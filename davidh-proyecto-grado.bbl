@@ -1,0 +1,22 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\astroncite{Amor et~al.}{2005}]{amor05}
+Amor, J.~J., Gonz\'alez, J.~M., Robles, G., and Herr\'aiz, I. (2005).
+\newblock Debian 3.1 (sarge) como caso de estudio de medici\'on de software
+  libre: resultados preliminares.
+\newblock {\em Nov\'atica}, (175):11--14.
+
+\bibitem[\protect\astroncite{Capiluppi and Michlmayr}{2007}]{Capiluppi07}
+Capiluppi, A. and Michlmayr, M. (2007).
+\newblock De la catedral al bazar: un estudio emp\'irico del ciclo de vida de
+  los proyectos basados en comunidades de voluntarios.
+\newblock {\em Nov\'atica}, (189):9--16.
+
+\bibitem[\protect\astroncite{{International Organization for
+  Standardization}}{2008}]{iso08}
+{International Organization for Standardization} (2008).
+\newblock Systems and software engineering -- software life cycle processes.
+\newblock Disponible en
+  \url{http://www.iso.org/iso/catalogue_detail?csnumber=43447}.
+
+\end{thebibliography}

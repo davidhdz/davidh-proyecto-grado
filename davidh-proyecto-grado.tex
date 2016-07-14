@@ -1,0 +1,327 @@
+\documentclass[12pt,letterpaper,spanish,oneside]{book}
+
+\usepackage{ulamonog} % formato para la propuesta o proyecto de grado
+\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{color}
+\usepackage[colorlinks]{hyperref}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{longtable}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{verbatim}
+\renewcommand{\thesection}{\arabic{section}}
+
+
+% ***************************************************************** %
+% En el siguiente comando se pueden modificar:
+% Titulo, Autor, Palabras clave
+% ***************************************************************** %
+
+% si se va a imprimir,
+% se incluye al final despues de citecolor=blue, el comando draft=true
+% Las siguientes son propiedades del pdf, más no cambian nada dentro del
+% texto de la monografía
+\hypersetup{pdftitle={Ciclos de vida del software libre. Caso de estudio Distribuci\'on Canaima GNU/Linux},
+pdfauthor={David A. Hern\'andez Aponte},
+pdfsubject={Propuesta de Proyecto de Grado}, % se deja igual (se cambia para el proyecto de grado)
+pdfkeywords={}, pdfstartview=FitH,
+citecolor=blue, draft=false}
+
+% ***************************************************************** %
+% FIN DE
+% Titulo, Autor, Palabras clave
+% ***************************************************************** %
+
+% Si desea que no aparezca la lista de tablas o figuras descomente las siguientes lineas
+\nolistoftables
+\nolistoffigures
+\sloppy
+
+\begin{document}
+
+\frontmatter
+
+
+% ***************************************************************** %
+% Portada y resumen
+% ***************************************************************** %
+
+% Si desea que el logo de la ULA aparezca en la parte superior,
+% descomente la siguiente línea. Por defecto aparece en la parte inferior
+\logoarriba{}
+
+% Año en el cual se entrega el proyecto de grado o la propuesta
+\copyrightyear{2016}
+
+% Al final cuando hayan presentado, sin comentar,
+% deberia ser el número de tesis presentada y la opción, IO por ejemplo
+% (Actualmente, 11-03-08, no se está trabajando con esta metodología de llevar un
+% número de proyecto para las tesis, por lo cual debe ir comentado)
+%\numproy{00IO}
+
+% En caso de hacer la propuesta, descomente la siguiente
+% instrucción. Para el Proyecto de Grado debe comentarse. Modifica
+% tanto la categoría de la monografía, como la aparición de
+% "Presentado ante la ilustre Universidad de Los Andes
+% como requisito parcial para obtener el Título de" en la portada
+\tipomonografia{Propuesta de Proyecto de Grado}
+
+
+% Título de la monografía, el cual saldrá en la portada
+\title{Ciclos de vida del software libre. Caso de estudio Distribuci\'on Canaima GNU/Linux}
+
+% Autor de la monografía, el cual saldrá en la portada
+ \author{David A. Hern\'andez Aponte}
+
+% La fechaentrega, presentaciondia, presentacionlugar
+% y mencionespecial, es para aquel caso en el cual se
+% vaya a utilizar la hoja del veredicto en el formato
+% que se presenta aquí. El primerjurado, segundojurado,
+% y cedula, son campos que pueden llenarse, pero sólo
+% aparecerán si se utiliza la página del veredicto
+
+% Cédula del autor de la monografía
+ \cedula{13.803.334}
+
+% Tutor del Proyecto de Grado
+ \tutor{Dr. Jacinto Dávila}
+
+% Cualquiera de los instructores que aparecen a continuación
+% pueden comentarse o descomentarse según sea el caso:
+
+%%% Cotutor del Proyecto de Grado
+% \cotutor{Dr. Jacinto Dávila}
+%%% Asesor del Proyecto de Grado
+% \asesor{Dr. Asesor}
+%%% Asesor Industrial del Proyecto de Grado
+% \asesorindustrial{Dr. Asesor Industrial}
+%%% Tutor Industrial del Proyecto de Grado
+% \tutorindustrial{Dr. Tutor Industrial}
+%%% Jurados del Proyecto de Grado
+%\primerjurado{Dr. Primer Profesor}
+%\segundojurado{Prof. Segundo Profesor}
+
+% ***************************************************************** %
+% Si sabe la fecha de presentación
+%
+% con o sin comentar
+% (Esta hoja es un formato para asentar la nota del proyecto de grado;
+% sin embargo, la hoja que se utiliza para ese fin, se busca en la escuela
+% días antes de la presentación)
+% ***************************************************************** %
+%\fechaentrega{Diciembre 2006} % Si sabe cuando se presentó
+%\presentaciondia{7 de Diciembre de 2005} % si conoce exactamente el día
+%\presentacionlugar{Salón de reuniones EISULA} % si conoce exactamente el lugar donde se presentó
+% ***************************************************************** %
+% FIN DE
+% Si sabe la fecha de presentación
+% ***************************************************************** %
+
+
+% ***************************************************************** %
+% Si tiene mencion especial
+% con o sin comentar
+% ***************************************************************** %
+%\mencionespecial{Este proyecto fue seleccionado como \textbf{mejor
+%proyecto de grado} de la Escuela de Ingeniería de Sistemas, en el
+%IC aniversario de la Facultad de Ingeniería.} % si tiene mención especial
+% (El texto puede cambiarse \mencionespecial{*********} según corresponda
+% ***************************************************************** %
+% FIN DE
+% Si tiene mencion especial
+% con o sin comentar
+% ***************************************************************** %
+
+% NO TOCAR si es Ingenieria de Sistemas
+% \grado{Ingeniero Químico} % por defecto Ingeniero de Sistemas
+
+%\signaturepage ----- NO TOCAR
+
+%%%%%OJO%%%%%Arreglen esto según su opción
+% Si es control y automatizacion se comentan las siguientes líneas. Si es de
+% Sistemas Computacionales comenta la tercera. De Investigación de Operaciones
+% comenta la segunda
+\opcion{Sistemas Computacionales}
+
+% Aquí se escribe el resumen de la monografía
+%\resumen{Se desea crear un módulo de balance hídrico espacio-temporal a partir de puntos utilizando el sistema de información geográfica SAGA y el entorno estadístico R conectando ambos paquetes de software mediante RSAGA, previo a  ello se deben realizar dos pasos: el análisis estructural de dependencia espacial y la posterior interpolación y validación de capas georeferenciadas de precipitación y evotranspiración utilizando métodos geoestadísticos}
+
+% Aquí se escriben las palabras claves de la monografía
+\descriptores{linux, software libre, distribución, ciclo de vida, canaima gnu/linux, desarrollo colaborativo}%, desarrollo colaborativo, %comunidades
+
+
+% Esto es para que salga la cota en la hoja del resumen. Actualmente,
+% 11-03-08, en la Escuela de Ingeniería de Sistemas no es necesario
+% buscar la cota previamente, sino que el Proyecto de Grado se entrega
+% en la Escuela sin cota.
+%\cota{IXD A01.1}
+
+% Si desea eliminar la frase "Este trabajo fue procesado en LATEX"
+% del resumen, descomente la siguiente línea
+%\sinlatex{}
+
+% ***************************************************************** %
+% FIN DE
+% Portada y resumen
+% ***************************************************************** %
+
+
+% ***************************************************************** %
+% Si tiene dedicatoria
+% con o sin comentar
+% ***************************************************************** %
+%\dedicatoria{A mi madre.}
+% ***************************************************************** %
+% FIN DE
+% Si tiene dedicatoria
+% ***************************************************************** %
+
+\beforepreface
+
+% ***************************************************************** %
+% Agradecimientos y capítulos NO numerados
+% ***************************************************************** %
+
+%\prefacesection{Agradecimientos}
+% Aún no hay agradecimientos
+
+%%% Capitulo sin numero, antes de la pagina 1
+
+%\prefacesection{Introducción}
+% Este es un ejemplo de una sección no numerada.
+
+
+% ***************************************************************** %
+% FIN DE
+% Agradecimientos y capítulos NO numerados
+% ***************************************************************** %
+
+\afterpreface
+
+\pagestyle{fancyplain}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{\textsc{\footnotesize\thechapter\ #1}}}
+\renewcommand{\sectionmark}[1]{\markright{\textsc{\footnotesize\thesection\ #1}}}
+\lhead[\fancyplain{}{\textsc{\footnotesize\thepage}}]%
+{\fancyplain{}{\rightmark}}
+\rhead[\fancyplain{}{\leftmark}]%
+{\fancyplain{}{\textsc{\footnotesize\thepage}}} \cfoot{}
+
+\mainmatter
+
+% ***************************************************************** %
+% Cuerpo
+% ***************************************************************** %
+% De aquí en adelante se desarrollan los capítulos numerados de la monografía
+
+
+
+\section{Antecedentes}
+La \cite{iso08} publica la última modificación hasta la fecha del estándar para los procesos de vida del software. El estándar establece un marco de trabajo para los procesos del ciclo de vida del software.
+
+\cite{amor05} realizaron una investigación en la que utiliza la versión 3.1 de la distribución Debian como caso de estudio de medición de software libre. Aquí se concluye que el crecimiento del trabajo en Debian se incrementa año tras año siendo uno de los mayores sistemas de software mundial, e independientemente de la envergadura del proyecto la comunidad de mantenedores y voluntarios que rodean el sistema goza de buena salud. Sin embargo, se cuestiona la sostenibilidad del proyecto a futuro, basándose en el tamaño medio de la distribución, señalando que este comportamiento se podría deber a un crecimiento de números de paquetes más rápido que el de mantenedores.
+
+\cite{Capiluppi07} realizaron un estudio empírico del ciclo de vida de los proyectos basados en comunidades de voluntarios basados en, concluyendo que los proyectos de software libre comienzan con una fase catedral, de desarrollo cerrado y de pocos desarrolladores, y luego migran a una fase bazar, desarrollo con un gran número de voluntarios y contribuciones. 
+
+
+\section{Planteamiento del Problema}
+En el software libre el modelo participativo es vital para el éxito y superviviencia de los proyectos, para ello cada proyecto define los protocolos para aceptar y facilitar la colaboración de terceros. Las contribuciones se pueden presentar, por ejemplo, proponiendo de modificaciones de código en un repositorio con control de versiones, reportando un mal funcionamiento del software, proponiendo nuevas ideas para ser implementadas en un futuro, colaborando con la traducción a diferentes idiomas, etc.
+
+Actualmente, la distribución Canaima GNU/Linux es poco usada y recibe pocas contribuciones. El presente trabajo pretende mostrar la viabilidad que tiene la distribución Canaima GNU/Linux para recibir contribuciones por parte de la comunidad de desarrolladores, entendiéndose principalmente en el apartado para la posible admisión de nuevos paquetes de software en los repositorios oficiales distribución. 
+
+% Area: Informática
+% Tema: Contribución en desarrollos de software
+% Título: Ciclos de vida del software libre. Caso de estudio Distribución Canaima
+
+% Var A: contribuciones por parte de la comunidad de desarrolladores
+% Var B: distribución Canaima GNU/Linux
+
+
+% Hay pocas contribuciones de de desarrollo de software por parte de la comunidad.
+% Aumentar contribuciones y uso de la distribución
+% Número de contribuciones de parte de la comunidad
+
+
+
+\section{Objetivos}
+\subsection{Objetivos Generales}
+Realizar un estudio del ciclo de vida de la Distribución Canaima GNU/Linux
+
+\subsection{Objetivos Específicos}
+\begin{enumerate}
+\item Comparar el ciclo de vida de la distribución Canaima con respecto a Ubuntu.
+\item Comparar el ciclo de vida de la distribución Canaima con respecto a Debian.
+\item Comparar el ciclo de vida de la distribución Canaima con respecto a Android.
+\item Analizar el uso de la distribución en Venezuela.
+\item Identificar y analizar las probables causas por las cuales la colaboración de la comunidad no es efectiva.
+\end{enumerate}
+
+
+\section{Método de Desarrollo}
+Para la realización de este trabajo se utilizará el método hipotético-deductivo, partiendo de la hipótesis que la la distribución Canaima GNU/Linux es poco usada y recibe pocas contribuciones de parte delos desarrolladores. Se identificarán las causas y consecuencias de la hipótesis, se harán comparaciones con otras distribuciones GNU/Linux que sustentarán o refutarán estas hipótesis.
+
+
+%\section{Cronograma de trabajo}
+%En el Cuadro~\ref{tab:cronograma} se muestra el cronograma de actividades a seguir durante la elaboración del proyecto de grado.
+%\begin{longtable}[width=0.7\textwidth]{l | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c |}
+%\cline{2-16}
+%&\multicolumn{16}{|>{\columncolor{green}} c|}{\small{Semana}} \\
+%\cline{2-16}
+%&\cellcolor{red}\small{1} &\cellcolor{red}\small{2} &\cellcolor{red}\small{3} &\cellcolor{red}\small{4} 
+%&\cellcolor{red}\small{5} &\cellcolor{red}\small{6} &\cellcolor{red}\small{7} &\cellcolor{red}\small{8} 
+%&\cellcolor{red}\small{9} &\cellcolor{red}\small{10} &\cellcolor{red}\small{11} &\cellcolor{red}\small{12} 
+%&\cellcolor{red}\small{13} &\cellcolor{red}\small{14} &\cellcolor{red}\small{15} &\cellcolor{red}\small{16}\\
+%\hline
+%\multicolumn{1}{|l|}{\tiny Reunión con el tutor} &\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}\\
+%\hline
+%\multicolumn{1}{|l|}{\tiny Revisión bibliográfica} &\cellcolor{blue}&\cellcolor{blue}&&&&&&&&&&&&&& \\
+%\hline
+%\multicolumn{1}{|l|}{\tiny Culminación de las 2 fases iniciales} &\cellcolor{blue}&\cellcolor{blue}&&&&&&&&&&&&&& \\
+%\hline
+%\multicolumn{1}{|l|}{\tiny Especificación de requerimientos} &&&\cellcolor{blue}&\cellcolor{blue}&&&&&&&&&&&& \\
+%\hline
+%\multicolumn{1}{|l|}{\tiny Análisis y diseño} &&&&&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&&&&&&&&& \\
+%\hline
+%\multicolumn{1}{|l|}{\tiny Codificación} &&&&&&&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&& \\
+%\hline
+%\multicolumn{1}{|l|}{\tiny Presentación de avance} &&&&&&&&&\cellcolor{blue}&&&&&&& \\
+%\hline
+%\multicolumn{1}{|l|}{\tiny Pruebas} &&&&&&&&&&&&&&\cellcolor{blue}&\cellcolor{blue}& \\
+%\hline
+%\multicolumn{1}{|l|}{\tiny Liberación} &&&&&&&&&&&&&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}& \\
+%\hline
+%\multicolumn{1}{|l|}{\tiny Redacción del informe final} &&&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&& \\
+%\hline
+%\multicolumn{1}{|l|}{\tiny Consignación de documentos} &&&&&&&&&&&&&&&\cellcolor{blue}& \\
+%\hline
+%\multicolumn{1}{|l|}{\tiny Presentación del informe final} &&&&&&&&&&&&&&&&\cellcolor{blue} \\
+%\hline
+%\multicolumn{1}{|l|}{\tiny Defensa del Proyecto de Grado} &&&&&&&&&&&&&&&&\cellcolor{blue} \\
+%\hline
+%\caption{Cronograma de actividades}\label{tab:cronograma}
+%\end{longtable}
+
+
+\section{Cronograma de Evaluación}
+Se mantendrá contacto semanal con el tutor para informarle del avance del proyecto y se realizará una reunión presencial, al menos una vez por semana, para discutir el trabajo realizado hasta el momento y se utilizarán herramientas informáticas de seguimiento.
+
+Cumplidos dos meses de haberse iniciado el Proyecto de Grado, se presentará un avance del mismo que permita ver el desarrollo del proyecto y a su vez permita se hagan observaciones y correcciones al mismo.
+
+
+\section{Palabras claves}
+canaima, linux, software libre, distribución, ciclo de vida
+
+%\section{Bibliografía}
+
+% Bibliografía
+\bibliographystyle{apa}
+\bibliography{davidh-proyecto-grado}
+
+
+\end{document}
+
+
