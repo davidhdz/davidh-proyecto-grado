@@ -1,10 +1,14 @@
 \select@language {spanish}
-\contentsline {section}{\numberline {1}Antecedentes}{1}{section.0.1}
-\contentsline {section}{\numberline {2}Planteamiento del Problema}{1}{section.0.2}
-\contentsline {section}{\numberline {3}Objetivos}{2}{section.0.3}
-\contentsline {subsection}{\numberline {3.1}Objetivos Generales}{2}{subsection.0.3.1}
-\contentsline {subsection}{\numberline {3.2}Objetivos Espec\IeC {\'\i }ficos}{2}{subsection.0.3.2}
-\contentsline {section}{\numberline {4}M\'etodo de Desarrollo}{2}{section.0.4}
-\contentsline {section}{\numberline {5}Cronograma de Evaluaci\'on}{2}{section.0.5}
-\contentsline {section}{\numberline {6}Palabras claves}{3}{section.0.6}
-\contentsline {chapter}{Bibliograf\'{\i }a}{4}{section.0.6}
+\contentsline {chapter}{\numberline {1}Introducci\'on}{1}{chapter.1}
+\contentsline {section}{\numberline {1}Antecedentes}{1}{section.1.1}
+\contentsline {section}{\numberline {2}Planteamiento del Problema}{2}{section.1.2}
+\contentsline {section}{\numberline {3}Objetivos}{2}{section.1.3}
+\contentsline {subsection}{\numberline {3.1}Objetivos Generales}{2}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {3.2}Objetivos Espec\IeC {\'\i }ficos}{2}{subsection.1.3.2}
+\contentsline {section}{\numberline {4}M\'etodo de Desarrollo}{3}{section.1.4}
+\contentsline {section}{\numberline {5}Cronograma de Evaluaci\'on}{3}{section.1.5}
+\contentsline {section}{\numberline {6}Palabras claves}{3}{section.1.6}
+\contentsline {chapter}{\numberline {2}Marco Te\'orico}{4}{chapter.2}
+\contentsline {section}{\numberline {1}Canaima}{4}{section.2.1}
+\contentsline {section}{\numberline {2}Debian}{7}{section.2.2}
+\contentsline {chapter}{Bibliograf\'{\i }a}{9}{section.2.2}
