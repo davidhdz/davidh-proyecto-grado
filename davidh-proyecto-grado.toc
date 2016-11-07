@@ -9,6 +9,6 @@
 \contentsline {section}{\numberline {5}Cronograma de Evaluaci\'on}{3}{section.1.5}
 \contentsline {section}{\numberline {6}Palabras claves}{3}{section.1.6}
 \contentsline {chapter}{\numberline {2}Marco Te\'orico}{4}{chapter.2}
-\contentsline {section}{\numberline {1}Canaima}{4}{section.2.1}
-\contentsline {section}{\numberline {2}Debian}{7}{section.2.2}
-\contentsline {chapter}{Bibliograf\'{\i }a}{9}{section.2.2}
+\contentsline {section}{\numberline {1}Canaima GNU/Linux}{4}{section.2.1}
+\contentsline {section}{\numberline {2}Debian}{9}{section.2.2}
+\contentsline {chapter}{Bibliograf\'{\i }a}{10}{section.2.2}

@@ -2,7 +2,7 @@
 
 \usepackage{ulamonog} % formato para la propuesta o proyecto de grado
 \usepackage[latin1]{inputenc}
-\usepackage[spanish]{babel}
+\usepackage[spanish,mexico]{babel}
 \usepackage{color}
 \usepackage[colorlinks]{hyperref}
 \usepackage{float}
@@ -16,7 +16,9 @@
 \usepackage{subcaption}
 \usepackage{verbatim}
 \usepackage[flushleft]{threeparttable}
+\usepackage{footnote}
 \renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\rmdefault}{bch}
 
 
 % ***************************************************************** %
@@ -58,7 +60,7 @@ citecolor=blue, draft=false}
 \logoarriba{}
 
 % Año en el cual se entrega el proyecto de grado o la propuesta
-\copyrightyear{2016}
+%\copyrightyear{2016}
 
 % Al final cuando hayan presentado, sin comentar,
 % deberia ser el número de tesis presentada y la opción, IO por ejemplo
@@ -154,7 +156,7 @@ citecolor=blue, draft=false}
 %\resumen{Se desea crear un módulo de balance hídrico espacio-temporal a partir de puntos utilizando el sistema de información geográfica SAGA y el entorno estadístico R conectando ambos paquetes de software mediante RSAGA, previo a  ello se deben realizar dos pasos: el análisis estructural de dependencia espacial y la posterior interpolación y validación de capas georeferenciadas de precipitación y evotranspiración utilizando métodos geoestadísticos}
 
 % Aquí se escriben las palabras claves de la monografía
-\descriptores{linux, software libre, distribución, ciclo de vida, canaima gnu/linux, desarrollo colaborativo}%, desarrollo colaborativo, %comunidades
+\descriptores{Linux, Software libre, Distribuci\'on Linux, Ciclo de vida, Canaima GNU/Linux, Desarrollo colaborativo, Debian}
 
 
 % Esto es para que salga la cota en la hoja del resumen. Actualmente,
@@ -207,9 +209,11 @@ citecolor=blue, draft=false}
 
 \pagestyle{fancyplain}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{\textsc{\footnotesize\thechapter\ #1}}}
-\renewcommand{\sectionmark}[1]{\markright{\textsc{\footnotesize\thesection\ #1}}}
+\renewcommand{\sectionmark}[1]{\markright{\textsc{\footnotesize\ #1}}}
+
 \lhead[\fancyplain{}{\textsc{\footnotesize\thepage}}]%
 {\fancyplain{}{\rightmark}}
+
 \rhead[\fancyplain{}{\leftmark}]%
 {\fancyplain{}{\textsc{\footnotesize\thepage}}} \cfoot{}
 
@@ -221,17 +225,17 @@ citecolor=blue, draft=false}
 % De aquí en adelante se desarrollan los capítulos numerados de la monografía
 
                                                                                                                                                                                           \chapter{Introducción}
-
+\noindent\rule{\textwidth}{0.4pt}
 \section{Antecedentes}
 La \cite{iso08} publica la última modificación hasta la fecha del estándar para los procesos de vida del software. El estándar establece un marco de trabajo para los procesos del ciclo de vida del software.
 
 \cite{amor05} realizaron una investigación en la que utiliza la versión 3.1 de la distribución Debian como caso de estudio de medición de software libre. Aquí se concluye que el crecimiento del trabajo en Debian se incrementa año tras año siendo uno de los mayores sistemas de software mundial, e independientemente de la envergadura del proyecto la comunidad de mantenedores y voluntarios que rodean el sistema goza de buena salud. Sin embargo, se cuestiona la sostenibilidad del proyecto a futuro, basándose en el tamaño medio de la distribución, señalando que este comportamiento se podría deber a un crecimiento de números de paquetes más rápido que el de mantenedores.
 
-\cite{Capiluppi07} realizaron un estudio empírico del ciclo de vida de los proyectos basados en comunidades de voluntarios basados en, concluyendo que los proyectos de software libre comienzan con una fase catedral, de desarrollo cerrado y de pocos desarrolladores, y luego migran a una fase bazar, desarrollo con un gran número de voluntarios y contribuciones. 
+Por su parte, \cite{Capiluppi07} realizaron un estudio empírico del ciclo de vida de los proyectos basados en comunidades de voluntarios, concluyendo que los proyectos de software libre comienzan con una fase catedral, de desarrollo cerrado y de pocos desarrolladores, y luego migran a una fase bazar, desarrollo con un gran número de voluntarios y contribuciones\footnote{Tomando como referencia el ensayo \textit{La Catedral y el Bazar} de \cite{Raymond99}}. 
 
 
 \section{Planteamiento del Problema}
-En el software libre el modelo participativo es vital para el éxito y superviviencia de los proyectos, para ello cada proyecto define los protocolos para aceptar y facilitar la colaboración de terceros. Las contribuciones se pueden presentar, por ejemplo, proponiendo de modificaciones de código en un repositorio con control de versiones, reportando un mal funcionamiento del software, proponiendo nuevas ideas para ser implementadas en un futuro, colaborando con la traducción a diferentes idiomas, etc.
+En el software libre el modelo participativo es vital para el éxito y superviviencia de los proyectos, para ello cada proyecto define los protocolos para aceptar y facilitar la colaboración de terceros. Las contribuciones se pueden presentar, por ejemplo, proponiendo modificaciones de código en un repositorio con control de versiones, reportando un mal funcionamiento del software, proponiendo nuevas ideas para ser implementadas en un futuro, colaborando con la traducción a diferentes idiomas, etc.
 
 Actualmente, la distribución Canaima GNU/Linux es poco usada y recibe pocas contribuciones. El presente trabajo pretende mostrar la viabilidad que tiene la distribución Canaima GNU/Linux para recibir contribuciones por parte de la comunidad de desarrolladores, entendiéndose principalmente en el apartado para la posible admisión de nuevos paquetes de software en los repositorios oficiales distribución. 
 
@@ -314,43 +318,39 @@ Cumplidos dos meses de haberse iniciado el Proyecto de Grado, se presentará un a
 
 
 \section{Palabras claves}
-canaima, linux, software libre, distribución, ciclo de vida
+Linux, Software libre, Distribuci\'on Linux, Ciclo de vida, Canaima GNU/Linux, Desarrollo colaborativo, Debian
+
 
 \chapter{Marco Teórico}
+\noindent\rule{\textwidth}{0.4pt}
+\section{Canaima GNU/Linux}
 
-\section{Canaima}
+Canaima GNU/Linux es una distribución Linux basada en Debian, forma parte del Proyecto Canaima, originado a raíz de la promulgación del  decreto 3.390 el cual dispone sobre el uso prioritario de Software Libre en los entes pertenecientes a la Administración Pública Nacional (APN). En el artículo número 7 se designa al entonces Ministerio de Ciencia y Tecnología la responsabilidad de ``proveer la Distribución Software Libre desarrollado con Estándares Abiertos para el Estado Venezolano'' \cite{venezuela04}. 
 
+Así pues, 3 años luego del Decreto 3390 nace la primera versión de la Distribución GNU/Linux del Estado Venezolano desarrollada en primera instancia para el Ministerio de Ciencia y Tecnología \cite{discusion12}, y que poco después adoptaría el nombre de Canaima.
 
-\textbf{Proyectos}
-\begin{itemize}
-\item 2007 -- 2010. Primeras versiones, Canaima GNU/Linux versiones 1.X - 2.X.
-\item 2009 -- Actualidad. Canaima Educativo.
-\item 2011 -- 2014. Canaima Popular.
-\item 2015 -- Actualidad. Canaima Poder Público.
-\end{itemize}
+Sobre la distribución y el proyecto Canaima \cite{figueira13} nos dice:
+\begin{quotation}
+Para su generación y mantenimiento, se creó el Proyecto Canaima, que ha evolucionado desde un producto de una institución particular, hasta un complejo y rico proyecto socio-tecnológico con diversas ramificaciones, donde participan decenas de personas distribuidas en toda la geografía nacional, a título individual o provenientes de instituciones, colectivos sociales y organizaciones diversas. (p.198)
+\end{quotation}
 
-\textbf{Sabores}
-\begin{itemize}
-\item Canaima Poder Público.
-\item Canaima Educativo.
-\item Canaima Comunal.
-\item Canaima Colibrí.
-\item Canaima Caribay.
-\item Canaima Forense.
-\item GeoCanaima.
-\end{itemize}
+El desarrollo de Canaima inicia con un estilo del tipo catedral, que poco a poco ha devenido en un estilo del tipo bazar, aunque todavía no lo alcance de manera cabal pues la posibilidad para la colaboración presenta aún algunas limitaciones. 
 
+La Tabla \ref{table:lanzamientos} muestra la fecha de lanzamiento de las diferentes versiones de la distribución Canaima GNU/Linux.
 
-\begin{table}[H]
+\begin{savenotes}
+\begin{table}[!ht]
 \begin{center}
 \begin{threeparttable}
-\caption{Lanzamientos de versiones de Canaima GNU/Linux}
+\caption{Lanzamientos de versiones de Canaima}
+\label{table:lanzamientos}
 \begin{tabular}{cccc} 
 %\hline
 \toprule
 \textbf{Versión} & \textbf{Nombre Clave} & \textbf{Fecha de Lanzamiento} \\
 %\hline
 \midrule
+1.0 & Canaima & 18/10/2007 \\
 2.0 & Canaima & 05/02/2009 \\
 2.0.1 RC1 & Canaima & 16/04/2009 \\
 2.0.1 & Canaima & 15/05/2009 \\
@@ -373,11 +373,32 @@ canaima, linux, software libre, distribución, ciclo de vida
 \end{tabular}
 \begin{tablenotes}
 \small
-\item Fuente: http://canaima.softwarelibre.gob.ve
+\item Fuentes: Canaima GNU/Linux\footnote{\url{http://canaima.softwarelibre.gob.ve}} y Wikipedia \footnote{\url{http://es.wikipedia.org/wiki/Canaima_(distribuci\%C3\%B3n_Linux)}}
 \end{tablenotes}
 \end{threeparttable}
 \end{center}
 \end{table}
+\end{savenotes}
+
+%\textbf{Proyectos}
+%\begin{itemize}
+%\item 2007 -- 2010. Primeras versiones, Canaima GNU/Linux versiones 1.X - 2.X.
+%\item 2009 -- Actualidad. Canaima Educativo.
+%\item 2011 -- 2014. Canaima Popular.
+%\item 2015 -- Actualidad. Canaima Poder Público.
+%\end{itemize}
+
+\textbf{Sabores}
+\begin{itemize}
+\item Canaima Poder Público.
+\item Canaima Educativo.
+\item Canaima Comunal.
+\item Canaima Colibrí.
+\item Canaima Caribay.
+\item Canaima Forense.
+\item GeoCanaima.
+\end{itemize}
+
 
 
 \textbf{Equipo Canaima GNU/Linux 2016}
@@ -400,7 +421,7 @@ canaima, linux, software libre, distribución, ciclo de vida
 \end{itemize}
 \item Cuatro desarrolladores.
 \begin{itemize}
-\item Gestión de la plataforma de versionamiento de Canima GNU/Linux
+\item Gestión de la plataforma de versionamiento de Canaima GNU/Linux
 \item Adaptación de Paquetes.
 \item Mantenimiento de Paquetes.
 \item Pruebas de correcto funcionamiento de los paquetes.
@@ -445,12 +466,14 @@ Fuente: http://canaima.softwarelibre.gob.ve/canaima/soporte
 
 \section{Debian}
 
+\cite{debian15} establecen que el proyecto Debian fue creado por Ian Murdock en agosto de 1993. (p.9). En la página web del proyecto\footnote{\url{https://www.debian.org/intro/about}} definen a Debian como un sistema operativo libre, dispone de versiones para el núcleo Linux o el núcleo FreeBSD. Además, Debian se presenta con mas de 43000 paquetes de software.
+
 \begin{itemize}
-\item 271 Mantendores Debian
+\item 271 Mantenedores Debian
 \item 1039 Desarrolladores Debian
 \end{itemize}
 
-
+\section{Ubuntu}
 
 %\section{Bibliografía}
 
