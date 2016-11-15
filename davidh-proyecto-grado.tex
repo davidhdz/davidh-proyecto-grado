@@ -4,10 +4,11 @@
 \usepackage[latin1]{inputenc}
 \usepackage[spanish,mexico]{babel}
 \usepackage{color}
+\usepackage[hyphens]{url}
 \usepackage[colorlinks]{hyperref}
 \usepackage{float}
 \usepackage{graphicx}
-\graphicspath{ {imagenes/} }
+\graphicspath{{imagenes/}}
 \usepackage{natbib}
 \usepackage{booktabs}
 \usepackage{colortbl}
@@ -336,19 +337,18 @@ Para su generación y mantenimiento, se creó el Proyecto Canaima, que ha evolucio
 
 El desarrollo de Canaima inicia con un estilo del tipo catedral, que poco a poco ha devenido en un estilo del tipo bazar, aunque todavía no lo alcance de manera cabal pues la posibilidad para la colaboración presenta aún algunas limitaciones. 
 
-La Tabla \ref{table:lanzamientos} muestra la fecha de lanzamiento de las diferentes versiones de la distribución Canaima GNU/Linux.
+\subsection{Lanzamientos}
+La Tabla \ref{table:lanzamientoscanaima} muestra la fecha de lanzamiento de las diferentes versiones de la distribución Canaima GNU/Linux.
 
 \begin{savenotes}
 \begin{table}[!ht]
 \begin{center}
 \begin{threeparttable}
 \caption{Lanzamientos de versiones de Canaima}
-\label{table:lanzamientos}
-\begin{tabular}{cccc} 
-%\hline
+\label{table:lanzamientoscanaima}
+\begin{tabular}{lcr} 
 \toprule
 \textbf{Versión} & \textbf{Nombre Clave} & \textbf{Fecha de Lanzamiento} \\
-%\hline
 \midrule
 1.0 & Canaima & 18/10/2007 \\
 2.0 & Canaima & 05/02/2009 \\
@@ -368,7 +368,6 @@ La Tabla \ref{table:lanzamientos} muestra la fecha de lanzamiento de las diferen
 4.0 & Kerepakupai & 04/12/2013 \\
 4.1 & Kukenán & 04/09/2014 \\
 5.0 VC1 & Chimantá & 23/12/2015 \\
-%\hline
 \bottomrule
 \end{tabular}
 \begin{tablenotes}
@@ -380,7 +379,7 @@ La Tabla \ref{table:lanzamientos} muestra la fecha de lanzamiento de las diferen
 \end{table}
 \end{savenotes}
 
-%\textbf{Proyectos}
+\subsection{Proyectos}
 %\begin{itemize}
 %\item 2007 -- 2010. Primeras versiones, Canaima GNU/Linux versiones 1.X - 2.X.
 %\item 2009 -- Actualidad. Canaima Educativo.
@@ -388,7 +387,8 @@ La Tabla \ref{table:lanzamientos} muestra la fecha de lanzamiento de las diferen
 %\item 2015 -- Actualidad. Canaima Poder Público.
 %\end{itemize}
 
-\textbf{Sabores}
+\subsection{Sabores}
+Definir sabores.
 \begin{itemize}
 \item Canaima Poder Público.
 \item Canaima Educativo.
@@ -401,7 +401,7 @@ La Tabla \ref{table:lanzamientos} muestra la fecha de lanzamiento de las diferen
 
 
 
-\textbf{Equipo Canaima GNU/Linux 2016}
+\subsection{Equipo Canaima GNU/Linux (septiembre de 2016)}
 \begin{itemize}
 \item Un Jefe de Oficina Canaima GNU/Linux. 
 \begin{itemize}
@@ -450,10 +450,17 @@ La Tabla \ref{table:lanzamientos} muestra la fecha de lanzamiento de las diferen
 \end{itemize}
 \end{itemize}
 
+\subsection{Histórico de distribuciones}
+\begin{itemize}
+\item Canaima \url{http://canaima.softwarelibre.gob.ve/descargas/canaima-gnu-linux/repositorio-de-distribuciones}
+\end{itemize}
 
+\subsection{Política}
+\begin{itemize}
+\item Contrato social de Canaima\url{http://wiki.canaima.softwarelibre.gob.ve/index.php/Contrato_Social}
+\end{itemize}
 
-
-\begin{figure}
+\begin{figure}[!h]
 \caption{Ciclo de desarrollo de Canaima GNU/Linux}
 \begin{center}
 \includegraphics[width=\textwidth]{ciclo_desarrollo}
@@ -462,20 +469,210 @@ Fuente: http://canaima.softwarelibre.gob.ve/canaima/soporte
 \end{figure}
 
 
-
-
 \section{Debian}
-
+\subsection{Definición}
 \cite{debian15} establecen que el proyecto Debian fue creado por Ian Murdock en agosto de 1993. (p.9). En la página web del proyecto\footnote{\url{https://www.debian.org/intro/about}} definen a Debian como un sistema operativo libre, dispone de versiones para el núcleo Linux o el núcleo FreeBSD. Además, Debian se presenta con mas de 43000 paquetes de software.
 
+\subsection{Componentes}
+\begin{description}
+\item[main] Paquetes compatibles con las directrices de software libre de Debian (DFSG), que además no dependen de paquetes que se encuentren fuera de este componente para su operación. Estos paquetes son los únicos que se consideran parte de la distribución Debian.
+\item[contrib] Paquetes compatibles con las directrices de software libre de Debian pero que tienen dependencias fuera de \textit{main}, incluida la posibilidad de tener dependencias en el componente \textit{non-free}. 
+\item[non-free] Paquetes no compatibles con las directrices de software libre de Debian. 
+\end{description}
+
+\subsection{Sabores}
+Debian dispone de varios entornos de escritorio en sus repositorios, estos son:
 \begin{itemize}
-\item 271 Mantenedores Debian
-\item 1039 Desarrolladores Debian
+\item GNOME
+\item KDE
+\item LXDE
+\item Xfce
+\item Cinnamon 
+\item MATE 
+\item consola
 \end{itemize}
 
-\section{Ubuntu}
 
-%\section{Bibliografía}
+\subsection{Roles}
+\begin{itemize}
+\item Autor original (\textit{upstream author}): es la persona que escribió el programa original.
+\item Mantenedor actual (\textit{upstream maintainer}): es la persona que actualmente se encarga de mantener el programa.
+\item Mantenedor (\textit{maintainer}): es la persona que se encarga de empaquetar el programa para Debian.
+\item Patrocinador (\textit{sponsor}): es la persona que ayuda a los mantenedores a subir los paquetes al repositorio oficial de paquetes Debian, luego de que estos sean revisados.
+\item Mentor: es la persona que ayuda a los mantenedores noveles con el empaquetado y otras actividades de desarrollo.
+\item Desarrollador Debian (DD) (\textit{Debian Developer}): es un miembro del proyecto Debian con permisos plenos de subida de paquetes al repositorio oficial de paquetes Debian.
+\item Mantenedor Debian (DM) (\textit{Debian Maintainer}): es una persona con permisos limitados de subida de paquetes al repositorio oficial de paquetes Debian.
+\end{itemize}
+
+\subsection{Colaboradores}
+\begin{itemize}
+\item 271 Mantenedores Debian\footnote{\url{https://nm.debian.org/public/people/dm_all} [Consultado 14 de noviembre de 2016]}
+\item 1043 Desarrolladores Debian\footnote{\url{https://nm.debian.org/public/people/dd_all} [Consultado 14 de noviembre de 2016]}
+\end{itemize}
+
+\subsection{Política}
+\begin{itemize}
+\item Contrato social de Debian \url{https://www.debian.org/social_contract}
+\end{itemize}
+
+\subsection{Histórico de distribuciones}
+\begin{itemize}
+\item Debian \url{http://cdimage.debian.org/mirror/cdimage/archive/}
+\end{itemize}
+
+\subsection{Versiones Debian}
+\begin{itemize}
+\item Estable (\textit{stable}): La versión estable contiene la \'ultima versión oficial de la distribución Debian.
+\item Pruebas (\textit{testing}): La versión de pruebas contiene paquetes que a\'un no han sido aceptados dentro de la versión estable, pero se encuentra en cola para ello.
+\item Inestable (\textit{unstable}): La versión inestable es la version que se encuentra en desarrollo constante. Esta versión siempre es llamada por el nombre clave Sid.
+\end{itemize}
+
+\subsection{Lanzamientos}
+La Tabla \ref{table:lanzamientosdebian} muestra la fecha de lanzamiento de las diferentes versiones de la distribución Debian.
+
+\begin{savenotes}
+\begin{table}[!ht]
+\begin{center}
+\begin{threeparttable}
+\caption{Lanzamientos de versiones de Ubuntu}
+\label{table:lanzamientosdebian}
+\begin{tabular}{lcr} 
+\toprule
+\textbf{Versión} & \textbf{Nombre Clave} & \textbf{Fecha de Lanzamiento} \\
+\midrule
+0.1--0.90 & Debian & agosto--diciembre 1993 \\
+0.91 & Debian & enero 1994 \\
+0.93R5 & Debian & marzo 1995 \\
+0.93R6 & Debian & noviembre 1995 \\
+1.1 & Buzz & 17/06/1996 \\
+1.2 & Rex & 12/12/1996 \\
+1.3 & Bo & 05/06/1997 \\
+2.0 & Hamm & 24/07/1998 \\
+2.1 & Slink & 09/03/1999 \\
+2.2 & Potato & 15/08/2000 \\
+3.0 & Woody & 19/07/2002 \\
+3.1 & Sarge & 06/06/2005 \\
+4.0 & Etch & 08/04/2007 \\
+5.0 & Lenny & 14/02/2009 \\
+6.0 & Squeeze & 06/02/2011 \\
+7.0 & Wheezy & 04/05/2013 \\
+8.0 & Jessie & 25/04/2015 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item Fuentes: \cite{debian15} y Debian\footnote{\url{https://www.debian.org/doc/manuals/project-history/ch-releases.html}}
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{table}
+\end{savenotes}
+
+\section{Ubuntu}
+\subsection{Definición}
+
+\subsection{Roles}
+\begin{itemize}
+\item Patrocinador (\textit{sponsors}): Es la persona que puede revisar el paquete y subirlo a los repositorios. 
+\item Desarrollador prospecto de Ubuntu (\textit{Ubuntu Prospective Developers}): Es aquella persona que reci\'en comienza a contribuir con Ubuntu.
+\item Desarrollador contribuidor de Ubuntu (\textit{Ubuntu Contributing Developers}): Es aquella persona reconocida con una membres\'ia de Ubuntu.
+\item Desarrollador Ubuntu de equipos delegados (\textit{Ubuntu Developers from delegated teams}): Es la persona que puede subir paquetes a determinados grupos de trabajo.
+\item MOTU (\textit{Master of the Universe}): Es aquella persona que puede subir paquetes a los repositorios \textit{Universe} and \textit{Multiverse}.
+\item Desarrollador del n\'ucleo de Ubuntu (core-dev) (\textit{Ubuntu Core Developers}): Es aquella persona que puede subir paquetes a todas las \'areas de Ubuntu.
+\item Subidor por paquete (Per-package Uploaders): Es aquella persona que puede subir paquetes espec\'ificos.
+\end{itemize}
+
+\subsection{Colaboradores}
+\begin{itemize}
+\item 87 Ubuntu Core Developers\footnote{\url{https://launchpad.net/~ubuntu-core-dev} [Consultado 14 de noviembre de 2016]} 
+\item 159 Ubuntu Contributing Developers\footnote{\url{https://launchpad.net/~ubuntu-developer-members} [Consultado 14 de noviembre de 2016]}
+\item 148 MOTU\footnote{\url{https://launchpad.net/~motu} [Consultado 14 de noviembre de 2016]}
+\item 734 Ubuntu Members\footnote{\url{https://launchpad.net/~ubuntumembers} [Consultado 14 de noviembre de 2016]}
+\end{itemize}
+
+
+\subsection{Componentes}
+\begin{itemize}
+\item Main: Software libre y abierto mantenido por Canonical.
+\item Universe: Software libre y abierto mantenido por la comunidad.
+\item Multiverse: Software con restricciones de licencia.
+\item Restricted: Controladores propietarios.
+\end{itemize}
+
+\subsection{Sabores}
+\begin{itemize}
+\item Edubuntu incluye aplicaciones para niños y ayuda al profesor a configurar un sal\'on de clase de manera r\'apida y sencilla.
+\item Kubuntu ofrece el espacio de trabajo KDE Plasma.
+\item Lubuntu versi\'on de Ubuntu con el entorno LXDE.
+\item Mythbuntu ofrece el sistema MythTV.
+\item Ubuntu GNOME versi\'on de Ubuntu con el entorno Gnome.
+\item Ubuntu Kylin proyecto enfocado para suplir las necesidades de usuarios chinos.
+\item Ubuntu MATE versi\'on de Ubuntu con el entorno Mate.
+\item Ubuntu Studio incluye aplicaciones enfocadas para el trabajo audiovisual.
+\item Xubuntu versi\'on de Ubuntu con el entorno XFCE.
+\end{itemize}
+
+\subsection{Política}
+\begin{itemize}
+\item Codigo de conducta de Ubuntu\url{https://www.ubuntu.com/about/about-ubuntu/conduct}
+\end{itemize}
+
+\subsection{Histórico de distribuciones}
+\begin{itemize}
+\item Ubuntu \url{http://old-releases.ubuntu.com/releases/}
+\end{itemize}
+
+\subsection{LTS}
+
+\subsection{Lanzamientos}
+La Tabla \ref{table:lanzamientosubuntu} muestra la fecha de lanzamiento de las diferentes versiones de la distribución Ubuntu.
+
+\begin{savenotes}
+\begin{table}[!ht]
+\begin{center}
+\begin{threeparttable}
+\caption{Lanzamientos de versiones de Ubuntu}
+\label{table:lanzamientosubuntu}
+\begin{tabular}{lcr} 
+\toprule
+\textbf{Versión} & \textbf{Nombre Clave} & \textbf{Fecha de Lanzamiento} \\
+\midrule
+4.10 & Warty Warthog & 20/10/2004 \\
+5.04 & Hoary Hedgehog & 08/04/2005 \\
+5.10 & Breezy Badger & 13/10/2005 \\
+6.06 LTS & Dapper Drake & 01/06/2006 \\
+6.10 & Edgy Eft & 26/10/2006 \\
+7.04 & Feisty Fawn & 19/04/2007 \\
+7.10 & Gutsy Gibbon & 18/10/2007 \\
+8.04 LTS & Hardy Heron & 24/04/2008 \\
+8.10 & Intrepid Ibex & 30/10/2008 \\
+9.04 & Jaunty Jackalope & 23/04/2009 \\
+9.10 & Karmic Koala & 29/10/2009 \\
+10.04 LTS & Lucid Lynx & 29/04/2010 \\
+10.10 & Maverick Meerkat & 10/10/2010 \\
+11.04 & Natty Narwhal & 28/04/2011 \\
+11.10 & Oneiric Ocelot & 13/10/2011 \\
+12.04 LTS & Precise Pangolin & 26/04/2012 \\
+12.10 & Quantal Quetzal & 18/10/2012 \\
+13.04 & Raring Ringtail & 25/04/2013 \\
+13.10 & Saucy Salamander & 17/10/2013 \\
+14.04 LTS & Saucy Salamander & 17/04/2014 \\
+14.10 & Utopic Unicorn & 23/10/2014 \\
+15.04 & Vivid Vervet & 23/04/2015 \\
+15.10 & Wily Werewolf & 21/10/2015 \\
+16.04 LTS & Xenial Xerus & 21/04/2016 \\
+16.10 & Yakkety Yak & 13/10/2016 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item Fuentes: Wikipedia \footnote{\url{https://es.wikipedia.org/wiki/Ubuntu\#Lanzamientos_y_soporte}}
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{table}
+\end{savenotes}
+
 
 % Bibliografía
 \bibliographystyle{apa}
