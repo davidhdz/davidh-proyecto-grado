@@ -1,7 +1,7 @@
 \documentclass[12pt,letterpaper,spanish,oneside]{book}
 
 \usepackage{ulamonog} % formato para la propuesta o proyecto de grado
-\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[spanish,mexico]{babel}
 \usepackage{color}
 \usepackage[hyphens]{url}
@@ -23,34 +23,38 @@
 \usepackage[title,toc,page]{appendix}
 \usepackage{titlesec}
 \usepackage{listings}
+\usepackage[dvipsnames]{xcolor}
 
 \lstset{
-backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
-  basicstyle=\scriptsize,        % the size of the fonts that are used for the code
-  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
-  breaklines=true,                 % sets automatic line breaking
-  captionpos=b,                    % sets the caption-position to bottom
-  commentstyle=\color{green},    % comment style
-%  deletekeywords={...},            % if you want to delete keywords from the given language
-  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
-%  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
-%  frame=single,	                   % adds a frame around the code
-  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
-  keywordstyle=\color{blue},       % keyword style
-%  language=Octave,                 % the language of the code
-%  morekeywords={*,...},           % if you want to add more keywords to the set
-  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
-  numbersep=5pt,                   % how far the line-numbers are from the code
-  numberstyle=\tiny\color{gray}, % the style that is used for the line-numbers
-  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
-  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
-  showstringspaces=false,          % underline spaces within strings only
-  showtabs=false,                  % show tabs within strings adding particular underscores
-  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
-%  stringstyle=\color{mymauve},     % string literal style
-  tabsize=2,	                   % sets default tabsize to 2 spaces
-%  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+%  inputencoding=utf8,
+  basicstyle=\ttfamily\scriptsize,
+  framerule=2pt,
+  numbers=left,
+  backgroundcolor=\color{gray!20},
+  frame=lines,
+  rulecolor=\color{black!30},
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  commentstyle=\color{green},
+  escapeinside={\%*}{*)},
+  framextopmargin=2pt,
+  framexbottommargin=2pt,
+  extendedchars=true,
+  literate={Ã¡}{{\'a}}1,
+  keepspaces=true,
+  keywordstyle=\color{blue},
+  numbersep=5pt,
+  numberstyle=\tiny\color{gray}, 
+  rulecolor=\color{black},
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+%  stepnumber=2,
+  tabsize=2,
 }
+
+\renewcommand{\lstlistingname}{Código}
 
 % ***************************************************************** %
 % En el siguiente comando se pueden modificar:
@@ -215,7 +219,7 @@ citecolor=blue, draft=false}
 % FIN DE
 % Si tiene dedicatoria
 % ***************************************************************** %
-
+\inputencoding{latin1}
 \beforepreface
 
 % ***************************************************************** %
@@ -261,7 +265,7 @@ citecolor=blue, draft=false}
 % ***************************************************************** %
 % De aquí en adelante se desarrollan los capítulos numerados de la monografía
 %\fancychapterstyle
-                                                                                                                                                                                          \chapter{Introducción y Antecedentes}
+                                                                                                                                                                                          \chapter{Introducci\'on y Antecedentes}
 \noindent\rule{\textwidth}{0.4pt}
 \section{Introducción}
 Este proyecto tiene como objetivo evaluar la productividad asociada o asociable a una distribución de software libre o distro. Para ello, revisamos el concepto de ciclo de vida del software, y lo usamos como una aproximación a la correspondiente noción de ciclo de vida de toda una distribución, un concepto claramente más complejo y difícil de abordar. Algunos indicadores complementarios son convocados para esta tarea y se los justifica a partir de esfuerzos previos en el área como los que se describen a continuación.
@@ -734,17 +738,14 @@ La Tabla \ref{table:lanzamientosubuntu} muestra la fecha de lanzamiento de las d
 
 \renewcommand\appendixpage{\clearpage\thispagestyle{empty}\mbox{}\vspace{1.5cm}\begin{flushleft}\Huge\bfseries\addappheadtotoc Apéndices \end{flushleft}}
 
-%\titleformat{\appendix}[display]
-%  {\normalfont\huge\bfseries}{\thispagestyle{empty}\filright\appendixname}{20pt}{\Huge}[]
 
 \begin{appendices}
 \noindent\rule{\textwidth}{0.4pt}
 \section{Datos recolectados}
 
 \section{Scripts para procesamiento de datos}
-\lstinputlisting[language=Python]{programas/paquetes.py}
 
-
+\lstinputlisting[language=Python,label=code1,caption=paquetes.py,]{programas/paquetes.py}
 
 \section{Cómo empaquetar en Canaima GNU/Linux}
 \end{appendices}
