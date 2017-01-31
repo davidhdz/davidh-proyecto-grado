@@ -20,7 +20,37 @@
 \usepackage{footnote}
 \renewcommand{\thesection}{\arabic{section}}
 \renewcommand{\rmdefault}{bch}
+\usepackage[title,toc,page]{appendix}
+\usepackage{titlesec}
+\usepackage{listings}
 
+\lstset{
+backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\scriptsize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{green},    % comment style
+%  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+%  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+%  frame=single,	                   % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+%  language=Octave,                 % the language of the code
+%  morekeywords={*,...},           % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{gray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+%  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,	                   % sets default tabsize to 2 spaces
+%  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
 
 % ***************************************************************** %
 % En el siguiente comando se pueden modificar:
@@ -108,8 +138,8 @@ citecolor=blue, draft=false}
 %%% Tutor Industrial del Proyecto de Grado
 % \tutorindustrial{Dr. Tutor Industrial}
 %%% Jurados del Proyecto de Grado
-\primerjurado{M.Sc. Rodolfo Sumoza}
-\segundojurado{Ing. Junior Altamiranda}
+\primerjurado{M.Sc. Junior Altamiranda}
+\segundojurado{Dr. Kay Tucci}
 
 % ***************************************************************** %
 % Si sabe la fecha de presentación
@@ -154,8 +184,7 @@ citecolor=blue, draft=false}
 \opcion{Sistemas Computacionales}
 
 % Aquí se escribe el resumen de la monografía
-\resumen{Se desea realizar un estudio que muestre el ciclo de vida del desarrollo de software libre aplicado a una distribución Linux, usando como objeto de investigación la distribución Canaima GNU/Linux, para ello se mostrará la manera en que se ha llevado a cabo su desarrollo través de la historia de la distribución, y se hará una comparación con otras distribuciones, como búsqueda para establecer casos de  ?exito y/o fracaso en las diferentes fases de
-desarrollo de la misma.}
+\resumen{Se desea realizar un estudio que muestre el ciclo de vida del desarrollo de software libre aplicado a una distribución Linux, usando como objeto de investigación la distribución Canaima GNU/Linux, para ello se mostrará la manera en que se ha llevado a cabo su desarrollo través de la historia de la distribución, y se hará una comparación con otras distribuciones, como búsqueda para establecer casos de éxito y/o fracaso en las diferentes fases de desarrollo de la misma.}
 
 % Aquí se escriben las palabras claves de la monografía
 \descriptores{Linux, Software libre, Distribuci\'on Linux, Ciclo de vida, Canaima GNU/Linux, Desarrollo colaborativo, Debian}
@@ -219,15 +248,24 @@ desarrollo de la misma.}
 \rhead[\fancyplain{}{\leftmark}]%
 {\fancyplain{}{\textsc{\footnotesize\thepage}}} \cfoot{}
 
+
 \mainmatter
+
+%\titleformat{\chapter}[display]
+%  {\normalfont\huge\bfseries}{\thispagestyle{empty}\filright\chaptertitlename\ \thechapter}{20pt}{\Huge}[\newpage]
+
+\renewcommand{\labelitemi}{$\bullet$} % Símbolo de listas
 
 % ***************************************************************** %
 % Cuerpo
 % ***************************************************************** %
 % De aquí en adelante se desarrollan los capítulos numerados de la monografía
-
-                                                                                                                                                                                          \chapter{Introducción}
+%\fancychapterstyle
+                                                                                                                                                                                          \chapter{Introducción y Antecedentes}
 \noindent\rule{\textwidth}{0.4pt}
+\section{Introducción}
+Este proyecto tiene como objetivo evaluar la productividad asociada o asociable a una distribución de software libre o distro. Para ello, revisamos el concepto de ciclo de vida del software, y lo usamos como una aproximación a la correspondiente noción de ciclo de vida de toda una distribución, un concepto claramente más complejo y difícil de abordar. Algunos indicadores complementarios son convocados para esta tarea y se los justifica a partir de esfuerzos previos en el área como los que se describen a continuación.
+
 \section{Antecedentes}
 La \cite{iso08} publica la última modificación hasta la fecha del estándar para los procesos de vida del software. El estándar establece un marco de trabajo para los procesos del ciclo de vida del software.
 
@@ -253,23 +291,32 @@ Actualmente, la distribución Canaima GNU/Linux es poco usada y recibe pocas cont
 % Número de contribuciones de parte de la comunidad
 
 
-
 \section{Objetivos}
-\subsection{Objetivos Generales}
-Realizar un estudio del ciclo de vida de la Distribución Canaima GNU/Linux
+Evaluar la productividad de una distro es, como se ha sugerido, un desafío complejo. En este proyecto nos concentramos en evaluar la productividad asociada al proyecto Canaima, un proyecto nacional que ha tenido la fortuna del apoyo financiero estatal.
+
+\subsection{Objetivo General}
+%Realizar un estudio del ciclo de vida de la Distribución Canaima GNU/Linux
+\begin{itemize}
+\item Evaluar la productividad de la metadistribución de Software Libre Canaima GNU/Linux.
+\end{itemize}
 
 \subsection{Objetivos Específicos}
 \begin{enumerate}
-\item Comparar el ciclo de vida de la distribución Canaima con respecto a Ubuntu.
-\item Comparar el ciclo de vida de la distribución Canaima con respecto a Debian.
-\item Comparar el ciclo de vida de la distribución Canaima con respecto a Android.
-\item Analizar el uso de la distribución en Venezuela.
-\item Identificar y analizar las probables causas por las cuales la colaboración de la comunidad no es efectiva.
+%\item Comparar el ciclo de vida de la distribución Canaima con respecto a Ubuntu.
+%\item Comparar el ciclo de vida de la distribución Canaima con respecto a Debian.
+%\item Comparar el ciclo de vida de la distribución Canaima con respecto a Android.
+%\item Analizar el uso de la distribución en Venezuela.
+%\item Identificar y analizar las probables causas por las cuales la colaboración de la comunidad no es efectiva.
+\item Caracterizar los ciclos de vida del software libre, identificando indicadores cuantivativos y cualitativos de cada etapa.
+\item Recolectar datos relevantes a esos indicadores para un conjunto de distros referenciales.
+\item Comparar la distro Canaima GNU/Linux con esas distribuciones referenciales.
+\item Analizar el estado actual del proyecto Canaima y explicar las razones para sus niveles actuales de productividad.
+\item Conclusiones y recomendaciones.
 \end{enumerate}
 
 
-\section{Método de Desarrollo}
-Para la realización de este trabajo se utilizará el método hipotético-deductivo, partiendo de la hipótesis que la la distribución Canaima GNU/Linux es poco usada y recibe pocas contribuciones de parte delos desarrolladores. Se identificarán las causas y consecuencias de la hipótesis, se harán comparaciones con otras distribuciones GNU/Linux que sustentarán o refutarán estas hipótesis.
+%\section{Método de Desarrollo}
+%Para la realización de este trabajo se utilizará el método hipotético-deductivo, partiendo de la hipótesis que la la distribución Canaima GNU/Linux es poco usada y recibe pocas contribuciones de parte delos desarrolladores. Se identificarán las causas y consecuencias de la hipótesis, se harán comparaciones con otras distribuciones GNU/Linux que sustentarán o refutarán estas hipótesis.
 
 
 %\section{Cronograma de trabajo}
@@ -313,17 +360,21 @@ Para la realización de este trabajo se utilizará el método hipotético-deductivo,
 %\end{longtable}
 
 
-\section{Cronograma de Evaluación}
-Se mantendrá contacto semanal con el tutor para informarle del avance del proyecto y se realizará una reunión presencial, al menos una vez por semana, para discutir el trabajo realizado hasta el momento y se utilizarán herramientas informáticas de seguimiento.
-
-Cumplidos dos meses de haberse iniciado el Proyecto de Grado, se presentará un avance del mismo que permita ver el desarrollo del proyecto y a su vez permita se hagan observaciones y correcciones al mismo.
-
-
-\section{Palabras claves}
-Linux, Software libre, Distribuci\'on Linux, Ciclo de vida, Canaima GNU/Linux, Desarrollo colaborativo, Debian
+%\section{Cronograma de Evaluación}
+%Se mantendrá contacto semanal con el tutor para informarle del avance del proyecto y se realizará una reunión presencial, al menos una vez por semana, para discutir el trabajo realizado hasta el momento y se utilizarán herramientas informáticas de seguimiento.
+%
+%Cumplidos dos meses de haberse iniciado el Proyecto de Grado, se presentará un avance del mismo que permita ver el desarrollo del proyecto y a su vez permita se hagan observaciones y correcciones al mismo.
 
 
-\chapter{Marco Teórico}
+%\section{Palabras claves}
+%Linux, Software libre, Distribuci\'on Linux, Ciclo de vida, Canaima GNU/Linux, Desarrollo colaborativo, Debian
+
+
+\chapter{Sobre el ciclo de vida del software libre y métodos para analizarlo}
+\noindent\rule{\textwidth}{0.4pt}
+
+
+\chapter{Datos referenciales de las más importantes distribuciones de software}
 \noindent\rule{\textwidth}{0.4pt}
 \section{Canaima GNU/Linux}
 
@@ -381,7 +432,7 @@ La Tabla \ref{table:lanzamientoscanaima} muestra la fecha de lanzamiento de las 
 \end{table}
 \end{savenotes}
 
-\subsection{Proyectos}
+%\subsection{Proyectos}
 %\begin{itemize}
 %\item 2007 -- 2010. Primeras versiones, Canaima GNU/Linux versiones 1.X - 2.X.
 %\item 2009 -- Actualidad. Canaima Educativo.
@@ -674,6 +725,29 @@ La Tabla \ref{table:lanzamientosubuntu} muestra la fecha de lanzamiento de las d
 \end{center}
 \end{table}
 \end{savenotes}
+
+\chapter{Estado de desarrollo y nivel de productividad de la Distro Canaima GNU/Linux}
+\noindent\rule{\textwidth}{0.4pt}
+
+\chapter{Conclusiones y recomendaciones}
+\noindent\rule{\textwidth}{0.4pt}
+
+\renewcommand\appendixpage{\clearpage\thispagestyle{empty}\mbox{}\vspace{1.5cm}\begin{flushleft}\Huge\bfseries\addappheadtotoc Apéndices \end{flushleft}}
+
+%\titleformat{\appendix}[display]
+%  {\normalfont\huge\bfseries}{\thispagestyle{empty}\filright\appendixname}{20pt}{\Huge}[]
+
+\begin{appendices}
+\noindent\rule{\textwidth}{0.4pt}
+\section{Datos recolectados}
+
+\section{Scripts para procesamiento de datos}
+\lstinputlisting[language=Python]{programas/paquetes.py}
+
+
+
+\section{Cómo empaquetar en Canaima GNU/Linux}
+\end{appendices}
 
 
 % Bibliografía
