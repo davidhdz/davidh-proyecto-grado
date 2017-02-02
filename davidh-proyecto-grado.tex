@@ -18,6 +18,7 @@
 \usepackage{verbatim}
 \usepackage[flushleft]{threeparttable}
 \usepackage{footnote}
+\usepackage{xstring}
 \renewcommand{\thesection}{\arabic{section}}
 \renewcommand{\rmdefault}{bch}
 \usepackage[title,toc,page]{appendix}
@@ -26,7 +27,6 @@
 \usepackage[dvipsnames]{xcolor}
 
 \lstset{
-%  inputencoding=utf8,
   basicstyle=\ttfamily\scriptsize,
   framerule=2pt,
   numbers=left,
@@ -36,12 +36,12 @@
   breakatwhitespace=false,
   breaklines=true,
   captionpos=b,
-  commentstyle=\color{green},
+  commentstyle=\color{black!60!green},
   escapeinside={\%*}{*)},
   framextopmargin=2pt,
   framexbottommargin=2pt,
   extendedchars=true,
-  literate={Ã¡}{{\'a}}1,
+  literate={Ã¡}{{\'a}}1 {NÃ}{{N\'u}}1,
   keepspaces=true,
   keywordstyle=\color{blue},
   numbersep=5pt,
@@ -746,7 +746,6 @@ La Tabla \ref{table:lanzamientosubuntu} muestra la fecha de lanzamiento de las d
 \section{Datos recolectados}
 
 \section{Scripts para procesamiento de datos}
-
 \lstinputlisting[language=Python,label=code1,caption=paquetes.py,]{programas/paquetes.py}
 
 \section{Cómo empaquetar en Canaima GNU/Linux}
