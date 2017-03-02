@@ -23,6 +23,8 @@
 \renewcommand{\rmdefault}{bch}
 \usepackage[title,toc,page]{appendix}
 \usepackage{titlesec}
+\renewcommand{\appendixtocname}{Ap\'endices}
+\renewcommand{\appendixpagename}{Ap\'endices}
 \usepackage{listings}
 \usepackage[dvipsnames]{xcolor}
 
@@ -743,10 +745,82 @@ La Tabla \ref{table:lanzamientosubuntu} muestra la fecha de lanzamiento de las d
 
 \begin{appendices}
 \noindent\rule{\textwidth}{0.4pt}
-\section{Datos recolectados}
-
 \section{Scripts para procesamiento de datos}
 \lstinputlisting[language=Python,label=code1,caption=paquetes.py,]{programas/paquetes.py}
+
+\section{Datos recolectados}
+\subsection{sloccount}
+Para poder trabajar con el programa \emph{sloccount} se procedió a preparar un ambiente de trabajo para cada distribución, para ello se realizaron los siguientes pasos:
+
+Instalación de los paquetes necesarios para crear una jaula.
+\begin{lstlisting}[language=Bash]
+apt install deboostrap
+\end{lstlisting}
+
+Instalación de una jaula Debian Jessie (como root)
+\begin{lstlisting}[language=Bash]
+debootstrap jessie jaula http://localhost/debian/ 
+\end{lstlisting}
+Donde: \\
+\textbf{deboostrap}: es el comando para construir la jaula.\\
+\textbf{jessie}: es la distribución a instalar en la jaula.\\
+\textbf{jaula}: es el nombre del directorio donde se creará la jaula.\\
+\textbf{http://localhost/debian/}: es la dirección del repositorio local. Al utilizar un repositorio local se disminuye considerablemente el tiempo de descarga de los paquetes.
+
+Se copia el script que se encargará de descargar los paquetes de la rama principal de la distribución a estudiar a la jaula recién creada.
+\begin{lstlisting}[language=Bash]
+sudo cp paquetes.py jaula/home/
+\end{lstlisting}
+
+Entramos a la jaula
+\begin{lstlisting}[language=Bash]
+sudo chroot jaula
+\end{lstlisting}
+
+En caso de ser necesario se modifica el sources.list para usar solo el repositorio local en su rama primcipal y se actualiza.
+\begin{lstlisting}[language=Bash]
+nano /etc/apt/sources.list
+apt update
+\end{lstlisting}
+
+
+Se instalan los paquetes necesarios para poder operar dentro de la jaula.
+\begin{lstlisting}[language=Bash]
+apt install xz-utils tar bzip2 python locales sloccount
+\end{lstlisting}
+
+Se configura el lenguaje del entorno.
+\begin{lstlisting}[language=Bash]
+locale-gen es_VE es_VE.UTF-8
+dpkg-reconfigure locales
+\end{lstlisting}
+
+
+Se descarga el paquete de fuentes desde el repositorio local y se descomprime:
+\begin{lstlisting}[language=Bash]
+wget http://localhost/debian/dists/jessie/main/source/Sources.gz
+gzip -d Sources.gz
+\end{lstlisting}
+
+Se procede a correr el script
+\begin{lstlisting}[language=Bash]
+python paquetes.py
+\end{lstlisting}
+
+Se descomprimen los paquetes fuentes:
+\begin{lstlisting}[language=Bash]
+ls *.gz  | xargs -n1 gzip -t
+ls *.gz  | xargs -n1 gunzip
+ls *.tar | xargs -n1 tar xvf
+ls *.xz  | xargs -n1 tar xvf
+ls *.bz2 | xargs -n1 bzip2 -dv
+ls *.xz  | xargs -n1 tar xvf
+\end{lstlisting}
+
+Se corre el programa de medidas de métricas
+\begin{lstlisting}[language=Bash]
+sloccount . > metrica.txt
+\end{lstlisting}
 
 \section{Cómo empaquetar en Canaima GNU/Linux}
 \end{appendices}
