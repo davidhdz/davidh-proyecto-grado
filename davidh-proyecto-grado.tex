@@ -43,7 +43,18 @@
   framextopmargin=2pt,
   framexbottommargin=2pt,
   extendedchars=true,
-  literate={Ã¡}{{\'a}}1 {NÃ}{{N\'u}}1,
+  literate={Ã¡}{{\'a}}1 {NÃ}{{N\'u}}1 {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 
+  {ó}{{\'o}}1 {ú}{{\'u}}1 {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 
+  {Ú}{{\'U}}1 {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1 
+  {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1 {ä}{{\"a}}1 
+  {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1 {Ä}{{\"A}}1 {Ë}{{\"E}}1 
+  {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1 {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 
+  {ô}{{\^o}}1 {û}{{\^u}}1 {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 
+  {Û}{{\^U}}1 {?}{{\oe}}1 {?}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1 
+  {?}{{\H{u}}}1 {?}{{\H{U}}}1 {?}{{\H{o}}}1 {?}{{\H{O}}}1 {ç}{{\c c}}1 
+  {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1 {?}{{\euro}}1 
+  {£}{{\pounds}}1 {«}{{\guillemotleft}}1 {»}{{\guillemotright}}1 
+  {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1,
   keepspaces=true,
   keywordstyle=\color{blue},
   numbersep=5pt,
@@ -748,17 +759,17 @@ La Tabla \ref{table:lanzamientosubuntu} muestra la fecha de lanzamiento de las d
 \section{Scripts para procesamiento de datos}
 \lstinputlisting[language=Python,label=code1,caption=paquetes.py,]{programas/paquetes.py}
 
-\section{Datos recolectados}
-\subsection{sloccount}
+\section{sloccount}
+\subsection{Procedimiento}
 Para poder trabajar con el programa \emph{sloccount} se procedió a preparar un ambiente de trabajo para cada distribución, para ello se realizaron los siguientes pasos:
 
 Instalación de los paquetes necesarios para crear una jaula.
-\begin{lstlisting}[language=Bash]
+\begin{lstlisting}[language=bash]
 apt install deboostrap
 \end{lstlisting}
 
 Instalación de una jaula Debian Jessie (como root)
-\begin{lstlisting}[language=Bash]
+\begin{lstlisting}[language=bash]
 debootstrap jessie jaula http://localhost/debian/ 
 \end{lstlisting}
 Donde: \\
@@ -768,47 +779,47 @@ Donde: \\
 \textbf{http://localhost/debian/}: es la dirección del repositorio local. Al utilizar un repositorio local se disminuye considerablemente el tiempo de descarga de los paquetes.
 
 Se copia el script que se encargará de descargar los paquetes de la rama principal de la distribución a estudiar a la jaula recién creada.
-\begin{lstlisting}[language=Bash]
+\begin{lstlisting}[language=bash]
 sudo cp paquetes.py jaula/home/
 \end{lstlisting}
 
 Entramos a la jaula
-\begin{lstlisting}[language=Bash]
+\begin{lstlisting}[language=bash]
 sudo chroot jaula
 \end{lstlisting}
 
 En caso de ser necesario se modifica el sources.list para usar solo el repositorio local en su rama primcipal y se actualiza.
-\begin{lstlisting}[language=Bash]
+\begin{lstlisting}[language=bash]
 nano /etc/apt/sources.list
 apt update
 \end{lstlisting}
 
 
 Se instalan los paquetes necesarios para poder operar dentro de la jaula.
-\begin{lstlisting}[language=Bash]
+\begin{lstlisting}[language=bash]
 apt install xz-utils tar bzip2 python locales sloccount
 \end{lstlisting}
 
 Se configura el lenguaje del entorno.
-\begin{lstlisting}[language=Bash]
+\begin{lstlisting}[language=bash]
 locale-gen es_VE es_VE.UTF-8
 dpkg-reconfigure locales
 \end{lstlisting}
 
 
 Se descarga el paquete de fuentes desde el repositorio local y se descomprime:
-\begin{lstlisting}[language=Bash]
+\begin{lstlisting}[language=bash]
 wget http://localhost/debian/dists/jessie/main/source/Sources.gz
 gzip -d Sources.gz
 \end{lstlisting}
 
 Se procede a correr el script
-\begin{lstlisting}[language=Bash]
+\begin{lstlisting}[language=bash]
 python paquetes.py
 \end{lstlisting}
 
 Se descomprimen los paquetes fuentes:
-\begin{lstlisting}[language=Bash]
+\begin{lstlisting}[language=bash]
 ls *.gz  | xargs -n1 gzip -t
 ls *.gz  | xargs -n1 gunzip
 ls *.tar | xargs -n1 tar xvf
@@ -818,9 +829,82 @@ ls *.xz  | xargs -n1 tar xvf
 \end{lstlisting}
 
 Se corre el programa de medidas de métricas
-\begin{lstlisting}[language=Bash]
-sloccount . > metrica.txt
+\begin{lstlisting}[language=bash]
+sloccount --duplicates --multiproject --personcost 60445 . > metrica.txt
 \end{lstlisting}
+Donde:\\
+\textbf{duplicates}: Cuenta archivos duplicados, normalmente si encuentra archivos con igual contenido determinado por medio del uso de valores hash MD5, este es contabilizado una sola vez.\\
+\textbf{multiproject}: Los diferentes directorios representan diferentes proyectos, de otro modo es asumido que todas las fuentes de código pertenecen a un mismo proyecto. Esto no cambia el total de número de archivos o valores SLOC pero sí afecta el esfuerzo y tiempo estimados. Con esta opción habilitada el esfuerzo es calculado de manera separada para cada proyecto y el tiempo es el tiempo estimado de los proyectos mas grandes.\\
+\textbf{personcost}: Cambia el salario promedio anual al valor indicado. En este caso se usó el valor obtenido desde http://www.payscale.com/research/US/Job=Computer_Programmer/Salary (cambiar por nombre y colocar la dirección en nota al pie)\\
+
+
+\subsection{Datos recolectados}
+El programa arrojó el siguiente resultado:
+
+\begin{scriptsize}
+\begin{verbatim}
+SLOC	Directory	SLOC-by-Language (Sorted)
+349866273 gz              ansic=128986521,cpp=74293948,xml=26655084,java=26514159,
+                        python=19912381,perl=12215857,cs=8448403,lisp=8016650,f90=7290306,fortran=6825781,pascal=4910481,sh=4463777,php=4443175,ruby=3957798,asm=2689005,ml=2556825,tcl=2077778,objc=1931893,haskell=1512297,yacc=671579,ada=491968,erlang=334754,exp=261249,lex=250132,awk=51460,vhdl=41640,csh=32402,jsp=18423,sed=8053,modula3=1896,cobol=598
+187313048 xz              ansic=73353232,cpp=64557720,java=17749541,xml=9805930,
+                        python=7879760,perl=2334979,asm=1965464,sh=1493240,erlang=1354531,fortran=1235921,ada=1190464,php=1072599,ruby=935369,tcl=572951,cs=397941,lisp=386299,objc=240947,yacc=231932,exp=115445,ml=80090,pascal=74662,f90=71071,lex=66387,jsp=49032,awk=34195,vhdl=19133,csh=19066,sed=14152,haskell=10935,modula3=40,cobol=20
+79417268 bz              ansic=31595722,cpp=24748762,xml=7746962,python=2584154,
+                        java=2132639,lisp=1920417,perl=1550392,sh=1406016,php=1104879,fortran=920982,ml=852255,asm=681086,cs=628107,objc=380315,haskell=360711,pascal=153194,yacc=145512,tcl=129445,f90=93066,erlang=92906,lex=59073,ruby=57143,ada=40603,exp=19080,awk=10430,sed=2005,csh=1344,jsp=39,modula3=29
+0       top_dir         (none)
+
+
+Totals grouped by language (dominant language first):
+ansic:    233935475 (37.94%)
+cpp:      163600430 (26.53%)
+java:      46396339 (7.52%)
+xml:       44207976 (7.17%)
+python:    30376295 (4.93%)
+perl:      16101228 (2.61%)
+lisp:      10323366 (1.67%)
+cs:         9474451 (1.54%)
+fortran:    8982684 (1.46%)
+f90:        7454443 (1.21%)
+sh:         7363033 (1.19%)
+php:        6620653 (1.07%)
+asm:        5335555 (0.87%)
+pascal:     5138337 (0.83%)
+ruby:       4950310 (0.80%)
+ml:         3489170 (0.57%)
+tcl:        2780174 (0.45%)
+objc:       2553155 (0.41%)
+haskell:    1883943 (0.31%)
+erlang:     1782191 (0.29%)
+ada:        1723035 (0.28%)
+yacc:       1049023 (0.17%)
+exp:         395774 (0.06%)
+lex:         375592 (0.06%)
+awk:          96085 (0.02%)
+jsp:          67494 (0.01%)
+vhdl:         60773 (0.01%)
+csh:          52812 (0.01%)
+sed:          24210 (0.00%)
+modula3:       1965 (0.00%)
+cobol:          618 (0.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 616,596,589
+Development Effort Estimate, Person-Years (Person-Months) = 240,176.86 (2,882,122.36)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 59.35 (712.25)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 4,046.52
+Total Estimated Cost to Develop                           = $ 32,444,627,885
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+\end{verbatim}
+\end{scriptsize}
 
 \section{Cómo empaquetar en Canaima GNU/Linux}
 \end{appendices}
