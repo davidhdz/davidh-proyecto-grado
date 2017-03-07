@@ -756,8 +756,17 @@ La Tabla \ref{table:lanzamientosubuntu} muestra la fecha de lanzamiento de las d
 
 \begin{appendices}
 \noindent\rule{\textwidth}{0.4pt}
-\section{Scripts para procesamiento de datos}
+\section{Scripts para descargar paquetes fuente}
+
+Este programa se encarga de descargar el conjunto de archivos fuentes y borrar los archivos descargados no necesarios.
+
 \lstinputlisting[language=Python,label=code1,caption=paquetes.py,]{programas/paquetes.py}
+
+\section{Scripts para ordenar y descomprimir paquetes fuentes}
+Los archivos fuentes descargados están en un formato empaquetado (o comprimido), a modo de mantener un orden y para contabilizar cada carpeta como un proyecto diferente, se crea un directorio para cada uno de los paquetes, esto ayuda entre otras cosas a evitar sobreescritura de archivos, en un directorio de descompresión común, a causa de uso de nombres iguales y mantiene cada conjunto de código en un espacio propio.
+
+\lstinputlisting[language=bash,label=code1,caption=mkdirmv,]{programas/mkdirmv}
+
 
 \section{sloccount}
 \subsection{Procedimiento}
@@ -782,6 +791,12 @@ Se copia el script que se encargará de descargar los paquetes de la rama princip
 \begin{lstlisting}[language=bash]
 sudo cp paquetes.py jaula/home/
 \end{lstlisting}
+
+Hacemos lo mismo con el programa que se encargará de crear directorios y descomprimir los archivos en estos directorios.
+\begin{lstlisting}[language=bash]
+sudo cp mkdirmv jaula/home/
+\end{lstlisting}
+
 
 Entramos a la jaula
 \begin{lstlisting}[language=bash]
@@ -818,15 +833,11 @@ Se procede a correr el script
 python paquetes.py
 \end{lstlisting}
 
-Se descomprimen los paquetes fuentes:
+Luego se corre el programa que se encarga de ordenar cada archivo en un directorio propio, descomprimirlo y borrar el archivo comprimido.
 \begin{lstlisting}[language=bash]
-ls *.gz  | xargs -n1 gzip -t
-ls *.gz  | xargs -n1 gunzip
-ls *.tar | xargs -n1 tar xvf
-ls *.xz  | xargs -n1 tar xvf
-ls *.bz2 | xargs -n1 bzip2 -dv
-ls *.xz  | xargs -n1 tar xvf
+./mkdirmv
 \end{lstlisting}
+
 
 Se corre el programa de medidas de métricas
 \begin{lstlisting}[language=bash]
@@ -835,7 +846,7 @@ sloccount --duplicates --multiproject --personcost 60445 . > metrica.txt
 Donde:\\
 \textbf{duplicates}: Cuenta archivos duplicados, normalmente si encuentra archivos con igual contenido determinado por medio del uso de valores hash MD5, este es contabilizado una sola vez.\\
 \textbf{multiproject}: Los diferentes directorios representan diferentes proyectos, de otro modo es asumido que todas las fuentes de código pertenecen a un mismo proyecto. Esto no cambia el total de número de archivos o valores SLOC pero sí afecta el esfuerzo y tiempo estimados. Con esta opción habilitada el esfuerzo es calculado de manera separada para cada proyecto y el tiempo es el tiempo estimado de los proyectos mas grandes.\\
-\textbf{personcost}: Cambia el salario promedio anual al valor indicado. En este caso se usó el valor obtenido desde http://www.payscale.com/research/US/Job=Computer_Programmer/Salary (cambiar por nombre y colocar la dirección en nota al pie)\\
+\textbf{personcost}: Cambia el salario promedio anual al valor indicado. En este caso se usó el valor obtenido desde la página PayScale\footnote{\url{http://www.payscale.com/research/US/Job=Computer_Programmer/Salary}}
 
 
 \subsection{Datos recolectados}
