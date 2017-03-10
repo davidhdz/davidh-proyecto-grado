@@ -30,6 +30,8 @@
 \usepackage[dvipsnames]{xcolor}
 
 \lstset{
+  language=python,
+  alsolanguage=bash,
   basicstyle=\ttfamily\scriptsize,
   framerule=2pt,
   numbers=left,
@@ -65,6 +67,10 @@
   showstringspaces=false,
   showtabs=false,
 %  stepnumber=2,
+%  sensitive=true,
+  keywords=[2]{else,close,for,if,break},
+  keywordstyle=\color{blue},
+  deletekeywords={source,list},
   tabsize=2,
 }
 
@@ -759,14 +765,17 @@ La Tabla \ref{table:lanzamientosubuntu} muestra la fecha de lanzamiento de las d
 \noindent\rule{\textwidth}{0.4pt}
 \section{Scripts para descargar paquetes fuente}
 
-Este programa se encarga de descargar el conjunto de archivos fuentes y borrar los archivos descargados no necesarios.
+Para descargar el código fuente de cada paquete dentro del repositorio principal de una distribución basada en Debian se ha utilizado el comando \texttt{apt-get --download-only source \textit{nombredelpaquete}},  esta acción descarga un conjunto de archivos que permiten compilar y construir nuevas versiones del paquete desde las fuentes. Las extensiones asociadas a estos archivos posibilita escoger el archivo que interesa para hacer las mediciones, así el programa utilizado para automatizar la descarga de todos los archivos fuente se enfoca en conservar el archivo con el código fuente creado por el autor, con extensión \texttt{.orig.tar.gz}, y elimina el resto.
 
-\lstinputlisting[language=Python,label=code1,caption=paquetes.py,]{programas/paquetes.py}
+El código para automatización de descarga de paquetes fuentes se aprecia en el Código~\ref{code1}. Básicamente el programa lee cada línea del archivo \emph{Sources}, el cual es el índice de archivos fuente que aloja el repositorio, y se encarga de extraer el nombre de cada paquete que se encuentra dentro del índice para luego proceder a la descarga en el disco duro del archivo comprimido que contiene el código fuente del nombre del paquete procesado.\\
+
+
+\lstinputlisting[label=code1,caption=paquetes.py,]{programas/paquetes.py}
 
 \section{Scripts para ordenar y descomprimir paquetes fuentes}
 Los archivos fuentes descargados están en un formato empaquetado (o comprimido), a modo de mantener un orden y para contabilizar cada carpeta como un proyecto diferente, se crea un directorio para cada uno de los paquetes, esto ayuda entre otras cosas a evitar sobreescritura de archivos, en un directorio de descompresión común, a causa de uso de nombres iguales y mantiene cada conjunto de código en un espacio propio.
 
-\lstinputlisting[language=bash,label=code1,caption=mkdirmv,]{programas/mkdirmv}
+\lstinputlisting[language=bash,label=code2,caption=mkdirmv,]{programas/mkdirmv}
 
 
 \section{sloccount}
@@ -774,12 +783,12 @@ Los archivos fuentes descargados están en un formato empaquetado (o comprimido),
 Para poder trabajar con el programa \emph{sloccount} se procedió a preparar un ambiente de trabajo para cada distribución, para ello se realizaron los siguientes pasos:
 
 Instalación de los paquetes necesarios para crear una jaula.
-\begin{lstlisting}[language=bash]
+\begin{lstlisting}
 apt install deboostrap
 \end{lstlisting}
 
 Instalación de una jaula Debian Jessie (como root)
-\begin{lstlisting}[language=bash]
+\begin{lstlisting}
 debootstrap jessie jaula http://localhost/debian/ 
 \end{lstlisting}
 Donde: \\
@@ -789,59 +798,59 @@ Donde: \\
 \textbf{http://localhost/debian/}: es la dirección del repositorio local. Al utilizar un repositorio local se disminuye considerablemente el tiempo de descarga de los paquetes.
 
 Se copia el script que se encargará de descargar los paquetes de la rama principal de la distribución a estudiar a la jaula recién creada.
-\begin{lstlisting}[language=bash]
+\begin{lstlisting}
 sudo cp paquetes.py jaula/home/
 \end{lstlisting}
 
 Hacemos lo mismo con el programa que se encargará de crear directorios y descomprimir los archivos en estos directorios.
-\begin{lstlisting}[language=bash]
+\begin{lstlisting}
 sudo cp mkdirmv jaula/home/
 \end{lstlisting}
 
 
 Entramos a la jaula
-\begin{lstlisting}[language=bash]
+\begin{lstlisting}
 sudo chroot jaula
 \end{lstlisting}
 
-En caso de ser necesario se modifica el sources.list para usar solo el repositorio local en su rama primcipal y se actualiza.
-\begin{lstlisting}[language=bash]
+En caso de ser necesario se modifica el sources.list para usar solo el repositorio local en su rama principal y se actualiza.
+\begin{lstlisting}
 nano /etc/apt/sources.list
 apt update
 \end{lstlisting}
 
 
 Se instalan los paquetes necesarios para poder operar dentro de la jaula.
-\begin{lstlisting}[language=bash]
+\begin{lstlisting}
 apt install xz-utils tar bzip2 python locales sloccount
 \end{lstlisting}
 
 Se configura el lenguaje del entorno.
-\begin{lstlisting}[language=bash]
+\begin{lstlisting}
 locale-gen es_VE es_VE.UTF-8
 dpkg-reconfigure locales
 \end{lstlisting}
 
 
 Se descarga el paquete de fuentes desde el repositorio local y se descomprime:
-\begin{lstlisting}[language=bash]
+\begin{lstlisting}
 wget http://localhost/debian/dists/jessie/main/source/Sources.gz
 gzip -d Sources.gz
 \end{lstlisting}
 
 Se procede a correr el script
-\begin{lstlisting}[language=bash]
+\begin{lstlisting}
 python paquetes.py
 \end{lstlisting}
 
 Luego se corre el programa que se encarga de ordenar cada archivo en un directorio propio, descomprimirlo y borrar el archivo comprimido.
-\begin{lstlisting}[language=bash]
+\begin{lstlisting}
 ./mkdirmv
 \end{lstlisting}
 
 
 Se corre el programa de medidas de métricas
-\begin{lstlisting}[language=bash]
+\begin{lstlisting}
 sloccount --duplicates --multiproject --personcost 60445 . > metrica.txt
 \end{lstlisting}
 Donde:\\
@@ -851,7 +860,7 @@ Donde:\\
 
 
 \subsection{Datos recolectados}
-El programa arrojó el siguiente resultado:
+Los resultados arrojados por el programa se muestran en la tabla \ref{table:sloc1}.
 \begin{table}[H]
 \begin{center}
 \caption{SLOC agrupados por lenguaje}
@@ -896,7 +905,7 @@ Cobol & 618 & (0.00\%) \\
 \end{center}
 \end{table}
 
-Hay que tomar en cuenta que SLOCCount deja por fuera una gran variedad de lenguajes que aún no son integrados en el código de reconocimiento del programa, incluído varios lenguajes de marcado, en la tabla \ref{table:unknown} se muestran algunos de ellos, indicando la cantidad total de archivos en el repositorio con las extensiones indicadas.
+Hay que tomar en cuenta que SLOCCount deja por fuera una gran variedad de lenguajes que aún no son integrados en el código de reconocimiento del programa, incluido varios lenguajes de marcado, en la tabla \ref{table:unknown} se muestran algunos de ellos, indicando la cantidad total de archivos en el repositorio con las extensiones indicadas.
 
 \begin{table}[H]
 \begin{center}

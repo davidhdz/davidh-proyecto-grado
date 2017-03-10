@@ -21,29 +21,28 @@ import string
 import subprocess
 import glob
 
-f = open('Sources', 'r')
+try:
+    f = open('Sources', 'r')
+except IOError:
+    print "Error al abrir el archivo , arg
+else:
+    cont=0
+    for line in f:
+        if 'Binary: ' in line:
+            binarios = string.split(line)[1:]
+            for paquete in binarios:
+                paquetes = string.strip(paquete,',')
+                if (glob.glob(paquetes + '_*')):
+                    break;		
+                subprocess.call("apt-get --download-only source " + paquetes,
+                                shell=True)
+                subprocess.call("rm *.dsc " + "> /dev/null 2>&1", shell=True)
+                subprocess.call("rm *.debian.tar.* " + "> /dev/null 2>&1", 
+                                shell=True)
+                subprocess.call("rm *.diff.gz " + "> /dev/null 2>&1", 
+                                shell=True)
+                cont = cont + 1
+    f.close()
 
-cont=0
-lista=""
-for line in f:
-    if 'Binary: ' in line:
-        binarios = string.split(line)[1:]
-        for paquete in binarios:
-#            lista = lista + " " + string.strip(paquete,",")
-#            print string.strip(paquete,',')
-            paquetes = string.strip(paquete,',')
-            if (glob.glob(paquetes + '_*')):
-                break;		
-            subprocess.call("apt-get --download-only source " + paquetes, shell=True)
-            subprocess.call("rm *.dsc " + "> /dev/null 2>&1", shell=True)
-            subprocess.call("rm *.debian.tar.* " + "> /dev/null 2>&1", shell=True)
-            subprocess.call("rm *.diff.gz " + "> /dev/null 2>&1", shell=True)
-            cont = cont + 1
-f.close()
-
-#g = open('paquetes.txt','w')
-#g.write(lista)
-#g.close()
-
-print
-print "Número de paquetes procesados: " + str(cont)
+    print
+    print "Cantidad de paquetes procesados: " + str(cont)
