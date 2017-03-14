@@ -24,7 +24,7 @@ import glob
 try:
     f = open('Sources', 'r')
 except IOError:
-    print "Error al abrir el archivo , arg
+    print "Error al abrir el archivo ", arg
 else:
     cont=0
     for line in f:

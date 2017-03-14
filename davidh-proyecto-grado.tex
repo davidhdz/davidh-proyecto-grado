@@ -68,9 +68,9 @@
   showtabs=false,
 %  stepnumber=2,
 %  sensitive=true,
-  keywords=[2]{else,close,for,if,break},
-  keywordstyle=\color{blue},
-  deletekeywords={source,list},
+  keywords=[2]{close},
+%  keywordstyle=\color{blue},
+  deletekeywords={source,list,cd},
   tabsize=2,
 }
 
@@ -536,7 +536,7 @@ Definir sabores.
 
 \subsection{Política}
 \begin{itemize}
-\item Contrato social de Canaima\url{http://wiki.canaima.softwarelibre.gob.ve/index.php/Contrato_Social}
+\item Contrato social de Canaima \url{http://wiki.canaima.softwarelibre.gob.ve/index.php/Contrato_Social}
 \end{itemize}
 
 \begin{figure}[H]
@@ -760,7 +760,6 @@ La Tabla \ref{table:lanzamientosubuntu} muestra la fecha de lanzamiento de las d
 
 \renewcommand\appendixpage{\clearpage\thispagestyle{empty}\mbox{}\vspace{1.5cm}\begin{flushleft}\Huge\bfseries\addappheadtotoc Apéndices \end{flushleft}}
 
-
 \begin{appendices}
 \noindent\rule{\textwidth}{0.4pt}
 \section{Scripts para descargar paquetes fuente}
@@ -769,19 +768,19 @@ Para descargar el código fuente de cada paquete dentro del repositorio principal
 
 El código para automatización de descarga de paquetes fuentes se aprecia en el Código~\ref{code1}. Básicamente el programa lee cada línea del archivo \emph{Sources}, el cual es el índice de archivos fuente que aloja el repositorio, y se encarga de extraer el nombre de cada paquete que se encuentra dentro del índice para luego proceder a la descarga en el disco duro del archivo comprimido que contiene el código fuente del nombre del paquete procesado.\\
 
-
 \lstinputlisting[label=code1,caption=paquetes.py,]{programas/paquetes.py}
 
 \section{Scripts para ordenar y descomprimir paquetes fuentes}
-Los archivos fuentes descargados están en un formato empaquetado (o comprimido), a modo de mantener un orden y para contabilizar cada carpeta como un proyecto diferente, se crea un directorio para cada uno de los paquetes, esto ayuda entre otras cosas a evitar sobreescritura de archivos, en un directorio de descompresión común, a causa de uso de nombres iguales y mantiene cada conjunto de código en un espacio propio.
+Los archivos fuentes se descargan en un formato empaquetado (o comprimido). A modo de mantener un orden y para efectos de contabilizar cada carpeta como un proyecto diferente, se crea un directorio para cada uno de los paquetes, esto ayuda entre otras cosas a evitar sobreescritura de archivos en un directorio de descompresión común debido a nombres de archivos y directorios iguales, y organiza cada subproyecto (paquete de código) en un espacio propio.\\
 
-\lstinputlisting[language=bash,label=code2,caption=mkdirmv,]{programas/mkdirmv}
+\lstinputlisting[label=code2,caption=mkdirmv,]{programas/mkdirmv}
+
+\section{Cantidad de líneas de Código Fuente}
+La medición de líneas de código fuente físicas permite realizar una serie de cálculos para estimar el tiempo de desarrollo y esfuerzo de un proyecto aplicando el Modelo Constructivo de Costos (COCOMO) \cite{boehm81} en su variante más actualizada COCOMO II \citep{boehm00}. %con valores coeficientes reajustados
 
 
-\section{sloccount}
 \subsection{Procedimiento}
-Para poder trabajar con el programa \emph{sloccount} se procedió a preparar un ambiente de trabajo para cada distribución, para ello se realizaron los siguientes pasos:
-
+Para poder obtener el número de líneas de código fuente se ha optado por trabajar con el programa \emph{cloc}\footnote{\url{https://github.com/AlDanial/cloc}}. Para ello se prepara un ambiente de trabajo para cada distribución a evaluar. Los pasos para ello se describen a continuación tomando como ejemplo la distribución Debian:\\
 Instalación de los paquetes necesarios para crear una jaula.
 \begin{lstlisting}
 apt install deboostrap
@@ -792,33 +791,31 @@ Instalación de una jaula Debian Jessie (como root)
 debootstrap jessie jaula http://localhost/debian/ 
 \end{lstlisting}
 Donde: \\
-\textbf{deboostrap}: es el comando para construir la jaula.\\
-\textbf{jessie}: es la distribución a instalar en la jaula.\\
-\textbf{jaula}: es el nombre del directorio donde se creará la jaula.\\
-\textbf{http://localhost/debian/}: es la dirección del repositorio local. Al utilizar un repositorio local se disminuye considerablemente el tiempo de descarga de los paquetes.
+\texttt{deboostrap}: es el comando para construir la jaula.\\
+\texttt{jessie}: es la distribución a instalar en la jaula.\\
+\texttt{jaula}: es el nombre del directorio donde se creará la jaula.\\
+\texttt{http://localhost/debian/}: es la dirección del repositorio local. Al utilizar un repositorio local se disminuye considerablemente el tiempo de descarga de los paquetes.
 
 Se copia el script que se encargará de descargar los paquetes de la rama principal de la distribución a estudiar a la jaula recién creada.
 \begin{lstlisting}
 sudo cp paquetes.py jaula/home/
 \end{lstlisting}
 
-Hacemos lo mismo con el programa que se encargará de crear directorios y descomprimir los archivos en estos directorios.
+Se repite la operación con el programa que se encargará de crear directorios y descomprimir los archivos en estos directorios.
 \begin{lstlisting}
 sudo cp mkdirmv jaula/home/
 \end{lstlisting}
 
-
-Entramos a la jaula
+Se entra a la jaula
 \begin{lstlisting}
 sudo chroot jaula
 \end{lstlisting}
 
-En caso de ser necesario se modifica el sources.list para usar solo el repositorio local en su rama principal y se actualiza.
+En caso de ser necesario se modifica el \texttt{sources.list} para usar solo el repositorio local en su rama principal y se actualiza.
 \begin{lstlisting}
 nano /etc/apt/sources.list
 apt update
 \end{lstlisting}
-
 
 Se instalan los paquetes necesarios para poder operar dentro de la jaula.
 \begin{lstlisting}
@@ -830,7 +827,6 @@ Se configura el lenguaje del entorno.
 locale-gen es_VE es_VE.UTF-8
 dpkg-reconfigure locales
 \end{lstlisting}
-
 
 Se descarga el paquete de fuentes desde el repositorio local y se descomprime:
 \begin{lstlisting}
@@ -848,15 +844,26 @@ Luego se corre el programa que se encarga de ordenar cada archivo en un director
 ./mkdirmv
 \end{lstlisting}
 
-
 Se corre el programa de medidas de métricas
+%\begin{lstlisting}
+%sloccount --duplicates --multiproject --personcost 60445 . > metrica.txt
+%\end{lstlisting}
+%Donde:\\
+%\textbf{duplicates}: Cuenta archivos duplicados, normalmente si encuentra archivos con igual contenido determinado por medio del uso de valores hash MD5, este es contabilizado una sola vez.\\
+%\textbf{multiproject}: Los diferentes directorios representan diferentes proyectos, de otro modo es asumido que todas las fuentes de código pertenecen a un mismo proyecto. Esto no cambia el total de número de archivos o valores SLOC pero sí afecta el esfuerzo y tiempo estimados. Con esta opción habilitada el esfuerzo es calculado de manera separada para cada proyecto y el tiempo es el tiempo estimado de los proyectos mas grandes.\\
+%\textbf{personcost}: Cambia el salario promedio anual al valor indicado. En este caso se usó el valor obtenido desde la página PayScale\footnote{\url{http://www.payscale.com/research/US/Job=Computer_Programmer/Salary}}
+
 \begin{lstlisting}
-sloccount --duplicates --multiproject --personcost 60445 . > metrica.txt
+cloc --unix --skip-uniqueness --csv --report-file=cloc.csv .
 \end{lstlisting}
+
+\noindent
 Donde:\\
-\textbf{duplicates}: Cuenta archivos duplicados, normalmente si encuentra archivos con igual contenido determinado por medio del uso de valores hash MD5, este es contabilizado una sola vez.\\
-\textbf{multiproject}: Los diferentes directorios representan diferentes proyectos, de otro modo es asumido que todas las fuentes de código pertenecen a un mismo proyecto. Esto no cambia el total de número de archivos o valores SLOC pero sí afecta el esfuerzo y tiempo estimados. Con esta opción habilitada el esfuerzo es calculado de manera separada para cada proyecto y el tiempo es el tiempo estimado de los proyectos mas grandes.\\
-\textbf{personcost}: Cambia el salario promedio anual al valor indicado. En este caso se usó el valor obtenido desde la página PayScale\footnote{\url{http://www.payscale.com/research/US/Job=Computer_Programmer/Salary}}
+\texttt{cloc}: es el programa para determinar la cantidad de líneas de código.\\
+\texttt{--unix}: es el argumento que anula la lógica de autodetección del sistema operativo y ejecutar en modo UNIX.\\
+\texttt{--skip-uniqueness}: es la opción que omite la comprobación de unicidad de archivo. De haberlos, se cuentan archivos con idénticos contenidos varias veces.\\
+\texttt{--csv}: es el argumento que indica al programa que el resultado se debe presentar con un formato de valores separados por coma (csv).\\
+\texttt{--report-file=cloc.csv .}: es el argumento que ordena al programa a almacenar los resultados en el archivo \texttt{cloc.csv}, en el directorio desde donde se corre el comando.
 
 
 \subsection{Datos recolectados}
@@ -869,110 +876,123 @@ Los resultados arrojados por el programa se muestran en la tabla \ref{table:sloc
 \toprule
 \textbf{Lenguaje} & \textbf{SLOC} & \textbf{Porcentaje} \\
 \midrule
-C & 261.241.103 & (37.33\%) \\
-C++ & 179.649.511 & (25.67\%) \\
-Java & 47.699.222 & (6.82\%) \\
-XML & 45.713.665 & (6.53\%) \\
-Shell & 37.447.019 & (5.35\%) \\
-Python & 32.768.023 & (4.68\%) \\
-Perl & 17.398.705 & (2.49\%) \\
-LISP & 10.569.577 & (1.51\%) \\
-C\# & 10.095.898 & (1.44\%) \\
-Fortran 77 & 9.174.840 & (1.31\%) \\
-Fortran 90 & 7.457.166 & (1.07\%) \\
-PHP & 6.874.865 & (0.98\%) \\
-Ensamblador & 6.566.481 & (0.94\%) \\
-Pascal & 5.210.566 & (0.74\%) \\
-Ruby & 5.030.281 & (0.72\%) \\
-ML & 3.727.447 & (0.53\%) \\
-TCL & 2.910.548 & (0.42\%) \\
-Objective-C & 2.625.223 & (0.38\%) \\
-Haskell & 1.914.031 & (0.27\%) \\
-Erlang & 1.787.598 & (0.26\%) \\
-Ada & 1.746.231 & (0.25\%) \\
-Yacc & 1.111.492 & (0.16\%) \\
-Expect & 3.99.384 & (0.06\%) \\
-lex & 395.535 & (0.06\%) \\
-awk & 10.1527 & (0.01\%) \\
-jsp & 73.209 & (0.01\%) \\
-vhdl & 60.971 & (0.01\%) \\
-C shell & 55.156 & (0.01\%) \\
-sed & 34.529 & (0.00\%) \\
-Modula3 & 1.965 & (0.00\%) \\
-Cobol & 618 & (0.00\%) \\
+%C & 261.241.103 & (37.33\%) \\
+%C++ & 179.649.511 & (25.67\%) \\
+%Java & 47.699.222 & (6.82\%) \\
+%XML & 45.713.665 & (6.53\%) \\
+%Shell & 37.447.019 & (5.35\%) \\
+%Python & 32.768.023 & (4.68\%) \\
+%Perl & 17.398.705 & (2.49\%) \\
+%LISP & 10.569.577 & (1.51\%) \\
+%C\# & 10.095.898 & (1.44\%) \\
+%Fortran 77 & 9.174.840 & (1.31\%) \\
+%Fortran 90 & 7.457.166 & (1.07\%) \\
+%PHP & 6.874.865 & (0.98\%) \\
+%Ensamblador & 6.566.481 & (0.94\%) \\
+%Pascal & 5.210.566 & (0.74\%) \\
+%Ruby & 5.030.281 & (0.72\%) \\
+%ML & 3.727.447 & (0.53\%) \\
+%TCL & 2.910.548 & (0.42\%) \\
+%Objective-C & 2.625.223 & (0.38\%) \\
+%Haskell & 1.914.031 & (0.27\%) \\
+%Erlang & 1.787.598 & (0.26\%) \\
+%Ada & 1.746.231 & (0.25\%) \\
+%Yacc & 1.111.492 & (0.16\%) \\
+%Expect & 3.99.384 & (0.06\%) \\
+%lex & 395.535 & (0.06\%) \\
+%awk & 10.1527 & (0.01\%) \\
+%jsp & 73.209 & (0.01\%) \\
+%vhdl & 60.971 & (0.01\%) \\
+%C shell & 55.156 & (0.01\%) \\
+%sed & 34.529 & (0.00\%) \\
+%Modula3 & 1.965 & (0.00\%) \\
+%Cobol & 618 & (0.00\%) \\
 \bottomrule
 \end{tabular}
 \end{center}
 \end{table}
 
-Hay que tomar en cuenta que SLOCCount deja por fuera una gran variedad de lenguajes que aún no son integrados en el código de reconocimiento del programa, incluido varios lenguajes de marcado, en la tabla \ref{table:unknown} se muestran algunos de ellos, indicando la cantidad total de archivos en el repositorio con las extensiones indicadas.
+%Hay que tomar en cuenta que SLOCCount deja por fuera una gran variedad de lenguajes que aún no son integrados en el código de reconocimiento del programa, incluido varios lenguajes de marcado, en la tabla \ref{table:unknown} se muestran algunos de ellos, indicando la cantidad total de archivos en el repositorio con las extensiones indicadas.
 
-\begin{table}[H]
-\begin{center}
-\caption{Extensiones desconocidas por SLOCCount}
-\label{table:unknown}
-\begin{tabular}{lcr} 
-\toprule
-\textbf{Lenguaje} & \textbf{Extensión} & \textbf{Cantidad de archivos} \\
-\midrule
-Javascript & .js & 146387 \\
-C++ (cabecera) & .hxx  & 29369 \\
-R & .R & 9751 \\
-QT & .qml  & 9189\\
-Lua & .lua  & 8624\\
-Golang & .go  & 5357\\
-YAML & .yaml  & 2576\\
-\bottomrule
-\end{tabular}
-\end{center}
-\end{table}
+%\begin{table}[H]
+%\begin{center}
+%\caption{Extensiones desconocidas por SLOCCount}
+%\label{table:unknown}
+%\begin{tabular}{lcr} 
+%\toprule
+%\textbf{Lenguaje} & \textbf{Extensión} & \textbf{Cantidad de archivos} \\
+%\midrule
+%Javascript & .js & 146387 \\
+%C++ (cabecera) & .hxx  & 29369 \\
+%R & .R & 9751 \\
+%QT & .qml  & 9189\\
+%Lua & .lua  & 8624\\
+%Golang & .go  & 5357\\
+%YAML & .yaml  & 2576\\
+%\bottomrule
+%\end{tabular}
+%\end{center}
+%\end{table}
+
 
 \subsection{Resultados}
+Tomando los valores bajo el modelo de estimación COCOMO Básico y aplicando los valores establecidos para el modo orgánico, se realizan los cálculos de esfuerzo y tiempo de desarrollo.
 
-Con el Modelo Básico COCOMO, el resultado arrojado fue el siguiente:
+COCOMO puede ser aplicado a tres tipos de proyecto:
 
-\begin{table}[H]
+\begin{description}
+\item[Orgánicos] Proyectos bajo un ambiente familiar, estable, relativamente sin restricciones y con desarrolladores experimentados. 
+\item[Semi-empotrados] Proyecto mezcla de los tipos orgánicos y empotrados, puede haber o no desarrolladores expertos y requerimientos mas o menos rígidos.
+\item[Empotrados] Proyectos ambiciosos con fuertes restricciones y experiencia moderada.
+\end{description}
+
+\begin{equation}
+Epm = a\times(KSLOC)^b
+\label{eq:Esfuerzo}
+\end{equation}
+
+\begin{equation}
+Tdev = c\times(Epm)^d
+\label{eq:Tiempo}
+\end{equation}
+
+\begin{equation}
+P = \frac{Epm}{Tdev}
+\label{eq:Personas}
+\end{equation}
+
+\begin{equation}
+Ctd = \frac{Epm}{12} \times Spa \times 2.4
+\label{eq:Coste}
+\end{equation}
+
+
+Donde:
+\begin{itemize}
+\item[$Epm$:] es la estimación del esfuerzo de desarrollo, en persona-mes.
+\item[$KSLOC$:] es el número de líneas de código fuente físicas, en miles.
+\item[$Tdev$:] es la estimación del tiempo de desarrollo del proyecto, en meses.
+\item[$P$:] es el número de personas requeridas, en personas.
+\item[$Ctd$:] es el costo total estimado de desarrollo del proyecto, en US\$.
+\item[$Spa$:] es el salario promedio anual estimado de programadores y analistas\footnote{Se toma como referencia US\$60.445,00, dato obtenido desde \url{http://www.payscale.com/research/US/Job=Computer_Programmer/Salary}}.
+\item[$a$, $b$, $c$ y $d$:] son los coeficientes según el tipo de proyecto, ver tabla \ref{table:coeficientes}
+\end{itemize}
+
+\begin{table}[h]
 \begin{center}
-\caption{Estimaciones}
-\label{table:sloc2}
-\begin{tabular}{lrr} 
+\caption{Constantes para el cálculo de distintos aspectos de costes}
+\label{table:coeficientes}
+\begin{tabular}{ccccc} 
 \toprule
-\multirow{2}{*}{\textbf{Variable}} &\multicolumn{2}{c}{\textbf{Estimación}} \\ 
-& \textbf{Mensual} & \textbf{Anual} \\
+Tipo de proyecto & \textbf{$a$} & \textbf{$b$} & \textbf{$c$} & \textbf{$d$}  \\
 \midrule
-SLOC  & \multicolumn{2}{c}{699.842.386}\\
-Ep   & 2.256.747,23 & 188.062,27 \\
-Td   & 178,27 & 14,86 \\
-Ctd   & &\$ 27.281.817.208,00\\
+Orgánico & 2,40 & 1,05 & 2,50 & 0,38 \\
+Medio    & 3,03 & 1,12 & 2,50 & 0,35 \\
+Embebido & 3,60 & 1,20 & 2,50 & 0,32 \\
 \bottomrule
 \end{tabular}
 \end{center}
 \end{table}
-
-%KSLOC = 488461.307861
-Cálculos con salario promedio anual de US\$60.445,00
-
-Donde:
-
-SLOC = Total de Líneas de Código Fuente Físicas   
-
-Ep = Estimación del esfuerzo de desarrollo. Persona--meses / Persona--años
-
-Td = Estimación del tiempo de desarrollo del proyecto
-
-Ctd = Costo total estimado de desarrollo
-
-
-\noindent\rule{\textwidth}{0.5pt}
-
-\begin{scriptsize}
-\noindent
-SLOCCount, Copyright (C) 2001-2004 David A. Wheeler\\
-SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.\\
-SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
-redistribute it under certain conditions as specified by the GNU GPL license;
-see the documentation for details.
-\end{scriptsize}
 
 
 \section{Cómo empaquetar en Canaima GNU/Linux}
