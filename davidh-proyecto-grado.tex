@@ -952,29 +952,35 @@ Epm = a\times(KSLOC)^b
 \end{equation}
 
 \begin{equation}
+Prod = \frac{KSLOC}{Epm}
+\label{eq:Productividad}
+\end{equation}
+
+\begin{equation}
 Tdev = c\times(Epm)^d
 \label{eq:Tiempo}
 \end{equation}
 
 \begin{equation}
-P = \frac{Epm}{Tdev}
+Per = \frac{Epm}{Tdev}
 \label{eq:Personas}
 \end{equation}
 
 \begin{equation}
-Ctd = \frac{Epm}{12} \times Spa \times 2.4
+Ctd = Per \times Spa
 \label{eq:Coste}
 \end{equation}
-
+%Ctd = \frac{Epm}{12} \times Spa \times 2.4 (según wheeler)
 
 Donde:
 \begin{itemize}
 \item[$Epm$:] es la estimación del esfuerzo de desarrollo, en persona-mes.
 \item[$KSLOC$:] es el número de líneas de código fuente físicas, en miles.
+\item[$Prod$:] es la productividad del proyecto.
 \item[$Tdev$:] es la estimación del tiempo de desarrollo del proyecto, en meses.
-\item[$P$:] es el número de personas requeridas, en personas.
+\item[$Per$:] es el número de personas requeridas, en personas.
 \item[$Ctd$:] es el costo total estimado de desarrollo del proyecto, en US\$.
-\item[$Spa$:] es el salario promedio anual estimado de programadores y analistas\footnote{Se toma como referencia US\$60.445,00, dato obtenido desde \url{http://www.payscale.com/research/US/Job=Computer_Programmer/Salary}}.
+\item[$Spa$:] es el salario promedio anual estimado de programadores y analistas\footnote{Se toma como referencia el valor US\$60.445,00 para el mes de enero de 2017, dato obtenido desde \url{http://www.payscale.com/research/US/Job=Computer_Programmer/Salary}}.
 \item[$a$, $b$, $c$ y $d$:] son los coeficientes según el tipo de proyecto, ver tabla \ref{table:coeficientes}
 \end{itemize}
 
