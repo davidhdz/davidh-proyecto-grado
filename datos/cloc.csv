@@ -1,0 +1,12 @@
+files,language,blank,comment,code,"http://cloc.sourceforge.net v 1.60  T=3.43 s (210.3 files/s, 54002.0 lines/s)"
+280,C++,16125,18203,86929
+309,C/C++ Header,7546,9825,20167
+67,Python,2758,1799,10622
+14,C,708,424,3888
+7,make,402,32,3399
+29,CMake,221,208,1016
+3,IDL,47,0,439
+5,Bourne Shell,27,27,219
+2,Bourne Again Shell,29,8,202
+5,XML,0,0,88
+1,Perl,5,4,36
