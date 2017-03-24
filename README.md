@@ -4,14 +4,18 @@ davidh-proyecto-grado
 Ciclos de vida del software libre. Caso de estudio Distribución Canaima GNU/Linux
 ----
 
-<br/>
 **Autor:** David A. Hernández Aponte
+
 
 **Tutor:** Ph.D. Jacinto Dávila
 
-<br/>
-**Resumen:** 
 
-<br/>
+**Resumen:** Se desea realizar un estudio que muestre el ciclo de vida del desarrollo
+de software libre aplicado a una distribución Linux, usando como objeto de
+investigación la distribución Canaima GNU/Linux, para ello se mostrará la manera
+en que se ha llevado a cabo su desarrollo través de la historia de la distribución, y
+se hará una comparación con otras distribuciones, como búsqueda para establecer
+casos de éxito y/o fracaso en las diferentes fases de desarrollo de la misma.
+
 **Palabras Clave:** linux, software libre, distribución, ciclo de vida, canaima gnu/linux, desarrollo colaborativo
-<br/>
+

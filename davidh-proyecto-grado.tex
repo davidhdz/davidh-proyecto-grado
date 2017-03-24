@@ -291,9 +291,9 @@ citecolor=blue, draft=false}
 Este proyecto tiene como objetivo evaluar la productividad asociada o asociable a una distribución de software libre o distro. Para ello, se revisa el concepto de ciclo de vida del software, y se usa como una aproximación a la correspondiente noción de ciclo de vida de toda una distribución, un concepto claramente más complejo y difícil de abordar. Algunos indicadores complementarios son convocados para esta tarea y se los justifica a partir de esfuerzos previos en el área como los que se describen a continuación.
 
 \section{Antecedentes}
-La \cite{iso08} publica la última modificación hasta la fecha de la norma para los procesos de vida del software ISO/IEC 12207, publicada por primera vez en 1995. Aquí se define \emph{ciclo de vida} como la ``evolución de un sistema, producto, servicio, proyecto u otra entidad concebida por humanos, desde su concepción hasta su retiro'' (ISO/IEC 12207:2008, p.4). También se define \emph{modelo de ciclo de vida} como el ``marco de trabajo de procesos y actividades relacionadas con el ciclo de vida que pueden estar organizadas en etapas, las cuales también actúan como referencia común para su comunicación y entendimiento.'' (ISO/IEC 12207:2008, p.4).
+La Organización Internacional para la Estandarización (ISO en inglés) publica en 2008 la última modificación hasta la fecha de la norma para los procesos de vida del software ISO/IEC 12207, publicada por primera vez en 1995. Aquí se define \emph{ciclo de vida} como la ``evolución de un sistema, producto, servicio, proyecto u otra entidad concebida por humanos, desde su concepción hasta su retiro'' (ISO/IEC 12207:2008, p.4). También se define \emph{modelo de ciclo de vida} como el ``marco de trabajo de procesos y actividades relacionadas con el ciclo de vida que pueden estar organizadas en etapas, las cuales también actúan como referencia común para su comunicación y entendimiento.'' \citep[p.~4]{iso08}.
 
-El \cite{ieee97} en su norma para la creación de procesos de ciclo de vida de software define \emph{ciclo de vida del software} como ``la secuencia de actividades específicas a un proyecto, que son creadas asignando las actividades de esta norma a un modelo de ciclo de vida de software seleccionado.'' (IEEE 1074--1997, p. 5). Un \emph{modelo de ciclo de vida del software} es definido como `` el marco de trabajo, seleccionado por cada organización, en el cuál se asignan actividades a esta norma para producir el ciclo de vida del software.'' (IEEE 1074--1997, p. 5). Finalmente se define \emph{procesos de ciclo de vida del software} como ``la descripción de proyectos específicos de los procesos basados en el ciclo de vida del software de un proyecto, y los activos del  proceso de la organización.'' (IEEE 1074--1997, p. 5). 
+El \cite{ieee97} en su norma para la creación de procesos de ciclo de vida de software define \emph{ciclo de vida del software} como ``la secuencia de actividades específicas a un proyecto, que son creadas asignando las actividades de esta norma a un modelo de ciclo de vida de software seleccionado.'' (p.~5). Un \emph{modelo de ciclo de vida del software} es definido como `` el marco de trabajo, seleccionado por cada organización, en el cuál se asignan actividades a esta norma para producir el ciclo de vida del software.'' (p.~5). Finalmente se define \emph{procesos de ciclo de vida del software} como ``la descripción de proyectos específicos de los procesos basados en el ciclo de vida del software de un proyecto, y los activos del  proceso de la organización.'' (p.~5). 
 
 \cite{amor05} realizaron una investigación en la que utiliza la versión 3.1 de la distribución Debian como caso de estudio de medición de software libre. Aquí se concluye que el crecimiento del trabajo en Debian se incrementa año tras año siendo uno de los mayores sistemas de software mundial, e independientemente de la envergadura del proyecto la comunidad de mantenedores y voluntarios que rodean el sistema goza de buena salud. Sin embargo, se cuestiona la sostenibilidad del proyecto a futuro, basándose en el tamaño medio de la distribución, señalando que este comportamiento se podría deber a un crecimiento de números de paquetes más rápido que el de mantenedores.
 
@@ -404,7 +404,9 @@ Evaluar la productividad de una distro es, como se ha sugerido, un desafío compl
 \noindent\rule{\textwidth}{0.4pt}
 \section{Canaima GNU/Linux}
 
-Canaima GNU/Linux es una distribución Linux basada en Debian, forma parte del Proyecto Canaima, originado a raíz de la promulgación del  decreto 3.390 el cual dispone sobre el uso prioritario de Software Libre en los entes pertenecientes a la Administración Pública Nacional (APN). En el artículo número 7 se designa al entonces Ministerio de Ciencia y Tecnología la responsabilidad de ``proveer la Distribución Software Libre desarrollado con Estándares Abiertos para el Estado Venezolano'' \cite{venezuela04}. 
+Canaima GNU/Linux es una metadistribución Linux basada en Debian, forma parte del Proyecto Canaima, originado a raíz de la promulgación del  decreto 3.390 el cual dispone sobre el uso prioritario de Software Libre en los entes pertenecientes a la Administración Pública Nacional (APN). En el artículo número 7 se designa al entonces Ministerio de Ciencia y Tecnología la responsabilidad de ``proveer la Distribución Software Libre desarrollado con Estándares Abiertos para el Estado Venezolano'' \citep[p.~9]{venezuela04}. 
+
+Canaima se crea ``con el propósito de lograr inter-operabilidad, homogeneidad y sustentabilidad de la plataforma informática que utilizan los servidores públicos en sus procesos de producción intelectual y gestión.'' \citep[p.~7]{canaima09}. Además, ``su objetivo estratégico es apalancar el proceso de migración a Software Libre en las instituciones de la Administración Pública Nacional, para avanzar hacia la independencia tecnológica, con pleno ejercicio de la soberanía nacional.''\citep[p.~7]{canaima09}.
 
 Así pues, 3 años luego del Decreto 3390 nace la primera versión de la Distribución GNU/Linux del Estado Venezolano desarrollada en primera instancia para el Ministerio de Ciencia y Tecnología \cite{discusion12}, y que poco después adoptaría el nombre de Canaima.
 
@@ -773,17 +775,19 @@ El código para automatización de descarga de paquetes fuentes se aprecia en el C
 \section{Scripts para ordenar y descomprimir paquetes fuentes}
 Los archivos fuentes se descargan en un formato empaquetado (o comprimido). A modo de mantener un orden y para efectos de contabilizar cada carpeta como un proyecto diferente, se crea un directorio para cada uno de los paquetes, esto ayuda entre otras cosas a evitar sobreescritura de archivos en un directorio de descompresión común debido a nombres de archivos y directorios iguales, y organiza cada subproyecto (paquete de código) en un espacio propio.\\
 
-\lstinputlisting[label=code2,caption=mkdirmv,]{programas/mkdirmv}
+\lstinputlisting[label=code2,caption=mkdirmv.sh,]{programas/mkdirmv.sh}
 
 \section{Cantidad de líneas de Código Fuente}
-La medición de líneas de código fuente físicas permite realizar una serie de cálculos para estimar el tiempo de desarrollo y esfuerzo de un proyecto aplicando el Modelo Constructivo de Costos (COCOMO) \cite{boehm81} en su variante más actualizada COCOMO II \citep{boehm00}. %con valores coeficientes reajustados
+La medición de líneas de código fuente físicas permite realizar una serie de cálculos para estimar el tiempo de desarrollo y esfuerzo de un proyecto aplicando el Modelo Constructivo de Costos (COCOMO) \cite{boehm81} en su variante más actualizada COCOMO II \cite{boehm00}. %con valores coeficientes reajustados
+
+Para poder obtener el número de líneas de código fuente se ha optado por trabajar con \emph{cloc}\footnote{\url{https://github.com/AlDanial/cloc}}. Cloc es un programa con licencia libre, multiplataforma, hecho en Perl, que cuenta las líneas en blanco, líneas con comentarios y las líneas físicas de código fuente reconociendo más de 200 lenguajes de programación.
 
 
 \subsection{Procedimiento}
-Para poder obtener el número de líneas de código fuente se ha optado por trabajar con el programa \emph{cloc}\footnote{\url{https://github.com/AlDanial/cloc}}. Para ello se prepara un ambiente de trabajo para cada distribución a evaluar. Los pasos para ello se describen a continuación tomando como ejemplo la distribución Debian:\\
+Antes de poder hacer uso de \emph{cloc} se prepara antes un ambiente de trabajo para cada distribución a evaluar. Los pasos para ello se describen a continuación tomando como ejemplo la distribución Debian:\\
 Instalación de los paquetes necesarios para crear una jaula.
 \begin{lstlisting}
-apt install deboostrap
+apt install debootstrap
 \end{lstlisting}
 
 Instalación de una jaula Debian Jessie (como root)
@@ -854,59 +858,41 @@ Se corre el programa de medidas de métricas
 %\textbf{personcost}: Cambia el salario promedio anual al valor indicado. En este caso se usó el valor obtenido desde la página PayScale\footnote{\url{http://www.payscale.com/research/US/Job=Computer_Programmer/Salary}}
 
 \begin{lstlisting}
-cloc --unix --skip-uniqueness --csv --report-file=cloc.csv .
+cloc --csv --report-file=cloc.csv _*
 \end{lstlisting}
 
 \noindent
 Donde:\\
 \texttt{cloc}: es el programa para determinar la cantidad de líneas de código.\\
-\texttt{--unix}: es el argumento que anula la lógica de autodetección del sistema operativo y ejecutar en modo UNIX.\\
-\texttt{--skip-uniqueness}: es la opción que omite la comprobación de unicidad de archivo. De haberlos, se cuentan archivos con idénticos contenidos varias veces.\\
+%\texttt{--unix}: es el argumento que anula la lógica de autodetección del sistema operativo y ejecutar en modo UNIX.\\
+%\texttt{--skip-uniqueness}: es la opción que omite la comprobación de unicidad de archivo. De haberlos, se cuentan archivos con idénticos contenidos varias veces.\\
 \texttt{--csv}: es el argumento que indica al programa que el resultado se debe presentar con un formato de valores separados por coma (csv).\\
-\texttt{--report-file=cloc.csv .}: es el argumento que ordena al programa a almacenar los resultados en el archivo \texttt{cloc.csv}, en el directorio desde donde se corre el comando.
+\texttt{--report-file=cloc.csv}: es el argumento que ordena al programa a almacenar los resultados en el archivo \texttt{cloc.csv}.\\
+\texttt{\_*}: ruta de los archivos o directorios que se analizarán, en este caso se analizan todos los archivos y directorios en el directorio actual que inician con guión bajo (\_)
 
 
 \subsection{Datos recolectados}
-Los resultados arrojados por el programa se muestran en la tabla \ref{table:sloc1}.
+Un ejemplo de los resultados arrojados por Cloc\footnote{para los paquetes zygrib, zyn, zynaddsubfx y zypper} se muestran en la tabla~\ref{table:sloc1}.
 \begin{table}[H]
 \begin{center}
 \caption{SLOC agrupados por lenguaje}
 \label{table:sloc1}
-\begin{tabular}{lrr} 
+\begin{tabular}{ccccc}
 \toprule
-\textbf{Lenguaje} & \textbf{SLOC} & \textbf{Porcentaje} \\
+\textbf{Cantidad de} & \multirow{2}{*}{\textbf{Lenguaje}} & \textbf{Líneas en} & \textbf{Líneas con}  & \textbf{Líneas de}\\
+\textbf{Archivos} &  & \textbf{blanco} & \textbf{Comentarios}  & \textbf{código fuente}\\
 \midrule
-%C & 261.241.103 & (37.33\%) \\
-%C++ & 179.649.511 & (25.67\%) \\
-%Java & 47.699.222 & (6.82\%) \\
-%XML & 45.713.665 & (6.53\%) \\
-%Shell & 37.447.019 & (5.35\%) \\
-%Python & 32.768.023 & (4.68\%) \\
-%Perl & 17.398.705 & (2.49\%) \\
-%LISP & 10.569.577 & (1.51\%) \\
-%C\# & 10.095.898 & (1.44\%) \\
-%Fortran 77 & 9.174.840 & (1.31\%) \\
-%Fortran 90 & 7.457.166 & (1.07\%) \\
-%PHP & 6.874.865 & (0.98\%) \\
-%Ensamblador & 6.566.481 & (0.94\%) \\
-%Pascal & 5.210.566 & (0.74\%) \\
-%Ruby & 5.030.281 & (0.72\%) \\
-%ML & 3.727.447 & (0.53\%) \\
-%TCL & 2.910.548 & (0.42\%) \\
-%Objective-C & 2.625.223 & (0.38\%) \\
-%Haskell & 1.914.031 & (0.27\%) \\
-%Erlang & 1.787.598 & (0.26\%) \\
-%Ada & 1.746.231 & (0.25\%) \\
-%Yacc & 1.111.492 & (0.16\%) \\
-%Expect & 3.99.384 & (0.06\%) \\
-%lex & 395.535 & (0.06\%) \\
-%awk & 10.1527 & (0.01\%) \\
-%jsp & 73.209 & (0.01\%) \\
-%vhdl & 60.971 & (0.01\%) \\
-%C shell & 55.156 & (0.01\%) \\
-%sed & 34.529 & (0.00\%) \\
-%Modula3 & 1.965 & (0.00\%) \\
-%Cobol & 618 & (0.00\%) \\
+280 & C++                & 16125 & 18203 & 86929 \\
+309 & C/C++ Header       &  7546 &  9825 & 20167 \\
+67  & Python             &  2758 &  1799 & 10622 \\
+14  & C                  &   708 &   424 &  3888 \\
+7   & make               &   402 &    32 &  3399 \\
+29  & CMake              &   221 &   208 &  1016 \\
+3   & IDL                &    47 &     0 &   439 \\
+5   & Bourne Shell       &    27 &    27 &   219 \\
+2   & Bourne Again Shell &    29 &     8 &   202 \\
+5   & XML                &     0 &     0 &    88 \\
+1   & Perl               &     5 &     4 &    36 \\
 \bottomrule
 \end{tabular}
 \end{center}

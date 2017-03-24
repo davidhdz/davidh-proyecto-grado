@@ -1,4 +1,4 @@
-files,language,blank,comment,code,"http://cloc.sourceforge.net v 1.60  T=3.43 s (210.3 files/s, 54002.0 lines/s)"
+Archivos,Lenguaje,En_blanco,Comentarios,Codigo,"http://cloc.sourceforge.net v 1.60  T=3.43 s (210.3 files/s, 54002.0 lines/s)"
 280,C++,16125,18203,86929
 309,C/C++ Header,7546,9825,20167
 67,Python,2758,1799,10622
