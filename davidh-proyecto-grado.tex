@@ -423,9 +423,9 @@ La Tabla \ref{table:lanzamientoscanaima} muestra la fecha de lanzamiento de las 
 \begin{savenotes}
 \begin{table}[H]
 \begin{center}
-\begin{threeparttable}
 \caption{Lanzamientos de versiones de Canaima}
 \label{table:lanzamientoscanaima}
+\begin{threeparttable}
 \begin{tabular}{lcr} 
 \toprule
 \textbf{Versión} & \textbf{Nombre Clave} & \textbf{Fecha de Lanzamiento} \\
@@ -555,26 +555,51 @@ Fuente: http://canaima.softwarelibre.gob.ve/canaima/soporte
 \cite{debian15} establecen que el proyecto Debian fue creado por Ian Murdock en agosto de 1993. (p.9). En la página web del proyecto\footnote{\url{https://www.debian.org/intro/about}} definen a Debian como un sistema operativo libre, dispone de versiones para el núcleo Linux o el núcleo FreeBSD. Además, Debian se presenta con mas de 43000 paquetes de software.
 
 \subsection{Componentes}
+
+Debian categoriza los paquetes incluidos en su sistema dentro de tres repositorios según su compatibilidad con las directrices de software libre de Debian (DFSG)\footnote{\url{https://www.debian.org/social_contract.es.html\#guidelines}}, estos repositorios son:
+
 \begin{description}
-\item[main] Paquetes compatibles con las directrices de software libre de Debian (DFSG), que además no dependen de paquetes que se encuentren fuera de este componente para su operación. Estos paquetes son los únicos que se consideran parte de la distribución Debian.
-\item[contrib] Paquetes compatibles con las directrices de software libre de Debian pero que tienen dependencias fuera de \textit{main}, incluida la posibilidad de tener dependencias en el componente \textit{non-free}. 
-\item[non-free] Paquetes no compatibles con las directrices de software libre de Debian. 
+\item[main] Paquetes compatibles con las DFSG, que además no dependen de paquetes que se encuentren fuera de este componente para su operación. Estos paquetes son los únicos que se consideran parte de la distribución Debian.
+\item[contrib] Paquetes compatibles con las DFSG pero que tienen dependencias fuera de \textit{main}, incluida la posibilidad de tener dependencias en el componente \textit{non-free}. 
+\item[non-free] Paquetes no compatibles con las DFSG. 
 \end{description}
 
-\subsection{Sabores}
-Debian dispone de varios entornos de escritorio en sus repositorios, estos son:
-\begin{itemize}
-\item GNOME
-\item KDE
-\item LXDE
-\item Xfce
-\item Cinnamon 
-\item MATE 
-\item consola
-\end{itemize}
+\subsection{Arquitecturas}
+Actualmente Debian soporta las arquitecturas mostradas en la tabla~\ref{table:archdebian}.
+
+\begin{savenotes}
+\begin{table}[H]
+\begin{center}
+\caption{Arquitecturas soportadas oficialmente por Debian}
+\label{table:archdebian}
+\begin{threeparttable}
+\begin{tabular}{ll} 
+\toprule
+\textbf{Adaptación} & \multicolumn{1}{c}{\textbf{Arquitectura}} \\
+\midrule
+amd64 & PC de 64 bits (amd64) \\
+arm64 & ARM de 64 bits (AArch64) \\
+armel & EABI ARM \\
+armhf & ABI ARM de punto flotante \\
+i386 & PC de 32 bits (i386) \\
+mips & MIPS (modo big-endian) \\
+powerpc & Motorola/IBM PowerPC \\
+ppc64el & POWER7+, POWER8 \\
+s390x & System z \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item Fuentes: Debian\footnote{\url{https://www.debian.org/ports/index.es.html\#portlist-released}}
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{table}
+\end{savenotes}
 
 
 \subsection{Roles}
+En la comunidad de desarrollo de Debian se pueden distinguir diferentes roles:
 \begin{itemize}
 \item Autor original (\textit{upstream author}): es la persona que escribió el programa original.
 \item Mantenedor actual (\textit{upstream maintainer}): es la persona que actualmente se encarga de mantener el programa.
@@ -605,7 +630,7 @@ Debian dispone de varios entornos de escritorio en sus repositorios, estos son:
 \begin{itemize}
 \item Estable (\textit{stable}): La versión estable contiene la \'ultima versión oficial de la distribución Debian.
 \item Pruebas (\textit{testing}): La versión de pruebas contiene paquetes que a\'un no han sido aceptados dentro de la versión estable, pero se encuentra en cola para ello.
-\item Inestable (\textit{unstable}): La versión inestable es la version que se encuentra en desarrollo constante. Esta versión siempre es llamada por el nombre clave Sid.
+\item Inestable (\textit{unstable}): La versión inestable es la version que se encuentra en desarrollo constante. Esta versión siempre es llamada por el nombre clave ``Sid''.
 \end{itemize}
 
 \subsection{Lanzamientos}
@@ -614,9 +639,9 @@ La Tabla \ref{table:lanzamientosdebian} muestra la fecha de lanzamiento de las d
 \begin{savenotes}
 \begin{table}[H]
 \begin{center}
-\begin{threeparttable}
 \caption{Lanzamientos de versiones de Ubuntu}
 \label{table:lanzamientosdebian}
+\begin{threeparttable}
 \begin{tabular}{lcr} 
 \toprule
 \textbf{Versión} & \textbf{Nombre Clave} & \textbf{Fecha de Lanzamiento} \\
@@ -651,6 +676,7 @@ La Tabla \ref{table:lanzamientosdebian} muestra la fecha de lanzamiento de las d
 
 \section{Ubuntu}
 \subsection{Definición}
+Ubuntu es una distribución GNU/Linux basada en Debian, concebida por Mark Shuttleworth en 2004. Según el equipo que trabaja en el Manual de Ubuntu, \cite{ubuntu16}, se estima que Ubuntu está instalado en el 2\% de las computadoras a nivel mundial, esto equivale a diez millones de usuarios en todo el mundo.
 
 \subsection{Roles}
 \begin{itemize}
@@ -680,18 +706,20 @@ La Tabla \ref{table:lanzamientosdebian} muestra la fecha de lanzamiento de las d
 \item Restricted: Controladores propietarios.
 \end{itemize}
 
-\subsection{Sabores}
-\begin{itemize}
-\item Edubuntu incluye aplicaciones para niños y ayuda al profesor a configurar un sal\'on de clase de manera r\'apida y sencilla.
-\item Kubuntu ofrece el espacio de trabajo KDE Plasma.
-\item Lubuntu versi\'on de Ubuntu con el entorno LXDE.
-\item Mythbuntu ofrece el sistema MythTV.
-\item Ubuntu GNOME versi\'on de Ubuntu con el entorno Gnome.
-\item Ubuntu Kylin proyecto enfocado para suplir las necesidades de usuarios chinos.
-\item Ubuntu MATE versi\'on de Ubuntu con el entorno Mate.
-\item Ubuntu Studio incluye aplicaciones enfocadas para el trabajo audiovisual.
-\item Xubuntu versi\'on de Ubuntu con el entorno XFCE.
-\end{itemize}
+
+
+%\subsection{Sabores}
+%\begin{itemize}
+%\item Edubuntu incluye aplicaciones para niños y ayuda al profesor a configurar un sal\'on de clase de manera r\'apida y sencilla.
+%\item Kubuntu ofrece el espacio de trabajo KDE Plasma.
+%\item Lubuntu versi\'on de Ubuntu con el entorno LXDE.
+%\item Mythbuntu ofrece el sistema MythTV.
+%\item Ubuntu GNOME versi\'on de Ubuntu con el entorno Gnome.
+%\item Ubuntu Kylin proyecto enfocado para suplir las necesidades de usuarios chinos.
+%\item Ubuntu MATE versi\'on de Ubuntu con el entorno Mate.
+%\item Ubuntu Studio incluye aplicaciones enfocadas para el trabajo audiovisual.
+%\item Xubuntu versi\'on de Ubuntu con el entorno XFCE.
+%\end{itemize}
 
 \subsection{Política}
 \begin{itemize}
@@ -711,9 +739,9 @@ La Tabla \ref{table:lanzamientosubuntu} muestra la fecha de lanzamiento de las d
 \begin{savenotes}
 \begin{table}[H]
 \begin{center}
-\begin{threeparttable}
 \caption{Lanzamientos de versiones de Ubuntu}
 \label{table:lanzamientosubuntu}
+\begin{threeparttable}
 \begin{tabular}{lcr} 
 \toprule
 \textbf{Versión} & \textbf{Nombre Clave} & \textbf{Fecha de Lanzamiento} \\
@@ -877,22 +905,22 @@ Un ejemplo de los resultados arrojados por Cloc\footnote{para los paquetes zygri
 \begin{center}
 \caption{SLOC agrupados por lenguaje}
 \label{table:sloc1}
-\begin{tabular}{ccccc}
+\begin{tabular}{lrrrr}
 \toprule
-\textbf{Cantidad de} & \multirow{2}{*}{\textbf{Lenguaje}} & \textbf{Líneas en} & \textbf{Líneas con}  & \textbf{Líneas de}\\
-\textbf{Archivos} &  & \textbf{blanco} & \textbf{Comentarios}  & \textbf{código fuente}\\
+\multirow{2}{*}{\textbf{Lenguaje}} & \multicolumn{1}{c}{\textbf{Cantidad de}} &  \multicolumn{1}{c}{\textbf{Líneas en}} & \multicolumn{1}{c}{\textbf{Líneas con}}  & \multicolumn{1}{c}{\textbf{Líneas de}}\\
+ & \multicolumn{1}{c}{\textbf{Archivos}} & \multicolumn{1}{c}{\textbf{blanco}} & \multicolumn{1}{c}{\textbf{Comentarios}}  & \multicolumn{1}{c}{\textbf{código fuente}}\\
 \midrule
-280 & C++                & 16125 & 18203 & 86929 \\
-309 & C/C++ Header       &  7546 &  9825 & 20167 \\
-67  & Python             &  2758 &  1799 & 10622 \\
-14  & C                  &   708 &   424 &  3888 \\
-7   & make               &   402 &    32 &  3399 \\
-29  & CMake              &   221 &   208 &  1016 \\
-3   & IDL                &    47 &     0 &   439 \\
-5   & Bourne Shell       &    27 &    27 &   219 \\
-2   & Bourne Again Shell &    29 &     8 &   202 \\
-5   & XML                &     0 &     0 &    88 \\
-1   & Perl               &     5 &     4 &    36 \\
+C++                & 280 & 16125 & 18203 & 86929 \\
+C/C++ Header       & 309 &  7546 &  9825 & 20167 \\
+Python             &  67 &  2758 &  1799 & 10622 \\
+C                  &  14 &   708 &   424 &  3888 \\
+make               &   7 &   402 &    32 &  3399 \\
+CMake              &  29 &   221 &   208 &  1016 \\
+IDL                &   3 &    47 &     0 &   439 \\
+Bourne Shell       &   5 &    27 &    27 &   219 \\
+Bourne Again Shell &   2 &    29 &     8 &   202 \\
+XML                &   5 &     0 &     0 &    88 \\
+Perl               &   1 &     5 &     4 &    36 \\
 \bottomrule
 \end{tabular}
 \end{center}
