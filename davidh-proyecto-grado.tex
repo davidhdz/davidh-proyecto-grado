@@ -611,6 +611,14 @@ powerpc & IBM/Motorola PowerPC \\
 \item Codigo de conducta de Ubuntu \url{https://www.ubuntu.com/about/about-ubuntu/conduct}
 \end{itemize}
 
+\subsection{Tiempos de soporte}
+Ubuntu hace lanzamientos con diferentes tiempos de soporte, cada seis meses se publica una versión estable, y las versiones estable con soporte de larga duración se publican cada dos años.
+
+\begin{description}
+\item [Estable:] Soporte por nueve meses.
+\item [LTS (\textit{Long Term Support}):] Soporte por cinco años.
+\end{description}
+
 \subsection{Histórico de distribuciones}
 \begin{itemize}
 \item Ubuntu \url{http://old-releases.ubuntu.com/releases/}
@@ -665,6 +673,76 @@ La Tabla \ref{table:lanzamientosubuntu} muestra la fecha de lanzamiento de las d
 \end{table}
 \end{savenotes}
 
+\subsection{Estadísticas}
+\subsubsection{Componente \textit{main}}
+Fecha del archivo Source: 02/04/2017
+Número de paquetes descargados: 2.495
+
+Cantidad de lenguajes reconocidos: 151
+
+\begin{table}[H]
+\begin{center}
+\caption{SLOC agrupados por lenguaje (20 primeros)}
+\label{table:slocubuntu}
+\begin{tabular}{lrrrr}
+\toprule
+\multirow{2}{*}{\textbf{Lenguaje}} & \multicolumn{1}{c}{\textbf{Cantidad de}} &  \multicolumn{1}{c}{\textbf{Líneas en}} & \multicolumn{1}{c}{\textbf{Líneas con}}  & \multicolumn{1}{c}{\textbf{Líneas de}}\\
+ & \multicolumn{1}{c}{\textbf{archivos}} & \multicolumn{1}{c}{\textbf{blanco}} & \multicolumn{1}{c}{\textbf{comentarios}}  & \multicolumn{1}{c}{\textbf{código fuente}}\\
+\midrule
+Archivos de traducción &  86.830 & 26.421.435 & 35.337.997 & 96.957.936 \\
+C                      & 157.152 & 11.690.328 & 12.772.978 & 66.131.833 \\
+C++                    & 125.344 &  6.748.270 &  6.123.082 & 37.054.512 \\
+Cabecera C/C++         & 208.053 &  5.092.406 &  8.860.093 & 25.843.040 \\
+HTML                   & 105.562 &  2.635.762 &    466.304 & 19.884.751 \\
+Bourne Shell           &  19.586 &  2.907.499 &  2.291.133 & 15.932.894 \\
+XML                    &  43.247 &    423.980 &     93.078 & 10.597.667 \\
+Python                 &  50.832 &  2.072.539 &  2.532.364 &  8.568.869 \\
+JavaScript             &  47.643 &  1.222.966 &  1.748.238 &  7.324.667 \\
+C\#                    &  41.546 &  1.116.899 &  1.324.878 &  6.064.615 \\
+\TeX                   &  13.314 &    499.529 &  2.314.342 &  5.766.279 \\
+m4                     &   7.007 &    391.713 &    109.621 &  3.590.276 \\
+Perl                   &  13.508 &    592.890 &    749.975 &  3.309.042 \\
+Ensamblador            &  15.860 &    396.138 &    649.093 &  2.882.766 \\
+Java                   &  18.395 &    546.084 &  1.194.939 &  2.540.210 \\
+Go                     &  11.674 &    334.856 &    409.455 &  2.457.237 \\
+JSON                   &   6.015 &      3.834 &          0 &  1.819.038 \\
+Erlang                 &   4.541 &    254.875 &    347.135 &  1.521.217 \\
+Lisp                   &   2.247 &    175.152 &    246.317 &  1.248.017 \\
+YAML                   &   1.579 &      5.852 &      2.771 &  1.234.255 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsubsection{COCOMO}
+\begin{savenotes}
+\begin{table}[H]
+\begin{center}
+\caption{Estimaciones de esfuerzo y costos para el componente \textit{main} de Ubuntu aplicando COCOMO Básico}
+\label{table:cocomoubuntu}
+\begin{threeparttable}
+\begin{tabular}{lr}
+%\toprule
+%\textbf{} & \textbf{}\\
+\midrule
+Líneas de código fuente:                        &    337.256.079 \\
+Esfuerzo estimado de desarrollo (persona--mes): &   1.529.568,80 \\
+Productividad estimada:                         &           0,22 \\
+Tiempo de desarrollo estimado (meses):          &         559,86 \\
+Personas requeridas estimadas (personas):       &       2.732,08 \\
+Costo total estimado del proyecto (US\$):       & 201.728.298,39 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item Para el Costo Total estimado se toma el valor US\$ 73.837,00 anual como salario de referencia para ingenieros de software, desarrolladores y programadores en enero de 2017\footnote{\url{http://www.payscale.com/research/US/Job=Software_Engineer\_\%2f\_Developer\_\%2f\_Programmer/Salary\#CareerPaths}}.
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{table}
+\end{savenotes}
+
+
 \section{Canaima GNU/Linux}
 \subsection{Definición}
 Canaima GNU/Linux es una metadistribución Linux basada en Debian, forma parte del Proyecto Canaima, originado a raíz de la promulgación del  decreto 3.390 el cual dispone sobre el uso prioritario de Software Libre en los entes pertenecientes a la Administración Pública Nacional (APN). En el artículo número 7 se designa al entonces Ministerio de Ciencia y Tecnología la responsabilidad de ``proveer la Distribución Software Libre desarrollado con Estándares Abiertos para el Estado Venezolano'' \citep[p.~9]{venezuela04}. 
@@ -696,7 +774,7 @@ Canaima construye su distro bajo 2 arquitecturas, mostradas en la tabla~\ref{tab
 \begin{savenotes}
 \begin{table}[H]
 \begin{center}
-\caption{Arquitecturas soportadas oficialmente por Ubuntu}
+\caption{Arquitecturas soportadas oficialmente por Canaima GNU/Linux}
 \label{table:archcanaima}
 \begin{threeparttable}
 \begin{tabular}{ll} 
@@ -715,6 +793,65 @@ amd64 & PC de 64 bits (amd64) \\
 \end{center}
 \end{table}
 \end{savenotes}
+
+\subsection{Equipo Canaima GNU/Linux (septiembre de 2016)}
+\begin{itemize}
+\item Un Jefe de Oficina Canaima GNU/Linux. 
+\begin{itemize}
+\item Coordinar el equipo de trabajo del Proyecto Canaima.
+\item Promover el cambio del modelo productivo del Proyecto desde el año 2014.
+\item Producción de software centrado en el usuario final.
+\item Diseño y construcción de una fábrica de ensamblaje de software en Venezuela.
+\end{itemize}
+\item Dos Articulación Sociotecnológica. 
+\begin{itemize}
+\item Impulso de procesos de sistematización de experiencias, organización y métodos, desarrollo de laboratorios de usabilidad para la evaluación del entorno de escritorio de Canaima GNU/Linux.
+\item Apoyo a procesos de migración a tecnologías libres.
+\item Redacción, edición y publicación de notas de prensa para el Portal Web del Proyecto Canaima GNU/Linux.
+\item Levantamiento y análisis de requerimientos técnicos
+\item Formación tecnológica
+\item Sistematización de experiencias, planificación y gestión.
+\end{itemize}
+\item Cuatro desarrolladores.
+\begin{itemize}
+\item Gestión de la plataforma de versionamiento de Canaima GNU/Linux
+\item Adaptación de Paquetes.
+\item Mantenimiento de Paquetes.
+\item Pruebas de correcto funcionamiento de los paquetes.
+\item Adaptación de Canaima GNU/Linux a Canaima Educativo.
+\end{itemize}
+\item Dos Plataforma Tecnológica.
+\begin{itemize}
+\item Mantenimiento y Actualización de la Plataforma Tecnológica.
+\item Monitoreo de la Plataforma Tecnológica.
+\item Creación de servicios para el uso del área de desarrollo y comunidad.
+\end{itemize}
+\item Un Laboratorio y Plataforma Tecnológica de Canaima Educativo.
+\begin{itemize}
+\item Probar y adaptar las versiones de Canaima GNU/Linux en las portátiles Canaima.
+\item Administrar parte de la plataforma de Canaima Educativo.
+\end{itemize}
+\item Un Soporte Técnico.
+\begin{itemize}
+\item Solventar casos registrados en los medios de soporte técnico de Canaima.
+\item Realizar pruebas de las versiones de Canaima.
+\item Actualizar constantemente los espacios de Soporte Técnico de Canaima.
+\end{itemize}
+\item Un Gestión Administrativa.
+\begin{itemize}
+\item Procesos administrativos del proyecto Canaima GNU/Linux.
+\end{itemize}
+\end{itemize}
+
+\subsection{Política}
+\begin{itemize}
+\item Contrato social de Canaima \url{http://wiki.canaima.softwarelibre.gob.ve/index.php/Contrato_Social}
+\end{itemize}
+
+\subsection{Histórico de distribuciones}
+\begin{itemize}
+\item Canaima \url{http://canaima.softwarelibre.gob.ve/descargas/canaima-gnu-linux/repositorio-de-distribuciones}
+\end{itemize}
 
 \subsection{Lanzamientos}
 La Tabla \ref{table:lanzamientoscanaima} muestra la fecha de lanzamiento de las diferentes versiones de la distribución Canaima GNU/Linux.
@@ -781,64 +918,9 @@ La Tabla \ref{table:lanzamientoscanaima} muestra la fecha de lanzamiento de las 
 
 
 
-\subsection{Equipo Canaima GNU/Linux (septiembre de 2016)}
-\begin{itemize}
-\item Un Jefe de Oficina Canaima GNU/Linux. 
-\begin{itemize}
-\item Coordinar el equipo de trabajo del Proyecto Canaima.
-\item Promover el cambio del modelo productivo del Proyecto desde el año 2014.
-\item Producción de software centrado en el usuario final.
-\item Diseño y construcción de una fábrica de ensamblaje de software en Venezuela.
-\end{itemize}
-\item Dos Articulación Sociotecnológica. 
-\begin{itemize}
-\item Impulso de procesos de sistematización de experiencias, organización y métodos, desarrollo de laboratorios de usabilidad para la evaluación del entorno de escritorio de Canaima GNU/Linux.
-\item Apoyo a procesos de migración a tecnologías libres.
-\item Redacción, edición y publicación de notas de prensa para el Portal Web del Proyecto Canaima GNU/Linux.
-\item Levantamiento y análisis de requerimientos técnicos
-\item Formación tecnológica
-\item Sistematización de experiencias, planificación y gestión.
-\end{itemize}
-\item Cuatro desarrolladores.
-\begin{itemize}
-\item Gestión de la plataforma de versionamiento de Canaima GNU/Linux
-\item Adaptación de Paquetes.
-\item Mantenimiento de Paquetes.
-\item Pruebas de correcto funcionamiento de los paquetes.
-\item Adaptación de Canaima GNU/Linux a Canaima Educativo.
-\end{itemize}
-\item Dos Plataforma Tecnológica.
-\begin{itemize}
-\item Mantenimiento y Actualización de la Plataforma Tecnológica.
-\item Monitoreo de la Plataforma Tecnológica.
-\item Creación de servicios para el uso del área de desarrollo y comunidad.
-\end{itemize}
-\item Un Laboratorio y Plataforma Tecnológica de Canaima Educativo.
-\begin{itemize}
-\item Probar y adaptar las versiones de Canaima GNU/Linux en las portátiles Canaima.
-\item Administrar parte de la plataforma de Canaima Educativo.
-\end{itemize}
-\item Un Soporte Técnico.
-\begin{itemize}
-\item Solventar casos registrados en los medios de soporte técnico de Canaima.
-\item Realizar pruebas de las versiones de Canaima.
-\item Actualizar constantemente los espacios de Soporte Técnico de Canaima.
-\end{itemize}
-\item Un Gestión Administrativa.
-\begin{itemize}
-\item Procesos administrativos del proyecto Canaima GNU/Linux.
-\end{itemize}
-\end{itemize}
 
-\subsection{Histórico de distribuciones}
-\begin{itemize}
-\item Canaima \url{http://canaima.softwarelibre.gob.ve/descargas/canaima-gnu-linux/repositorio-de-distribuciones}
-\end{itemize}
 
-\subsection{Política}
-\begin{itemize}
-\item Contrato social de Canaima \url{http://wiki.canaima.softwarelibre.gob.ve/index.php/Contrato_Social}
-\end{itemize}
+
 
 \begin{figure}[H]
 \caption{Ciclo de desarrollo de Canaima GNU/Linux}
@@ -860,9 +942,9 @@ Fuente: http://canaima.softwarelibre.gob.ve/canaima/soporte
 \noindent\rule{\textwidth}{0.4pt}
 \section{Scripts para descargar paquetes fuente}
 
-Para descargar el código fuente de cada paquete dentro del repositorio principal de una distribución basada en Debian se ha utilizado el comando \texttt{apt-get --download-only source \textit{nombredelpaquete}},  esta acción descarga un conjunto de archivos que permiten compilar y construir nuevas versiones del paquete desde las fuentes. Las extensiones asociadas a estos archivos posibilita escoger el archivo que interesa para hacer las mediciones, así el programa utilizado para automatizar la descarga de todos los archivos fuente se enfoca en conservar el archivo con el código fuente creado por el autor, con extensión \texttt{.orig.tar.gz}, y elimina el resto.
+Para descargar el código fuente de cada paquete dentro del repositorio principal de una distribución basada en Debian se ha utilizado el comando \texttt{apt-get --download-only source \textit{nombredelpaquete}},  esta acción descarga un conjunto de archivos que permiten compilar y construir nuevas versiones del paquete desde las fuentes. Las extensiones asociadas a estos archivos posibilita escoger el archivo que interesa para hacer las mediciones, así el programa utilizado para automatizar la descarga de todos los archivos fuente se enfoca en conservar el archivo con el código fuente creado por el autor, con extensión \texttt{.orig.tar.gz}, y elimina el resto de archivos descargados que no son necesarios para el proceso de cálculo de líneas de código.
 
-El código para automatización de descarga de paquetes fuentes se aprecia en el Código~\ref{code1}. Básicamente el programa lee cada línea del archivo \emph{Sources}, el cual es el índice de archivos fuente que aloja el repositorio, y se encarga de extraer el nombre de cada paquete que se encuentra dentro del índice para luego proceder a la descarga en el disco duro del archivo comprimido que contiene el código fuente del nombre del paquete procesado.\\
+El código para automatización de descarga de paquetes fuentes se aprecia en el Código~\ref{code1}. Básicamente el programa lee cada línea del archivo \emph{Sources}, el cual es el índice de archivos fuente que aloja el repositorio, y se encarga de identificar y extraer el nombre de cada paquete que se encuentra dentro del índice para luego proceder a la descarga en el disco duro del archivo comprimido que contiene el código fuente del nombre del paquete procesado.\\
 
 \lstinputlisting[label=code1,caption=paquetes.py,]{programas/paquetes.py}
 
@@ -874,11 +956,11 @@ Los archivos fuentes se descargan en un formato empaquetado (o comprimido). A mo
 \section{Cantidad de líneas de Código Fuente}
 La medición de líneas de código fuente físicas permite realizar una serie de cálculos para estimar el tiempo de desarrollo y esfuerzo de un proyecto aplicando el Modelo Constructivo de Costos (COCOMO) \cite{boehm81} en su variante más actualizada COCOMO II \cite{boehm00}. %con valores coeficientes reajustados
 
-Para poder obtener el número de líneas de código fuente se ha optado por trabajar con \emph{cloc}\footnote{\url{https://github.com/AlDanial/cloc}}. Cloc es un programa con licencia libre, multiplataforma, hecho en Perl, que cuenta las líneas en blanco, líneas con comentarios y las líneas físicas de código fuente reconociendo más de 200 lenguajes de programación.
+Para poder obtener el número de líneas de código fuente se ha optado por trabajar con \texttt{cloc}\footnote{\url{https://github.com/AlDanial/cloc}}. \texttt{Cloc} es un programa con licencia libre, multiplataforma, hecho en Perl, que cuenta las líneas en blanco, líneas con comentarios y las líneas físicas de código fuente reconociendo más de 200 lenguajes de programación.
 
 
 \subsection{Procedimiento}
-Antes de poder hacer uso de \emph{cloc} se prepara antes un ambiente de trabajo para cada distribución a evaluar. Los pasos para ello se describen a continuación tomando como ejemplo la distribución Debian:\\
+Antes de poder hacer uso de \texttt{cloc} se prepara antes un ambiente de trabajo para cada distribución a evaluar. Los pasos para ello se describen a continuación tomando como ejemplo la distribución Debian:\\
 Instalación de los paquetes necesarios para crear una jaula.
 \begin{lstlisting}
 apt install debootstrap
@@ -901,7 +983,7 @@ sudo cp paquetes.py jaula/home/
 
 Se repite la operación con el programa que se encargará de crear directorios y descomprimir los archivos en estos directorios.
 \begin{lstlisting}
-sudo cp mkdirmv jaula/home/
+sudo cp mkdirmv.sh jaula/home/
 \end{lstlisting}
 
 Se entra a la jaula
@@ -917,7 +999,7 @@ apt update
 
 Se instalan los paquetes necesarios para poder operar dentro de la jaula.
 \begin{lstlisting}
-apt install xz-utils tar bzip2 python locales sloccount
+apt install xz-utils tar bzip2 python locales sloccount cloc
 \end{lstlisting}
 
 Se configura el lenguaje del entorno.
@@ -939,10 +1021,10 @@ python paquetes.py
 
 Luego se corre el programa que se encarga de ordenar cada archivo en un directorio propio, descomprimirlo y borrar el archivo comprimido.
 \begin{lstlisting}
-./mkdirmv
+./mkdirmv.sh
 \end{lstlisting}
 
-Se corre el programa de medidas de métricas
+Se corre el programa de medidas de métricas\footnote{Asegúrese de haber borrado los programas \texttt{paquetes.py}, \texttt{mkdirmv.sh} y el archivo \texttt{Source} para no incluirlos en las métricas.}
 %\begin{lstlisting}
 %sloccount --duplicates --multiproject --personcost 60445 . > metrica.txt
 %\end{lstlisting}
@@ -952,12 +1034,13 @@ Se corre el programa de medidas de métricas
 %\textbf{personcost}: Cambia el salario promedio anual al valor indicado. En este caso se usó el valor obtenido desde la página PayScale\footnote{\url{http://www.payscale.com/research/US/Job=Computer_Programmer/Salary}}
 
 \begin{lstlisting}
-cloc --csv --report-file=cloc.csv _*
+cloc --use-sloccount --csv --report-file=cloc.csv _*
 \end{lstlisting}
 
 \noindent
 Donde:\\
 \texttt{cloc}: es el programa para determinar la cantidad de líneas de código.\\
+\texttt{--use-sloccount}: es la orden que le indica a \texttt{cloc} usar los contadores compilados de \texttt{SLOCCount}\footnote{\url{https://www.dwheeler.com/sloccount/}} para los lenguajes C, java, pascal, php y xml que mejoran el desempeño en tiempo del programa.\\
 %\texttt{--unix}: es el argumento que anula la lógica de autodetección del sistema operativo y ejecutar en modo UNIX.\\
 %\texttt{--skip-uniqueness}: es la opción que omite la comprobación de unicidad de archivo. De haberlos, se cuentan archivos con idénticos contenidos varias veces.\\
 \texttt{--csv}: es el argumento que indica al programa que el resultado se debe presentar con un formato de valores separados por coma (csv).\\
@@ -966,7 +1049,7 @@ Donde:\\
 
 
 \subsection{Datos recolectados}
-Un ejemplo de los resultados arrojados por Cloc\footnote{para los paquetes zygrib, zyn, zynaddsubfx y zypper} se muestran en la tabla~\ref{table:sloc1}.
+Un ejemplo de los resultados arrojados por \texttt{cloc}\footnote{para los paquetes zygrib, zyn, zynaddsubfx y zypper} se muestran en la tabla~\ref{table:sloc1}.
 \begin{table}[H]
 \begin{center}
 \caption{SLOC agrupados por lenguaje}
@@ -974,19 +1057,19 @@ Un ejemplo de los resultados arrojados por Cloc\footnote{para los paquetes zygri
 \begin{tabular}{lrrrr}
 \toprule
 \multirow{2}{*}{\textbf{Lenguaje}} & \multicolumn{1}{c}{\textbf{Cantidad de}} &  \multicolumn{1}{c}{\textbf{Líneas en}} & \multicolumn{1}{c}{\textbf{Líneas con}}  & \multicolumn{1}{c}{\textbf{Líneas de}}\\
- & \multicolumn{1}{c}{\textbf{Archivos}} & \multicolumn{1}{c}{\textbf{blanco}} & \multicolumn{1}{c}{\textbf{Comentarios}}  & \multicolumn{1}{c}{\textbf{código fuente}}\\
+ & \multicolumn{1}{c}{\textbf{archivos}} & \multicolumn{1}{c}{\textbf{blanco}} & \multicolumn{1}{c}{\textbf{comentarios}}  & \multicolumn{1}{c}{\textbf{código fuente}}\\
 \midrule
-C++                & 280 & 16125 & 18203 & 86929 \\
-C/C++ Header       & 309 &  7546 &  9825 & 20167 \\
-Python             &  67 &  2758 &  1799 & 10622 \\
-C                  &  14 &   708 &   424 &  3888 \\
-make               &   7 &   402 &    32 &  3399 \\
-CMake              &  29 &   221 &   208 &  1016 \\
-IDL                &   3 &    47 &     0 &   439 \\
-Bourne Shell       &   5 &    27 &    27 &   219 \\
-Bourne Again Shell &   2 &    29 &     8 &   202 \\
-XML                &   5 &     0 &     0 &    88 \\
-Perl               &   1 &     5 &     4 &    36 \\
+C++                & 280 & 16.125 & 18,203 & 86.929 \\
+C/C++ Header       & 309 &  7.546 &  9,825 & 20.167 \\
+Python             &  67 &  2.758 &  1,799 & 10.622 \\
+C                  &  14 &    708 &    424 &  3.888 \\
+make               &   7 &    402 &     32 &  3.399 \\
+CMake              &  29 &    221 &    208 &  1.016 \\
+IDL                &   3 &     47 &      0 &    439 \\
+Bourne Shell       &   5 &     27 &     27 &    219 \\
+Bourne Again Shell &   2 &     29 &      8 &    202 \\
+XML                &   5 &      0 &      0 &     88 \\
+Perl               &   1 &      5 &      4 &     36 \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -1015,7 +1098,7 @@ Perl               &   1 &     5 &     4 &    36 \\
 %\end{table}
 
 
-\subsection{Resultados}
+\subsection{Fórmulas}
 Tomando los valores bajo el modelo de estimación COCOMO Básico y aplicando los valores establecidos para el modo orgánico, se realizan los cálculos de esfuerzo y tiempo de desarrollo.
 
 COCOMO puede ser aplicado a tres tipos de proyecto:
@@ -1064,7 +1147,7 @@ Donde:
 \item[$a$, $b$, $c$ y $d$:] son los coeficientes según el tipo de proyecto, ver tabla \ref{table:coeficientes}
 \end{itemize}
 
-\begin{table}[h]
+\begin{table}[H]
 \begin{center}
 \caption{Constantes para el cálculo de distintos aspectos de costes}
 \label{table:coeficientes}
@@ -1081,7 +1164,7 @@ Embebido & 3,60 & 1,20 & 2,50 & 0,32 \\
 \end{table}
 
 
-\section{Cómo empaquetar en Canaima GNU/Linux}
+%\section{Cómo empaquetar en Canaima GNU/Linux}
 \end{appendices}
 
 
