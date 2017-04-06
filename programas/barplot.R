@@ -16,7 +16,7 @@
 # You should have received a copy of the GNU General Public License
 # along with paquetes.py. If not, see <http://www.gnu.org/licenses/>.
 
-# Estadísticas básicas de los datos obtenidos por CLOC
+# Generador de gráficos de barra con los datos obtenidos por CLOC
 
 library(tcltk)
 
@@ -28,11 +28,18 @@ entrada <- tk_choose.files(default = "", caption = "Seleccione el archivo de ent
 
 cloc <- as.data.frame(read.csv(entrada, header=TRUE))
 
-cat("\n\n")
-cat("==========================================================\n")
-cat("Total archivos con lenguajes reconocidos:\t", format(sum(cloc$files), digits=2, nsmall=2, decimal.mark=",", big.mark=".", scientific=FALSE),"\n")
-cat("Total de líneas en blanco:\t\t\t", format(sum(cloc$blank), digits=2, nsmall=2, decimal.mark=",", big.mark=".", scientific=FALSE),"\n")
-cat("Total de líneas con comentarios:\t\t", format(sum(cloc$comment), digits=2, nsmall=2, decimal.mark=",", big.mark=".", scientific=FALSE),"\n")
-cat("\nTotal de líneas de código fuente:\t\t", format(sum(cloc$code), digits=2, nsmall=2, decimal.mark=",", big.mark=".", scientific=FALSE),"\n")
-cat("==========================================================\n\n\n")
+ss1<-subset(cloc[,1:5],cloc$code>1230000)
+ss2<-subset(cloc[,1:5],cloc$code<1230000)
+ss3 <- data.frame("files"=sum(ss2$files),"language"="otros", "blank"=sum(ss2$blank), "comment"=sum(ss2$comment),"code"=sum(ss2$code))
+ss4 <- rbind(ss1,ss3)
 
+ahora <- Sys.time()
+tiempo <- strftime(ahora,"%Y%m%d%H%M%S")
+png(sprintf('./plot_%s.png', tiempo), width = 800)
+
+barplot(as.matrix(ss4[,3:5])/1000000, beside = TRUE, horiz=FALSE, legend=(ss4$language), args.legend = list(bty="n", horiz=FALSE), border="white", yaxt="n", #ylim=c(0, max(ss4$code)),
+        ylab = "Líneas de código", main = "Cantidad de líneas vacía, comentarios y líneas de código fuente por Lenguaje", col=rainbow(length(ss4$language)))
+my.axis <-paste(axTicks(2),"M",sep="")
+axis(2,at=axTicks(2), labels=my.axis)
+
+dev.off()
