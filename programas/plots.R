@@ -30,32 +30,32 @@ entrada <- tk_choose.files(default = "", caption = "Seleccione el archivo de ent
 
 cloc <- as.data.frame(read.csv(entrada, header=TRUE))
 
-ss1<-subset(cloc[,1:5],cloc$code>1230000)
-ss2<-subset(cloc[,1:5],cloc$code<1230000)
-ss3 <- data.frame("files"=sum(ss2$files),"language"="otros", "blank"=sum(ss2$blank), "comment"=sum(ss2$comment),"code"=sum(ss2$code))
-ss4 <- rbind(ss1,ss3)
+#ss1<-subset(cloc[,1:5],cloc$code>1230000)
+#ss2<-subset(cloc[,1:5],cloc$code<1230000)
+#ss3 <- data.frame("files"=sum(ss2$files),"language"="otros", "blank"=sum(ss2$blank), "comment"=sum(ss2$comment),"code"=sum(ss2$code))
+#ss4 <- rbind(ss1,ss3)
 
 ahora <- Sys.time()
 tiempo <- strftime(ahora,"%Y%m%d%H%M%S")
 pdf(sprintf('./plot_%s.pdf', tiempo))
 
 # Gráfico de barras
-barplot(as.matrix(ss4[,3:5])/1000000, beside = TRUE, horiz=FALSE, legend=(ss4$language), args.legend = list(bty="n", horiz=FALSE), border="white", yaxt="n", #ylim=c(0, max(ss4$code)),
-        ylab = "Líneas de código", main = "Cantidad de líneas vacía, comentarios y líneas de código fuente por Lenguaje", col=rainbow(length(ss4$language)))
-my.axis <-paste(axTicks(2),"M",sep="")
+barplot(as.matrix(cloc[,3:5])/1000, beside = TRUE, horiz=FALSE, legend=(cloc$language), args.legend = list(bty="n", horiz=FALSE), border="white", yaxt="n", #ylim=c(0, max(ss4$code)),
+        ylab = "Líneas de código", main = "Cantidad de líneas vacía, comentarios y líneas de código fuente por Lenguaje", col=rainbow(length(cloc$language)))
+my.axis <-paste(axTicks(2),"K",sep="")
 axis(2,at=axTicks(2), labels=my.axis)
 
 # Pie
-pct <- round(ss4$files/sum(ss4$files)*100)
+pct <- round(cloc$files/sum(cloc$files)*100)
 lbls <- paste(pct,"%",sep="") # ad % to labels 
 #lbls <- paste(ss4$language, lbls) # add percents to labels 
 
-pie(ss4$files, col=rainbow(length(lbls)), lbls,
+pie(cloc$files, col=rainbow(length(lbls)), lbls,
     main="Cantidad de archivos por lenguaje")
 
-bisectors<-pie3D(ss4$files, col=rainbow(length(lbls)), start=0, labels = lbls, labelcex = 1,
+bisectors<-pie3D(cloc$files, col=rainbow(length(lbls)), start=0, labels = lbls, labelcex = 1,
                  main="Cantidad de archivos por lenguaje", explode=.0,shade=.6, theta=pi/pi)
-legend(-.8,1, ss4$language, cex=0.8, fill=rainbow(length(ss4$language)))
+legend(-.8,1, cloc$language, cex=0.8, fill=rainbow(length(cloc$language)))
 
 
 dev.off()
