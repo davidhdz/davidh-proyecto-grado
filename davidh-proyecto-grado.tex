@@ -529,7 +529,7 @@ La Tabla \ref{table:lanzamientosdebian} muestra la fecha de lanzamiento de las d
 \begin{savenotes}
 \begin{table}[H]
 \begin{center}
-\caption{Lanzamientos de versiones de Ubuntu}
+\caption{Lanzamientos de versiones de Debian}
 \label{table:lanzamientosdebian}
 \begin{threeparttable}
 \begin{tabular}{lcr} 
@@ -712,13 +712,15 @@ La Tabla \ref{table:lanzamientosubuntu} muestra la fecha de lanzamiento de las d
 
 \subsection{Estadísticas}
 \subsubsection{Componente \textit{main}}
-Fecha del archivo Source: 02/04/2017
-Número de paquetes descargados: 2.495
-Cantidad de lenguajes reconocidos: 151
+\begin{itemize}
+\item Fecha del archivo Source: 02/04/2017
+\item Número de paquetes descargados: 2.495
+\item Cantidad de lenguajes reconocidos: 151
+\end{itemize}
 
 \begin{table}[H]
 \begin{center}
-\caption{SLOC agrupados por lenguaje (20 primeros)}
+\caption{SLOC agrupados por lenguaje (20 primeros) para Ubuntu}
 \label{table:slocubuntu}
 \begin{tabular}{lrrrr}
 \toprule
@@ -949,6 +951,78 @@ La Tabla \ref{table:lanzamientoscanaima} muestra la fecha de lanzamiento de las 
 \end{center}
 \end{table}
 \end{savenotes}
+
+\subsection{Estadísticas}
+\subsubsection{Componente \textit{main}}
+\begin{itemize}
+\item Fecha del archivo Source: 01/06/2016
+\item Número de paquetes descargados: 35
+\item Cantidad de lenguajes reconocidos: 20
+\end{itemize}
+
+\begin{table}[H]
+\begin{center}
+\caption{SLOC agrupados por lenguaje para Canaima}
+\label{table:sloccanaima}
+\begin{tabular}{lrrrr}
+\toprule
+\multirow{2}{*}{\textbf{Lenguaje}} & \multicolumn{1}{c}{\textbf{Cantidad de}} &  \multicolumn{1}{c}{\textbf{Líneas en}} & \multicolumn{1}{c}{\textbf{Líneas con}}  & \multicolumn{1}{c}{\textbf{Líneas de}}\\
+ & \multicolumn{1}{c}{\textbf{archivos}} & \multicolumn{1}{c}{\textbf{blanco}} & \multicolumn{1}{c}{\textbf{comentarios}}  & \multicolumn{1}{c}{\textbf{código fuente}}\\
+\midrule
+Archivos de traducción &    358 & 51.676 & 81.546 & 133.367 \\
+JavaScript             &    211 & 10.421 & 21.619 &  65.567 \\
+C\#                    &    341 &  9.921 & 10.647 &  44.215 \\
+CSS                    &     40 &  4.709 &  4.055 &  44.060 \\
+Bourne Shell           &     40 &  4.420 &  5.700 &  31.785 \\
+Python                 &    155 &  4.246 &  5.776 &  13.948 \\
+JSON                   &      2 &      0 &      0 &  11.560 \\
+XML                    &     21 &    265 &  1.659 &  11.082 \\
+m4                     &      5 &  1.020 &    106 &   8.793 \\
+Glade                  &      8 &      0 &     15 &   6.985 \\
+HTML                   &     52 &    376 &     79 &   3.136 \\
+MSBuild script         &      6 &      0 &     14 &   1.515 \\
+make                   &     33 &    350 &    233 &   1.303 \\
+Windows Resource File  &     11 &    212 &      0 &   1.108 \\
+Bourne Again Shell     &     58 &    760 &    633 &   1.101 \\
+Markdown               &      5 &    121 &      0 &     251 \\
+YAML                   &     20 &      7 &      0 &     191 \\
+C                      &      2 &      9 &      5 &      25 \\
+INI                    &      3 &      0 &      0 &      22 \\
+D                      &      1 &      0 &      0 &       1 \\
+\textbf{Total}         & \textbf{1.372} & \textbf{88.513} & \textbf{132.087} & \textbf{380.015} \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsubsection{COCOMO}
+\begin{savenotes}
+\begin{table}[H]
+\begin{center}
+\caption{Estimaciones de esfuerzo y costos para el componente \textit{usuarios} de Canaima aplicando COCOMO Básico}
+\label{table:cocomocanaima}
+\begin{threeparttable}
+\begin{tabular}{lr}
+%\toprule
+%\textbf{} & \textbf{}\\
+\midrule
+Líneas de código fuente:                        &      380.015 \\
+Esfuerzo estimado de desarrollo (persona--mes): &     1.227,44 \\
+Productividad estimada:                         &         0,31 \\
+Tiempo de desarrollo estimado (meses):          &        37,30 \\
+Personas requeridas estimadas (personas):       &        32,90 \\
+Costo total estimado del proyecto (US\$):       & 2.429.490,95 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item Para el Costo Total estimado se toma el valor US\$ 73.837,00 anual como salario de referencia para ingenieros de software, desarrolladores y programadores en enero de 2017\footnote{\url{http://www.payscale.com/research/US/Job=Software_Engineer\_\%2f\_Developer\_\%2f\_Programmer/Salary\#CareerPaths}}.
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{table}
+\end{savenotes}
+
 
 %\subsection{Proyectos}
 %\begin{itemize}
