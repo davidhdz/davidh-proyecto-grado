@@ -1,5 +1,4 @@
-files,language,blank,comment,code,"github.com/AlDanial/cloc v 1.72  T=146496.21 s (7.8 files/s, 3298.9 lines/s)"
-86830,PO File,26421435,35337997,96957936
+files,language,blank,comment,code,"github.com/AlDanial/cloc v 1.72  T=140705.64 s (7.5 files/s, 2306.6 lines/s)"
 157152,C,11690328,12772978,66131833
 125344,C++,6748270,6123082,37054512
 208053,C/C++ Header,5092406,8860093,25843040
@@ -25,7 +24,7 @@ files,language,blank,comment,code,"github.com/AlDanial/cloc v 1.72  T=146496.21 
 420,Qt Linguist,1376,0,946564
 5667,CSS,123852,54964,910513
 25108,DTD,180922,275645,799180
-11196,IDL,134224,8,720043
+11008,IDL,133854,8,713558
 3317,Ruby,98680,83705,710150
 4865,Expect,68760,66275,698427
 3365,Objective C++,128593,143048,593365
@@ -39,7 +38,7 @@ files,language,blank,comment,code,"github.com/AlDanial/cloc v 1.72  T=146496.21 
 72,RobotFramework,36,2612,300241
 6001,QML,53416,141965,295784
 951,Glade,1702,1246,284870
-591,Prolog,7531,8201,271503
+572,Prolog,7461,8430,272822
 1482,Markdown,49096,3,266180
 6000,CMake,47276,65699,245420
 4498,INI,57658,3966,235219
@@ -60,10 +59,10 @@ files,language,blank,comment,code,"github.com/AlDanial/cloc v 1.72  T=146496.21 
 2297,NAnt script,14155,508,84474
 189,Antlr,16887,6695,73413
 136,xBase Header,6712,2034,69871
-582,MATLAB,20053,15395,68319
+583,MATLAB,20053,15395,68320
 309,XSD,6437,4037,66252
+3242,Qt Project,9871,2379,46309
 624,Sass,9708,7660,43199
-3035,Qt Project,9397,2250,41535
 899,DOS Batch,6943,4814,36679
 358,Protocol Buffers,10679,15041,36656
 1760,GLSL,11051,34286,36034
@@ -133,7 +132,7 @@ files,language,blank,comment,code,"github.com/AlDanial/cloc v 1.72  T=146496.21 
 12,WiX string localization,38,21,215
 1,AutoHotkey,49,28,178
 2,Unity-Prefab,2,0,142
-11,Mathematica,2,0,132
+11,Mathematica,4,0,135
 4,SAS,53,66,121
 3,Kermit,4,20,83
 6,Standard ML,14,0,81
@@ -144,9 +143,8 @@ files,language,blank,comment,code,"github.com/AlDanial/cloc v 1.72  T=146496.21 
 1,VHDL,5,11,16
 2,Swift,1,0,12
 1,AMPLE,2,0,9
-1,Arduino Sketch,4,5,8
 1,Rexx,17,2,8
+1,Arduino Sketch,4,5,8
 2,Pig Latin,4,3,7
 1,Stylus,2,0,5
-1,Mercury,2,0,4
 12,Specman e,9958,25905,0

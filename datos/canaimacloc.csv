@@ -1,5 +1,4 @@
-files,language,blank,comment,code,"github.com/AlDanial/cloc v 1.72  T=46.25 s (29.7 files/s, 12985.4 lines/s)"
-358,PO File,51676,81546,133367
+files,language,blank,comment,code,"github.com/AlDanial/cloc v 1.72  T=63.65 s (15.9 files/s, 5248.1 lines/s)"
 211,JavaScript,10421,21619,65567
 341,C#,9921,10647,44215
 40,CSS,4709,4055,44060

@@ -30,19 +30,20 @@ entrada <- tk_choose.files(default = "", caption = "Seleccione el archivo de ent
 
 cloc <- as.data.frame(read.csv(entrada, header=TRUE))
 
-#ss1<-subset(cloc[,1:5],cloc$code>1230000)
-#ss2<-subset(cloc[,1:5],cloc$code<1230000)
-#ss3 <- data.frame("files"=sum(ss2$files),"language"="otros", "blank"=sum(ss2$blank), "comment"=sum(ss2$comment),"code"=sum(ss2$code))
-#ss4 <- rbind(ss1,ss3)
+## Descomentar para Ubuntu y Debian
+ss1<-subset(cloc[,1:5],cloc$code>1230000)
+ss2<-subset(cloc[,1:5],cloc$code<1230000)
+ss3 <- data.frame("files"=sum(ss2$files),"language"="otros", "blank"=sum(ss2$blank), "comment"=sum(ss2$comment),"code"=sum(ss2$code))
+cloc <- rbind(ss1,ss3)
 
 ahora <- Sys.time()
 tiempo <- strftime(ahora,"%Y%m%d%H%M%S")
 pdf(sprintf('./plot_%s.pdf', tiempo))
 
 # Gráfico de barras
-barplot(as.matrix(cloc[,3:5])/1000, beside = TRUE, horiz=FALSE, legend=(cloc$language), args.legend = list(bty="n", horiz=FALSE), border="white", yaxt="n", #ylim=c(0, max(ss4$code)),
+barplot(as.matrix(cloc[,3:5])/1000000, beside = TRUE, horiz=FALSE, legend=(cloc$language), args.legend = list(bty="n", horiz=FALSE), border="white", yaxt="n", #ylim=c(0, max(ss4$code)),
         ylab = "Líneas de código", main = "Cantidad de líneas vacía, comentarios y líneas de código fuente por Lenguaje", col=rainbow(length(cloc$language)))
-my.axis <-paste(axTicks(2),"K",sep="")
+my.axis <-paste(axTicks(2),"M",sep="")
 axis(2,at=axTicks(2), labels=my.axis)
 
 # Pie
