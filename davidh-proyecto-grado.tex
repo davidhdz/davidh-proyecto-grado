@@ -19,7 +19,10 @@
 \usepackage{verbatim}
 \usepackage[flushleft]{threeparttable}
 \usepackage{footnote}
+\usepackage{eurosym}
 \usepackage{xstring}
+\usepackage{transparent}
+\usepackage[adobe-utopia]{mathdesign}
 \renewcommand{\thesection}{\arabic{section}}
 \renewcommand{\rmdefault}{bch}
 \usepackage[title,toc,page]{appendix}
@@ -1005,11 +1008,10 @@ D                      &      1 &      0 &      0 &       1 \\
 
 \begin{figure}[H]
 \caption{Cantidad de líneas vacía, comentarios y líneas de código fuente en los lenguajes del componente \textit{usuarios} de Canaima}
-\begin{center}
+\centering
 \includegraphics[width=\textwidth]{barplot_canaima}
-\end{center}
-%Fuente: http://canaima.softwarelibre.gob.ve/canaima/soporte
 \end{figure}
+
 
 \subsubsection{COCOMO}
 \begin{savenotes}
@@ -1039,6 +1041,20 @@ Costo total estimado del proyecto (US\$):       & 1.833.612,33 \\
 \end{table}
 \end{savenotes}
 
+\subsubsection{Presupuesto Canaima} 
+
+Tomando datos de la página del Centro Nacional de Tecnologías de Información (CNTI)\footnote{\url{http://www.cnti.gob.ve/institucion/responsabilidad-social.html}}, se muestra en la figura~\ref{fig:presupuesto_canaima} la relación del presupuesto asignado y el presupuesto ejecutado entre los años 2011 y 2015, ambos inclusive. Un dato interesante es que en el año 2015, según la información publicada por el CNTI, el total ejecutado es aproximadamente 4 veces el monto asignado para esta actividad, e históricamente, en promedio, el total ejecutado no llegaba a sobrepasar los 2~millones de bolívares.
+
+\begin{figure}[H]
+\caption{Presupuesto asignado al desarrollo de la distribución Canaima GNU/Linux}
+\begin{center}
+\includegraphics[width=\textwidth]{presupuesto_canaima}
+\end{center}
+\label{fig:presupuesto_canaima}
+\end{figure}
+
+El proyecto Gaudalinex, una distribución GNU/Linux con apoyo financiero de la Junta de Andalucía, España; en el año 2016\footnote{\url{http://www.juntadeandalucia.es/contratacion/ContractFormalizationDetail.action?code=2016-0000008954}} adjudicó y formalizó el contrato para el desarrollo de la distribución Guadalinex y su par empresarial GECOS (Guadalinex Escritorio COrporativo eStándar) por un monto total de \euro 84.700,00\footnote{Aquí se establece que la hora de un programador es de \euro 21,78 (con IVA).}.
+
 
 %\subsection{Proyectos}
 %\begin{itemize}
@@ -1061,11 +1077,6 @@ Costo total estimado del proyecto (US\$):       & 1.833.612,33 \\
 %\end{itemize}
 
 
-
-
-
-
-
 \begin{figure}[H]
 \caption{Ciclo de desarrollo de Canaima GNU/Linux}
 \begin{center}
@@ -1074,13 +1085,21 @@ Costo total estimado del proyecto (US\$):       & 1.833.612,33 \\
 Fuente: http://canaima.softwarelibre.gob.ve/canaima/soporte
 \end{figure}
 
-\chapter{Estado de desarrollo y nivel de productividad de la Distro Canaima GNU/Linux}
+\chapter{Estado de desarrollo y nivel de productividad de la Distribución Canaima GNU/Linux}
 \noindent\rule{\textwidth}{0.4pt}
 
+En principio, para las 2 primeras versiones de Canaima, el modelo de desarrollo se ajustaba a los tiempos de desarrollo de Debian, pero no se ajustaban a los tiempos de la Administración Pública Nacional.
+
+[Continua...]
+%Echar un breve cuento de las versiones 1 de EHN y 2 ONUVA
+
+A partir de la versión 3 se da inicio a una nueva etapa dentro del proyecto Canaima, esta versión marca el inicio de un modelo algo más endógeno, aquí el Estado pasa de ser un simple cliente que contrata un servicio para la construcción de una herramienta de software a un actor directo en los procesos, toma de decisiones y construcción de la distribución.
+
+[Continua...]
 
 \chapter{Conclusiones y recomendaciones}
 \noindent\rule{\textwidth}{0.4pt}
-Antes que todo, debe tenerse en cuenta que Canaima GNU/Linux es una distribución cuyo soporte financiero, técnico y humano proviene de un Estado, Debian, en cambio, es una distribución cuyo soporte proviene principalmente de la comunidad de desarrolladores y usuarios, finalmente, Ubuntu es una distribución soportada principalmente por una empresa, Canonical. Dicho esto, el interés que mueve a cada proyecto puede variar, puede ir desde lo estratégico a lo meramente económico.
+Antes que todo, debe tenerse en cuenta que Canaima GNU/Linux es una distribución cuyo soporte financiero, técnico y humano proviene de un Estado, Debian, en cambio, es una distribución cuyo soporte proviene principalmente de la comunidad de desarrolladores y usuarios, finalmente, Ubuntu es una distribución patrocinada principalmente por una empresa, Canonical. Dicho esto, el interés que mueve a cada proyecto puede variar, puede ir desde lo estratégico a lo meramente económico.
 
 
 \renewcommand\appendixpage{\clearpage\thispagestyle{empty}\mbox{}\vspace{1.5cm}\begin{flushleft}\Huge\bfseries\addappheadtotoc Apéndices \end{flushleft}}
