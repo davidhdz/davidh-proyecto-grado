@@ -17,19 +17,31 @@
 # You should have received a copy of the GNU General Public License
 # along with paquetes.py. If not, see <http://www.gnu.org/licenses/>.
 
+""" Programa que lee los paquetes de un archivo Source y descarga el archivo 
+    fuente de cada uno de estos paquetes.
+"""
+
+# Carga de bibliotecas
 import string
 import subprocess
 import glob
 
+# Carga el archivo "Sources", este debe estar en el directorio de corrida
 try:
     f = open('Sources', 'r')
 except IOError:
     print "Error al abrir el archivo ", arg
 else:
+    #contador de paquetes procesados
     cont=0
+    #Evalúa cada línea de Sources
     for line in f:
+        # Si en la línea encuentra la palabra "Binary: " almacena los nombres de
+        # cada paquete encontrado en la línea dentro de la lista "binarios"
         if 'Binary: ' in line:
             binarios = string.split(line)[1:]
+            # Descarga las fuentes si no existen ya, y borra archivos no 
+            # necesarios.
             for paquete in binarios:
                 paquetes = string.strip(paquete,',')
                 if (glob.glob(paquetes + '_*')):

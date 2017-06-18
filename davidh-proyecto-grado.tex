@@ -31,6 +31,7 @@
 \renewcommand{\appendixpagename}{Ap\'endices}
 \usepackage{listings}
 \usepackage[dvipsnames]{xcolor}
+\usepackage{textcomp}
 
 \lstset{
   language=python,
@@ -60,7 +61,7 @@
   {?}{{\H{u}}}1 {?}{{\H{U}}}1 {?}{{\H{o}}}1 {?}{{\H{O}}}1 {ç}{{\c c}}1 
   {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1 {?}{{\euro}}1 
   {£}{{\pounds}}1 {«}{{\guillemotleft}}1 {»}{{\guillemotright}}1 
-  {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1,
+  {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1 {Ã}{{\'i}}1 {'}{{\textquotesingle}}1,
   keepspaces=true,
   keywordstyle=\color{blue},
   numbersep=5pt,
@@ -88,11 +89,15 @@
 % se incluye al final despues de citecolor=blue, el comando draft=true
 % Las siguientes son propiedades del pdf, más no cambian nada dentro del
 % texto de la monografía
+\definecolor{ingula}{RGB}{10,31,98}
+
 \hypersetup{pdftitle={Ciclos de vida del software libre. Caso de estudio Distribuci\'on Canaima GNU/Linux},
 pdfauthor={David A. Hern\'andez Aponte},
-pdfsubject={Propuesta de Proyecto de Grado}, % se deja igual (se cambia para el proyecto de grado)
-pdfkeywords={}, pdfstartview=FitH,
-citecolor=blue, draft=false}
+pdfsubject={Proyecto de Grado}, % se deja igual (se cambia para el proyecto de grado)
+pdfkeywords={Linux, Software libre, Distribuci\'on Linux, Ciclo de vida, Canaima GNU/Linux, Desarrollo colaborativo, Debian, Ubuntu, COCOMO, SLOC.}, pdfstartview=FitH,
+colorlinks=true, allcolors=ingula, 
+draft=false
+}
 
 % ***************************************************************** %
 % FIN DE
@@ -214,7 +219,7 @@ citecolor=blue, draft=false}
 \resumen{Se desea realizar un estudio que muestre el ciclo de vida del desarrollo de software libre aplicado a una distribución Linux, usando como objeto de investigación la distribución Canaima GNU/Linux, para ello se mostrará la manera en que se ha llevado a cabo su desarrollo través de la historia de la distribución, y se hará una comparación con otras distribuciones, como búsqueda para establecer casos de éxito y/o fracaso en las diferentes fases de desarrollo de la misma.}
 
 % Aquí se escriben las palabras claves de la monografía
-\descriptores{Linux, Software libre, Distribuci\'on Linux, Ciclo de vida, Canaima GNU/Linux, Desarrollo colaborativo, Debian, COCOMO, SLOC}
+\descriptores{Linux, Software libre, Distribuci\'on Linux, Ciclo de vida, Canaima GNU/Linux, Desarrollo colaborativo, Debian, Ubuntu, COCOMO, SLOC.}
 
 
 % Esto es para que salga la cota en la hoja del resumen. Actualmente,
@@ -586,6 +591,94 @@ La Tabla \ref{table:lanzamientosdebian} muestra la fecha de lanzamiento de las d
 \end{center}
 \end{table}
 \end{savenotes}
+
+\subsection{Estadísticas}
+\subsubsection{Componente \textit{main}}
+\begin{itemize}
+\item Fecha del archivo Source: 06/05/2017
+\item Número de paquetes descargados: 20.981
+\item Cantidad de lenguajes reconocidos: 179
+\end{itemize}
+
+\begin{table}[H]
+\begin{center}
+\caption{SLOC agrupados por lenguaje para Debian}
+\label{table:slocdebian}
+\begin{tabular}{lrrrr}
+\toprule
+\multirow{2}{*}{\textbf{Lenguaje}} & \multicolumn{1}{c}{\textbf{Cantidad de}} &  \multicolumn{1}{c}{\textbf{Líneas en}} & \multicolumn{1}{c}{\textbf{Líneas con}}  & \multicolumn{1}{c}{\textbf{Líneas de}}\\
+ & \multicolumn{1}{c}{\textbf{archivos}} & \multicolumn{1}{c}{\textbf{blanco}} & \multicolumn{1}{c}{\textbf{comentarios}}  & \multicolumn{1}{c}{\textbf{código fuente}}\\
+\midrule
+C                 & 534.083 & 40.610.907 & 45.978.259 & 228.239.179 \\
+C++               & 484.030 & 26.725.540 & 24.715.793 & 141.455.570 \\
+Bourne Shell      &  95.241 & 14.824.473 & 15.983.187 &  99.179.801 \\
+Cabecera C/C++    & 809.250 & 19.839.105 & 36.676.482 &  88.063.518 \\
+HTML              & 365.730 &  6.967.723 &  1.841.372 &  65.097.778 \\
+m4                &  49.654 &  3.183.855 &    698.068 &  56.911.113 \\
+Java              & 398.850 &  9.858.765 & 23.133.295 &  47.973.926 \\
+XML               & 179.091 &  2.218.577 &  1.456.931 &  45.182.189 \\
+Python            & 196.352 &  7.544.353 &  9.611.562 &  32.015.199 \\
+Qt Linguist       &   7.535 &    111.793 &         18 &  21.013.940 \\
+JavaScript        & 148.352 &  3.461.765 &  4.497.530 &  18.030.906 \\
+Perl              & 100.525 &  4.420.066 &  5.141.400 &  17.125.106 \\
+\TeX              &  23.472 &  1.252.733 &  3.265.439 &  10.365.660 \\
+C\#               &  67.943 &  1.803.520 &  2.796.671 &  10.173.671 \\
+Fortran 77        &  42.097 &    484.591 &  4.295.158 &   9.407.107 \\
+Fortran 90        &  12.819 &    312.233 &  1.108.344 &   7.448.896 \\
+Lisp              &  18.520 &  1.092.827 &  1.537.110 &   7.339.162 \\
+Module Definition &   8.624 &     96.572 &     48.120 &   7.095.719 \\
+PHP               &  52.913 &  1.161.255 &  3.146.443 &   6.469.612 \\
+Otros             & 731.630 & 13.414.341 & 14.506.986 &  96.629.959 \\
+\textbf{Total}    & \textbf{4.326.711} & \textbf{159.384.994} & \textbf{200.438.168} & \textbf{1.015.218.011} \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{figure}[H]
+\caption{Porcentaje de archivos por lenguaje dentro del componente \textit{main} de Debian}
+\begin{center}
+\includegraphics[width=\textwidth]{pie_debian}
+\end{center}
+%Fuente: http://canaima.softwarelibre.gob.ve/canaima/soporte
+\end{figure}
+
+\begin{figure}[H]
+\caption{Cantidad de líneas vacía, comentarios y líneas de código fuente en los lenguajes del componente \textit{main} de Debian}
+\begin{center}
+\includegraphics[width=\textwidth]{barplot_debian}
+\end{center}
+%Fuente: http://canaima.softwarelibre.gob.ve/canaima/soporte
+\end{figure}
+
+\subsubsection{COCOMO}
+\begin{savenotes}
+\begin{table}[H]
+\begin{center}
+\caption{Estimaciones de esfuerzo y costos para el componente \textit{main} de Debian aplicando COCOMO Básico}
+\label{table:cocomodebian}
+\begin{threeparttable}
+\begin{tabular}{lr}
+%\toprule
+%\textbf{} & \textbf{}\\
+\midrule
+Líneas de código fuente:                        &  1.015.218.011 \\
+Esfuerzo estimado de desarrollo (persona--mes): &   4.865.175,62 \\
+Productividad estimada:                         &           0,21 \\
+Tiempo de desarrollo estimado (meses):          &         869,04 \\
+Personas requeridas estimadas (personas):       &       5.598,36 \\
+Costo total estimado del proyecto (US\$):       & 413.366.347,61 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item Para el Costo Total estimado se toma el valor US\$ 73.837,00 anual como salario de referencia para ingenieros de software, desarrolladores y programadores en enero de 2017\footnote{\url{http://www.payscale.com/research/US/Job=Software_Engineer\_\%2f\_Developer\_\%2f\_Programmer/Salary\#CareerPaths}}.
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{table}
+\end{savenotes}
+
 
 \section{Ubuntu}
 \subsection{Definición}
@@ -1134,15 +1227,6 @@ El proyecto Gaudalinex, una distribución GNU/Linux con apoyo financiero de la Ju
 %\item GeoCanaima.
 %\end{itemize}
 
-
-\begin{figure}[H]
-\caption{Ciclo de desarrollo de Canaima GNU/Linux}
-\begin{center}
-\includegraphics[width=\textwidth]{ciclo_desarrollo}
-\end{center}
-Fuente: http://canaima.softwarelibre.gob.ve/canaima/soporte
-\end{figure}
-
 \chapter{Estado de desarrollo y nivel de productividad de la Distribución Canaima GNU/Linux}
 \noindent\rule{\textwidth}{0.4pt}
 
@@ -1154,6 +1238,36 @@ En principio, para las 2 primeras versiones de Canaima, el modelo de desarrollo 
 A partir de la versión 3 se da inicio a una nueva etapa dentro del proyecto Canaima, esta versión marca el inicio de un modelo algo más endógeno, aquí el Estado pasa de ser un simple cliente que contrata un servicio para la construcción de una herramienta de software a un actor directo en los procesos, toma de decisiones y construcción de la distribución.
 
 [Continua...]
+
+``Canaima GNU/Linux posee un modelo de desarrollo basado en Debian, con algunas modificaciones para adaptarla a las necesidades propias de Venezuela.''
+
+\begin{figure}[H]
+\caption{Ciclo de desarrollo de Canaima GNU/Linux}
+\begin{center}
+\includegraphics[width=\textwidth]{ciclo_desarrollo}
+\end{center}
+Fuente: http://canaima.softwarelibre.gob.ve/canaima/soporte
+\end{figure}
+
+
+[Continua...]
+
+2012 fue el último año donde se hicieron públicos los datos sobre el proceso de migración de software libre en la APN\footnote{\url{http://www.cnti.gob.ve/til-venezuela/estadisticas-de-migracion/estadisticas-de-migracion.html}}, los datos de ese año se alcanzaron a través de un censo realizado entre noviembre de 2012 y febrero de 2013, 126 instituciones de las 580 que conformaban para ese entonces la APN suministraron la información requerida, de allí se obtiene que el 51,14\%, el equivalente a 70.871 de las máquinas evaluadas, tenían instalado Canaima GNU/Linux, le seguía en cantidad el sistema operativo privativo Microsoft  Windows con 44,72\% equivalente a 61.966 máquinas (ver figura \ref{fig:migracion2012}). Se debe acotar que el estudio no hace mención sobre estaciones de trabajo con múltiples sistemas instalados, por lo que cabe la posibilidad que varias de las máquinas con Linux instalado también dispusieran Windows y aquí cabría la pregunta, de haber maquinas con múltiples sistemas ?`cuál de los sistemas instalados era el sistema operativo de uso regular?
+
+Para sacar estimaciones de número de máquinas que cuentan con la distribución Canaima GNU/Linux, se suele tomar como referencia el número de computadoras entregadas bajo el programa Canaima Educativo, éste consiste en dotar de una computadora portátil con contenido educativo a niños y maestros de educación primaria de escuelas públicas. Para diciembre de 2016 se habían entregado 5.177.000 computadoras Canaima en todo el país \cite{oria16}.
+
+El problema en mantener esta afirmación es que el proyecto inició la entrega de computadoras en 2009, el Estado no añadió un sistema de seguimiento de hardware o software, por lo que no es posible en este momento saber el número exacto de computadoras operativas, tampoco se puede saber, de este número de máquinas operativas, cuántas aún conservan el software entregado originalmente, cuántas de estas le han actualizado el sistema o le han instalado otro sistema operativo (libre o privativo), cuántas aún están en manos de sus dueños originales, etc.
+
+
+
+\begin{figure}[H]
+\caption{Sistemas de operación en las estaciones de trabajo de la APN}
+\begin{center}
+\includegraphics[width=\textwidth]{migracion2012}
+\end{center}
+{\small Fuente: \url{http://www.cnti.gob.ve/til-venezuela/estadisticas-de-migracion/estadisticas-de-migracion.html} (Recuperado 28/03/2017)}
+\label{fig:migracion2012}
+\end{figure}
 
 \chapter{Conclusiones y recomendaciones}
 \noindent\rule{\textwidth}{0.4pt}
@@ -1170,12 +1284,12 @@ Para descargar el código fuente de cada paquete dentro del repositorio principal
 
 El código para automatización de descarga de paquetes fuentes se aprecia en el Código~\ref{code1}. Básicamente el programa lee cada línea del archivo \emph{Sources}, el cual es el índice de archivos fuente que aloja el repositorio, y se encarga de identificar y extraer el nombre de cada paquete que se encuentra dentro del índice para luego proceder a la descarga en el disco duro del archivo comprimido que contiene el código fuente del nombre del paquete procesado.\\
 
-\lstinputlisting[label=code1,caption=paquetes.py,]{programas/paquetes.py}
+\lstinputlisting[label=code1,caption=paquetes.py]{programas/paquetes.py}
 
 \section{Scripts para ordenar y descomprimir paquetes fuentes}
-Los archivos fuentes se descargan en un formato empaquetado (o comprimido). A modo de mantener un orden y para efectos de contabilizar cada carpeta como un proyecto diferente, se crea un directorio para cada uno de los paquetes, esto ayuda entre otras cosas a evitar sobreescritura de archivos en un directorio de descompresión común debido a nombres de archivos y directorios iguales, y organiza cada subproyecto (paquete de código) en un espacio propio.\\
+Los archivos fuentes se descargan en un formato empaquetado (o comprimido). A modo de mantener un orden y para efectos de contabilizar cada directorio como un proyecto diferente, se crea un directorio para cada uno de los paquetes, esto ayuda entre otras cosas a evitar sobreescritura de archivos en un directorio de descompresión común debido a nombres de archivos y directorios iguales, y organiza cada subproyecto (paquete de código) en un espacio propio. El conjunto de instrucciones utilizado para ejecutar todos estos pasos se aprecia en el Código~\ref{code2}\\
 
-\lstinputlisting[label=code2,caption=mkdirmv.sh,]{programas/mkdirmv.sh}
+\lstinputlisting[label=code2,caption=mkdirmv.sh]{programas/mkdirmv.sh}
 
 \section{Cantidad de líneas de Código Fuente}
 
@@ -1268,6 +1382,16 @@ Donde:\\
 \texttt{--report-file=cloc.csv}: es el argumento que ordena al programa a almacenar los resultados en el archivo \texttt{cloc.csv}.\\
 \texttt{\_*}: ruta de los archivos o directorios que se analizarán, en este caso se analizan todos los archivos y directorios en el directorio actual que inician con guión bajo (\_)
 
+\subsection{Caso Debian}
+Para la estimación de los valores en el caso del repositorio Debian se ha debido recurrir a una variación en el método de recolección de datos. Debido a que el programa \texttt{cloc} se quedaba sin responder en un punto del proceso, se procedió a evaluar por separado cada paquete, para luego compilar la información de los 20.498\footnote{De los 20.981 paquetes analizados, 7 paquetes causaban que el programa se quedara sin respuesta y otros 476 no generaron reporte.} reportes generados por \texttt{cloc}.
+
+Para correr \texttt{cloc} en cada directorio por separado se utilizó el siguiente script que genera un archivo de reporte csv por cada paquete procesado satisfactoriamente. El código se muestra en el Código~\ref{code3}.\\
+
+\lstinputlisting[label=code3,caption=cloc\_recargado.sh]{programas/cloc_recargado.sh}
+
+Una vez con todos los reportes generados, se procede a evaluar la información, compilando los datos para generar un reporte global. Se ha creado el siguiente programa en python para el análisis de los datos. Código~\ref{code4}.\\
+
+\lstinputlisting[label=code4,caption=analisis\_cloc\_debian.py]{programas/analisis_cloc_debian.py}
 
 \subsection{Datos recolectados}
 Un ejemplo de los resultados arrojados por \texttt{cloc}\footnote{para los paquetes zygrib, zyn, zynaddsubfx y zypper} se muestran en la tabla~\ref{table:sloc1}.

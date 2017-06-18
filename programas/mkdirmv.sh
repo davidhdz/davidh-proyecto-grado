@@ -16,6 +16,10 @@
 # You should have received a copy of the GNU General Public License
 # along with mkdirmv. If not, see <http://www.gnu.org/licenses/>.
 
+# Programa que crea un directorio por cada archivo comprimido, allí descomprime 
+# este archivo y limpia el directorio raíz.
+
+
 for file in *.*; do
   directorio="$(basename "${file}")"
   mkdir "_${directorio}"
