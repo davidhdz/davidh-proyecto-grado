@@ -324,12 +324,13 @@
   {\large \lineskip .75em \@tituloautor~\@author \par} \vskip 1em
   {\normalsize \@tipomonografia\ --- \ \@opcion,\space \realpageref{last@page} p\'aginas\par}
 \end{center}\pagebreak[0]\thispagestyle{empty}
- \vfil {\bf Resumen:}\ \@resumen\par\vskip2mm \noindent{\bf Palabras clave:}\ \@descriptores
+ \vfil {\bf Resumen:}\ \@resumen\par\vskip1em \noindent{\bf Palabras clave:}\ \@descriptores
  \iftiene@cota
    \\ \noindent{\bf Cota:}\ \@cota
  \fi
  \par
- \ifsinlatex@sinlatex  
+ \ifsinlatex@sinlatex
+ \vskip 2em
  {\small Este trabajo fue procesado en \LaTeX.}
  \fi
 \vfill\newpage }

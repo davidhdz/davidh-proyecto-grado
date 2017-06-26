@@ -299,9 +299,9 @@ draft=false
 Este proyecto tiene como objetivo evaluar la productividad asociada o asociable a una distribución de software libre o distro. Para ello, se revisa el concepto de ciclo de vida del software, y se usa como una aproximación a la correspondiente noción de ciclo de vida de toda una distribución, un concepto claramente más complejo y difícil de abordar. Algunos indicadores complementarios son convocados para esta tarea y se los justifica a partir de esfuerzos previos en el área como los que se describen a continuación.
 
 \section{Antecedentes}
-La Organización Internacional para la Estandarización (ISO en inglés) publica en 2008 la última modificación hasta la fecha de la norma para los procesos de vida del software ISO/IEC 12207, publicada por primera vez en 1995. Aquí se define \emph{ciclo de vida} como la ``evolución de un sistema, producto, servicio, proyecto u otra entidad concebida por humanos, desde su concepción hasta su retiro'' (ISO/IEC 12207:2008, p.4). También se define \emph{modelo de ciclo de vida} como el ``marco de trabajo de procesos y actividades relacionadas con el ciclo de vida que pueden estar organizadas en etapas, las cuales también actúan como referencia común para su comunicación y entendimiento.'' \citep[p.~4]{iso08}.
+La Organización Internacional para la Estandarización (ISO en inglés) publica en 2008 la última modificación hasta la fecha de la norma para los procesos de vida del software ISO/IEC 12207, publicada por primera vez en 1995. Aquí se define \emph{ciclo de vida} como la ``evolución de un sistema, producto, servicio, proyecto u otra entidad concebida por humanos, desde su concepción hasta su retiro'' \citep[p.~4]{iso08}. También se define \emph{modelo de ciclo de vida} como el ``marco de trabajo de procesos y actividades relacionadas con el ciclo de vida que pueden estar organizadas en etapas, las cuales también actúan como referencia común para su comunicación y entendimiento.'' \citep[p.~4]{iso08}.
 
-El \cite{ieee97} en su norma para la creación de procesos de ciclo de vida de software define \emph{ciclo de vida del software} como ``la secuencia de actividades específicas a un proyecto, que son creadas asignando las actividades de esta norma a un modelo de ciclo de vida de software seleccionado.'' (p.~5). Un \emph{modelo de ciclo de vida del software} es definido como `` el marco de trabajo, seleccionado por cada organización, en el cuál se asignan actividades a esta norma para producir el ciclo de vida del software.'' (p.~5). Finalmente se define \emph{procesos de ciclo de vida del software} como ``la descripción de proyectos específicos de los procesos basados en el ciclo de vida del software de un proyecto, y los activos del  proceso de la organización.'' (p.~5). 
+El \cite{ieee97} en su norma para la creación de procesos de ciclo de vida de software define \emph{ciclo de vida del software} como ``la secuencia de actividades específicas a un proyecto, que son creadas asignando las actividades de esta norma a un modelo de ciclo de vida de software seleccionado.'' (p.~5). Un \emph{modelo de ciclo de vida del software} es definido como ``el marco de trabajo, seleccionado por cada organización, en el cuál se asignan actividades a esta norma para producir el ciclo de vida del software.'' (p.~5). Finalmente se define \emph{procesos de ciclo de vida del software} como ``la descripción de proyectos específicos de los procesos basados en el ciclo de vida del software de un proyecto, y los activos del  proceso de la organización.'' (p.~5). 
 
 \cite{amor05a} realizaron una investigación en la que utiliza la versión 3.1 de la distribución Debian como caso de estudio de medición de software libre. Aquí se concluye que el crecimiento del trabajo en Debian se incrementa año tras año siendo uno de los mayores sistemas de software mundial, e independientemente de la envergadura del proyecto la comunidad de mantenedores y voluntarios que rodean el sistema goza de buena salud. Sin embargo, se cuestiona la sostenibilidad del proyecto a futuro, basándose en el tamaño medio de la distribución, señalando que este comportamiento se podría deber a un crecimiento de números de paquetes más rápido que el de mantenedores.
 
@@ -338,7 +338,6 @@ Evaluar la productividad de una distro es, como se ha sugerido, un desafío compl
 \begin{enumerate}
 %\item Comparar el ciclo de vida de la distribución Canaima con respecto a Ubuntu.
 %\item Comparar el ciclo de vida de la distribución Canaima con respecto a Debian.
-%\item Comparar el ciclo de vida de la distribución Canaima con respecto a Android.
 %\item Analizar el uso de la distribución en Venezuela.
 %\item Identificar y analizar las probables causas por las cuales la colaboración de la comunidad no es efectiva.
 \item Caracterizar los ciclos de vida del software libre, identificando indicadores cuantivativos y cualitativos de cada etapa.
@@ -418,8 +417,6 @@ Asimismo, la \cite{iso08} agrupa las actividades que pueden ser ejecutadas duran
 
 Los siete procesos descritos en el estándar son: procesos de acuerdo; procesos de habilitación de proyectos organizacionales; procesos de proyecto; procesos técnicos; procesos de implementación de software; procesos de soporte de software y procesos de reutilización de software. La figura~\ref{fig:grupo-procesos-cvs} muestra la categorización de los grupos y subgrupos de los procesos del ciclo de vida según el estándar de la ISO.
 
-
-
 El modelo descrito por la ISO no está vinculado con alguna metodología o modelo de ciclo de vida de software en particular, por ejemplo, modelos de desarrollo tipo cascada, incremental, prototipo, espiral, etc., sino que pretende ser una referencia general que las organizaciones adaptarían a sus necesidades. 
 
 \begin{figure}[H]
@@ -435,6 +432,8 @@ Fuente: \cite{iso08}
 El modelo de referencia de procesos no representa un enfoque de implementación de procesos particular ni prescribe un modelo, metodología o técnica de ciclo de vida del sistema/software. En cambio, el modelo de referencia está destinado a ser adoptado por una organización basada en sus necesidades de negocio y dominio de aplicación. El proceso definido de la organización es adoptado por los proyectos de la organización en el contexto de los requisitos del cliente.\\
 \noindent \citep[p.~14]{iso08}
 \end{quotation}
+
+
 
 \section{Cantidad de líneas de Código Fuente}
 La medición de líneas de código fuente físicas (\textit{Source Lines of Code} o SLOC en inglés) permite realizar una serie de cálculos para estimar el tiempo de desarrollo y esfuerzo de un proyecto aplicando el Modelo Constructivo de Costos (COCOMO) \cite{boehm81} en su variante más actualizada COCOMO II \cite{boehm00}. 
@@ -463,7 +462,7 @@ Debian categoriza los paquetes incluidos en su sistema dentro de tres repositori
 \end{description}
 
 \subsection{Arquitecturas}
-Actualmente Debian soporta las arquitecturas mostradas en la tabla~\ref{table:archdebian}.
+Hasta la versión 8.0 (Jessie) Debian soporta las arquitecturas mostradas en la tabla~\ref{table:archdebian}.
 
 \begin{savenotes}
 \begin{table}[H]
@@ -682,7 +681,7 @@ Costo total estimado del proyecto (US\$):       & 413.366.347,61 \\
 
 \section{Ubuntu}
 \subsection{Definición}
-Ubuntu es una distribución GNU/Linux basada en Debian, concebida por Mark Shuttleworth en 2004. Según el equipo que trabaja en el Manual de Ubuntu, \cite{ubuntu16}, se estima que Ubuntu está instalado en el 2\% de las computadoras a nivel mundial, esto equivale a diez millones de usuarios en todo el mundo.
+Ubuntu es una distribución GNU/Linux basada en Debian, concebida por Mark Shuttleworth en 2004. Según el equipo que trabaja en el Manual de Ubuntu, \cite{ubuntu16}, se estima que Ubuntu está instalado en el 2\% de las computadoras a nivel mundial, esto equivale a diez millones de usuarios en todo el mundo. Sin embargo, la página ``Ubuntu Insights''\footnote{\url{https://insights.ubuntu.com/about}} de Ubuntu afirma, para mayo de 2017, que existen mas de 40 millones de usuarios de escritorio.
 
 \subsection{Componentes}
 Ubuntu categoriza los paquetes incluidos en su sistema dentro de cuatro repositorios, de acuerdo a si son libres o no, según la Filosofía de Software Libre de Ubuntu\footnote{\url{https://www.ubuntu.com/about/about-ubuntu/our-philosophy}}, estos repositorios son:
@@ -1256,7 +1255,7 @@ Fuente: http://canaima.softwarelibre.gob.ve/canaima/soporte
 
 Para sacar estimaciones de número de máquinas que cuentan con la distribución Canaima GNU/Linux, se suele tomar como referencia el número de computadoras entregadas bajo el programa Canaima Educativo, éste consiste en dotar de una computadora portátil con contenido educativo a niños y maestros de educación primaria de escuelas públicas. Para diciembre de 2016 se habían entregado 5.177.000 computadoras Canaima en todo el país \cite{oria16}.
 
-El problema en mantener esta afirmación es que el proyecto inició la entrega de computadoras en 2009, el Estado no añadió un sistema de seguimiento de hardware o software, por lo que no es posible en este momento saber el número exacto de computadoras operativas, tampoco se puede saber, de este número de máquinas operativas, cuántas aún conservan el software entregado originalmente, cuántas de estas le han actualizado el sistema o le han instalado otro sistema operativo (libre o privativo), cuántas aún están en manos de sus dueños originales, etc.
+El problema en mantener esta afirmación es que el proyecto inició la entrega de computadoras en 2009, el Estado no añadió un sistema de seguimiento de hardware o software, por lo que no es posible en este momento saber algunos datos de interés estadístico para el Estado como el número exacto de computadoras operativas, tampoco se puede saber, de este número de máquinas operativas, cuántas aún conservan el software entregado originalmente, cuántas de estas le han actualizado el sistema o le han instalado otro sistema operativo (libre o privativo), cuántas aún están en manos de sus dueños originales, etc.
 
 
 
@@ -1271,8 +1270,51 @@ El problema en mantener esta afirmación es que el proyecto inició la entrega de 
 
 \chapter{Conclusiones y recomendaciones}
 \noindent\rule{\textwidth}{0.4pt}
+
+Calcular la cantidad de usuarios a nivel mundial de un sistema operativo como Linux no es tarea fácil, y conocer cuál es la distribución Linux que usan es aún mas cuesta arriba, solamente podemos llegar a algunas estimaciones a través de ciertas técnicas. 
+
+Existen empresas que se dedican a obtener estadísticas detalladas de los visitantes de las páginas web de sus clientes, para ello les proveen de un pequeño script que debe ser insertado en la página web y este se encarga de obtener la información de los visitantes; cada vez que la página web es visitada el script recoge información de la computadora visitante, entre los datos recolectados se pueden mencionar: la dirección IP del visitante, país, cantidad de visitas previas a la página, el nombre del navegador, versión del navegador, tipo de dispositivo que visita la página (tableta, teléfono móvil, computadora de escritorio), resolución de pantalla y sistema operativo instalado en el dispositivo. 
+
+Algunas de estas compañías hacen público parte de estos datos y de allí la información en la tabla~\ref{table:cuota_linux} que muestra el porcentaje de máquinas con Linux que han visitado alguna página monitorizada por estos sistemas.
+
+\begin{savenotes}
+\begin{table}[H]
+\begin{center}
+\caption{Cuota de mercado para mayo de 2017 de sistemas operativos basados en Linux instalados en computadoras de escritorio con acceso a internet.}
+\label{table:cuota_linux}
+%\begin{threeparttable}
+\begin{tabular}{lc}
+\toprule
+\textbf{Fuente de datos} & \textbf{Cuota de mercado (\%)}\\
+\midrule
+W3Counter          &      2,64 \\
+Net Market Share   &      1,99 \\
+StatCounter        &      1,66 \\
+statista           &      1,53 \\
+\bottomrule
+\end{tabular}
+%\begin{tablenotes}
+%\small
+%\item 
+%\end{tablenotes}
+%\end{threeparttable}
+\end{center}
+\end{table}
+\end{savenotes}
+
+% http://www.w3counter.com/globalstats.php?year=2017&month=5
+% https://www.netmarketshare.com/report.aspx?qprid=9&qpaf=&qpcustom=Linux&qpcustomb=0&qpcd=1
+% http://gs.statcounter.com/os-market-share/desktop/worldwide#monthly-200901-201705
+% https://www.statista.com/statistics/218089/global-market-share-of-windows-7/
+
+Ahora, se puede hacer una estimación mínima de usuarios Linux, para ello se toma la cantidad  3.739.698.500\footnote{Dato recuperado de \url{http://www.internetworldstats.com/stats.htm} en mayo de 2017} como el número base de usuarios de internet para marzo de 2017, y usando los valores máximos y mínimos de la tabla~\ref{table:cuota_linux} se obtiene que existen aproximadamente, al menos, entre 57.217.387 y 98.728.040 usuarios con acceso a internet que usan alguna distribución Linux para escritorio.
+
+
+[Continúa]
+
 Antes que todo, debe tenerse en cuenta que Canaima GNU/Linux es una distribución cuyo soporte financiero, técnico y humano proviene de un Estado, Debian, en cambio, es una distribución cuyo soporte proviene principalmente de la comunidad de desarrolladores y usuarios, finalmente, Ubuntu es una distribución patrocinada principalmente por una empresa, Canonical. Dicho esto, el interés que mueve a cada proyecto puede variar, puede ir desde lo estratégico a lo meramente económico.
 
+[Continúa]
 
 \renewcommand\appendixpage{\clearpage\thispagestyle{empty}\mbox{}\vspace{1.5cm}\begin{flushleft}\Huge\bfseries\addappheadtotoc Apéndices \end{flushleft}}
 
