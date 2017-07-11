@@ -89,6 +89,7 @@
 \def\quintojurado#1{\gdef\@quintojurado{#1}\fifth@readertrue}
 \def\resumen#1{\gdef\@resumen{#1}}
 \def\dedicatoria#1{\gdef\@dedicatoria{#1}\dedic@tiontrue}
+\def\agradecimiento#1{\gdef\@agradecimiento{#1}\agr@detrue}
 \def\descriptores#1{\gdef\@descriptores{#1}}
 \def\fechaentrega#1{\gdef\@fechaentrega{#1}} % cambiar por fechaentrega
 \def\presentaciondia#1{\gdef\@presentaciondia{#1}\presen@tatrue}
@@ -108,7 +109,7 @@
 \def\@sinlatex{}
 \def\@presentacionlugar{-- por definir --}
 \def\@numproy{}
-\def\@tituloautor{TMI}
+\def\@tituloautor{}
 \def\@resumen{}
 \def\@descriptores{}
 \def\@cota{}
@@ -170,6 +171,8 @@
 \newif\ifms@c   \ms@cfalse
 \newif\ifsinlatex@sinlatex   \sinlatex@sinlatextrue
 
+\newif\ifagr@de     \agr@detrue
+
 \def\no@breaks#1{{\def\\{ \ignorespaces}#1}}    % disallow explicit line breaks
 
 \expandafter\ifx\csname realpageref\endcsname\relax%
@@ -212,7 +215,7 @@
     \end{center}
     \vskip0.3in
     \begin{center}
-    Por
+    Elaborado por
     \end{center}
     \vskip0.3in
     \begin{center}
@@ -354,15 +357,30 @@
         \@dedicatoria
         \vfill\end{flushright}
     \fi
+        \ifagr@de
+        \cleardoublepage\pagestyle{empty}
+%        \begin{flushright}%
+%        \Large\em\null\vfill%\vskip1in
+%        \@agradecimiento
+%        \vfill\end{flushright}
+\vspace*{6em}
+\noindent{\Huge \textbf{Agradecimiento}}
+
+\vspace*{2em}
+\@agradecimiento
+
+    \fi
     \fi
     \iffront@pages\tableofcontents\else\addtocounter{page}{1}\fi
     \newpage
     \iftablespage
-        \addcontentsline{toc}{chapter}{/'Indice de Tablas}\listoftables
+%        \addcontentsline{toc}{chapter}{\'Indice de Tablas}
+        \listoftables
         \newpage
     \fi
     \iffigurespage
-        \addcontentsline{toc}{chapter}{/'Indice de Figuras}\listoffigures
+%        \addcontentsline{toc}{chapter}{\'Indice de Figuras}
+        \listoffigures
         \newpage
     \fi
 }

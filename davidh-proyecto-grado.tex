@@ -105,8 +105,8 @@ draft=false
 % ***************************************************************** %
 
 % Si desea que no aparezca la lista de tablas o figuras descomente las siguientes lineas
-\nolistoftables
-\nolistoffigures
+%\nolistoftables
+%\nolistoffigures
 \sloppy
 
 \begin{document}
@@ -242,7 +242,9 @@ draft=false
 % Si tiene dedicatoria
 % con o sin comentar
 % ***************************************************************** %
-%\dedicatoria{A mi madre.}
+\dedicatoria{A mi madre.}
+
+\agradecimiento{A quienes corresponda (por definir).}
 % ***************************************************************** %
 % FIN DE
 % Si tiene dedicatoria
@@ -255,12 +257,17 @@ draft=false
 % ***************************************************************** %
 
 %\prefacesection{Agradecimientos}
-% Aún no hay agradecimientos
+%A quien corresponda.
 
 %%% Capitulo sin numero, antes de la pagina 1
 
 %\prefacesection{Introducción}
 % Este es un ejemplo de una sección no numerada.
+\newpage
+\vspace*{200px}
+\begin{flushright}
+Pensamiento
+\end{flushright}
 
 
 % ***************************************************************** %
@@ -299,9 +306,9 @@ draft=false
 Este proyecto tiene como objetivo evaluar la productividad asociada o asociable a una distribución de software libre o distro. Para ello, se revisa el concepto de ciclo de vida del software, y se usa como una aproximación a la correspondiente noción de ciclo de vida de toda una distribución, un concepto claramente más complejo y difícil de abordar. Algunos indicadores complementarios son convocados para esta tarea y se los justifica a partir de esfuerzos previos en el área como los que se describen a continuación.
 
 \section{Antecedentes}
-La Organización Internacional para la Estandarización (ISO en inglés) publica en 2008 la última modificación hasta la fecha de la norma para los procesos de vida del software ISO/IEC 12207, publicada por primera vez en 1995. Aquí se define \emph{ciclo de vida} como la ``evolución de un sistema, producto, servicio, proyecto u otra entidad concebida por humanos, desde su concepción hasta su retiro'' \citep[p.~4]{iso08}. También se define \emph{modelo de ciclo de vida} como el ``marco de trabajo de procesos y actividades relacionadas con el ciclo de vida que pueden estar organizadas en etapas, las cuales también actúan como referencia común para su comunicación y entendimiento.'' \citep[p.~4]{iso08}.
+La Organización Internacional para la Normalización (ISO en inglés) publica en 2008 la última modificación hasta la fecha de la norma para los procesos de vida del software ISO/IEC 12207, publicada por primera vez en 1995. Aquí se define \emph{ciclo de vida} como la ``evolución de un sistema, producto, servicio, proyecto u otra entidad concebida por humanos, desde su concepción hasta su retiro'' \citep[p.4]{iso08}. También se define \emph{modelo de ciclo de vida} como el ``marco de trabajo de procesos y actividades relacionadas con el ciclo de vida que pueden estar organizadas en etapas, las cuales también actúan como referencia común para su comunicación y entendimiento'' \citep[p.4]{iso08}.
 
-El \cite{ieee97} en su norma para la creación de procesos de ciclo de vida de software define \emph{ciclo de vida del software} como ``la secuencia de actividades específicas a un proyecto, que son creadas asignando las actividades de esta norma a un modelo de ciclo de vida de software seleccionado.'' (p.~5). Un \emph{modelo de ciclo de vida del software} es definido como ``el marco de trabajo, seleccionado por cada organización, en el cuál se asignan actividades a esta norma para producir el ciclo de vida del software.'' (p.~5). Finalmente se define \emph{procesos de ciclo de vida del software} como ``la descripción de proyectos específicos de los procesos basados en el ciclo de vida del software de un proyecto, y los activos del  proceso de la organización.'' (p.~5). 
+El \cite{ieee97} en su norma para la creación de procesos de ciclo de vida de software define \emph{ciclo de vida del software} como ``la secuencia de actividades específicas a un proyecto, que son creadas asignando las actividades de esta norma a un modelo de ciclo de vida de software seleccionado'' (p.5). Un \emph{modelo de ciclo de vida del software} es definido como ``el marco de trabajo, seleccionado por cada organización, en el cuál se asignan actividades a esta norma para producir el ciclo de vida del software'' \cite[p.5]{ieee97}. Finalmente se define \emph{procesos de ciclo de vida del software} como ``la descripción de proyectos específicos de los procesos basados en el ciclo de vida del software de un proyecto, y los activos del  proceso de la organización'' \cite[p.5]{ieee97}. 
 
 \cite{amor05a} realizaron una investigación en la que utiliza la versión 3.1 de la distribución Debian como caso de estudio de medición de software libre. Aquí se concluye que el crecimiento del trabajo en Debian se incrementa año tras año siendo uno de los mayores sistemas de software mundial, e independientemente de la envergadura del proyecto la comunidad de mantenedores y voluntarios que rodean el sistema goza de buena salud. Sin embargo, se cuestiona la sostenibilidad del proyecto a futuro, basándose en el tamaño medio de la distribución, señalando que este comportamiento se podría deber a un crecimiento de números de paquetes más rápido que el de mantenedores.
 
@@ -341,11 +348,23 @@ Evaluar la productividad de una distro es, como se ha sugerido, un desafío compl
 %\item Analizar el uso de la distribución en Venezuela.
 %\item Identificar y analizar las probables causas por las cuales la colaboración de la comunidad no es efectiva.
 \item Caracterizar los ciclos de vida del software libre, identificando indicadores cuantivativos y cualitativos de cada etapa.
-\item Recolectar datos relevantes a esos indicadores para un conjunto de distros referenciales.
+\item Recolectar datos relevantes a esos indicadores para un conjunto de distribuciones Linux  referenciales.
 \item Comparar la distro Canaima GNU/Linux con esas distribuciones referenciales.
 \item Analizar el estado actual del proyecto Canaima y explicar las razones para sus niveles actuales de productividad.
 \item Conclusiones y recomendaciones.
 \end{enumerate}
+
+Para alcanzar los objetivos descritos, se han realizado una serie de actividades que incluyen la  recolección de datos para cada distro objeto de referencia, la estimación de esfuerzo y costos empleados en el desarrollo de cada proyecto, y la caracterización del modelo de desarrollo del proyecto Canaima.\\
+
+El documento está organizado en 5 capítulos:
+
+\begin{itemize}
+\item Capítulo 1: correspondiente a la introducción, antecedentes, planteamiento del problema y objetivos.
+\item Capítulo 2: se definen los conceptos teóricos en torno al ciclo de vida del software libre y la estimación de esfuerzo y costos así como la descripción de las técnicas utilizadas para determinar estas estimaciones.
+\item Capítulo 3: en este capítulo se muestran los datos referenciales comunes que sirven como puntos de comparación entre las distribuciones evaluadas.
+\item Capítulo 4: se realiza un recuento histórico de la distribución Canaima GNU/Linux y se hace la caracterización del modelo de desarrollo que permite describir su ciclo de vida.
+\item Capítulo 5: se plasman las conclusiones, observaciones y recomendaciones de la investigación.
+\end{itemize}
 
 
 %\section{Método de Desarrollo}
@@ -406,14 +425,14 @@ Evaluar la productividad de una distro es, como se ha sugerido, un desafío compl
 \chapter{Sobre el ciclo de vida del software libre y métodos para analizarlo}
 \noindent\rule{\textwidth}{0.4pt}
 \section{Ciclo de Vida}
-``Un ciclo de vida para un proyecto se compone de fases sucesivas compuestas por tareas que se pueden planificar.'' \citep[p.~24]{inteco09}.
+``Un ciclo de vida para un proyecto se compone de fases sucesivas compuestas por tareas que se pueden planificar'' \citep[p.24]{inteco09}.
 
 La \cite{iso08} plantea lo siguiente,
-\begin{quotation}
+\begin{quote}
 La vida de un sistema o de un producto de software puede ser modelado a través de un modelo de ciclo de vida basado en fases. Los modelos pueden ser usados para representar toda su vida, desde la concepción hasta su retiro, o la representación de una porción de vida correspondiente al proyecto actual. El modelo de ciclo de vida está comprendido por una secuencia de fases que se pueden solapar y/o iterar, según sea apropiado para el alcance, magnitud, complejidad, necesidades y oportunidades cambiantes del proyecto. Cada etapa es descrita como una declaración de propósitos y resultados. Los procesos y actividades del ciclo de vida son seleccionados y empleados en una etapa para cumplir el propósito y los resultados de esa fase. (p.12)%\footnote{Traducción propia.}
-\end{quotation}
+\end{quote}
 
-Asimismo, la \cite{iso08} agrupa las actividades que pueden ser ejecutadas durante el ciclo de vida de un sistema de software en siete grupos de procesos. Cada uno de los procesos del ciclo de vida dentro de esos grupos es descrito en términos de su propósito y resultados deseados y lista las actividades y tareas que deben realizarse para alcanzar esos resultados. (p.13). 
+Asimismo, la Organización Internacional de Normalización agrupa las actividades que pueden ser ejecutadas durante el ciclo de vida de un sistema de software en siete grupos de procesos. Cada uno de los procesos del ciclo de vida dentro de esos grupos es descrito en términos de su propósito y resultados deseados y lista las actividades y tareas que deben realizarse para alcanzar esos resultados \citep{iso08}.
 
 Los siete procesos descritos en el estándar son: procesos de acuerdo; procesos de habilitación de proyectos organizacionales; procesos de proyecto; procesos técnicos; procesos de implementación de software; procesos de soporte de software y procesos de reutilización de software. La figura~\ref{fig:grupo-procesos-cvs} muestra la categorización de los grupos y subgrupos de los procesos del ciclo de vida según el estándar de la ISO.
 
@@ -428,17 +447,40 @@ Fuente: \cite{iso08}
 \label{fig:grupo-procesos-cvs}
 \end{figure}
 
-\begin{quotation}
+\begin{quote}
 El modelo de referencia de procesos no representa un enfoque de implementación de procesos particular ni prescribe un modelo, metodología o técnica de ciclo de vida del sistema/software. En cambio, el modelo de referencia está destinado a ser adoptado por una organización basada en sus necesidades de negocio y dominio de aplicación. El proceso definido de la organización es adoptado por los proyectos de la organización en el contexto de los requisitos del cliente.\\
-\noindent \citep[p.~14]{iso08}
-\end{quotation}
+\noindent \citep[p.14]{iso08}
+\end{quote}
+
+\subsection{Procesos del software}
+Según \cite{somerville05}, ``un proceso del software es un conjunto de actividades y resultados asociados que producen un producto de software'' (p.8). Además, continúa \cite{somerville05}, un modelo de proceso del software lo define así:
+\begin{quote}
+Un modelo de procesos del software es una descripción simplificada de un proceso del software que presenta una visión de ese proceso. Estos modelos pueden incluir actividades que son parte de los procesos y productos de software y el papel de las personas involucradas en la ingeniería del software.  (p.8)
+\end{quote}
+
+%\begin{quote}
+%Toda organización que lleve a cabo un proceso de software, debe trabajar con un modelo que se adapte a su marco de trabajo y ajustarlo a sus actividades específicas, a las personas que realizarán el proceso y al ambiente en el que se ejecutará el trabajo.\\
+%\citep[p.11]{mardones08}. 
+%\end{quote}
+
+% Para Canaima se hará un ejercicio de ubicación del ciclo de vida describiendo su modelo de flujo de trabajo y un modelo de rolación.
+
+\section{Estimación de costos}
+
+%Según \cite{somerville05} los sistema socio-técnico no solo incluyen componentes de hardware y software sino que también incluyen personas, políticas y reglas organizacionales. Canaima es descrito como un proyecto socio-tecnológico-productivo abierto\footnote{?`Qué es Canaima? \url{http://canaima.softwarelibre.gob.ve/canaima/que-es-canaima} Recuperado en marzo de 2017.}.
+
+\subsection{Líneas de código fuente y el modelo COCOMO}
+La medición de líneas de código fuente físicas (\textit{Source Lines of Code} o SLOC en inglés) permite realizar una serie de cálculos para estimar el tiempo de desarrollo y esfuerzo de un proyecto aplicando el Modelo Constructivo de Costos (COCOMO) \citep{boehm81} en su variante más actualizada COCOMO II \citep{boehm00}. 
+
+\begin{quote}
+El modelo COCOMO es un modelo empírico que se obtuvo recopilando datos de varios proyectos grandes. Estos datos fueron analizados para descubrir las fórmulas que mejor se ajustaban a las observaciones. Estas fórmulas vinculan el tamaño del sistema y del producto, factores del proyecto y del equipo con el esfuerzo necesario para desarrollar el sistema.\\
+\citep[p.572]{somerville05}
+\end{quote}
+
+%\subsection{Cantidad de líneas de código fuente}
 
 
-
-\section{Cantidad de líneas de Código Fuente}
-La medición de líneas de código fuente físicas (\textit{Source Lines of Code} o SLOC en inglés) permite realizar una serie de cálculos para estimar el tiempo de desarrollo y esfuerzo de un proyecto aplicando el Modelo Constructivo de Costos (COCOMO) \cite{boehm81} en su variante más actualizada COCOMO II \cite{boehm00}. 
-
-El uso de esta técnica ``es una de las más simples y de las más ampliamente usadas para la comparación de piezas de software.'' \citep[p.~6]{gonzalez-barahona03}. Ya en el pasado se ha utilizado este método por medio de la utilización de paquetes de software que facilitan el cálculo de las líneas de código como muestran los trabajos de Wheeler, González, Amor y otros autores (\cite{wheeler01,gonzalez01,gonzalez-barahona03,amor04,amor05a,amor05b,amor07,amor09,herraiz06}).
+El uso de esta técnica ``es una de las más simples y de las más ampliamente usadas para la comparación de piezas de software.'' \citep[p.6]{gonzalez-barahona03}. Ya en el pasado se ha utilizado este método por medio de la utilización de paquetes de software que facilitan el cálculo de las líneas de código como muestran los trabajos de Wheeler, González, Amor y otros autores \citep{wheeler01,gonzalez01,gonzalez-barahona03,amor04,amor05a,amor05b,amor07,amor09,herraiz06}.
 
 
 Para poder obtener el número de líneas de código fuente se ha optado por trabajar con \texttt{cloc}\footnote{\url{https://github.com/AlDanial/cloc}}. \texttt{Cloc} es un programa con licencia libre, multiplataforma, hecho en Perl, que cuenta las líneas en blanco, líneas con comentarios y las líneas físicas de código fuente reconociendo más de 200 lenguajes de programación.
@@ -449,7 +491,7 @@ Para poder obtener el número de líneas de código fuente se ha optado por trabaja
 
 \section{Debian}
 \subsection{Definición}
-\cite{debian15} establecen que el proyecto Debian fue creado por Ian Murdock en agosto de 1993. (p.9). En la página web del proyecto\footnote{\url{https://www.debian.org/intro/about}} definen a Debian como un sistema operativo libre, dispone de versiones para el núcleo Linux o el núcleo FreeBSD. Además, Debian se presenta con mas de 43000 paquetes de software.
+\cite{debian15} establecen que el proyecto Debian fue creado por Ian Murdock en agosto de 1993. En la página web del proyecto\footnote{\url{https://www.debian.org/intro/about}} definen a Debian como un sistema operativo libre, dispone de versiones para el núcleo Linux o el núcleo FreeBSD. Además, Debian se presenta con mas de 43000 paquetes de software.
 
 \subsection{Componentes}
 
@@ -591,7 +633,7 @@ La Tabla \ref{table:lanzamientosdebian} muestra la fecha de lanzamiento de las d
 \end{table}
 \end{savenotes}
 
-\subsection{Estadísticas}
+\subsection{Estimación de costos}
 \subsubsection{Componente \textit{main}}
 \begin{itemize}
 \item Fecha del archivo Source: 06/05/2017
@@ -681,7 +723,7 @@ Costo total estimado del proyecto (US\$):       & 413.366.347,61 \\
 
 \section{Ubuntu}
 \subsection{Definición}
-Ubuntu es una distribución GNU/Linux basada en Debian, concebida por Mark Shuttleworth en 2004. Según el equipo que trabaja en el Manual de Ubuntu, \cite{ubuntu16}, se estima que Ubuntu está instalado en el 2\% de las computadoras a nivel mundial, esto equivale a diez millones de usuarios en todo el mundo. Sin embargo, la página ``Ubuntu Insights''\footnote{\url{https://insights.ubuntu.com/about}} de Ubuntu afirma, para mayo de 2017, que existen mas de 40 millones de usuarios de escritorio.
+Ubuntu es una distribución GNU/Linux basada en Debian, concebida por Mark Shuttleworth en 2004. Según el equipo que trabaja en el Manual de Ubuntu, se estima que Ubuntu está instalado en el 2\% de las computadoras a nivel mundial, esto equivale a diez millones de usuarios en todo el mundo \citep{ubuntu16}. Sin embargo, la página ``Ubuntu Insights''\footnote{\url{https://insights.ubuntu.com/about}} de Ubuntu afirma, para mayo de 2017, que existen mas de 40 millones de usuarios de escritorio.
 
 \subsection{Componentes}
 Ubuntu categoriza los paquetes incluidos en su sistema dentro de cuatro repositorios, de acuerdo a si son libres o no, según la Filosofía de Software Libre de Ubuntu\footnote{\url{https://www.ubuntu.com/about/about-ubuntu/our-philosophy}}, estos repositorios son:
@@ -844,7 +886,7 @@ La Tabla \ref{table:lanzamientosubuntu} muestra la fecha de lanzamiento de las d
 \end{table}
 \end{savenotes}
 
-\subsection{Estadísticas}
+\subsection{Estimación de costos}
 \subsubsection{Componente \textit{main}}
 \begin{itemize}
 \item Fecha del archivo Source: 02/04/2017
@@ -935,16 +977,16 @@ Costo total estimado del proyecto (US\$):       & 161.783.066,47 \\
 
 \section{Canaima GNU/Linux}
 \subsection{Definición}
-Canaima GNU/Linux es una metadistribución Linux basada en Debian, forma parte del Proyecto Canaima, originado a raíz de la promulgación del  decreto 3.390 el cual dispone sobre el uso prioritario de Software Libre en los entes pertenecientes a la Administración Pública Nacional (APN). En el artículo número 7 se designa al entonces Ministerio de Ciencia y Tecnología la responsabilidad de ``proveer la Distribución Software Libre desarrollado con Estándares Abiertos para el Estado Venezolano'' \citep[p.~9]{venezuela04}. 
+Canaima GNU/Linux es una metadistribución Linux basada en Debian, forma parte del Proyecto Canaima, originado a raíz de la promulgación del  decreto 3.390 el cual dispone sobre el uso prioritario de Software Libre en los entes pertenecientes a la Administración Pública Nacional (APN). En el artículo número 7 se designa al entonces Ministerio de Ciencia y Tecnología la responsabilidad de ``proveer la Distribución Software Libre desarrollado con Estándares Abiertos para el Estado Venezolano'' \citep[p.9]{venezuela04}. 
 
-Canaima se crea ``con el propósito de lograr inter-operabilidad, homogeneidad y sustentabilidad de la plataforma informática que utilizan los servidores públicos en sus procesos de producción intelectual y gestión.'' \citep[p.~7]{canaima09}. Además, ``su objetivo estratégico es apalancar el proceso de migración a Software Libre en las instituciones de la Administración Pública Nacional, para avanzar hacia la independencia tecnológica, con pleno ejercicio de la soberanía nacional.''\citep[p.~7]{canaima09}.
+Canaima se crea ``con el propósito de lograr inter-operabilidad, homogeneidad y sustentabilidad de la plataforma informática que utilizan los servidores públicos en sus procesos de producción intelectual y gestión'' \citep[p.7]{canaima09}. Además, ``su objetivo estratégico es apalancar el proceso de migración a Software Libre en las instituciones de la Administración Pública Nacional, para avanzar hacia la independencia tecnológica, con pleno ejercicio de la soberanía nacional'' \citep[p.7]{canaima09}.
 
 Así pues, 3 años luego del Decreto 3390 nace la primera versión de la Distribución GNU/Linux del Estado Venezolano desarrollada en primera instancia para el Ministerio de Ciencia y Tecnología \cite{discusion12}, y que poco después adoptaría el nombre de Canaima.
 
 Sobre la distribución y el proyecto Canaima \cite{figueira13} nos dice:
-\begin{quotation}
+\begin{quote}
 Para su generación y mantenimiento, se creó el Proyecto Canaima, que ha evolucionado desde un producto de una institución particular, hasta un complejo y rico proyecto socio-tecnológico con diversas ramificaciones, donde participan decenas de personas distribuidas en toda la geografía nacional, a título individual o provenientes de instituciones, colectivos sociales y organizaciones diversas. (p.198)
-\end{quotation}
+\end{quote}
 
 El desarrollo de Canaima inicia con un estilo del tipo catedral, que poco a poco ha devenido en un estilo del tipo bazar, aunque todavía no lo alcance de manera cabal pues la posibilidad para la colaboración presenta aún algunas limitaciones. 
 
@@ -1105,7 +1147,7 @@ La Tabla \ref{table:lanzamientoscanaima} muestra la fecha de lanzamiento de las 
 \end{table}
 \end{savenotes}
 
-\subsection{Estadísticas}
+\subsection{Estimación de costos}
 \subsubsection{Componente \textit{main}}
 \begin{itemize}
 \item Fecha del archivo Source: 01/06/2016
@@ -1253,7 +1295,7 @@ Fuente: http://canaima.softwarelibre.gob.ve/canaima/soporte
 
 2012 fue el último año donde se hicieron públicos los datos sobre el proceso de migración de software libre en la APN\footnote{\url{http://www.cnti.gob.ve/til-venezuela/estadisticas-de-migracion/estadisticas-de-migracion.html}}, los datos de ese año se alcanzaron a través de un censo realizado entre noviembre de 2012 y febrero de 2013, 126 instituciones de las 580 que conformaban para ese entonces la APN suministraron la información requerida, de allí se obtiene que el 51,14\%, el equivalente a 70.871 de las máquinas evaluadas, tenían instalado Canaima GNU/Linux, le seguía en cantidad el sistema operativo privativo Microsoft  Windows con 44,72\% equivalente a 61.966 máquinas (ver figura \ref{fig:migracion2012}). Se debe acotar que el estudio no hace mención sobre estaciones de trabajo con múltiples sistemas instalados, por lo que cabe la posibilidad que varias de las máquinas con Linux instalado también dispusieran Windows y aquí cabría la pregunta, de haber maquinas con múltiples sistemas ?`cuál de los sistemas instalados era el sistema operativo de uso regular?
 
-Para sacar estimaciones de número de máquinas que cuentan con la distribución Canaima GNU/Linux, se suele tomar como referencia el número de computadoras entregadas bajo el programa Canaima Educativo, éste consiste en dotar de una computadora portátil con contenido educativo a niños y maestros de educación primaria de escuelas públicas. Para diciembre de 2016 se habían entregado 5.177.000 computadoras Canaima en todo el país \cite{oria16}.
+Para sacar estimaciones de número de máquinas que cuentan con la distribución Canaima GNU/Linux, se suele tomar como referencia el número de computadoras entregadas bajo el programa Canaima Educativo, éste consiste en dotar de una computadora portátil con contenido educativo a niños y maestros de educación primaria de escuelas públicas. Para diciembre de 2016 se habían entregado 5.177.000 computadoras Canaima en todo el país \citep{oria16}.
 
 El problema en mantener esta afirmación es que el proyecto inició la entrega de computadoras en 2009, el Estado no añadió un sistema de seguimiento de hardware o software, por lo que no es posible en este momento saber algunos datos de interés estadístico para el Estado como el número exacto de computadoras operativas, tampoco se puede saber, de este número de máquinas operativas, cuántas aún conservan el software entregado originalmente, cuántas de estas le han actualizado el sistema o le han instalado otro sistema operativo (libre o privativo), cuántas aún están en manos de sus dueños originales, etc.
 
