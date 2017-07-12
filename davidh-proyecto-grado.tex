@@ -306,9 +306,9 @@ Pensamiento
 Este proyecto tiene como objetivo evaluar la productividad asociada o asociable a una distribución de software libre o distro. Para ello, se revisa el concepto de ciclo de vida del software, y se usa como una aproximación a la correspondiente noción de ciclo de vida de toda una distribución, un concepto claramente más complejo y difícil de abordar. Algunos indicadores complementarios son convocados para esta tarea y se los justifica a partir de esfuerzos previos en el área como los que se describen a continuación.
 
 \section{Antecedentes}
-La Organización Internacional para la Normalización (ISO en inglés) publica en 2008 la última modificación hasta la fecha de la norma para los procesos de vida del software ISO/IEC 12207, publicada por primera vez en 1995. Aquí se define \emph{ciclo de vida} como la ``evolución de un sistema, producto, servicio, proyecto u otra entidad concebida por humanos, desde su concepción hasta su retiro'' \citep[p.4]{iso08}. También se define \emph{modelo de ciclo de vida} como el ``marco de trabajo de procesos y actividades relacionadas con el ciclo de vida que pueden estar organizadas en etapas, las cuales también actúan como referencia común para su comunicación y entendimiento'' \citep[p.4]{iso08}.
+La Organización Internacional para la Normalización (ISO en inglés) presenta en 2008 la última modificación hasta la fecha de la norma para los procesos de vida del software ISO/IEC 12207, publicada por primera vez en 1995. Aquí se define \emph{ciclo de vida} como la evolución de un sistema, producto, servicio, proyecto u otra entidad concebida por humanos, desde su concepción hasta su retiro \citep{iso08}. También se explica el \emph{modelo de ciclo de vida} como el marco de trabajo de procesos y actividades relacionadas con el ciclo de vida que pueden estar organizadas en etapas, las cuales también actúan como referencia común para su comunicación y entendimiento \citep{iso08}.
 
-El \cite{ieee97} en su norma para la creación de procesos de ciclo de vida de software define \emph{ciclo de vida del software} como ``la secuencia de actividades específicas a un proyecto, que son creadas asignando las actividades de esta norma a un modelo de ciclo de vida de software seleccionado'' (p.5). Un \emph{modelo de ciclo de vida del software} es definido como ``el marco de trabajo, seleccionado por cada organización, en el cuál se asignan actividades a esta norma para producir el ciclo de vida del software'' \cite[p.5]{ieee97}. Finalmente se define \emph{procesos de ciclo de vida del software} como ``la descripción de proyectos específicos de los procesos basados en el ciclo de vida del software de un proyecto, y los activos del  proceso de la organización'' \cite[p.5]{ieee97}. 
+El \cite{ieee97} en su norma para la creación de procesos de ciclo de vida de software define \emph{ciclo de vida del software} como la secuencia de actividades específicas a un proyecto, que son creadas asignando las actividades de esta norma a un modelo de ciclo de vida de software seleccionado. Un \emph{modelo de ciclo de vida del software} es determinado como el marco de trabajo, seleccionado por cada organización, en el cuál se asignan actividades a esta norma para producir el ciclo de vida del software \citep{ieee97}. Finalmente se define \emph{procesos de ciclo de vida del software} como la descripción de proyectos específicos de los procesos basados en el ciclo de vida del software de un proyecto, y los activos del  proceso de la organización \citep{ieee97}. 
 
 \cite{amor05a} realizaron una investigación en la que utiliza la versión 3.1 de la distribución Debian como caso de estudio de medición de software libre. Aquí se concluye que el crecimiento del trabajo en Debian se incrementa año tras año siendo uno de los mayores sistemas de software mundial, e independientemente de la envergadura del proyecto la comunidad de mantenedores y voluntarios que rodean el sistema goza de buena salud. Sin embargo, se cuestiona la sostenibilidad del proyecto a futuro, basándose en el tamaño medio de la distribución, señalando que este comportamiento se podría deber a un crecimiento de números de paquetes más rápido que el de mantenedores.
 
@@ -422,8 +422,15 @@ El documento está organizado en 5 capítulos:
 %Linux, Software libre, Distribuci\'on Linux, Ciclo de vida, Canaima GNU/Linux, Desarrollo colaborativo, Debian
 
 
-\chapter{Sobre el ciclo de vida del software libre y métodos para analizarlo}
+\chapter{Sobre el ciclo de vida del software libre y estimación de costos}
 \noindent\rule{\textwidth}{0.4pt}
+\newline
+
+La naturaleza libre de las distribuciones Linux permiten realizar estudios sobre su desarrollo, a partir de repositorios públicos por cada versión liberada se pueden extraer una serie datos que sirven como insumos para alimentar la base de conocimientos alrededor de estas distros; por ejemplo, determinar los lenguajes utilizados, cantidad de líneas de código, número de paquetes de software en una distribución, frecuencia de lanzamientos de nuevas versiones, etc., datos que a su vez permiten mostrar la evolución de las distribuciones en el tiempo.
+
+Para poder describir el ciclo de vida de la distribución Canaima GNU/Linux se hace un recuento histórico de la forma en que se ha llevado el proyecto desde sus primeras versiones liberadas en 2007 hasta la fecha actual, se determinan los factores claves que forman parte de los procesos mas relevantes de un ciclo de vida para ubicar el modelo de desarrollo que hoy en día es aplicado en el proyecto Canaima.
+
+
 \section{Ciclo de Vida}
 ``Un ciclo de vida para un proyecto se compone de fases sucesivas compuestas por tareas que se pueden planificar'' \citep[p.24]{inteco09}.
 
@@ -436,32 +443,37 @@ Asimismo, la Organización Internacional de Normalización agrupa las actividades 
 
 Los siete procesos descritos en el estándar son: procesos de acuerdo; procesos de habilitación de proyectos organizacionales; procesos de proyecto; procesos técnicos; procesos de implementación de software; procesos de soporte de software y procesos de reutilización de software. La figura~\ref{fig:grupo-procesos-cvs} muestra la categorización de los grupos y subgrupos de los procesos del ciclo de vida según el estándar de la ISO.
 
-El modelo descrito por la ISO no está vinculado con alguna metodología o modelo de ciclo de vida de software en particular, por ejemplo, modelos de desarrollo tipo cascada, incremental, prototipo, espiral, etc., sino que pretende ser una referencia general que las organizaciones adaptarían a sus necesidades. 
-
 \begin{figure}[H]
 \caption{Grupos de los procesos del ciclo de vida}
-\begin{center}
+\centering
 \includegraphics[width=\textwidth]{grupos-procesos-cvs}
-\end{center}
-Fuente: \cite{iso08}
+
+{\footnotesize Fuente: \cite{iso08}}
 \label{fig:grupo-procesos-cvs}
 \end{figure}
 
+El modelo descrito por la ISO no está vinculado con alguna metodología o modelo de ciclo de vida de software en particular, por ejemplo, modelos de desarrollo tipo cascada, incremental, prototipo, espiral, etc., sino que pretende ser una referencia general que las organizaciones adaptarían a sus necesidades. En cambio, el modelo de referencia está destinado a ser adoptado por una organización basada en sus necesidades de negocio y dominio de aplicación. El proceso definido de la organización es adoptado por los proyectos de la organización en el contexto de los requisitos del cliente \citep{iso08}.
+
+\section{Procesos del software}
+Según \cite{somerville05}, ``un proceso del software es un conjunto de actividades y resultados asociados que producen un producto de software'' (p.8). A su vez, \cite{pressman10} dice:
+
 \begin{quote}
-El modelo de referencia de procesos no representa un enfoque de implementación de procesos particular ni prescribe un modelo, metodología o técnica de ciclo de vida del sistema/software. En cambio, el modelo de referencia está destinado a ser adoptado por una organización basada en sus necesidades de negocio y dominio de aplicación. El proceso definido de la organización es adoptado por los proyectos de la organización en el contexto de los requisitos del cliente.\\
-\noindent \citep[p.14]{iso08}
+El proceso de software forma la base para el control de la administración de proyectos de software, y establece el contexto en el que se aplican métodos técnicos, se generan productos del trabajo (modelos, documentos, datos,
+reportes, formatos, etc.), se establecen puntos de referencia, se asegura la calidad y se administra el cambio de manera apropiada. (p.12)
 \end{quote}
 
-\subsection{Procesos del software}
-Según \cite{somerville05}, ``un proceso del software es un conjunto de actividades y resultados asociados que producen un producto de software'' (p.8). Además, continúa \cite{somerville05}, un modelo de proceso del software lo define así:
+Por su parte \cite{mardones08} puntualiza:
+
 \begin{quote}
-Un modelo de procesos del software es una descripción simplificada de un proceso del software que presenta una visión de ese proceso. Estos modelos pueden incluir actividades que son parte de los procesos y productos de software y el papel de las personas involucradas en la ingeniería del software.  (p.8)
+Toda organización que lleve a cabo un proceso de software, debe trabajar con un modelo que se adapte a su marco de trabajo y ajustarlo a sus actividades específicas, a las personas que realizarán el proceso y al ambiente en el que se ejecutará el trabajo. (p.11)
 \end{quote}
 
-%\begin{quote}
-%Toda organización que lleve a cabo un proceso de software, debe trabajar con un modelo que se adapte a su marco de trabajo y ajustarlo a sus actividades específicas, a las personas que realizarán el proceso y al ambiente en el que se ejecutará el trabajo.\\
-%\citep[p.11]{mardones08}. 
-%\end{quote}
+Adicionalmente, \cite{somerville05} hace una definición de un modelo de proceso del software, queda así:
+\begin{quote}
+Un modelo de procesos del software es una descripción simplificada de un proceso del software que presenta una visión de ese proceso. Estos modelos pueden incluir actividades que son parte de los procesos y productos de software y el papel de las personas involucradas en la ingeniería del software. (p.8)
+\end{quote}
+
+Canaima es descrito como un proyecto socio-tecnológico-productivo abierto\footnote{?`Qué es Canaima? \url{http://canaima.softwarelibre.gob.ve/canaima/que-es-canaima} Recuperado en marzo de 2017.}, por ello, la tarea de describir su ciclo de vida va más allá del mero enfoque técnico. Ya lo dice \cite{somerville05}, los sistema socio-técnico no solo incluyen componentes de hardware y software sino que también incluyen personas, políticas y reglas organizacionales.
 
 % Para Canaima se hará un ejercicio de ubicación del ciclo de vida describiendo su modelo de flujo de trabajo y un modelo de rolación.
 
@@ -483,7 +495,7 @@ El modelo COCOMO es un modelo empírico que se obtuvo recopilando datos de varios
 El uso de esta técnica ``es una de las más simples y de las más ampliamente usadas para la comparación de piezas de software.'' \citep[p.6]{gonzalez-barahona03}. Ya en el pasado se ha utilizado este método por medio de la utilización de paquetes de software que facilitan el cálculo de las líneas de código como muestran los trabajos de Wheeler, González, Amor y otros autores \citep{wheeler01,gonzalez01,gonzalez-barahona03,amor04,amor05a,amor05b,amor07,amor09,herraiz06}.
 
 
-Para poder obtener el número de líneas de código fuente se ha optado por trabajar con \texttt{cloc}\footnote{\url{https://github.com/AlDanial/cloc}}. \texttt{Cloc} es un programa con licencia libre, multiplataforma, hecho en Perl, que cuenta las líneas en blanco, líneas con comentarios y las líneas físicas de código fuente reconociendo más de 200 lenguajes de programación.
+Para poder obtener el número de líneas de código fuente en este estudio se ha optado por utilizar la herramienta \texttt{cloc}\footnote{\url{https://github.com/AlDanial/cloc}}. \texttt{Cloc} es un programa con licencia libre, multiplataforma, hecho en Perl, que analiza los paquetes de software dados y procede a contar las líneas en blanco, líneas con comentarios y las líneas físicas de código fuente, reconociendo más de 200 lenguajes de programación. Una vez obtenido el número de líneas de código fuente se efectúan   los cálculos respectivos de las diferentes estimaciones, tales como: esfuerzo estimado de desarrollo, productividad, tiempo de desarrollo, cantidad de personas requeridas y costo total del proyecto.
 
 
 \chapter{Datos referenciales de las más importantes distribuciones de software}
