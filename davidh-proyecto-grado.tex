@@ -301,7 +301,8 @@ Daniel Kon.}
 % ***************************************************************** %
 % De aquí en adelante se desarrollan los capítulos numerados de la monografía
 %\fancychapterstyle
-                                                                                                                                                                                          \chapter{Introducci\'on y Antecedentes}
+
+\chapter{Introducci\'on y Antecedentes}
 \noindent\rule{\textwidth}{0.4pt}
 \section{Introducción}
 Este proyecto tiene como objetivo evaluar la productividad asociada o asociable a una distribución de software libre o distro. Para ello, se revisa el concepto de ciclo de vida del software, y se usa como una aproximación a la correspondiente noción de ciclo de vida de toda una distribución, un concepto claramente más complejo y difícil de abordar. Algunos indicadores complementarios son convocados para esta tarea y se los justifica a partir de esfuerzos previos en el área como los que se describen a continuación.
@@ -431,7 +432,7 @@ La naturaleza libre de las distribuciones Linux permiten realizar estudios sobre
 
 Para poder describir el ciclo de vida de la distribución Canaima GNU/Linux se hace un recuento histórico de la forma en que se ha llevado el proyecto desde sus primeras versiones liberadas en 2007 hasta la fecha actual, se determinan los factores claves que forman parte de los procesos mas relevantes de un ciclo de vida para ubicar el modelo de desarrollo que hoy en día es aplicado en el proyecto Canaima.
 
-La medición de líneas de código fuente físicas (\textit{Source Lines of Code} o SLOC en inglés) permite realizar una serie de cálculos para estimar el tiempo de desarrollo y esfuerzo de un proyecto aplicando el Modelo Constructivo de Costos (COCOMO) \citep{boehm81} en su variante más actualizada COCOMO II \citep{boehm00}. 
+La medición de líneas de código fuente físicas (\textit{Source Lines of Code} o SLOC en inglés) permite realizar una serie de cálculos para estimar el tiempo de desarrollo y esfuerzo de un proyecto aplicando el Modelo Constructivo de Costos (COCOMO) \citep{boehm81}.% en su variante más actualizada COCOMO II \citep{boehm00}. 
 
 El uso de esta técnica ``es una de las más simples y de las más ampliamente usadas para la comparación de piezas de software.'' \citep[p.6]{gonzalez-barahona03}. Ya en el pasado se ha utilizado este método por medio de la utilización de paquetes de software que facilitan el cálculo de las líneas de código como muestran los trabajos de Wheeler, González, Amor y otros autores \citep{wheeler01,gonzalez01,gonzalez-barahona03,amor04,amor05a,amor05b,amor07,amor09,herraiz06}.
 
@@ -486,6 +487,11 @@ Canaima es descrito como un proyecto socio-tecnológico-productivo abierto\footno
 %Según \cite{somerville05} los sistema socio-técnico no solo incluyen componentes de hardware y software sino que también incluyen personas, políticas y reglas organizacionales. Canaima es descrito como un proyecto socio-tecnológico-productivo abierto\footnote{?`Qué es Canaima? \url{http://canaima.softwarelibre.gob.ve/canaima/que-es-canaima} Recuperado en marzo de 2017.}.
 
 \subsection{El modelo COCOMO}
+El modelo COCOMO básico utiliza el número de líneas de código fuente de los paquetes para estimar los recursos mínimos que se necesitan para construir el sistema \citep{gonzalez-barahona03}, pero debe tomarse en cuenta que, sin embargo, el modelo utilizado para esta estimación asume en cualquier caso un entorno de desarrollo privativo ``clásico'', por lo que debe considerarse con cierto cuidado \citep{gonzalez01}. En cualquier caso, las estimaciones devenidas de este modelo tienen la intención de darnos una idea de los costos de tiempo, esfuerzo y personal que tomarían los proyectos evaluados aplicando modelos de desarrollo privativo.
+
+El modelo COCOMO [...] tres tipos de proyectos [...] orgánicos, [...] 
+
+Se asume para los cálculos un modelo orgánico (ver apéndice~\ref{ap:cocomo}), el cual se traduce en proyectos que normalmente provienen de entornos estables, familiares, indulgentes, relativamente sin restricciones \citep{boehm81}. %La aceptación de un paquete en distribuciones como Debian suponen un nivel de madurez alto, los paquetes deben superar procesos de análisis de errores asegurando su calidad.
 
 \begin{quote}
 El modelo COCOMO es un modelo empírico que se obtuvo recopilando datos de varios proyectos grandes. Estos datos fueron analizados para descubrir las fórmulas que mejor se ajustaban a las observaciones. Estas fórmulas vinculan el tamaño del sistema y del producto, factores del proyecto y del equipo con el esfuerzo necesario para desarrollar el sistema.\\
@@ -493,7 +499,13 @@ El modelo COCOMO es un modelo empírico que se obtuvo recopilando datos de varios
 \end{quote}
 
 \subsection{Líneas de código fuente (SLOC)}
-Determinar las estimaciones de costo de desarrollo siguiendo el modelo COCOMO supone poseer la cantidad de líneas de código fuente (\textit{Source Line of Code (SLOC)} en inglés), la metodología usada para obtener estos números implica hacerse del código fuente de los paquetes a evaluar (ver apéndice~\ref{ap:descarga}). Como se desea realizar comparaciones con términos comunes en cada distribución, se seleccionan los repositorios principales de cada distro, los repositorios ``main'' en Debian y en Ubuntu, y el repositorio ``usuarios'' de Canaima. Estos repositorios representan paquetes de software libre y abierto mantenidos enteramente por la comunidad de desarrolladores y mantenedores de cada distribución. Ya contando con los paquetes fuentes descomprimidos a evaluar (ver apéndice~\ref{ap:orden}) se debe recorrer cada archivo en busca de las líneas de código, comentarios y líneas en blanco.
+Una línea física de código fuente (\textit{Source Line of Code (SLOC)} en inglés) es aquella que termina en una línea nueva o con un demarcador de fin de archivo, y además contiene, por lo menos, un carácter diferente a  un espacio en blanco  o comentario \citep{wheeler01}. En otras palabras, toda línea de código que no represente un comentario, líneas vacías o líneas compuestas íntegramente de espacios en blanco o tabulaciones no se consideran líneas físicas de código.
+
+Determinar las estimaciones de costo de desarrollo siguiendo el modelo COCOMO supone conocer la cantidad de líneas físicas de código fuente, la metodología usada para obtener estos números implica hacerse del código fuente de los paquetes a evaluar (ver apéndice~\ref{ap:descarga}). 
+
+Como se desea realizar comparaciones con términos comunes entre las tres distribuciones, se seleccionan los repositorios principales de cada distro, los repositorios ``\textit{main}'' en Debian y en Ubuntu, y el repositorio ``\textit{usuarios}'' de Canaima. Estos repositorios representan paquetes de software libre y abierto mantenidos enteramente por la comunidad de desarrolladores y mantenedores de cada distribución. Esto quiere decir que, aunque puede que hayan paquetes ``iguales'' en los repositorios, los mantenedores se encargan de adaptar los programas para que cumplan con los estándares de publicación y calidad de cada distro, añadiendo a su vez un nivel de maduración bastante alto en los paquetes alojados en sus repositorios. 
+
+Ya contando con los paquetes fuentes descomprimidos a evaluar (ver apéndice~\ref{ap:orden}) se debe recorrer cada archivo en busca de las líneas de código, comentarios y líneas en blanco.
 
 Para poder deducir el número de líneas de código fuente en este estudio se ha optado por utilizar la herramienta \texttt{cloc}\footnote{\url{https://github.com/AlDanial/cloc}} (ver apéndice~\ref{ap:sloc}). \texttt{Cloc} es un programa con licencia libre, multiplataforma, hecho en Perl, que analiza los paquetes de software dados y procede a contar las líneas en blanco, líneas con comentarios y las líneas físicas de código fuente, reconociendo más de 200 lenguajes de programación. Una vez obtenido el número de líneas de código fuente se efectúan los cálculos respectivos de las diferentes estimaciones, tales como: esfuerzo estimado de desarrollo, productividad, tiempo de desarrollo, cantidad de personas requeridas y costo total del proyecto.
 
@@ -1542,6 +1554,7 @@ Perl               &   1 &      5 &      4 &     36 \\
 
 
 \section{Fórmulas para la estimación de costos}
+\label{ap:cocomo}
 Tomando los valores bajo el modelo de estimación COCOMO Básico y aplicando los valores establecidos para el modo orgánico, se realizan los cálculos de esfuerzo y tiempo de desarrollo.
 
 COCOMO puede ser aplicado a tres tipos de proyecto:
@@ -1587,23 +1600,22 @@ Donde:
 \item[$Per$:] es el número de personas requeridas, en personas.
 \item[$Ctd$:] es el costo total estimado de desarrollo del proyecto, en US\$.
 \item[$Spa$:] es el salario promedio anual estimado de programadores y analistas\footnote{Se toma como referencia el valor US\$60.445,00 para el mes de enero de 2017, dato obtenido desde \url{http://www.payscale.com/research/US/Job=Computer_Programmer/Salary}}.
-\item[$a$, $b$, $c$ y $d$:] son los coeficientes según el tipo de proyecto, ver tabla \ref{table:coeficientes}
+\item[$a$, $b$, $c$ y $d$:] son los coeficientes según el tipo de proyecto, ver tabla \ref{table:coeficientes}.
 \end{itemize}
 
 \begin{table}[H]
-\begin{center}
-\caption{Constantes para el cálculo de distintos aspectos de costes}
+\centering
+\caption{Constantes para el cálculo de distintos aspectos de costes para el modelo COCOMO básico}
 \label{table:coeficientes}
 \begin{tabular}{ccccc} 
 \toprule
 Tipo de proyecto & \textbf{$a$} & \textbf{$b$} & \textbf{$c$} & \textbf{$d$}  \\
 \midrule
-Orgánico & 2,40 & 1,05 & 2,50 & 0,38 \\
+\textbf{Orgánico} & \textbf{2,40} & \textbf{1,05} & \textbf{2,50} & \textbf{0,38} \\
 Medio    & 3,03 & 1,12 & 2,50 & 0,35 \\
 Embebido & 3,60 & 1,20 & 2,50 & 0,32 \\
 \bottomrule
 \end{tabular}
-\end{center}
 \end{table}
 
 
