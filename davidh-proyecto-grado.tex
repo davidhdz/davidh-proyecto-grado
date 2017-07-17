@@ -487,16 +487,30 @@ Canaima es descrito como un proyecto socio-tecnológico-productivo abierto\footno
 %Según \cite{somerville05} los sistema socio-técnico no solo incluyen componentes de hardware y software sino que también incluyen personas, políticas y reglas organizacionales. Canaima es descrito como un proyecto socio-tecnológico-productivo abierto\footnote{?`Qué es Canaima? \url{http://canaima.softwarelibre.gob.ve/canaima/que-es-canaima} Recuperado en marzo de 2017.}.
 
 \subsection{El modelo COCOMO}
-El modelo COCOMO básico utiliza el número de líneas de código fuente de los paquetes para estimar los recursos mínimos que se necesitan para construir el sistema \citep{gonzalez-barahona03}, pero debe tomarse en cuenta que, sin embargo, el modelo utilizado para esta estimación asume en cualquier caso un entorno de desarrollo privativo ``clásico'', por lo que debe considerarse con cierto cuidado \citep{gonzalez01}. En cualquier caso, las estimaciones devenidas de este modelo tienen la intención de darnos una idea de los costos de tiempo, esfuerzo y personal que tomarían los proyectos evaluados aplicando modelos de desarrollo privativo.
-
-El modelo COCOMO [...] tres tipos de proyectos [...] orgánicos, [...] 
-
-Se asume para los cálculos un modelo orgánico (ver apéndice~\ref{ap:cocomo}), el cual se traduce en proyectos que normalmente provienen de entornos estables, familiares, indulgentes, relativamente sin restricciones \citep{boehm81}. %La aceptación de un paquete en distribuciones como Debian suponen un nivel de madurez alto, los paquetes deben superar procesos de análisis de errores asegurando su calidad.
 
 \begin{quote}
 El modelo COCOMO es un modelo empírico que se obtuvo recopilando datos de varios proyectos grandes. Estos datos fueron analizados para descubrir las fórmulas que mejor se ajustaban a las observaciones. Estas fórmulas vinculan el tamaño del sistema y del producto, factores del proyecto y del equipo con el esfuerzo necesario para desarrollar el sistema.\\
 \citep[p.572]{somerville05}
 \end{quote}
+
+En el modelo COCOMO, desarrollado por Boehm a inicios de la década de 1980,  no sólo se consideró las características del producto sino también aquellas concernientes al equipo y ambiente de desarrollo \citep{nptel06}. De este modo, se caracterizan tres modelos de desarrollo de software para COCOMO de acuerdo a su complejidad: 
+
+\begin{description}
+\item[Orgánico:] Proyectos pequeños de menos de 50 \textit{KSLOC}, compuesto por equipos pequeños con experiencia en el desarrollo de proyectos similares, en ambientes estables y sin fuertes restricciones de tiempo.
+\item[Semiempotrado:]  Proyectos de mediana escala, entre 50 y 300 \textit{KSLOC}, desarrollado por equipos con experiencia limitada y limitadas restricciones de tiempo.
+\item[Empotrado:] Proyectos de gran escala, con mas de 300 \textit{KSLOC}, desarrollados por equipos compuesto de personal que pudieran no tener mucha experiencia, posee altas restricciones de tiempo y procedimientos complejos.
+\end{description}
+
+Adicionalmente, sobre los modelos que operan dentro de COCOMO, \cite{gomez00} dicen:
+\begin{quote}
+COCOMO' 81 está compuesto por tres modelos que corresponden a distintos niveles de detalle y precisión. Mencionados en orden creciente son: Modelo Básico, Intermedio y Detallado. La estimación es más precisa a medida que se toman en cuenta mayor cantidad de factores que influyen en el desarrollo de un producto de software. (p.6)
+\end{quote}
+
+El modelo COCOMO básico utiliza el número de líneas de código fuente de los paquetes para estimar los recursos mínimos que se necesitan para construir el sistema \citep{gonzalez-barahona03}, pero debe tomarse en cuenta que, sin embargo, el modelo utilizado para esta estimación asume en cualquier caso un entorno de desarrollo privativo ``clásico'', por lo que debe considerarse con cierto cuidado \citep{gonzalez01}. En cualquier caso, las estimaciones devenidas de este modelo tienen la intención de darnos una idea de los costos de tiempo, esfuerzo y personal que tomarían los proyectos evaluados aplicando modelos de desarrollo privativo.
+
+Para los cálculos efectuados en el estudio se asume un modelo orgánico (ver apéndice~\ref{ap:cocomo}), [...]. 
+
+
 
 \subsection{Líneas de código fuente (SLOC)}
 Una línea física de código fuente (\textit{Source Line of Code (SLOC)} en inglés) es aquella que termina en una línea nueva o con un demarcador de fin de archivo, y además contiene, por lo menos, un carácter diferente a  un espacio en blanco  o comentario \citep{wheeler01}. En otras palabras, toda línea de código que no represente un comentario, líneas vacías o líneas compuestas íntegramente de espacios en blanco o tabulaciones no se consideran líneas físicas de código.
@@ -507,7 +521,7 @@ Como se desea realizar comparaciones con términos comunes entre las tres distrib
 
 Ya contando con los paquetes fuentes descomprimidos a evaluar (ver apéndice~\ref{ap:orden}) se debe recorrer cada archivo en busca de las líneas de código, comentarios y líneas en blanco.
 
-Para poder deducir el número de líneas de código fuente en este estudio se ha optado por utilizar la herramienta \texttt{cloc}\footnote{\url{https://github.com/AlDanial/cloc}} (ver apéndice~\ref{ap:sloc}). \texttt{Cloc} es un programa con licencia libre, multiplataforma, hecho en Perl, que analiza los paquetes de software dados y procede a contar las líneas en blanco, líneas con comentarios y las líneas físicas de código fuente, reconociendo más de 200 lenguajes de programación. Una vez obtenido el número de líneas de código fuente se efectúan los cálculos respectivos de las diferentes estimaciones, tales como: esfuerzo estimado de desarrollo, productividad, tiempo de desarrollo, cantidad de personas requeridas y costo total del proyecto.
+Para poder deducir el número de líneas de código fuente en este estudio se ha optado por utilizar la herramienta \texttt{cloc}\footnote{\url{https://github.com/AlDanial/cloc}} (ver apéndice~\ref{ap:sloc}). \texttt{Cloc} es un programa con licencia libre, multiplataforma, hecho en Perl, que analiza los paquetes de software dados y procede a contar las líneas en blanco, líneas con comentarios y las líneas físicas de código fuente, reconociendo más de 200 lenguajes de programación. Una vez obtenido el número de líneas de código fuente se efectúan los cálculos respectivos de las diferentes estimaciones, tales como: esfuerzo estimado de desarrollo, productividad, tiempo de desarrollo, cantidad de personas requeridas y costo total del proyecto. En este trabajo se asume cada distribución como la suma de cada uno de los proyectos (paquetes) de software que lo componen, dicho esto, se toma como la cantidad total de líneas de código fuente a la suma de las líneas de código fuente de cada paquete de software contenido en el repositorio principal de cada distribución.
 
 
 \chapter{Datos referenciales de las más importantes distribuciones de software}
@@ -1612,7 +1626,7 @@ Donde:
 Tipo de proyecto & \textbf{$a$} & \textbf{$b$} & \textbf{$c$} & \textbf{$d$}  \\
 \midrule
 \textbf{Orgánico} & \textbf{2,40} & \textbf{1,05} & \textbf{2,50} & \textbf{0,38} \\
-Medio    & 3,03 & 1,12 & 2,50 & 0,35 \\
+Medio    & 3,00 & 1,12 & 2,50 & 0,35 \\
 Embebido & 3,60 & 1,20 & 2,50 & 0,32 \\
 \bottomrule
 \end{tabular}
