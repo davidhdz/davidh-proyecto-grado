@@ -308,7 +308,7 @@ Daniel Kon.}
 Este proyecto tiene como objetivo evaluar la productividad asociada o asociable a una distribución de software libre o distro. Para ello, se revisa el concepto de ciclo de vida del software, y se usa como una aproximación a la correspondiente noción de ciclo de vida de toda una distribución, un concepto claramente más complejo y difícil de abordar. Algunos indicadores complementarios son convocados para esta tarea y se los justifica a partir de esfuerzos previos en el área como los que se describen a continuación.
 
 \section{Antecedentes}
-La Organización Internacional para la Normalización (ISO en inglés) presenta en 2008 la última modificación hasta la fecha de la norma para los procesos de vida del software ISO/IEC 12207, publicada por primera vez en 1995. Aquí se define \emph{ciclo de vida} como la evolución de un sistema, producto, servicio, proyecto u otra entidad concebida por humanos, desde su concepción hasta su retiro \citep{iso08}. También se explica el \emph{modelo de ciclo de vida} como el marco de trabajo de procesos y actividades relacionadas con el ciclo de vida que pueden estar organizadas en etapas, las cuales también actúan como referencia común para su comunicación y entendimiento \citep{iso08}.
+La Organización Internacional para la Normalización (\textit{International Organization for Standardization}, ISO en inglés) presenta en 2008 la última modificación hasta la fecha de la norma para los procesos de vida del software ISO/IEC 12207, publicada por primera vez en 1995. Aquí se define \emph{ciclo de vida} como la evolución de un sistema, producto, servicio, proyecto u otra entidad concebida por humanos, desde su concepción hasta su retiro \citep{iso08}. También se explica el \emph{modelo de ciclo de vida} como el marco de trabajo de procesos y actividades relacionadas con el ciclo de vida que pueden estar organizadas en etapas, las cuales también actúan como referencia común para su comunicación y entendimiento \citep{iso08}.
 
 El \cite{ieee97} en su norma para la creación de procesos de ciclo de vida de software define \emph{ciclo de vida del software} como la secuencia de actividades específicas a un proyecto, que son creadas asignando las actividades de esta norma a un modelo de ciclo de vida de software seleccionado. Un \emph{modelo de ciclo de vida del software} es determinado como el marco de trabajo, seleccionado por cada organización, en el cuál se asignan actividades a esta norma para producir el ciclo de vida del software \citep{ieee97}. Finalmente se define \emph{procesos de ciclo de vida del software} como la descripción de proyectos específicos de los procesos basados en el ciclo de vida del software de un proyecto, y los activos del  proceso de la organización \citep{ieee97}. 
 
@@ -428,27 +428,25 @@ El documento está organizado en 5 capítulos:
 \noindent\rule{\textwidth}{0.4pt}
 \newline
 
-La naturaleza libre de las distribuciones Linux permiten realizar estudios sobre su desarrollo, a partir de repositorios públicos por cada versión liberada se pueden extraer una serie datos que sirven como insumos para alimentar la base de conocimientos alrededor de estas distros; por ejemplo, determinar los lenguajes utilizados, cantidad de líneas de código, número de paquetes de software en una distribución, frecuencia de lanzamientos de nuevas versiones, etc., datos que a su vez permiten mostrar la evolución de las distribuciones en el tiempo.
+La naturaleza libre de las distribuciones linux permiten realizar estudios sobre su desarrollo, a partir de repositorios públicos por cada versión liberada se pueden extraer una serie datos que sirven como insumo para alimentar la base de conocimientos alrededor de estas distros; por ejemplo, determinar los lenguajes utilizados, cantidad de líneas de código, número de paquetes de software en una distribución, frecuencia de lanzamiento de nuevas versiones, etc., datos que a su vez permiten mostrar la evolución de las distribuciones en el tiempo.
 
 Para poder describir el ciclo de vida de la distribución Canaima GNU/Linux se hace un recuento histórico de la forma en que se ha llevado el proyecto desde sus primeras versiones liberadas en 2007 hasta la fecha actual, se determinan los factores claves que forman parte de los procesos mas relevantes de un ciclo de vida para ubicar el modelo de desarrollo que hoy en día es aplicado en el proyecto Canaima.
 
-La medición de líneas de código fuente físicas (\textit{Source Lines of Code} o SLOC en inglés) permite realizar una serie de cálculos para estimar el tiempo de desarrollo y esfuerzo de un proyecto aplicando el Modelo Constructivo de Costos (COCOMO) \citep{boehm81}.% en su variante más actualizada COCOMO II \citep{boehm00}. 
+La medición de líneas de código fuente físicas (\textit{Source Lines of Code} o SLOC en inglés) permite realizar una serie de cálculos para estimar el tiempo de desarrollo y esfuerzo de un proyecto aplicando el Modelo Constructivo de Costos (COCOMO) \citep{boehm81}.
 
 El uso de esta técnica ``es una de las más simples y de las más ampliamente usadas para la comparación de piezas de software.'' \citep[p.6]{gonzalez-barahona03}. Ya en el pasado se ha utilizado este método por medio de la utilización de paquetes de software que facilitan el cálculo de las líneas de código como muestran los trabajos de Wheeler, González, Amor y otros autores \citep{wheeler01,gonzalez01,gonzalez-barahona03,amor04,amor05a,amor05b,amor07,amor09,herraiz06}.
 
 \section{Ciclo de Vida}
 ``Un ciclo de vida para un proyecto se compone de fases sucesivas compuestas por tareas que se pueden planificar'' \citep[p.24]{inteco09}.
 
-La \cite{iso08} plantea lo siguiente,
-\begin{quote}
-La vida de un sistema o de un producto de software puede ser modelado a través de un modelo de ciclo de vida basado en fases. Los modelos pueden ser usados para representar toda su vida, desde la concepción hasta su retiro, o la representación de una porción de vida correspondiente al proyecto actual. El modelo de ciclo de vida está comprendido por una secuencia de fases que se pueden solapar y/o iterar, según sea apropiado para el alcance, magnitud, complejidad, necesidades y oportunidades cambiantes del proyecto. Cada etapa es descrita como una declaración de propósitos y resultados. Los procesos y actividades del ciclo de vida son seleccionados y empleados en una etapa para cumplir el propósito y los resultados de esa fase. (p.12)%\footnote{Traducción propia.}
-\end{quote}
+La vida de un sistema o de un producto de software puede ser modelado a través de un modelo de ciclo de vida basado en fases. Los modelos pueden ser usados para representar toda su vida, desde la concepción hasta su retiro, o la representación de una porción de vida correspondiente al proyecto actual. El modelo de ciclo de vida está comprendido por una secuencia de fases que se pueden solapar y/o iterar, según sea apropiado para el alcance, magnitud, complejidad, necesidades y oportunidades cambiantes del proyecto. Cada etapa es descrita como una declaración de propósitos y resultados. Los procesos y actividades del ciclo de vida son seleccionados y empleados en una etapa para cumplir el propósito y los resultados de esa fase \citep{iso08}.
 
-Asimismo, la Organización Internacional de Normalización agrupa las actividades que pueden ser ejecutadas durante el ciclo de vida de un sistema de software en siete grupos de procesos. Cada uno de los procesos del ciclo de vida dentro de esos grupos es descrito en términos de su propósito y resultados deseados y lista las actividades y tareas que deben realizarse para alcanzar esos resultados \citep{iso08}.
+``El modelo ISO/IEC 12207 divide a sus procesos en dos grupos: procesos del ciclo de vida de los sistemas en general y procesos específicos del ciclo de vida del sistema de software'' 
+\citep[p.86]{renteria12}. Dentro de estos dos procesos principales las actividades que pueden ser ejecutadas durante el ciclo de vida de un sistema de software se agrupan en siete procesos. Cada uno de los procesos del ciclo de vida dentro de esos grupos es descrito en términos de su propósito y resultados deseados y lista las actividades y tareas que deben realizarse para alcanzar esos resultados \citep{iso08}.\\
 
 Los siete procesos descritos en el estándar son: procesos de acuerdo; procesos de habilitación de proyectos organizacionales; procesos de proyecto; procesos técnicos; procesos de implementación de software; procesos de soporte de software y procesos de reutilización de software. La figura~\ref{fig:grupo-procesos-cvs} muestra la categorización de los grupos y subgrupos de los procesos del ciclo de vida según el estándar de la ISO.
 
-\begin{figure}[H]
+\begin{figure}[h]
 \caption{Grupos de los procesos del ciclo de vida}
 \centering
 \includegraphics[width=\textwidth]{grupos-procesos-cvs}
@@ -473,21 +471,18 @@ Por su parte \cite{mardones08} puntualiza:
 Toda organización que lleve a cabo un proceso de software, debe trabajar con un modelo que se adapte a su marco de trabajo y ajustarlo a sus actividades específicas, a las personas que realizarán el proceso y al ambiente en el que se ejecutará el trabajo. (p.11)
 \end{quote}
 
-Adicionalmente, \cite{somerville05} hace una definición de un modelo de proceso del software, queda así:
+También, \cite{somerville05}, hace una definición de un modelo de proceso del software, queda así:
 \begin{quote}
 Un modelo de procesos del software es una descripción simplificada de un proceso del software que presenta una visión de ese proceso. Estos modelos pueden incluir actividades que son parte de los procesos y productos de software y el papel de las personas involucradas en la ingeniería del software. (p.8)
 \end{quote}
 
-Canaima es descrito como un proyecto socio-tecnológico-productivo abierto\footnote{?`Qué es Canaima? \url{http://canaima.softwarelibre.gob.ve/canaima/que-es-canaima} Recuperado en marzo de 2017.}, por ello, la tarea de describir su ciclo de vida va más allá del mero enfoque técnico. Ya lo dice \cite{somerville05}, los sistema socio-técnico no solo incluyen componentes de hardware y software sino que también incluyen personas, políticas y reglas organizacionales.
+Canaima es descrito como un proyecto socio-tecnológico-productivo abierto\footnote{?`Qué es Canaima? \url{http://canaima.softwarelibre.gob.ve/canaima/que-es-canaima} Recuperado en marzo de 2017.}, por ello, la tarea de describir su ciclo de vida va más allá del mero enfoque técnico. En otras palabras \cite{somerville05} dice que, los sistemas socio-técnicos no sólo incluyen componentes de hardware y software sino que también incluyen personas, políticas y reglas organizacionales.
 
 % Para Canaima se hará un ejercicio de ubicación del ciclo de vida describiendo su modelo de flujo de trabajo y un modelo de rolación.
 
 \section{Estimación de costos}
 
-%Según \cite{somerville05} los sistema socio-técnico no solo incluyen componentes de hardware y software sino que también incluyen personas, políticas y reglas organizacionales. Canaima es descrito como un proyecto socio-tecnológico-productivo abierto\footnote{?`Qué es Canaima? \url{http://canaima.softwarelibre.gob.ve/canaima/que-es-canaima} Recuperado en marzo de 2017.}.
-
 \subsection{El modelo COCOMO}
-
 \begin{quote}
 El modelo COCOMO es un modelo empírico que se obtuvo recopilando datos de varios proyectos grandes. Estos datos fueron analizados para descubrir las fórmulas que mejor se ajustaban a las observaciones. Estas fórmulas vinculan el tamaño del sistema y del producto, factores del proyecto y del equipo con el esfuerzo necesario para desarrollar el sistema.\\
 \citep[p.572]{somerville05}
@@ -496,9 +491,9 @@ El modelo COCOMO es un modelo empírico que se obtuvo recopilando datos de varios
 En el modelo COCOMO, desarrollado por Boehm a inicios de la década de 1980,  no sólo se consideró las características del producto sino también aquellas concernientes al equipo y ambiente de desarrollo \citep{nptel06}. De este modo, se caracterizan tres modelos de desarrollo de software para COCOMO de acuerdo a su complejidad: 
 
 \begin{description}
-\item[Orgánico:] Proyectos pequeños de menos de 50 \textit{KSLOC}, compuesto por equipos pequeños con experiencia en el desarrollo de proyectos similares, en ambientes estables y sin fuertes restricciones de tiempo.
-\item[Semiempotrado:]  Proyectos de mediana escala, entre 50 y 300 \textit{KSLOC}, desarrollado por equipos con experiencia limitada y limitadas restricciones de tiempo.
-\item[Empotrado:] Proyectos de gran escala, con mas de 300 \textit{KSLOC}, desarrollados por equipos compuesto de personal que pudieran no tener mucha experiencia, posee altas restricciones de tiempo y procedimientos complejos.
+\item[Orgánico:] Proyectos pequeños de menos de 50 KSLOC, compuesto por equipos pequeños con experiencia en el desarrollo de proyectos semejantes, en ambientes estables y sin fuertes restricciones de tiempo.
+\item[Semiempotrado:]  Proyectos de mediana escala, entre 50 y 300 KSLOC, desarrollado por equipos con experiencia limitada y limitadas restricciones de tiempo.
+\item[Empotrado:] Proyectos de gran escala, con mas de 300 KSLOC, desarrollados por equipos compuesto de personal que pudieran no tener mucha experiencia, posee altas restricciones de tiempo y procedimientos complejos.
 \end{description}
 
 Adicionalmente, sobre los modelos que operan dentro de COCOMO, \cite{gomez00} dicen:
@@ -508,21 +503,30 @@ COCOMO' 81 está compuesto por tres modelos que corresponden a distintos niveles 
 
 El modelo COCOMO básico utiliza el número de líneas de código fuente de los paquetes para estimar los recursos mínimos que se necesitan para construir el sistema \citep{gonzalez-barahona03}, pero debe tomarse en cuenta que, sin embargo, el modelo utilizado para esta estimación asume en cualquier caso un entorno de desarrollo privativo ``clásico'', por lo que debe considerarse con cierto cuidado \citep{gonzalez01}. En cualquier caso, las estimaciones devenidas de este modelo tienen la intención de darnos una idea de los costos de tiempo, esfuerzo y personal que tomarían los proyectos evaluados aplicando modelos de desarrollo privativo.
 
-Para los cálculos efectuados en el estudio se asume un modelo orgánico (ver apéndice~\ref{ap:cocomo}), [...]. 
+Para los cálculos efectuados en el estudio se asume un modelo orgánico (ver apéndice~\ref{ap:cocomo}), se selecciona este modelo fundamentado en que una distribución linux, en sí, es una colección de paquetes de software diseñados para interactuar en ambientes basados en el núcleo linux, organizados y configurados de tal forma que permiten hacer funcionar una computadora para poder efectuar una gran variedad de tareas. Cada paquete admitido en una distro es un proyecto, generalmente pequeño, compuesto por un grupo de programadores con pericia en el desarrollo de aplicaciones similares, cada proyecto tiene sus modos de disponer de los tiempos de entrega y procedimientos. Cada vez que se hace un lanzamiento de una nueva versión de una distribución, se selecciona la última versión estable de cada paquete, los mantenedores se encargan de velar porque los paquetes cumplan con todos los requisitos de calidad de cada distribución antes de ser admitidos en los repositorios.
 
 
 
 \subsection{Líneas de código fuente (SLOC)}
-Una línea física de código fuente (\textit{Source Line of Code (SLOC)} en inglés) es aquella que termina en una línea nueva o con un demarcador de fin de archivo, y además contiene, por lo menos, un carácter diferente a  un espacio en blanco  o comentario \citep{wheeler01}. En otras palabras, toda línea de código que no represente un comentario, líneas vacías o líneas compuestas íntegramente de espacios en blanco o tabulaciones no se consideran líneas físicas de código.
+Una línea física de código fuente (\textit{Source Line of Code (SLOC)} en inglés) es aquella que termina en una línea nueva o con un demarcador de fin de archivo, y además contiene, por lo menos, un carácter diferente a  un espacio en blanco  o comentario \citep{wheeler01}. En otras palabras, toda línea que represente un comentario, esté vacía o esté compuesta íntegramente de espacios en blanco o tabulaciones no se consideran como líneas de código.
 
-Determinar las estimaciones de costo de desarrollo siguiendo el modelo COCOMO supone conocer la cantidad de líneas físicas de código fuente, la metodología usada para obtener estos números implica hacerse del código fuente de los paquetes a evaluar (ver apéndice~\ref{ap:descarga}). 
+Determinar las estimaciones de costo de desarrollo siguiendo el modelo COCOMO supone conocer la cantidad de líneas de código fuente físicas, el proceso aplicado para obtener estos números implica hacerse del código fuente de los paquetes a evaluar (ver apéndice~\ref{ap:descarga}). 
 
 Como se desea realizar comparaciones con términos comunes entre las tres distribuciones, se seleccionan los repositorios principales de cada distro, los repositorios ``\textit{main}'' en Debian y en Ubuntu, y el repositorio ``\textit{usuarios}'' de Canaima. Estos repositorios representan paquetes de software libre y abierto mantenidos enteramente por la comunidad de desarrolladores y mantenedores de cada distribución. Esto quiere decir que, aunque puede que hayan paquetes ``iguales'' en los repositorios, los mantenedores se encargan de adaptar los programas para que cumplan con los estándares de publicación y calidad de cada distro, añadiendo a su vez un nivel de maduración bastante alto en los paquetes alojados en sus repositorios. 
 
 Ya contando con los paquetes fuentes descomprimidos a evaluar (ver apéndice~\ref{ap:orden}) se debe recorrer cada archivo en busca de las líneas de código, comentarios y líneas en blanco.
 
-Para poder deducir el número de líneas de código fuente en este estudio se ha optado por utilizar la herramienta \texttt{cloc}\footnote{\url{https://github.com/AlDanial/cloc}} (ver apéndice~\ref{ap:sloc}). \texttt{Cloc} es un programa con licencia libre, multiplataforma, hecho en Perl, que analiza los paquetes de software dados y procede a contar las líneas en blanco, líneas con comentarios y las líneas físicas de código fuente, reconociendo más de 200 lenguajes de programación. Una vez obtenido el número de líneas de código fuente se efectúan los cálculos respectivos de las diferentes estimaciones, tales como: esfuerzo estimado de desarrollo, productividad, tiempo de desarrollo, cantidad de personas requeridas y costo total del proyecto. En este trabajo se asume cada distribución como la suma de cada uno de los proyectos (paquetes) de software que lo componen, dicho esto, se toma como la cantidad total de líneas de código fuente a la suma de las líneas de código fuente de cada paquete de software contenido en el repositorio principal de cada distribución.
+Para poder deducir el número de líneas de código fuente en el presente estudio se ha optado por utilizar la herramienta \texttt{cloc}\footnote{\url{https://github.com/AlDanial/cloc}} (ver apéndice~\ref{ap:sloc}). \texttt{Cloc} es un programa con licencia libre, multiplataforma, hecho en Perl, que analiza los paquetes de software dados y procede a contar las líneas en blanco, líneas con comentarios y las líneas de código fuente físicas, reconociendo más de 200 lenguajes de programación. Una vez obtenido el número de líneas de código fuente se efectúan los cálculos respectivos de las diferentes estimaciones, tales como: esfuerzo estimado de desarrollo, productividad, tiempo de desarrollo, cantidad de personas requeridas y costo total del proyecto. En este trabajo se asume cada distribución como la suma de cada uno de los proyectos (paquetes) de software que lo componen, dicho esto, se toma como la cantidad total de líneas de código fuente a la suma de las líneas de código fuente de cada paquete de software contenido en el repositorio principal de cada distribución.
 
+%\subsection{Procedimientos para el cálculo de estimaciones}
+%En resumen, para poder determinar las estimaciones de costos aplicando el modelo COCOMO básico en cada distribución, se realizan los siguientes operaciones:
+%\begin{enumerate}
+%\item Descargar  el archivo \texttt{Sources} que contiene la lista de paquetes fuentes de la rama principal de la versión de la distro a evaluar.
+%\item Ejecutar el script de descarga de paquetes fuentes.
+%\item Ejectuar el script de descompresión y ordenamiento de paquetes fuente.
+%\item Correr el programa \texttt{cloc} para estimar el número de líneas de código fuente físicas.
+%\item Realizar las estimaciones de esfuerzo, tiempo de desarrollo, personal, productividad y costo total.
+%\end{enumerate}
 
 \chapter{Datos referenciales de las más importantes distribuciones de software}
 \noindent\rule{\textwidth}{0.4pt}
