@@ -32,6 +32,7 @@
 \usepackage{listings}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{textcomp}
+\usepackage{anyfontsize}
 
 \lstset{
   language=python,
@@ -216,7 +217,7 @@ draft=false
 \opcion{Sistemas Computacionales}
 
 % Aquí se escribe el resumen de la monografía
-\resumen{Se desea realizar un estudio que muestre el ciclo de vida del desarrollo de software libre aplicado a una distribución Linux, usando como objeto de investigación la distribución Canaima GNU/Linux, para ello se mostrará la manera en que se ha llevado a cabo su desarrollo través de la historia de la distribución, y se hará una comparación con otras distribuciones, como búsqueda para establecer casos de éxito y/o fracaso en las diferentes fases de desarrollo de la misma.}
+\resumen{Se realizó un estudio en el que se describe el ciclo de vida del desarrollo de software libre aplicado a una distribución Linux, usando como objeto de investigación la distribución Canaima GNU/Linux. Para ello se muestra la manera en que se ha llevado a cabo su desarrollo través de la historia de la distribución, y se hace un cotejo con otras distribuciones, como estrategia comparativa para establecer casos de éxito y/o fracaso en las diferentes fases de desarrollo de la misma.}
 
 % Aquí se escriben las palabras claves de la monografía
 \descriptores{Linux, Software libre, Distribuci\'on Linux, Ciclo de vida, Canaima GNU/Linux, Desarrollo colaborativo, Debian, Ubuntu, COCOMO, SLOC.}
@@ -301,26 +302,35 @@ Daniel Kon.}
 % ***************************************************************** %
 % De aquí en adelante se desarrollan los capítulos numerados de la monografía
 %\fancychapterstyle
-
+%\addtolength{\parskip}{\baselineskip}
 \chapter{Introducci\'on y Antecedentes}
 \noindent\rule{\textwidth}{0.4pt}
 \section{Introducción}
 Este proyecto tiene como objetivo evaluar la productividad asociada o asociable a una distribución de software libre o distro. Para ello, se revisa el concepto de ciclo de vida del software, y se usa como una aproximación a la correspondiente noción de ciclo de vida de toda una distribución, un concepto claramente más complejo y difícil de abordar. Algunos indicadores complementarios son convocados para esta tarea y se los justifica a partir de esfuerzos previos en el área como los que se describen a continuación.
 
 \section{Antecedentes}
-La Organización Internacional para la Normalización (\textit{International Organization for Standardization}, ISO en inglés) presenta en 2008 la última modificación hasta la fecha de la norma para los procesos de vida del software ISO/IEC 12207, publicada por primera vez en 1995. Aquí se define \emph{ciclo de vida} como la evolución de un sistema, producto, servicio, proyecto u otra entidad concebida por humanos, desde su concepción hasta su retiro \citep{iso08}. También se explica el \emph{modelo de ciclo de vida} como el marco de trabajo de procesos y actividades relacionadas con el ciclo de vida que pueden estar organizadas en etapas, las cuales también actúan como referencia común para su comunicación y entendimiento \citep{iso08}.
+La Organización Internacional para la Normalización (\textit{International Organization for Standardization}, ISO en inglés) presenta en 2008 la última modificación hasta la fecha de la norma para los procesos de vida del software ISO/IEC 12207, publicada por primera vez en 1995. Aquí se define \emph{ciclo de vida} como la evolución de un sistema, producto, servicio, proyecto u otra entidad concebida por humanos, desde su concepción hasta su retiro \citep{iso08}. También se explica el \emph{modelo de ciclo de vida} como la descripción de procesos y actividades relacionadas con el ciclo de vida que pueden estar organizadas en etapas, las cuales también actúan como referencia común para su comunicación y entendimiento \citep{iso08}.
 
-El \cite{ieee97} en su norma para la creación de procesos de ciclo de vida de software define \emph{ciclo de vida del software} como la secuencia de actividades específicas a un proyecto, que son creadas asignando las actividades de esta norma a un modelo de ciclo de vida de software seleccionado. Un \emph{modelo de ciclo de vida del software} es determinado como el marco de trabajo, seleccionado por cada organización, en el cuál se asignan actividades a esta norma para producir el ciclo de vida del software \citep{ieee97}. Finalmente se define \emph{procesos de ciclo de vida del software} como la descripción de proyectos específicos de los procesos basados en el ciclo de vida del software de un proyecto, y los activos del  proceso de la organización \citep{ieee97}. 
+El \cite{ieee97} en su norma para la creación de procesos de software define \emph{ciclo de vida del software} como la secuencia de actividades específicas a un proyecto que son creadas asignando las actividades de esta norma a un modelo de ciclo de vida de software seleccionado. A su vez, un \emph{modelo de ciclo de vida del software} es determinado como el marco de trabajo, seleccionado por cada organización, en el cuál se asignan actividades a esta norma para producir el ciclo de vida del software \citep{ieee97}. Finalmente se define \emph{procesos de ciclo de vida del software} como la descripción específica de los procesos de proyectos basados en el ciclo de vida del software y en los mecanismos que definen el entorno del proyecto dentro de la organización. \citep{ieee97}. 
 
-\cite{amor05a} realizaron una investigación en la que utiliza la versión 3.1 de la distribución Debian como caso de estudio de medición de software libre. Aquí se concluye que el crecimiento del trabajo en Debian se incrementa año tras año siendo uno de los mayores sistemas de software mundial, e independientemente de la envergadura del proyecto la comunidad de mantenedores y voluntarios que rodean el sistema goza de buena salud. Sin embargo, se cuestiona la sostenibilidad del proyecto a futuro, basándose en el tamaño medio de la distribución, señalando que este comportamiento se podría deber a un crecimiento de números de paquetes más rápido que el de mantenedores.
+\cite{Capiluppi07} realizaron un estudio empírico del ciclo de vida de los proyectos basados en comunidades de voluntarios, concluyendo que los proyectos de software libre comienzan con una fase catedral, de desarrollo cerrado y de pocos desarrolladores, y luego migran a una fase bazar, desarrollo con un gran número de voluntarios y contribuciones\footnote{Tomando como referencia el ensayo \textit{La Catedral y el Bazar} de \cite{Raymond99}}.
+ 
+Por su parte, \cite{amor05a} realizaron una investigación en la que utiliza la versión 3.1 de la distribución Debian como caso de estudio de medición de software libre. Allí se concluye que el crecimiento de Debian se incrementa año tras año, al igual que el número de voluntarios  y el número de paquetes. Así, señalan a Debian como uno de los mayores sistemas de software del mundo, sino el más grande. Sin embargo, la sostenibilidad del proyecto es cuestionada al apuntar un comportamiento inestable en el tamaño medio del proyecto ``probablemente debido a un crecimiento de los paquetes más rápido que el número de mantenedores de Debian'' \citep[p.14]{amor05a}.
 
-Por su parte, \cite{Capiluppi07} realizaron un estudio empírico del ciclo de vida de los proyectos basados en comunidades de voluntarios, concluyendo que los proyectos de software libre comienzan con una fase catedral, de desarrollo cerrado y de pocos desarrolladores, y luego migran a una fase bazar, desarrollo con un gran número de voluntarios y contribuciones\footnote{Tomando como referencia el ensayo \textit{La Catedral y el Bazar} de \cite{Raymond99}}. 
+La técnica de medición de líneas de código fuente físicas (\textit{Source Lines of Code} o SLOC en inglés) permite realizar una serie de cálculos para estimar el tiempo de desarrollo y esfuerzo de un proyecto aplicando el Modelo Constructivo de Costos (\textit{Constructive Cost Model} -- COCOMO) \citep{boehm81}.
 
+Esta técnica ``es una de las más simples y de las más ampliamente usadas para la comparación de piezas de software.'' \citep[p.6]{gonzalez-barahona03}. Ya en el pasado se ha utilizado este método por medio de la utilización de paquetes de software que facilitan el cálculo de las líneas de código como muestran los trabajos de Wheeler, González, Amor y otros autores \citep{wheeler01,gonzalez01,gonzalez-barahona03,amor04,amor05a,amor05b,amor07,amor09,herraiz06}.
 
 \section{Planteamiento del Problema}
-En el software libre el modelo participativo es vital para el éxito y superviviencia de los proyectos, para ello cada proyecto define los protocolos para aceptar y facilitar la colaboración de terceros. Las contribuciones se pueden presentar, por ejemplo, proponiendo modificaciones de código en un repositorio con control de versiones, reportando un mal funcionamiento del software, proponiendo nuevas ideas para ser implementadas en un futuro, colaborando con la traducción a diferentes idiomas, etc.
+En el software libre el modelo participativo es vital para el éxito y superviviencia de los proyectos, para ello cada proyecto define los protocolos para aceptar y facilitar la colaboración de terceros. Las contribuciones se pueden presentar, por ejemplo, proponiendo modificaciones de código en un repositorio con control de versiones, reportando un mal funcionamiento del software, proponiendo nuevas ideas para ser implementadas en un futuro, colaborando con la traducción a diferentes idiomas y otros.
 
-Actualmente, la distribución Canaima GNU/Linux es poco usada y recibe pocas contribuciones. El presente trabajo pretende mostrar la viabilidad que tiene la distribución Canaima GNU/Linux para recibir contribuciones por parte de la comunidad de desarrolladores, entendiéndose principalmente en el apartado para la posible admisión de nuevos paquetes de software en los repositorios oficiales distribución. 
+La distribución Canaima GNU/Linux nace desde la necesidad de centrar esfuerzos para el desarrollo, mantenimiento y soporte de un sistema operativo libre, con estándares abiertos y para ser usado como una plataforma tecnológica común en las instituciones de la Administración Pública Nacional (APN). Adicionalmente, se busca disminuir el gasto público destinado a la compra de licencias de software privativo que poco aportan al plan nacional de desarrollo el cual, entre otras aspectos, impulsa el carácter libre del conocimiento y fortalece el modelo de trabajo colaborativo.
+
+Sin embargo en la actualidad, es posible afirmar que la distribución Canaima GNU/Linux está siendo poco usada dentro de la APN y que no se están cumpliendo las expectativas que dieron origen a su creación. Se cree que la debilidad en la conducción del Proyecto Canaima sea el asunto medular que ofrece razón a esta situación, tales como: planificación equívoca en la aplicación del proyecto; insuficiencia de personal el cual además no se encuentra a dedicación exclusiva del mismo y otros. Esto quiere decir que, existen pocas personas dedicadas a este proyecto cuyas dimensiones socio-técnicas requieren de un equipo amplio y multidisciplinario que garantice la concreción de los objetivos para los cuales fue concebida esta distribución.
+
+La presente investigación está orientada a mostrar por una parte, la productividad del desarrollo de Canaima GNU/Linux comparándola con otras distribuciones de referencia; y por la otra, presentar la viabilidad que tiene la misma para recibir contribuciones por parte de la comunidad de desarrolladores; y con ello formular algunas recomendaciones para mejorar la situación descrita en torno a la distribución Canaima GNU/Linux.
+%entendiéndose principalmente en lo referido a la posible admisión de nuevos paquetes de software en los repositorios oficiales distribución. 
+
 
 % Area: Informática
 % Tema: Contribución en desarrollos de software
@@ -335,7 +345,7 @@ Actualmente, la distribución Canaima GNU/Linux es poco usada y recibe pocas cont
 
 
 \section{Objetivos}
-Evaluar la productividad de una distro es, como se ha sugerido, un desafío complejo. En este proyecto nos concentramos en evaluar la productividad asociada al proyecto Canaima, un proyecto nacional que ha tenido la fortuna del apoyo financiero estatal.
+Evaluar la productividad de una distro es, como se ha sugerido, un desafío complejo. En este proyecto nos concentramos en evaluar la productividad asociada al proyecto Canaima, un proyecto nacional que ha tenido el apoyo financiero estatal.
 
 \subsection{Objetivo General}
 %Realizar un estudio del ciclo de vida de la Distribución Canaima GNU/Linux
@@ -353,7 +363,7 @@ Evaluar la productividad de una distro es, como se ha sugerido, un desafío compl
 \item Recolectar datos relevantes a esos indicadores para un conjunto de distribuciones Linux  referenciales.
 \item Comparar la distro Canaima GNU/Linux con esas distribuciones referenciales.
 \item Analizar el estado actual del proyecto Canaima y explicar las razones para sus niveles actuales de productividad.
-\item Conclusiones y recomendaciones.
+%\item Conclusiones y recomendaciones.
 \end{enumerate}
 
 Para alcanzar los objetivos descritos, se han realizado una serie de actividades que incluyen la  recolección de datos para cada distro objeto de referencia, la estimación de esfuerzo y costos empleados en el desarrollo de cada proyecto, y la caracterización del modelo de desarrollo del proyecto Canaima.\\
@@ -362,7 +372,7 @@ El documento está organizado en 5 capítulos:
 
 \begin{itemize}
 \item Capítulo 1: correspondiente a la introducción, antecedentes, planteamiento del problema y objetivos.
-\item Capítulo 2: se definen los conceptos teóricos en torno al ciclo de vida del software libre y la estimación de esfuerzo y costos así como la descripción de las técnicas utilizadas para determinar estas estimaciones.
+\item Capítulo 2: se definen los conceptos en torno al ciclo de vida del software libre y la estimación de esfuerzo y costos así como la descripción de las técnicas utilizadas para determinar estas estimaciones.
 \item Capítulo 3: en este capítulo se muestran los datos referenciales comunes que sirven como puntos de comparación entre las distribuciones evaluadas.
 \item Capítulo 4: se realiza un recuento histórico de la distribución Canaima GNU/Linux y se hace la caracterización del modelo de desarrollo que permite describir su ciclo de vida.
 \item Capítulo 5: se plasman las conclusiones, observaciones y recomendaciones de la investigación.
@@ -428,21 +438,29 @@ El documento está organizado en 5 capítulos:
 \noindent\rule{\textwidth}{0.4pt}
 \newline
 
-La naturaleza libre de las distribuciones linux permiten realizar estudios sobre su desarrollo, a partir de repositorios públicos por cada versión liberada se pueden extraer una serie datos que sirven como insumo para alimentar la base de conocimientos alrededor de estas distros; por ejemplo, determinar los lenguajes utilizados, cantidad de líneas de código, número de paquetes de software en una distribución, frecuencia de lanzamiento de nuevas versiones, etc., datos que a su vez permiten mostrar la evolución de las distribuciones en el tiempo.
+La naturaleza libre de las distribuciones linux permite que se realicen diversos estudios sobre esos desarrollos. A partir de repositorios públicos, por cada versión liberada se pueden extraer una serie datos que sirven como insumo para alimentar bases de conocimientos que caracterizan estas distros; por ejemplo, determinar los lenguajes utilizados, cantidad de líneas de código, número de paquetes de software en una distribución, frecuencia de lanzamiento de nuevas versiones, etc., datos que a su vez permiten mostrar la evolución de las distribuciones en el tiempo.
 
-Para poder describir el ciclo de vida de la distribución Canaima GNU/Linux se hace un recuento histórico de la forma en que se ha llevado el proyecto desde sus primeras versiones liberadas en 2007 hasta la fecha actual, se determinan los factores claves que forman parte de los procesos mas relevantes de un ciclo de vida para ubicar el modelo de desarrollo que hoy en día es aplicado en el proyecto Canaima.
+Para poder describir el ciclo de vida de la distribución Canaima GNU/Linux se hace un recuento histórico del proyecto desde sus primeras versiones liberadas en 2007 hasta la fecha actual. Se determinan en este estudio los factores claves que forman parte de los procesos mas relevantes de un ciclo de vida para ubicar el modelo de desarrollo que hoy en día es aplicado en el proyecto Canaima.
 
-La medición de líneas de código fuente físicas (\textit{Source Lines of Code} o SLOC en inglés) permite realizar una serie de cálculos para estimar el tiempo de desarrollo y esfuerzo de un proyecto aplicando el Modelo Constructivo de Costos (COCOMO) \citep{boehm81}.
+Tener otras figuras con las cuales comparar la distribución nacional ayuda establecer algunas ideas acerca de la magnitud que conlleva un proyecto de software de tal envergadura. Por ello se toma como referentes dos de las distribuciones más populares en el ambiente Linux: Debian y Ubuntu.
 
-El uso de esta técnica ``es una de las más simples y de las más ampliamente usadas para la comparación de piezas de software.'' \citep[p.6]{gonzalez-barahona03}. Ya en el pasado se ha utilizado este método por medio de la utilización de paquetes de software que facilitan el cálculo de las líneas de código como muestran los trabajos de Wheeler, González, Amor y otros autores \citep{wheeler01,gonzalez01,gonzalez-barahona03,amor04,amor05a,amor05b,amor07,amor09,herraiz06}.
+Las consideraciones tomadas para la selección de estas distribuciones radica principalmente en que parten de la misma rama. Debian es la distribución madre de Ubuntu y de Canaima, es decir, estas dos distribuciones son derivaciones directas de Debian, se basan en ella para su construcción y por ello comparten algunas características básicas: son distribuciones gratuitas, tienen soporte para los mismos sistemas de archivos\footnote{Según la versión de Debian en las que estén basadas.}, tienen un modelo de lanzamiento fijo, comparten el mismo sistema de gestión de paquetes (DEB) y tienen un sistema de repositorios equivalente. 
+
+Las diferencias principales se pueden apreciar en los modelos de gobernanza y en la gestión de los diferentes procesos del desarrollo de las  distribuciones, y son estas diferencias las que servirán para descubrir el ciclo de vida de la distribución Canaima/GNU Linux.
+
+
+%La documentación sobre cada una de las distribuciones y las comunidades que hacen vida en ellas también es uno de los factores a considerar en el estudio.
+
+%La medición de líneas de código fuente físicas (\textit{Source Lines of Code} o SLOC en inglés) permite realizar una serie de cálculos para estimar el tiempo de desarrollo y esfuerzo de un proyecto aplicando el Modelo Constructivo de Costos (COCOMO) \citep{boehm81}.
+
+%Esta técnica ``es una de las más simples y de las más ampliamente usadas para la comparación de piezas de software.'' \citep[p.6]{gonzalez-barahona03}. Ya en el pasado se ha utilizado este método por medio de la utilización de paquetes de software que facilitan el cálculo de las líneas de código como muestran los trabajos de Wheeler, González, Amor y otros autores \citep{wheeler01,gonzalez01,gonzalez-barahona03,amor04,amor05a,amor05b,amor07,amor09,herraiz06}.
 
 \section{Ciclo de Vida}
 ``Un ciclo de vida para un proyecto se compone de fases sucesivas compuestas por tareas que se pueden planificar'' \citep[p.24]{inteco09}.
 
 La vida de un sistema o de un producto de software puede ser modelado a través de un modelo de ciclo de vida basado en fases. Los modelos pueden ser usados para representar toda su vida, desde la concepción hasta su retiro, o la representación de una porción de vida correspondiente al proyecto actual. El modelo de ciclo de vida está comprendido por una secuencia de fases que se pueden solapar y/o iterar, según sea apropiado para el alcance, magnitud, complejidad, necesidades y oportunidades cambiantes del proyecto. Cada etapa es descrita como una declaración de propósitos y resultados. Los procesos y actividades del ciclo de vida son seleccionados y empleados en una etapa para cumplir el propósito y los resultados de esa fase \citep{iso08}.
 
-``El modelo ISO/IEC 12207 divide a sus procesos en dos grupos: procesos del ciclo de vida de los sistemas en general y procesos específicos del ciclo de vida del sistema de software'' 
-\citep[p.86]{renteria12}. Dentro de estos dos procesos principales las actividades que pueden ser ejecutadas durante el ciclo de vida de un sistema de software se agrupan en siete procesos. Cada uno de los procesos del ciclo de vida dentro de esos grupos es descrito en términos de su propósito y resultados deseados y lista las actividades y tareas que deben realizarse para alcanzar esos resultados \citep{iso08}.\\
+``El modelo ISO/IEC 12207 divide a sus procesos en dos grupos: procesos del ciclo de vida de los sistemas en general y procesos específicos del ciclo de vida del sistema de software'' \citep[p.86]{renteria12}. Dentro de estos dos procesos principales las actividades que pueden ser ejecutadas durante el ciclo de vida de un sistema de software se agrupan en siete procesos. Cada uno de los procesos del ciclo de vida dentro de esos grupos es descrito en términos de su propósito y resultados deseados y lista las actividades y tareas que deben realizarse para alcanzar esos resultados \citep{iso08}.
 
 Los siete procesos descritos en el estándar son: procesos de acuerdo; procesos de habilitación de proyectos organizacionales; procesos de proyecto; procesos técnicos; procesos de implementación de software; procesos de soporte de software y procesos de reutilización de software. La figura~\ref{fig:grupo-procesos-cvs} muestra la categorización de los grupos y subgrupos de los procesos del ciclo de vida según el estándar de la ISO.
 
@@ -455,14 +473,13 @@ Los siete procesos descritos en el estándar son: procesos de acuerdo; procesos d
 \label{fig:grupo-procesos-cvs}
 \end{figure}
 
-El modelo descrito por la ISO no está vinculado con alguna metodología o modelo de ciclo de vida de software en particular, por ejemplo, modelos de desarrollo tipo cascada, incremental, prototipo, espiral, etc., sino que pretende ser una referencia general que las organizaciones adaptarían a sus necesidades. En cambio, el modelo de referencia está destinado a ser adoptado por una organización basada en sus necesidades de negocio y dominio de aplicación. El proceso definido de la organización es adoptado por los proyectos de la organización en el contexto de los requisitos del cliente \citep{iso08}.
+El modelo descrito por la ISO no está vinculado con alguna metodología o modelo de ciclo de vida de software en particular. Por ejemplo, modelos de desarrollo tipo cascada, incremental, prototipo, espiral, etc. Pretende ser una referencia general que las organizaciones adaptarían a sus necesidades. En cambio, el modelo de referencia está destinado a ser adoptado por una organización basada en sus necesidades de negocio y dominio de aplicación. El proceso definido por la organización es adoptado a su vez por los proyectos de la organización en el contexto de los requisitos del cliente \citep{iso08}.
 
 \section{Procesos del software}
 Según \cite{somerville05}, ``un proceso del software es un conjunto de actividades y resultados asociados que producen un producto de software'' (p.8). A su vez, \cite{pressman10} dice:
 
 \begin{quote}
-El proceso de software forma la base para el control de la administración de proyectos de software, y establece el contexto en el que se aplican métodos técnicos, se generan productos del trabajo (modelos, documentos, datos,
-reportes, formatos, etc.), se establecen puntos de referencia, se asegura la calidad y se administra el cambio de manera apropiada. (p.12)
+El proceso de software forma la base para el control de la administración de proyectos de software, y establece el contexto en el que se aplican métodos técnicos, se generan productos del trabajo (modelos, documentos, datos, reportes, formatos, etc.), se establecen puntos de referencia, se asegura la calidad y se administra el cambio de manera apropiada. (p.12)
 \end{quote}
 
 Por su parte \cite{mardones08} puntualiza:
@@ -476,24 +493,28 @@ También, \cite{somerville05}, hace una definición de un modelo de proceso del so
 Un modelo de procesos del software es una descripción simplificada de un proceso del software que presenta una visión de ese proceso. Estos modelos pueden incluir actividades que son parte de los procesos y productos de software y el papel de las personas involucradas en la ingeniería del software. (p.8)
 \end{quote}
 
-Canaima es descrito como un proyecto socio-tecnológico-productivo abierto\footnote{?`Qué es Canaima? \url{http://canaima.softwarelibre.gob.ve/canaima/que-es-canaima} Recuperado en marzo de 2017.}, por ello, la tarea de describir su ciclo de vida va más allá del mero enfoque técnico. En otras palabras \cite{somerville05} dice que, los sistemas socio-técnicos no sólo incluyen componentes de hardware y software sino que también incluyen personas, políticas y reglas organizacionales.
+Canaima es descrito como un proyecto socio-tecnológico-productivo abierto\footnote{?`Qué es Canaima? \url{http://canaima.softwarelibre.gob.ve/canaima/que-es-canaima} Recuperado en marzo de 2017.}, por ello, la tarea de describir su ciclo de vida va más allá del mero enfoque técnico. En otras palabras \cite{somerville05} dice que, los sistemas socio-técnicos no sólo incluyen componentes de hardware y software sino que también incluyen personas, políticas y reglas organizacionales. 
+
+Estos factores serán explicados en el capítulo siguiente, como parte de la caracterización de los procesos que componen el desarrollo de la distribución Canaima y así dibujar el ciclo de vida, y el modelo de ciclo de vida, que mejor corresponda con las prácticas empleadas en este proyecto.
 
 % Para Canaima se hará un ejercicio de ubicación del ciclo de vida describiendo su modelo de flujo de trabajo y un modelo de rolación.
 
 \section{Estimación de costos}
 
-\subsection{El modelo COCOMO}
+\subsection{El Modelo Constructivo de Costos -- COCOMO}
 \begin{quote}
 El modelo COCOMO es un modelo empírico que se obtuvo recopilando datos de varios proyectos grandes. Estos datos fueron analizados para descubrir las fórmulas que mejor se ajustaban a las observaciones. Estas fórmulas vinculan el tamaño del sistema y del producto, factores del proyecto y del equipo con el esfuerzo necesario para desarrollar el sistema.\\
 \citep[p.572]{somerville05}
 \end{quote}
 
-En el modelo COCOMO, desarrollado por Boehm a inicios de la década de 1980,  no sólo se consideró las características del producto sino también aquellas concernientes al equipo y ambiente de desarrollo \citep{nptel06}. De este modo, se caracterizan tres modelos de desarrollo de software para COCOMO de acuerdo a su complejidad: 
+En el modelo COCOMO, desarrollado por Boehm a inicios de la década de 1980,  no sólo se consideró las características del producto sino también aquellas concernientes al equipo y ambiente de desarrollo. De este modo, Boehm caracteriza los desarrollos de software de acuerdo a su complejidad de desarrollo \citep{nptel06}. Estas tres categorías son:
 
 \begin{description}
 \item[Orgánico:] Proyectos pequeños de menos de 50 KSLOC, compuesto por equipos pequeños con experiencia en el desarrollo de proyectos semejantes, en ambientes estables y sin fuertes restricciones de tiempo.
-\item[Semiempotrado:]  Proyectos de mediana escala, entre 50 y 300 KSLOC, desarrollado por equipos con experiencia limitada y limitadas restricciones de tiempo.
-\item[Empotrado:] Proyectos de gran escala, con mas de 300 KSLOC, desarrollados por equipos compuesto de personal que pudieran no tener mucha experiencia, posee altas restricciones de tiempo y procedimientos complejos.
+
+\item[Semiempotrado:]  Proyectos de mediana escala, entre 50 y 300 KSLOC, desarrollado por equipos con experiencia limitada y restricciones de tiempo moderadas.
+
+\item[Empotrado:] Proyectos de gran escala, con mas de 300 KSLOC, desarrollados por equipos compuesto de personal que pudieran no tener mucha experiencia, posee fuertes restricciones de tiempo y procedimientos complejos.
 \end{description}
 
 Adicionalmente, sobre los modelos que operan dentro de COCOMO, \cite{gomez00} dicen:
@@ -503,40 +524,350 @@ COCOMO' 81 está compuesto por tres modelos que corresponden a distintos niveles 
 
 El modelo COCOMO básico utiliza el número de líneas de código fuente de los paquetes para estimar los recursos mínimos que se necesitan para construir el sistema \citep{gonzalez-barahona03}, pero debe tomarse en cuenta que, sin embargo, el modelo utilizado para esta estimación asume en cualquier caso un entorno de desarrollo privativo ``clásico'', por lo que debe considerarse con cierto cuidado \citep{gonzalez01}. En cualquier caso, las estimaciones devenidas de este modelo tienen la intención de darnos una idea de los costos de tiempo, esfuerzo y personal que tomarían los proyectos evaluados aplicando modelos de desarrollo privativo.
 
-Para los cálculos efectuados en el estudio se asume un modelo orgánico (ver apéndice~\ref{ap:cocomo}), se selecciona este modelo fundamentado en que una distribución linux, en sí, es una colección de paquetes de software diseñados para interactuar en ambientes basados en el núcleo linux, organizados y configurados de tal forma que permiten hacer funcionar una computadora para poder efectuar una gran variedad de tareas. Cada paquete admitido en una distro es un proyecto, generalmente pequeño, compuesto por un grupo de programadores con pericia en el desarrollo de aplicaciones similares, cada proyecto tiene sus modos de disponer de los tiempos de entrega y procedimientos. Cada vez que se hace un lanzamiento de una nueva versión de una distribución, se selecciona la última versión estable de cada paquete, los mantenedores se encargan de velar porque los paquetes cumplan con todos los requisitos de calidad de cada distribución antes de ser admitidos en los repositorios.
-
+Para los cálculos efectuados en el estudio se asume un modelo orgánico. Se selecciona este modelo fundamentado que una distribución linux, es una colección de paquetes de software diseñados para interactuar en ambientes basados en el núcleo linux, organizados y configurados de tal forma que permiten hacer funcionar una computadora para poder efectuar una gran variedad de tareas. Cada paquete admitido en una distro es un proyecto, generalmente pequeño, compuesto por un grupo de programadores con pericia en el desarrollo de aplicaciones similares. Cada proyecto tiene sus modos de disponer de los tiempos de entrega y procedimientos. Cada vez que se hace un lanzamiento de una nueva versión de una distribución, se selecciona la última versión estable de cada paquete, los mantenedores se encargan de velar porque los paquetes cumplan con todos los requisitos de calidad de cada distribución antes de ser admitidos en los repositorios.
 
 
 \subsection{Líneas de código fuente (SLOC)}
 Una línea física de código fuente (\textit{Source Line of Code (SLOC)} en inglés) es aquella que termina en una línea nueva o con un demarcador de fin de archivo, y además contiene, por lo menos, un carácter diferente a  un espacio en blanco  o comentario \citep{wheeler01}. En otras palabras, toda línea que represente un comentario, esté vacía o esté compuesta íntegramente de espacios en blanco o tabulaciones no se consideran como líneas de código.
 
-Determinar las estimaciones de costo de desarrollo siguiendo el modelo COCOMO supone conocer la cantidad de líneas de código fuente físicas, el proceso aplicado para obtener estos números implica hacerse del código fuente de los paquetes a evaluar (ver apéndice~\ref{ap:descarga}). 
+Determinar las estimaciones de costo de desarrollo siguiendo el modelo COCOMO supone conocer la cantidad de líneas de código fuente físicas. El proceso aplicado para obtener estos números implica hacerse del código fuente de los paquetes a evaluar. 
 
-Como se desea realizar comparaciones con términos comunes entre las tres distribuciones, se seleccionan los repositorios principales de cada distro, los repositorios ``\textit{main}'' en Debian y en Ubuntu, y el repositorio ``\textit{usuarios}'' de Canaima. Estos repositorios representan paquetes de software libre y abierto mantenidos enteramente por la comunidad de desarrolladores y mantenedores de cada distribución. Esto quiere decir que, aunque puede que hayan paquetes ``iguales'' en los repositorios, los mantenedores se encargan de adaptar los programas para que cumplan con los estándares de publicación y calidad de cada distro, añadiendo a su vez un nivel de maduración bastante alto en los paquetes alojados en sus repositorios. 
+Como se desea realizar comparaciones con términos comunes entre las tres distribuciones, se seleccionan los repositorios principales de cada distro, los repositorios ``\textit{main}'' en Debian y en Ubuntu, y el repositorio ``\textit{usuarios}'' de Canaima. Estos repositorios representan paquetes de software libre y abierto mantenidos enteramente por la comunidad de desarrolladores y mantenedores de cada distribución. Esto quiere decir que, aunque puede que haya paquetes ``iguales'' en los repositorios, los mantenedores se encargan de adaptar los programas para que cumplan con los estándares de publicación y calidad de cada distro. 
 
-Ya contando con los paquetes fuentes descomprimidos a evaluar (ver apéndice~\ref{ap:orden}) se debe recorrer cada archivo en busca de las líneas de código, comentarios y líneas en blanco.
+Ya contando con los paquetes fuentes descomprimidos a evaluar se debe recorrer cada archivo en busca de las líneas de código, comentarios y líneas en blanco.
 
-Para poder deducir el número de líneas de código fuente en el presente estudio se ha optado por utilizar la herramienta \texttt{cloc}\footnote{\url{https://github.com/AlDanial/cloc}} (ver apéndice~\ref{ap:sloc}). \texttt{Cloc} es un programa con licencia libre, multiplataforma, hecho en Perl, que analiza los paquetes de software dados y procede a contar las líneas en blanco, líneas con comentarios y las líneas de código fuente físicas, reconociendo más de 200 lenguajes de programación. Una vez obtenido el número de líneas de código fuente se efectúan los cálculos respectivos de las diferentes estimaciones, tales como: esfuerzo estimado de desarrollo, productividad, tiempo de desarrollo, cantidad de personas requeridas y costo total del proyecto. En este trabajo se asume cada distribución como la suma de cada uno de los proyectos (paquetes) de software que lo componen, dicho esto, se toma como la cantidad total de líneas de código fuente a la suma de las líneas de código fuente de cada paquete de software contenido en el repositorio principal de cada distribución.
+Para poder calcular el número de líneas de código fuente en el presente estudio se ha optado por utilizar la herramienta \texttt{cloc}\footnote{\url{https://github.com/AlDanial/cloc}}. \texttt{Cloc} es un programa con licencia libre, multiplataforma, hecho en Perl, que analiza los paquetes de software dados y procede a contar las líneas en blanco, líneas con comentarios y las líneas de código fuente físicas, reconociendo más de 200 lenguajes de programación. 
 
-%\subsection{Procedimientos para el cálculo de estimaciones}
-%En resumen, para poder determinar las estimaciones de costos aplicando el modelo COCOMO básico en cada distribución, se realizan los siguientes operaciones:
-%\begin{enumerate}
-%\item Descargar  el archivo \texttt{Sources} que contiene la lista de paquetes fuentes de la rama principal de la versión de la distro a evaluar.
-%\item Ejecutar el script de descarga de paquetes fuentes.
-%\item Ejectuar el script de descompresión y ordenamiento de paquetes fuente.
-%\item Correr el programa \texttt{cloc} para estimar el número de líneas de código fuente físicas.
-%\item Realizar las estimaciones de esfuerzo, tiempo de desarrollo, personal, productividad y costo total.
-%\end{enumerate}
+Una vez obtenido el número de líneas de código fuente se efectúan los cálculos respectivos de las diferentes estimaciones, tales como: esfuerzo estimado de desarrollo, productividad, tiempo de desarrollo, cantidad de personas requeridas y costo total del proyecto. 
+
+En este trabajo se asume cada distribución como la suma de cada uno de los proyectos (paquetes) de software que lo componen. Dicho esto, se toma como la cantidad total de líneas de código fuente a la suma de las líneas de código fuente de cada paquete de software contenido en el repositorio principal de cada distribución.
+
+\subsection{Procedimientos para el cálculo de estimaciones}
+En resumen, para poder determinar las estimaciones de costos aplicando el modelo COCOMO básico en cada distribución, se realizan los siguientes operaciones:
+\begin{enumerate}
+\item Descargar  el archivo \texttt{Sources} que contiene la lista de paquetes fuentes de la rama principal de la versión de la distro a evaluar.
+\item Ejecutar el script de descarga de paquetes fuentes.
+\item Ejectuar el script de descompresión y ordenamiento de paquetes fuente.
+\item Correr el programa \texttt{cloc} para estimar el número de líneas de código fuente físicas.
+\item Realizar las estimaciones de esfuerzo, tiempo de desarrollo, personal, productividad y costo total.
+\end{enumerate}
+
+\subsubsection{Scripts para descargar paquetes fuente}
+
+Para descargar el código fuente de cada paquete dentro del repositorio principal de una distribución basada en Debian se ha utilizado el comando \texttt{apt-get --download-only source \textit{nombredelpaquete}}. Esta acción descarga un conjunto de archivos que permiten compilar y construir nuevas versiones del paquete desde las fuentes. 
+
+Las extensiones asociadas a estos archivos posibilita escoger el archivo que interesa para hacer las mediciones. Así, el programa utilizado para automatizar la descarga de todos los archivos fuente se enfoca en conservar el archivo con el código fuente creado por el autor, con extensión \texttt{.orig.tar.gz}, y elimina el resto de archivos descargados que no son necesarios para el proceso de cálculo de líneas de código. 
+
+El listado de los paquetes de un repositorio se encuentra en un archivo llamado ``\textit{Sources}''. Este archivo se ubica dentro del mismo repositorio público, en un directorio de nombre \texttt{source}, para cada rama del repositorio y para cada una de las versiones de la distribución. 
+
+El código para automatización de descarga de paquetes fuentes se aprecia en el Código~\ref{code1} del Apéndice. Básicamente el programa lee cada línea del archivo \emph{Sources}, el cual es el índice de archivos fuente que aloja el repositorio, y se encarga de identificar y extraer el nombre de cada paquete que se encuentra dentro del índice para luego proceder a la descarga en el disco duro del archivo comprimido que contiene el código fuente del nombre del paquete procesado.
+
+\subsubsection{Scripts para ordenar y descomprimir paquetes fuentes}
+
+Los archivos fuentes se descargan en un formato empaquetado (o comprimido). A modo de mantener un orden y para efectos de contabilizar cada directorio como un proyecto diferente, el script crea un directorio para cada uno de los paquetes, esto ayuda entre otras cosas a evitar sobreescritura de archivos en un directorio de descompresión común debido a nombres de archivos y directorios iguales, y organiza cada subproyecto (paquete de código) en un espacio propio.
+
+Los directorios creados inician con el símbolo guión bajo (\_), esto se debe porque la orden utilizada para descomprimir los paquetes no permite la creación de un directorio con el mismo nombre que el archivo a desempaquetar.  El conjunto de instrucciones utilizado para ejecutar todos estos pasos se aprecia en el Código~\ref{code2} del Apéndice.
+
+\subsubsection{Cantidad de líneas de Código Fuente}
+
+Previo al uso de \texttt{cloc} se prepara un ambiente de trabajo para cada distribución a evaluar con el fin de operar en un ambiente limpio, recién instalado. Los pasos para ello se describen a continuación tomando como ejemplo la distribución Debian:
+
+Instalación de los paquetes necesarios para crear una jaula.
+
+\begin{lstlisting}
+apt install debootstrap
+\end{lstlisting}
+
+Instalación de una jaula Debian Jessie (como root)
+\begin{lstlisting}
+debootstrap jessie jaula http://localhost/debian/ 
+\end{lstlisting}
+Donde: \\
+\texttt{deboostrap}: es el comando para construir la jaula.\\
+\texttt{jessie}: es la distribución a instalar en la jaula.\\
+\texttt{jaula}: es el nombre del directorio donde se creará la jaula.\\
+\texttt{http://localhost/debian/}: es la dirección del repositorio local. Al utilizar un repositorio local se disminuye considerablemente el tiempo de descarga de los paquetes.
+
+Se copia el script que se encargará de descargar los paquetes de la rama principal de la distribución hacia la jaula recién creada.
+\begin{lstlisting}
+sudo cp paquetes.py jaula/home/
+\end{lstlisting}
+
+Se repite la operación con el programa que se encargará de crear directorios y descomprimir los archivos en estos directorios.
+\begin{lstlisting}
+sudo cp mkdirmv.sh jaula/home/
+\end{lstlisting}
+
+Se entra a la jaula
+\begin{lstlisting}
+sudo chroot jaula
+\end{lstlisting}
+
+En caso de ser necesario se modifica el \texttt{sources.list} para usar sólo el repositorio local en su rama principal y se actualiza.
+\begin{lstlisting}
+nano /etc/apt/sources.list
+apt update
+\end{lstlisting}
+
+Se instalan los paquetes necesarios para poder operar dentro de la jaula.
+\begin{lstlisting}
+apt install xz-utils tar bzip2 python locales sloccount cloc
+\end{lstlisting}
+
+Se configura el lenguaje del entorno.
+\begin{lstlisting}
+locale-gen es_VE es_VE.UTF-8
+dpkg-reconfigure locales
+\end{lstlisting}
+
+Se descarga el paquete de fuentes desde el repositorio local y se descomprime:
+\begin{lstlisting}
+wget http://localhost/debian/dists/jessie/main/source/Sources.gz
+gzip -d Sources.gz
+\end{lstlisting}
+
+Se procede a correr el script de descarga
+\begin{lstlisting}
+python paquetes.py
+\end{lstlisting}
+
+Luego se corre el programa que se encarga de ordenar cada archivo en un directorio propio, descomprimirlo y borrar el archivo comprimido.
+\begin{lstlisting}
+./mkdirmv.sh
+\end{lstlisting}
+
+Se corre el programa de medidas de métricas\footnote{Asegúrese de haber borrado los programas \texttt{paquetes.py}, \texttt{mkdirmv.sh} y el archivo \texttt{Source} para no incluirlos en las métricas.}
+
+
+\begin{lstlisting}
+cloc --use-sloccount --exclude-ext=po --csv --report-file=cloc.csv _*
+\end{lstlisting}
+
+\noindent
+Donde:\\
+\texttt{cloc}: es el programa para determinar la cantidad de líneas de código.\\
+\texttt{--use-sloccount}: es la orden que le indica a \texttt{cloc} usar los contadores compilados de \texttt{SLOCCount}\footnote{\url{https://www.dwheeler.com/sloccount/}} para los lenguajes C, java, pascal, php y xml que mejoran el desempeño en tiempo del programa.\\
+\texttt{--exclude-ext=po}: argumento acompañado de una lista de extensiones que le indica al programa excluir todos los archivos de ese tipo en los cálculos.\\
+\texttt{--csv}: es el argumento que indica al programa que el resultado se debe presentar con un formato de valores separados por coma (csv).\\
+\texttt{--report-file=cloc.csv}: es el argumento que ordena al programa almacenar los resultados en el archivo \texttt{cloc.csv}.\\
+\texttt{\_*}: ruta de los archivos o directorios que se analizarán. En este caso se analizan todos los archivos y directorios en el directorio actual que inician con guión bajo (\_)
+
+\subsubsection{Caso Debian}
+Para la estimación de los valores en el caso del repositorio Debian se ha debido recurrir a una variación en el método de recolección de datos. Debido a que el programa \texttt{cloc} se quedaba sin responder en un punto del proceso, se procedió a evaluar por separado cada paquete, para luego compilar la información de los 20.498\footnote{De los 20.981 paquetes analizados, 7 paquetes causaban que el programa se quedara sin respuesta y otros 476 no generaron reporte.} reportes generados por \texttt{cloc}.
+
+Para correr \texttt{cloc} en cada directorio por separado se utilizó un script que genera un archivo de reporte csv por cada paquete procesado satisfactoriamente. El código se muestra en el Código~\ref{code3} del Apéndice.
+
+Una vez con todos los reportes generados se procede a evaluar esta información compilando los datos para generar un reporte global. Para ello también se ha creado un programa en python que hace uso de la biblioteca \texttt{pandas}\footnote{\url{http://pandas.pydata.org/}} para el análisis de los datos. El código fuente de este programa se aprecia en el Código~\ref{code4} del Apéndice.
+
+%\lstinputlisting[label=code4,caption=analisis\_cloc\_debian.py]{programas/analisis_cloc_debian.py}
+
+\subsection{Datos recolectados}
+Un ejemplo de los resultados arrojados por \texttt{cloc} para los paquetes \texttt{zygrib}, \texttt{zyn}, \texttt{zynaddsubfx} y \texttt{zypper} de la distribución Debian 8.0 se muestran en la tabla~\ref{table:sloc1}.
+\begin{table}[H]
+\begin{center}
+\caption{SLOC agrupados por lenguaje}
+\label{table:sloc1}
+\begin{tabular}{lrrrr}
+\toprule
+\multirow{2}{*}{\textbf{Lenguaje}} & \multicolumn{1}{c}{\textbf{Cantidad de}} &  \multicolumn{1}{c}{\textbf{Líneas en}} & \multicolumn{1}{c}{\textbf{Líneas con}}  & \multicolumn{1}{c}{\textbf{Líneas de}}\\
+ & \multicolumn{1}{c}{\textbf{archivos}} & \multicolumn{1}{c}{\textbf{blanco}} & \multicolumn{1}{c}{\textbf{comentarios}}  & \multicolumn{1}{c}{\textbf{código fuente}}\\
+\midrule
+C++                & 280 & 16.125 & 18,203 & 86.929 \\
+C/C++ Header       & 309 &  7.546 &  9,825 & 20.167 \\
+Python             &  67 &  2.758 &  1,799 & 10.622 \\
+C                  &  14 &    708 &    424 &  3.888 \\
+make               &   7 &    402 &     32 &  3.399 \\
+CMake              &  29 &    221 &    208 &  1.016 \\
+IDL                &   3 &     47 &      0 &    439 \\
+Bourne Shell       &   5 &     27 &     27 &    219 \\
+Bourne Again Shell &   2 &     29 &      8 &    202 \\
+XML                &   5 &      0 &      0 &     88 \\
+Perl               &   1 &      5 &      4 &     36 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+%Finalmente, para esta etapa, se hace uso de un script codificado en lenguaje R para totalizar las líneas de código y obtener el valor de SLOC que será usado para la estimación de costos. Ver Código~\ref{code5} del Apéndice.
+
+
+
+\section{Estimación de valores}
+\label{ap:cocomo}
+Tomando los valores bajo el modelo de estimación COCOMO Básico y aplicando los valores establecidos para el modo orgánico presentados en la Tabla~\ref{table:coeficientes}, se realizan los cálculos de esfuerzo y tiempo de desarrollo mediante un script en lenguaje R (ver Código~\ref{code6} del Apéndice) usando como entrada de datos el mismo archivo csv generado por el programa de medidas de métricas.
+
+%COCOMO puede ser aplicado a tres tipos de proyecto:
+%
+%\begin{description}
+%\item[Orgánicos] Proyectos bajo un ambiente familiar, estable, relativamente sin restricciones y con desarrolladores experimentados. 
+%\item[Semi-empotrados] Proyecto mezcla de los tipos orgánicos y empotrados, puede haber o no desarrolladores expertos y requerimientos mas o menos rígidos.
+%\item[Empotrados] Proyectos ambiciosos con fuertes restricciones y experiencia moderada.
+%\end{description}
+
+\subsection{Ecuaciones}
+
+\begin{equation}
+Epm = a\times(KSLOC)^b
+\label{eq:Esfuerzo}
+\end{equation}
+
+\begin{equation}
+Prod = \frac{KSLOC}{Epm}
+\label{eq:Productividad}
+\end{equation}
+
+\begin{equation}
+Tdev = c\times(Epm)^d
+\label{eq:Tiempo}
+\end{equation}
+
+\begin{equation}
+Per = \frac{Epm}{Tdev}
+\label{eq:Personas}
+\end{equation}
+
+\begin{equation}
+Ctd = Per \times Spa
+\label{eq:Coste}
+\end{equation}
+%Ctd = \frac{Epm}{12} \times Spa \times 2.4 (según wheeler)
+
+Donde:
+\begin{itemize}
+\item[$Epm$:] es la estimación del esfuerzo de desarrollo, en persona-mes.
+\item[$KSLOC$:] es el número de líneas de código fuente físicas, en miles.
+\item[$Prod$:] es la productividad del proyecto.
+\item[$Tdev$:] es la estimación del tiempo de desarrollo del proyecto, en meses.
+\item[$Per$:] es el número de personas requeridas, en personas.
+\item[$Ctd$:] es el costo total estimado de desarrollo del proyecto, en US\$.
+\item[$Spa$:] es el salario promedio anual estimado de programadores y analistas\footnote{Se toma como referencia el valor US\$60.445,00 para el mes de enero de 2017, dato obtenido desde \url{http://www.payscale.com/research/US/Job=Computer_Programmer/Salary}}.
+\item[$a$, $b$, $c$ y $d$:] son los coeficientes según el tipo de proyecto, ver tabla \ref{table:coeficientes}.
+\end{itemize}
+
+\begin{table}[H]
+\centering
+\caption{Constantes para el cálculo de distintos aspectos de costes para el modelo COCOMO básico}
+\label{table:coeficientes}
+\begin{tabular}{lcccc} 
+\toprule
+Tipo de proyecto & \textbf{$a$} & \textbf{$b$} & \textbf{$c$} & \textbf{$d$}  \\
+\midrule
+\textbf{Orgánico} & \textbf{2,40} & \textbf{1,05} & \textbf{2,50} & \textbf{0,38} \\
+Medio    & 3,00 & 1,12 & 2,50 & 0,35 \\
+Embebido & 3,60 & 1,20 & 2,50 & 0,32 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Continuando con el ejemplo usando los paquetes \texttt{zygrib}, \texttt{zyn}, \texttt{zynaddsubfx} y \texttt{zypper} de la distribución Debian 8.0, la Tabla~\ref{table:cocomocloc} presenta los cálculos de estimación de esfuerzo para estos paquetes.
+
+\begin{savenotes}
+\begin{table}[H]
+\begin{center}
+\caption{Estimaciones de esfuerzo y costos para los paquetes \texttt{zygrib}, \texttt{zyn}, \texttt{zynaddsubfx} y \texttt{zypper} de la distribución Debian 8.0 aplicando COCOMO Básico}
+\label{table:cocomocloc}
+\begin{threeparttable}
+\begin{tabular}{lr}
+%\toprule
+%\textbf{} & \textbf{}\\
+\toprule
+Líneas de código fuente:                        &      127.005 \\
+Esfuerzo estimado de desarrollo (persona--mes): &       388,35 \\
+Productividad estimada:                         &         0,33 \\
+Tiempo de desarrollo estimado (meses):          &        24,09 \\
+Personas requeridas estimadas (personas):       &        16,12 \\
+Costo total estimado del proyecto (US\$):       & 1.190.288,83 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item Para el Costo Total estimado se toma el valor US\$ 73.837,00 anual como salario de referencia para ingenieros de software, desarrolladores y programadores en enero de 2017\footnote{\url{http://www.payscale.com/research/US/Job=Software_Engineer\_\%2f\_Developer\_\%2f\_Programmer/Salary\#CareerPaths}}.
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{table}
+\end{savenotes}
+
+La calidad de estas estimaciones de productividad depende crucialmente de la obtención de datos de procesos o ciclos de vida en alguna etapa estable y reconocida. Por esta razón, en este trabajo se realizó un esfuerzo especial por identificar y levantar la información de proyectos de distribución de software de amplia trayectoria global. Esos proyectos se explican y justifican en el capítulo siguiente.
 
 \chapter{Datos referenciales de las más importantes distribuciones de software}
 \noindent\rule{\textwidth}{0.4pt}
 
 \section{Debian}
 \subsection{Definición}
-\cite{debian15} establecen que el proyecto Debian fue creado por Ian Murdock en agosto de 1993. En la página web del proyecto\footnote{\url{https://www.debian.org/intro/about}} definen a Debian como un sistema operativo libre, dispone de versiones para el núcleo Linux o el núcleo FreeBSD. Además, Debian se presenta con mas de 43000 paquetes de software.
+Debian es una de las primeras distribuciones basadas en el núcleo Linux, también es una de las más prolíficas derivándose de ella otras cientos de distribuciones \citep{wiki17}. \cite{debian15} establecen que el proyecto Debian fue creado por Ian Murdock en agosto de 1993. En la página web del proyecto\footnote{\url{https://www.debian.org/intro/about}} definen a Debian como un sistema operativo libre, dispone de versiones para el núcleo Linux y el núcleo FreeBSD. Además, Debian se presenta con mas de 43000 paquetes de software.
+
+\subsection{Política}
+Debian ha creado un documento que marca los principios filosóficos  para el trabajo en torno al proyecto. Allí se especifican los puntos que fundamentan la distribución. 
+
+Se divide en dos secciones: el ``contrato social'' con la comunidad de software libre, y luego, las directrices de software libre de Debian (DFSG). La primera parte establece los compromisos con la comunidad de software Libre y la segunda parte dispone las normas que deben cumplirse para que las contribuciones sean aceptadas y admitidas en el proyecto.
+
+El contrato social de Debian está disponible en \url{https://www.debian.org/social_contract}
+
+\subsection{Versiones Debian}
+
+Oficialmente el proyecto Debian presta soporte a 4 ramas de desarrollo. 
+
+\begin{description}
+\item [Antigua estable (\textit{oldstable}):] Esta versión contiene la  versión inmediatamente anterior a la versión estable.
+\item [Estable (\textit{stable}):] La versión estable contiene la \'ultima versión oficial de la distribución Debian.
+\item [En pruebas (\textit{testing}):] La versión de pruebas contiene paquetes que a\'un no han sido aceptados dentro de la versión estable, pero se encuentra en cola para ello.
+\item [Inestable (\textit{unstable}):] La versión inestable es la version que se encuentra en desarrollo constante. Esta versión siempre es llamada por el nombre clave ``Sid''.
+\end{description}
+
+La rama estable tiene soporte completo de seguridad. Los lanzamientos de nuevas versiones suceden aproximadamente cada dos años. Cuando una versión estable pasa a la fase antigua estable recibe soporte del equipo de seguridad por aproximadamente un año mas. 
+
+Existe un proyecto que inició con la versión 6 (Squeeze) de Debian para dar soporte a largo plazo (LTS) a todas las versiones estables, el objetivo es extender por dos años adicionales el soporte a las ramas. El equipo está integrado por voluntarios que toman la responsabilidad del mantenimiento de la seguridad una vez que el equipo de seguridad de Debian haya culminado el plazo establecido de soporte. De este modo se tiene, dos años aproximadamente de soporte mientras la rama está en su fase estable, un año mientras es antigua estable, y dos años más como LTS para un aproximado de 5 años en total.
+
+\subsection{Lanzamientos}
+La Tabla \ref{table:lanzamientosdebian} muestra la fecha de lanzamiento de las diferentes versiones de la distribución Debian.
+
+\begin{savenotes}
+\begin{table}[H]
+\caption{Lanzamientos de versiones de Debian}
+\label{table:lanzamientosdebian}
+\centering
+\resizebox{.55\textwidth}{!}{%
+\begin{threeparttable}
+\begin{tabular}{lcr} 
+\toprule
+\textbf{Versión} & \textbf{Nombre Clave} & \textbf{Fecha de Lanzamiento} \\
+\midrule
+0.1--0.90 & Debian  & agosto--diciembre 1993 \\
+0.91      & Debian  & enero 1994 \\
+0.93R5    & Debian  & marzo 1995 \\
+0.93R6    & Debian  & 26/10/1995 \\
+1.1       & Buzz    & 17/06/1996 \\
+1.2       & Rex     & 12/12/1996 \\
+1.3       & Bo      & 02/07/1997 \\
+2.0       & Hamm    & 24/07/1998 \\
+2.1       & Slink   & 09/03/1999 \\
+2.2       & Potato  & 15/08/2000 \\
+3.0       & Woody   & 19/07/2002 \\
+3.1       & Sarge   & 06/06/2005 \\
+4.0       & Etch    & 08/04/2007 \\
+5.0       & Lenny   & 14/02/2009 \\
+6.0       & Squeeze & 06/02/2011 \\
+7.0       & Wheezy  & 04/05/2013 \\
+8.0       & Jessie  & 25/04/2015 \\
+%9.0       & Stretch & 17/06/2017 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item Fuentes: \cite{debian15} y \textit{DebianReleases}\footnote{\url{https://wiki.debian.org/DebianReleases}}
+\end{tablenotes}
+\end{threeparttable}}
+\end{table}
+\end{savenotes}
+
+
+\subsection{Histórico de distribuciones}
+El hecho de que una distribución mantenga un archivo donde se almacenan las versiones publicadas durante su vida añade la posibilidad de explorar aspectos históricos y técnicos de la distribución.
+
+Debian mantiene un registro de la mayoría de las versiones liberadas hasta la fecha, específicamente desde la versión 3.0  (Woody). Este directorio puede encontrarse en la dirección \url{http://cdimage.debian.org/mirror/cdimage/archive/}.
 
 \subsection{Componentes}
-
 Debian categoriza los paquetes incluidos en su sistema dentro de tres repositorios según su compatibilidad con las directrices de software libre de Debian (DFSG)\footnote{\url{https://www.debian.org/social_contract.es.html\#guidelines}}, estos repositorios son:
 
 \begin{description}
@@ -564,6 +895,7 @@ armel   & EABI ARM \\
 armhf   & ABI ARM de punto flotante \\
 i386    & PC de 32 bits (i386) \\
 mips    & MIPS (modo big-endian) \\
+mipsel  & MIPS (modo little-endian) \\
 powerpc & Motorola/IBM PowerPC \\
 ppc64el & POWER7+, POWER8 \\
 s390x   & System z \\
@@ -571,7 +903,7 @@ s390x   & System z \\
 \end{tabular}
 \begin{tablenotes}
 \small
-\item Fuentes: Debian\footnote{\url{https://www.debian.org/ports/index.es.html\#portlist-released}}
+\item Fuentes: Debian\footnote{\url{https://www.debian.org/ports/index.es.html\#portlist-released}}, DistroWatch\footnote{\url{https://distrowatch.com/table.php?distribution=debian}}
 \end{tablenotes}
 \end{threeparttable}
 \end{center}
@@ -587,41 +919,26 @@ En la comunidad de desarrollo de Debian se pueden distinguir diferentes roles:
 \item [Mantenedor (\textit{maintainer}):] es la persona que se encarga de empaquetar el programa para Debian.
 \item [Patrocinador (\textit{sponsor}):] es la persona que ayuda a los mantenedores a subir los paquetes al repositorio oficial de paquetes Debian, luego de que estos sean revisados.
 \item [Mentor:] es la persona que ayuda a los mantenedores noveles con el empaquetado y otras actividades de desarrollo.
-\item [Desarrollador Debian (DD) (\textit{Debian Developer}):] es un miembro del proyecto Debian con permisos plenos de subida de paquetes al repositorio oficial de paquetes Debian.
 \item [Mantenedor Debian (DM) (\textit{Debian Maintainer}):] es una persona con permisos limitados de subida de paquetes al repositorio oficial de paquetes Debian.
+\item [Desarrollador Debian (DD) (\textit{Debian Developer}):] es un miembro del proyecto Debian con permisos plenos de subida de paquetes al repositorio oficial de paquetes Debian.
 \end{description}
 
 \subsection{Colaboradores}
+Para finales del año 2016 existían poco más de 1300 colaboradores del proyecto Debian entre Mantenedores Debian y Desarrolladores Debian.
+
 \begin{itemize}
 \item 271 Mantenedores Debian\footnote{\url{https://nm.debian.org/public/people/dm_all} [Consultado 14 de noviembre de 2016]}
 \item 1043 Desarrolladores Debian\footnote{\url{https://nm.debian.org/public/people/dd_all} [Consultado 14 de noviembre de 2016]}
 \end{itemize}
 
-\subsection{Política}
-\begin{itemize}
-\item Contrato social de Debian \url{https://www.debian.org/social_contract}
-\end{itemize}
-
-\subsection{Histórico de distribuciones}
-\begin{itemize}
-\item Debian \url{http://cdimage.debian.org/mirror/cdimage/archive/}
-\end{itemize}
-
-\subsection{Versiones Debian}
-\begin{description}
-\item [Estable (\textit{stable}):] La versión estable contiene la \'ultima versión oficial de la distribución Debian.
-\item [Pruebas (\textit{testing}):] La versión de pruebas contiene paquetes que a\'un no han sido aceptados dentro de la versión estable, pero se encuentra en cola para ello.
-\item [Inestable (\textit{unstable}):] La versión inestable es la version que se encuentra en desarrollo constante. Esta versión siempre es llamada por el nombre clave ``Sid''.
-\end{description}
-
 \subsection{Listas de discusión}
 \subsubsection{Lista de usuarios}
 \begin{figure}[H]
 \caption{Actividad de la lista de correos \textit{Users} de Debian}
-\begin{center}
+\centering
 \includegraphics[width=\textwidth]{lista_debian_user}
-\end{center}
-Fuente: https://lists.debian.org/debian-user/ (Recuperado 06/06/2017)
+
+\footnotesize{Fuente: \url{https://lists.debian.org/debian-user/} (Recuperado 06/06/2017)}
 \end{figure}
 
 \subsubsection{Lista de desarrolladores}
@@ -633,48 +950,19 @@ Fuente: https://lists.debian.org/debian-user/ (Recuperado 06/06/2017)
 Fuente: https://lists.debian.org/debian-devel/ (Recuperado 07/06/2017)
 \end{figure}
 
+\subsection{Ciclo de vida de un paquete en Debian}
 
-\subsection{Lanzamientos}
-La Tabla \ref{table:lanzamientosdebian} muestra la fecha de lanzamiento de las diferentes versiones de la distribución Debian.
-
+En la figura~\ref{fig:ciclodebian} se presenta el diagrama de flujo de paquetes entre las diferentes versiones de Debian.
 \begin{savenotes}
-\begin{table}[H]
+\begin{figure}[H]
+\caption{Flujo de trabajo de paquetes Debian para 2016}
+\label{fig:ciclodebian}
 \begin{center}
-\caption{Lanzamientos de versiones de Debian}
-\label{table:lanzamientosdebian}
-\begin{threeparttable}
-\begin{tabular}{lcr} 
-\toprule
-\textbf{Versión} & \textbf{Nombre Clave} & \textbf{Fecha de Lanzamiento} \\
-\midrule
-0.1--0.90 & Debian & agosto--diciembre 1993 \\
-0.91 & Debian & enero 1994 \\
-0.93R5 & Debian & marzo 1995 \\
-0.93R6 & Debian & noviembre 1995 \\
-1.1 & Buzz & 17/06/1996 \\
-1.2 & Rex & 12/12/1996 \\
-1.3 & Bo & 05/06/1997 \\
-2.0 & Hamm & 24/07/1998 \\
-2.1 & Slink & 09/03/1999 \\
-2.2 & Potato & 15/08/2000 \\
-3.0 & Woody & 19/07/2002 \\
-3.1 & Sarge & 06/06/2005 \\
-4.0 & Etch & 08/04/2007 \\
-5.0 & Lenny & 14/02/2009 \\
-6.0 & Squeeze & 06/02/2011 \\
-7.0 & Wheezy & 04/05/2013 \\
-8.0 & Jessie & 25/04/2015 \\
-\bottomrule
-\end{tabular}
-\begin{tablenotes}
-\small
-\item Fuentes: \cite{debian15} y Debian\footnote{\url{https://www.debian.org/doc/manuals/project-history/ch-releases.html}}
-\end{tablenotes}
-\end{threeparttable}
+\includegraphics[width=\textwidth]{package-cycle}
 \end{center}
-\end{table}
+Fuente: Imagen basada en el código de Antoine Beaupré\footnote{\url{https://anonscm.debian.org/git/collab-maint/package-cycle.git/tree/package-cycle.dot} (Recuperado Junio 2017)}
+\end{figure}
 \end{savenotes}
-
 \subsection{Estimación de costos}
 \subsubsection{Componente \textit{main}}
 \begin{itemize}
@@ -744,7 +1032,7 @@ Otros             & 731.630 & 13.414.341 & 14.506.986 &  96.629.959 \\
 \begin{tabular}{lr}
 %\toprule
 %\textbf{} & \textbf{}\\
-\midrule
+\toprule
 Líneas de código fuente:                        &  1.015.218.011 \\
 Esfuerzo estimado de desarrollo (persona--mes): &   4.865.175,62 \\
 Productividad estimada:                         &           0,21 \\
@@ -998,7 +1286,7 @@ Otros                  &   161.869 &  2.155.228 &  2.753.629 &  16.526.958 \\
 \begin{tabular}{lr}
 %\toprule
 %\textbf{} & \textbf{}\\
-\midrule
+\toprule
 Líneas de código fuente:                        &    240.297.751 \\
 Esfuerzo estimado de desarrollo (persona--mes): &   1.071.515,44 \\
 Productividad estimada:                         &           0,22 \\
@@ -1257,7 +1545,7 @@ D                      &      1 &      0 &      0 &       1 \\
 \begin{tabular}{lr}
 %\toprule
 %\textbf{} & \textbf{}\\
-\midrule
+\toprule
 Líneas de código fuente:                        &      246.648 \\
 Esfuerzo estimado de desarrollo (persona--mes): &       779,64 \\
 Productividad estimada:                         &         0,32 \\
@@ -1341,6 +1629,7 @@ Para sacar estimaciones de número de máquinas que cuentan con la distribución Ca
 
 El problema en mantener esta afirmación es que el proyecto inició la entrega de computadoras en 2009, el Estado no añadió un sistema de seguimiento de hardware o software, por lo que no es posible en este momento saber algunos datos de interés estadístico para el Estado como el número exacto de computadoras operativas, tampoco se puede saber, de este número de máquinas operativas, cuántas aún conservan el software entregado originalmente, cuántas de estas le han actualizado el sistema o le han instalado otro sistema operativo (libre o privativo), cuántas aún están en manos de sus dueños originales, etc.
 
+Por todo esto no es correcto alegar que Canaima ``tiene la comunidad de Software Libre más grande del mundo con los más de 5 millones de usuarias y usuarias de todo el territorio nacional que tienen su canaimita.'' \citep{hernandez16}. A lo sumo se podría afirmar que se han entregado más de 5 millones de computadoras portátiles a estudiantes y docentes desde que inició el proyecto Canaima Educativo, pero no hay manera de asegurar que esa sea la cantidad de usuarios actuales. 
 
 
 \begin{figure}[H]
@@ -1404,149 +1693,260 @@ Antes que todo, debe tenerse en cuenta que Canaima GNU/Linux es una distribución
 
 \begin{appendices}
 \noindent\rule{\textwidth}{0.4pt}
-\section{Scripts para descargar paquetes fuente}
+\section{Códigos fuentes}
+\subsection{Script para descargar paquetes fuente}
 \label{ap:descarga}
 
-Para descargar el código fuente de cada paquete dentro del repositorio principal de una distribución basada en Debian se ha utilizado el comando \texttt{apt-get --download-only source \textit{nombredelpaquete}},  esta acción descarga un conjunto de archivos que permiten compilar y construir nuevas versiones del paquete desde las fuentes. Las extensiones asociadas a estos archivos posibilita escoger el archivo que interesa para hacer las mediciones, así el programa utilizado para automatizar la descarga de todos los archivos fuente se enfoca en conservar el archivo con el código fuente creado por el autor, con extensión \texttt{.orig.tar.gz}, y elimina el resto de archivos descargados que no son necesarios para el proceso de cálculo de líneas de código. El listado de los paquetes de un repositorio se encuentra en un archivo llamado ``\textit{Sources}'', este archivo se ubica dentro del mismo repositorio público, en un directorio de nombre \texttt{source}, para cada rama del repositorio por cada versión de la distribución. 
-
-El código para automatización de descarga de paquetes fuentes se aprecia en el Código~\ref{code1}. Básicamente el programa lee cada línea del archivo \emph{Sources}, el cual es el índice de archivos fuente que aloja el repositorio, y se encarga de identificar y extraer el nombre de cada paquete que se encuentra dentro del índice para luego proceder a la descarga en el disco duro del archivo comprimido que contiene el código fuente del nombre del paquete procesado.\\
+%Para descargar el código fuente de cada paquete dentro del repositorio principal de una distribución basada en Debian se ha utilizado el comando \texttt{apt-get --download-only source \textit{nombredelpaquete}},  esta acción descarga un conjunto de archivos que permiten compilar y construir nuevas versiones del paquete desde las fuentes. Las extensiones asociadas a estos archivos posibilita escoger el archivo que interesa para hacer las mediciones, así el programa utilizado para automatizar la descarga de todos los archivos fuente se enfoca en conservar el archivo con el código fuente creado por el autor, con extensión \texttt{.orig.tar.gz}, y elimina el resto de archivos descargados que no son necesarios para el proceso de cálculo de líneas de código. El listado de los paquetes de un repositorio se encuentra en un archivo llamado ``\textit{Sources}'', este archivo se ubica dentro del mismo repositorio público, en un directorio de nombre \texttt{source}, para cada rama del repositorio por cada versión de la distribución. 
+%
+%El código para automatización de descarga de paquetes fuentes se aprecia en el Código~\ref{code1}. Básicamente el programa lee cada línea del archivo \emph{Sources}, el cual es el índice de archivos fuente que aloja el repositorio, y se encarga de identificar y extraer el nombre de cada paquete que se encuentra dentro del índice para luego proceder a la descarga en el disco duro del archivo comprimido que contiene el código fuente del nombre del paquete procesado.\\
+%\\
 
 \lstinputlisting[label=code1,caption=paquetes.py]{programas/paquetes.py}
 
-\section{Scripts para ordenar y descomprimir paquetes fuentes}
+\subsection{Script para ordenar y descomprimir paquetes fuentes}
 \label{ap:orden}
-Los archivos fuentes se descargan en un formato empaquetado (o comprimido). A modo de mantener un orden y para efectos de contabilizar cada directorio como un proyecto diferente, se crea un directorio para cada uno de los paquetes, esto ayuda entre otras cosas a evitar sobreescritura de archivos en un directorio de descompresión común debido a nombres de archivos y directorios iguales, y organiza cada subproyecto (paquete de código) en un espacio propio. El conjunto de instrucciones utilizado para ejecutar todos estos pasos se aprecia en el Código~\ref{code2}\\
+%Los archivos fuentes se descargan en un formato empaquetado (o comprimido). A modo de mantener un orden y para efectos de contabilizar cada directorio como un proyecto diferente, se crea un directorio para cada uno de los paquetes, esto ayuda entre otras cosas a evitar sobreescritura de archivos en un directorio de descompresión común debido a nombres de archivos y directorios iguales, y organiza cada subproyecto (paquete de código) en un espacio propio. El conjunto de instrucciones utilizado para ejecutar todos estos pasos se aprecia en el Código~\ref{code2}\\
 
 \lstinputlisting[label=code2,caption=mkdirmv.sh]{programas/mkdirmv.sh}
 
-\section{Cantidad de líneas de Código Fuente}
-\label{ap:sloc}
-\subsection{Procedimiento}
-Antes de poder hacer uso de \texttt{cloc} se prepara antes un ambiente de trabajo para cada distribución a evaluar. Los pasos para ello se describen a continuación tomando como ejemplo la distribución Debian:\\
-Instalación de los paquetes necesarios para crear una jaula.
-\begin{lstlisting}
-apt install debootstrap
-\end{lstlisting}
-
-Instalación de una jaula Debian Jessie (como root)
-\begin{lstlisting}
-debootstrap jessie jaula http://localhost/debian/ 
-\end{lstlisting}
-Donde: \\
-\texttt{deboostrap}: es el comando para construir la jaula.\\
-\texttt{jessie}: es la distribución a instalar en la jaula.\\
-\texttt{jaula}: es el nombre del directorio donde se creará la jaula.\\
-\texttt{http://localhost/debian/}: es la dirección del repositorio local. Al utilizar un repositorio local se disminuye considerablemente el tiempo de descarga de los paquetes.
-
-Se copia el script que se encargará de descargar los paquetes de la rama principal de la distribución a estudiar a la jaula recién creada.
-\begin{lstlisting}
-sudo cp paquetes.py jaula/home/
-\end{lstlisting}
-
-Se repite la operación con el programa que se encargará de crear directorios y descomprimir los archivos en estos directorios.
-\begin{lstlisting}
-sudo cp mkdirmv.sh jaula/home/
-\end{lstlisting}
-
-Se entra a la jaula
-\begin{lstlisting}
-sudo chroot jaula
-\end{lstlisting}
-
-En caso de ser necesario se modifica el \texttt{sources.list} para usar solo el repositorio local en su rama principal y se actualiza.
-\begin{lstlisting}
-nano /etc/apt/sources.list
-apt update
-\end{lstlisting}
-
-Se instalan los paquetes necesarios para poder operar dentro de la jaula.
-\begin{lstlisting}
-apt install xz-utils tar bzip2 python locales sloccount cloc
-\end{lstlisting}
-
-Se configura el lenguaje del entorno.
-\begin{lstlisting}
-locale-gen es_VE es_VE.UTF-8
-dpkg-reconfigure locales
-\end{lstlisting}
-
-Se descarga el paquete de fuentes desde el repositorio local y se descomprime:
-\begin{lstlisting}
-wget http://localhost/debian/dists/jessie/main/source/Sources.gz
-gzip -d Sources.gz
-\end{lstlisting}
-
-Se procede a correr el script
-\begin{lstlisting}
-python paquetes.py
-\end{lstlisting}
-
-Luego se corre el programa que se encarga de ordenar cada archivo en un directorio propio, descomprimirlo y borrar el archivo comprimido.
-\begin{lstlisting}
-./mkdirmv.sh
-\end{lstlisting}
-
-Se corre el programa de medidas de métricas\footnote{Asegúrese de haber borrado los programas \texttt{paquetes.py}, \texttt{mkdirmv.sh} y el archivo \texttt{Source} para no incluirlos en las métricas.}
+%\section{Cantidad de líneas de Código Fuente}
+%\label{ap:sloc}
+%\subsection{Procedimiento}
+%Antes de poder hacer uso de \texttt{cloc} se prepara antes un ambiente de trabajo para cada distribución a evaluar. Los pasos para ello se describen a continuación tomando como ejemplo la distribución Debian:\\
+%Instalación de los paquetes necesarios para crear una jaula.
 %\begin{lstlisting}
-%sloccount --duplicates --multiproject --personcost 60445 . > metrica.txt
+%apt install debootstrap
 %\end{lstlisting}
+%
+%Instalación de una jaula Debian Jessie (como root)
+%\begin{lstlisting}
+%debootstrap jessie jaula http://localhost/debian/ 
+%\end{lstlisting}
+%Donde: \\
+%\texttt{deboostrap}: es el comando para construir la jaula.\\
+%\texttt{jessie}: es la distribución a instalar en la jaula.\\
+%\texttt{jaula}: es el nombre del directorio donde se creará la jaula.\\
+%\texttt{http://localhost/debian/}: es la dirección del repositorio local. Al utilizar un repositorio local se disminuye considerablemente el tiempo de descarga de los paquetes.
+%
+%Se copia el script que se encargará de descargar los paquetes de la rama principal de la distribución a estudiar a la jaula recién creada.
+%\begin{lstlisting}
+%sudo cp paquetes.py jaula/home/
+%\end{lstlisting}
+%
+%Se repite la operación con el programa que se encargará de crear directorios y descomprimir los archivos en estos directorios.
+%\begin{lstlisting}
+%sudo cp mkdirmv.sh jaula/home/
+%\end{lstlisting}
+%
+%Se entra a la jaula
+%\begin{lstlisting}
+%sudo chroot jaula
+%\end{lstlisting}
+%
+%En caso de ser necesario se modifica el \texttt{sources.list} para usar solo el repositorio local en su rama principal y se actualiza.
+%\begin{lstlisting}
+%nano /etc/apt/sources.list
+%apt update
+%\end{lstlisting}
+%
+%Se instalan los paquetes necesarios para poder operar dentro de la jaula.
+%\begin{lstlisting}
+%apt install xz-utils tar bzip2 python locales sloccount cloc
+%\end{lstlisting}
+%
+%Se configura el lenguaje del entorno.
+%\begin{lstlisting}
+%locale-gen es_VE es_VE.UTF-8
+%dpkg-reconfigure locales
+%\end{lstlisting}
+%
+%Se descarga el paquete de fuentes desde el repositorio local y se descomprime:
+%\begin{lstlisting}
+%wget http://localhost/debian/dists/jessie/main/source/Sources.gz
+%gzip -d Sources.gz
+%\end{lstlisting}
+%
+%Se procede a correr el script
+%\begin{lstlisting}
+%python paquetes.py
+%\end{lstlisting}
+%
+%Luego se corre el programa que se encarga de ordenar cada archivo en un directorio propio, descomprimirlo y borrar el archivo comprimido.
+%\begin{lstlisting}
+%./mkdirmv.sh
+%\end{lstlisting}
+%
+%Se corre el programa de medidas de métricas\footnote{Asegúrese de haber borrado los programas \texttt{paquetes.py}, \texttt{mkdirmv.sh} y el archivo \texttt{Source} para no incluirlos en las métricas.}
+%%\begin{lstlisting}
+%%sloccount --duplicates --multiproject --personcost 60445 . > metrica.txt
+%%\end{lstlisting}
+%%Donde:\\
+%%\textbf{duplicates}: Cuenta archivos duplicados, normalmente si encuentra archivos con igual contenido determinado por medio del uso de valores hash MD5, este es contabilizado una sola vez.\\
+%%\textbf{multiproject}: Los diferentes directorios representan diferentes proyectos, de otro modo es asumido que todas las fuentes de código pertenecen a un mismo proyecto. Esto no cambia el total de número de archivos o valores SLOC pero sí afecta el esfuerzo y tiempo estimados. Con esta opción habilitada el esfuerzo es calculado de manera separada para cada proyecto y el tiempo es el tiempo estimado de los proyectos mas grandes.\\
+%%\textbf{personcost}: Cambia el salario promedio anual al valor indicado. En este caso se usó el valor obtenido desde la página PayScale\footnote{\url{http://www.payscale.com/research/US/Job=Computer_Programmer/Salary}}
+%
+%\begin{lstlisting}
+%cloc --use-sloccount --exclude-ext=po --csv --report-file=cloc.csv _*
+%\end{lstlisting}
+%
+%\noindent
 %Donde:\\
-%\textbf{duplicates}: Cuenta archivos duplicados, normalmente si encuentra archivos con igual contenido determinado por medio del uso de valores hash MD5, este es contabilizado una sola vez.\\
-%\textbf{multiproject}: Los diferentes directorios representan diferentes proyectos, de otro modo es asumido que todas las fuentes de código pertenecen a un mismo proyecto. Esto no cambia el total de número de archivos o valores SLOC pero sí afecta el esfuerzo y tiempo estimados. Con esta opción habilitada el esfuerzo es calculado de manera separada para cada proyecto y el tiempo es el tiempo estimado de los proyectos mas grandes.\\
-%\textbf{personcost}: Cambia el salario promedio anual al valor indicado. En este caso se usó el valor obtenido desde la página PayScale\footnote{\url{http://www.payscale.com/research/US/Job=Computer_Programmer/Salary}}
+%\texttt{cloc}: es el programa para determinar la cantidad de líneas de código.\\
+%\texttt{--use-sloccount}: es la orden que le indica a \texttt{cloc} usar los contadores compilados de \texttt{SLOCCount}\footnote{\url{https://www.dwheeler.com/sloccount/}} para los lenguajes C, java, pascal, php y xml que mejoran el desempeño en tiempo del programa.\\
+%\texttt{--exclude-ext=po}: argumento acompañado de una lista de extensiones que le indica al programa excluir todos los archivos de ese tipo en los cálculos. \\
+%%\texttt{--unix}: es el argumento que anula la lógica de autodetección del sistema operativo y ejecutar en modo UNIX.\\
+%%\texttt{--skip-uniqueness}: es la opción que omite la comprobación de unicidad de archivo. De haberlos, se cuentan archivos con idénticos contenidos varias veces.\\
+%\texttt{--csv}: es el argumento que indica al programa que el resultado se debe presentar con un formato de valores separados por coma (csv).\\
+%\texttt{--report-file=cloc.csv}: es el argumento que ordena al programa a almacenar los resultados en el archivo \texttt{cloc.csv}.\\
+%\texttt{\_*}: ruta de los archivos o directorios que se analizarán, en este caso se analizan todos los archivos y directorios en el directorio actual que inician con guión bajo (\_)
+%
+%\subsection{Caso Debian}
 
-\begin{lstlisting}
-cloc --use-sloccount --exclude-ext=po --csv --report-file=cloc.csv _*
-\end{lstlisting}
+%Para la estimación de los valores en el caso del repositorio Debian se ha debido recurrir a una variación en el método de recolección de datos. Debido a que el programa \texttt{cloc} se quedaba sin responder en un punto del proceso, se procedió a evaluar por separado cada paquete, para luego compilar la información de los 20.498\footnote{De los 20.981 paquetes analizados, 7 paquetes causaban que el programa se quedara sin respuesta y otros 476 no generaron reporte.} reportes generados por \texttt{cloc}.
+%
+%Para correr \texttt{cloc} en cada directorio por separado se utilizó el siguiente script que genera un archivo de reporte csv por cada paquete procesado satisfactoriamente. El código se muestra en el Código~\ref{code3}.\\
 
-\noindent
-Donde:\\
-\texttt{cloc}: es el programa para determinar la cantidad de líneas de código.\\
-\texttt{--use-sloccount}: es la orden que le indica a \texttt{cloc} usar los contadores compilados de \texttt{SLOCCount}\footnote{\url{https://www.dwheeler.com/sloccount/}} para los lenguajes C, java, pascal, php y xml que mejoran el desempeño en tiempo del programa.\\
-\texttt{--exclude-ext=po}: argumento acompañado de una lista de extensiones que le indica al programa excluir todos los archivos de ese tipo en los cálculos. \\
-%\texttt{--unix}: es el argumento que anula la lógica de autodetección del sistema operativo y ejecutar en modo UNIX.\\
-%\texttt{--skip-uniqueness}: es la opción que omite la comprobación de unicidad de archivo. De haberlos, se cuentan archivos con idénticos contenidos varias veces.\\
-\texttt{--csv}: es el argumento que indica al programa que el resultado se debe presentar con un formato de valores separados por coma (csv).\\
-\texttt{--report-file=cloc.csv}: es el argumento que ordena al programa a almacenar los resultados en el archivo \texttt{cloc.csv}.\\
-\texttt{\_*}: ruta de los archivos o directorios que se analizarán, en este caso se analizan todos los archivos y directorios en el directorio actual que inician con guión bajo (\_)
-
-\subsection{Caso Debian}
-Para la estimación de los valores en el caso del repositorio Debian se ha debido recurrir a una variación en el método de recolección de datos. Debido a que el programa \texttt{cloc} se quedaba sin responder en un punto del proceso, se procedió a evaluar por separado cada paquete, para luego compilar la información de los 20.498\footnote{De los 20.981 paquetes analizados, 7 paquetes causaban que el programa se quedara sin respuesta y otros 476 no generaron reporte.} reportes generados por \texttt{cloc}.
-
-Para correr \texttt{cloc} en cada directorio por separado se utilizó el siguiente script que genera un archivo de reporte csv por cada paquete procesado satisfactoriamente. El código se muestra en el Código~\ref{code3}.\\
+\subsection{Script para correr \texttt{cloc} en el caso Debian}
 
 \lstinputlisting[label=code3,caption=cloc\_recargado.sh]{programas/cloc_recargado.sh}
 
-Una vez con todos los reportes generados, se procede a evaluar la información, compilando los datos para generar un reporte global. Se ha creado el siguiente programa en python para el análisis de los datos. Código~\ref{code4}.\\
+%Una vez con todos los reportes generados, se procede a evaluar la información, compilando los datos para generar un reporte global. Se ha creado el siguiente programa en python para el análisis de los datos. Código~\ref{code4}.\\
+
+\subsection{Script para el análisis de los datos generados por el script \texttt{cloc\_recargado.sh}}
 
 \lstinputlisting[label=code4,caption=analisis\_cloc\_debian.py]{programas/analisis_cloc_debian.py}
 
-\subsection{Datos recolectados}
-Un ejemplo de los resultados arrojados por \texttt{cloc}\footnote{para los paquetes zygrib, zyn, zynaddsubfx y zypper} se muestran en la tabla~\ref{table:sloc1}.
-\begin{table}[H]
-\begin{center}
-\caption{SLOC agrupados por lenguaje}
-\label{table:sloc1}
-\begin{tabular}{lrrrr}
-\toprule
-\multirow{2}{*}{\textbf{Lenguaje}} & \multicolumn{1}{c}{\textbf{Cantidad de}} &  \multicolumn{1}{c}{\textbf{Líneas en}} & \multicolumn{1}{c}{\textbf{Líneas con}}  & \multicolumn{1}{c}{\textbf{Líneas de}}\\
- & \multicolumn{1}{c}{\textbf{archivos}} & \multicolumn{1}{c}{\textbf{blanco}} & \multicolumn{1}{c}{\textbf{comentarios}}  & \multicolumn{1}{c}{\textbf{código fuente}}\\
-\midrule
-C++                & 280 & 16.125 & 18,203 & 86.929 \\
-C/C++ Header       & 309 &  7.546 &  9,825 & 20.167 \\
-Python             &  67 &  2.758 &  1,799 & 10.622 \\
-C                  &  14 &    708 &    424 &  3.888 \\
-make               &   7 &    402 &     32 &  3.399 \\
-CMake              &  29 &    221 &    208 &  1.016 \\
-IDL                &   3 &     47 &      0 &    439 \\
-Bourne Shell       &   5 &     27 &     27 &    219 \\
-Bourne Again Shell &   2 &     29 &      8 &    202 \\
-XML                &   5 &      0 &      0 &     88 \\
-Perl               &   1 &      5 &      4 &     36 \\
-\bottomrule
-\end{tabular}
-\end{center}
-\end{table}
+%\subsection{Script para el total de Lineas de Código Fuente SLOC}
+%
+%\begin{lstlisting}[language=R,caption=estadisticas.R,label=code5]
+%#! /usr/bin/env Rscript
+%
+%# Copyright 2017 David Hernández
+%#
+%#
+%# This software is free software: you can redistribute it and/or modify
+%# it under the terms of the GNU General Public License as published by
+%# the Free Software Foundation, either version 3 of the License, or
+%# (at your option) any later version.
+%#
+%# This software is distributed in the hope that it will be useful,
+%# but WITHOUT ANY WARRANTY; without even the implied warranty of
+%# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%# GNU General Public License for more details.
+%#
+%# You should have received a copy of the GNU General Public License
+%# along with estadisticas.R. If not, see <http://www.gnu.org/licenses/>.
+%
+%# Estadísticas básicas de los datos obtenidos por CLOC
+%
+%library(tcltk)
+%
+%#Filtro de extensiones con las que se trabajará en este script
+%Filters   <- matrix(c("csv",".csv"),1, 2, byrow = TRUE)
+%
+%#Cargar el archivo de entrada
+%entrada <- tk_choose.files(default = "", caption = "Seleccione el archivo de entrada",multi = FALSE, filters = Filters, index = 1)
+%
+%cloc <- as.data.frame(read.csv(entrada, header=TRUE))
+%
+%cat("\n\n")
+%cat("==========================================================\n")
+%cat("Total archivos con lenguajes reconocidos:\t", format(sum(cloc$files), digits=2, nsmall=2, decimal.mark=",", big.mark=".", scientific=FALSE),"\n")
+%cat("Total de líneas en blanco:\t\t\t", format(sum(cloc$blank), digits=2, nsmall=2, decimal.mark=",", big.mark=".", scientific=FALSE),"\n")
+%cat("Total de líneas con comentarios:\t\t", format(sum(cloc$comment), digits=2, nsmall=2, decimal.mark=",", big.mark=".", scientific=FALSE),"\n")
+%cat("\nTotal de líneas de código fuente:\t\t", format(sum(cloc$code), digits=2, nsmall=2, decimal.mark=",", big.mark=".", scientific=FALSE),"\n")
+%cat("==========================================================\n\n\n")
+%
+%\end{lstlisting}
+
+\subsection{Script para calcular las estimaciones de esfuerzo}
+
+\begin{lstlisting}[language=R,caption=esfuerzo.R,label=code6]
+#! /usr/bin/env Rscript
+
+# Copyright 2017 David Hernández
+#
+#
+# This software is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This software is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with esfuerzo.R. If not, see <http://www.gnu.org/licenses/>.
+
+# Cálculo de estimaciones aplicando el Modelo COCOMO Básico
+
+library(tcltk)
+
+#Filtro de extensiones con las que se trabajará en este script
+Filters   <- matrix(c("csv",".csv"),1, 2, byrow = TRUE)
+
+#Cargar el archivo de entrada
+entrada <- tk_choose.files(default = "", caption = "Seleccione el archivo de entrada",multi = FALSE, filters = Filters, index = 1)
+
+cloc <- read.csv(entrada, header=TRUE)
+
+a <- 2.40
+b <- 1.05
+c <- 2.5
+d <- 0.38
+KSLOC <- sum(cloc$code)/1000
+Spa <- 73837
+Epm <- a*(KSLOC)^b
+Prod <- KSLOC/Epm
+Tdev <- c*(Epm)^d
+Per <- Epm/Tdev
+Ctd <- Per*Spa
+
+cat("\n\n")
+cat("Líneas de código fuente: \t", format(sum(cloc$code), digits=2, nsmall=2, decimal.mark=",", big.mark=".", scientific=FALSE),"\n")
+cat("Líneas de código fuente (K): \t", format(KSLOC, digits=2, nsmall=2, decimal.mark=",", big.mark=".", scientific=FALSE),"\n\n\n")
+cat("Estimaciones aplicando el Modelo COCOMO Básico\n")
+cat("==============================================================\n")
+cat("Esfuerzo estimado de desarrollo:\t", format(Epm, digits=2, nsmall=2, decimal.mark=",", big.mark=".", scientific=FALSE),"\n")
+cat("Productividad estimada:\t\t\t", format(Prod, digits=2, nsmall=2, decimal.mark=",", big.mark=".", scientific=FALSE),"\n")
+cat("Tiempo de desarrollo estimado:\t\t", format(Tdev, digits=2, nsmall=2, decimal.mark=",", big.mark=".", scientific=FALSE),"\n")
+cat("Personas requeridas estimadas:\t\t", format(Per, digits=2, nsmall=2, decimal.mark=",", big.mark=".", scientific=FALSE),"\n")
+cat("\nCosto total estimado del proyecto(*):\t", format(Ctd, digits=2, nsmall=2, decimal.mark=",", big.mark=".", scientific=FALSE), "\n\n")
+cat("(*) con US$", format(Spa, digits=2, nsmall=2, decimal.mark=",", big.mark=".", scientific=FALSE), "anual como referencia para enero de 2017\n")
+cat("==============================================================\n\n\n")
+\end{lstlisting}
+
+%\subsection{Datos recolectados}
+%Un ejemplo de los resultados arrojados por \texttt{cloc}\footnote{para los paquetes zygrib, zyn, zynaddsubfx y zypper} se muestran en la tabla~\ref{table:sloc1}.
+%\begin{table}[H]
+%\begin{center}
+%\caption{SLOC agrupados por lenguaje}
+%\label{table:sloc1}
+%\begin{tabular}{lrrrr}
+%\toprule
+%\multirow{2}{*}{\textbf{Lenguaje}} & \multicolumn{1}{c}{\textbf{Cantidad de}} &  \multicolumn{1}{c}{\textbf{Líneas en}} & \multicolumn{1}{c}{\textbf{Líneas con}}  & \multicolumn{1}{c}{\textbf{Líneas de}}\\
+% & \multicolumn{1}{c}{\textbf{archivos}} & \multicolumn{1}{c}{\textbf{blanco}} & \multicolumn{1}{c}{\textbf{comentarios}}  & \multicolumn{1}{c}{\textbf{código fuente}}\\
+%\midrule
+%C++                & 280 & 16.125 & 18,203 & 86.929 \\
+%C/C++ Header       & 309 &  7.546 &  9,825 & 20.167 \\
+%Python             &  67 &  2.758 &  1,799 & 10.622 \\
+%C                  &  14 &    708 &    424 &  3.888 \\
+%make               &   7 &    402 &     32 &  3.399 \\
+%CMake              &  29 &    221 &    208 &  1.016 \\
+%IDL                &   3 &     47 &      0 &    439 \\
+%Bourne Shell       &   5 &     27 &     27 &    219 \\
+%Bourne Again Shell &   2 &     29 &      8 &    202 \\
+%XML                &   5 &      0 &      0 &     88 \\
+%Perl               &   1 &      5 &      4 &     36 \\
+%\bottomrule
+%\end{tabular}
+%\end{center}
+%\end{table}
+
+%============
 
 %Hay que tomar en cuenta que SLOCCount deja por fuera una gran variedad de lenguajes que aún no son integrados en el código de reconocimiento del programa, incluido varios lenguajes de marcado, en la tabla \ref{table:unknown} se muestran algunos de ellos, indicando la cantidad total de archivos en el repositorio con las extensiones indicadas.
 
@@ -1571,70 +1971,70 @@ Perl               &   1 &      5 &      4 &     36 \\
 %\end{table}
 
 
-\section{Fórmulas para la estimación de costos}
-\label{ap:cocomo}
-Tomando los valores bajo el modelo de estimación COCOMO Básico y aplicando los valores establecidos para el modo orgánico, se realizan los cálculos de esfuerzo y tiempo de desarrollo.
-
-COCOMO puede ser aplicado a tres tipos de proyecto:
-
-\begin{description}
-\item[Orgánicos] Proyectos bajo un ambiente familiar, estable, relativamente sin restricciones y con desarrolladores experimentados. 
-\item[Semi-empotrados] Proyecto mezcla de los tipos orgánicos y empotrados, puede haber o no desarrolladores expertos y requerimientos mas o menos rígidos.
-\item[Empotrados] Proyectos ambiciosos con fuertes restricciones y experiencia moderada.
-\end{description}
-
-\begin{equation}
-Epm = a\times(KSLOC)^b
-\label{eq:Esfuerzo}
-\end{equation}
-
-\begin{equation}
-Prod = \frac{KSLOC}{Epm}
-\label{eq:Productividad}
-\end{equation}
-
-\begin{equation}
-Tdev = c\times(Epm)^d
-\label{eq:Tiempo}
-\end{equation}
-
-\begin{equation}
-Per = \frac{Epm}{Tdev}
-\label{eq:Personas}
-\end{equation}
-
-\begin{equation}
-Ctd = Per \times Spa
-\label{eq:Coste}
-\end{equation}
-%Ctd = \frac{Epm}{12} \times Spa \times 2.4 (según wheeler)
-
-Donde:
-\begin{itemize}
-\item[$Epm$:] es la estimación del esfuerzo de desarrollo, en persona-mes.
-\item[$KSLOC$:] es el número de líneas de código fuente físicas, en miles.
-\item[$Prod$:] es la productividad del proyecto.
-\item[$Tdev$:] es la estimación del tiempo de desarrollo del proyecto, en meses.
-\item[$Per$:] es el número de personas requeridas, en personas.
-\item[$Ctd$:] es el costo total estimado de desarrollo del proyecto, en US\$.
-\item[$Spa$:] es el salario promedio anual estimado de programadores y analistas\footnote{Se toma como referencia el valor US\$60.445,00 para el mes de enero de 2017, dato obtenido desde \url{http://www.payscale.com/research/US/Job=Computer_Programmer/Salary}}.
-\item[$a$, $b$, $c$ y $d$:] son los coeficientes según el tipo de proyecto, ver tabla \ref{table:coeficientes}.
-\end{itemize}
-
-\begin{table}[H]
-\centering
-\caption{Constantes para el cálculo de distintos aspectos de costes para el modelo COCOMO básico}
-\label{table:coeficientes}
-\begin{tabular}{ccccc} 
-\toprule
-Tipo de proyecto & \textbf{$a$} & \textbf{$b$} & \textbf{$c$} & \textbf{$d$}  \\
-\midrule
-\textbf{Orgánico} & \textbf{2,40} & \textbf{1,05} & \textbf{2,50} & \textbf{0,38} \\
-Medio    & 3,00 & 1,12 & 2,50 & 0,35 \\
-Embebido & 3,60 & 1,20 & 2,50 & 0,32 \\
-\bottomrule
-\end{tabular}
-\end{table}
+%\section{Fórmulas para la estimación de costos}
+%\label{ap:cocomo}
+%Tomando los valores bajo el modelo de estimación COCOMO Básico y aplicando los valores establecidos para el modo orgánico, se realizan los cálculos de esfuerzo y tiempo de desarrollo.
+%
+%COCOMO puede ser aplicado a tres tipos de proyecto:
+%
+%\begin{description}
+%\item[Orgánicos] Proyectos bajo un ambiente familiar, estable, relativamente sin restricciones y con desarrolladores experimentados. 
+%\item[Semi-empotrados] Proyecto mezcla de los tipos orgánicos y empotrados, puede haber o no desarrolladores expertos y requerimientos mas o menos rígidos.
+%\item[Empotrados] Proyectos ambiciosos con fuertes restricciones y experiencia moderada.
+%\end{description}
+%
+%\begin{equation}
+%Epm = a\times(KSLOC)^b
+%\label{eq:Esfuerzo}
+%\end{equation}
+%
+%\begin{equation}
+%Prod = \frac{KSLOC}{Epm}
+%\label{eq:Productividad}
+%\end{equation}
+%
+%\begin{equation}
+%Tdev = c\times(Epm)^d
+%\label{eq:Tiempo}
+%\end{equation}
+%
+%\begin{equation}
+%Per = \frac{Epm}{Tdev}
+%\label{eq:Personas}
+%\end{equation}
+%
+%\begin{equation}
+%Ctd = Per \times Spa
+%\label{eq:Coste}
+%\end{equation}
+%%Ctd = \frac{Epm}{12} \times Spa \times 2.4 (según wheeler)
+%
+%Donde:
+%\begin{itemize}
+%\item[$Epm$:] es la estimación del esfuerzo de desarrollo, en persona-mes.
+%\item[$KSLOC$:] es el número de líneas de código fuente físicas, en miles.
+%\item[$Prod$:] es la productividad del proyecto.
+%\item[$Tdev$:] es la estimación del tiempo de desarrollo del proyecto, en meses.
+%\item[$Per$:] es el número de personas requeridas, en personas.
+%\item[$Ctd$:] es el costo total estimado de desarrollo del proyecto, en US\$.
+%\item[$Spa$:] es el salario promedio anual estimado de programadores y analistas\footnote{Se toma como referencia el valor US\$60.445,00 para el mes de enero de 2017, dato obtenido desde \url{http://www.payscale.com/research/US/Job=Computer_Programmer/Salary}}.
+%\item[$a$, $b$, $c$ y $d$:] son los coeficientes según el tipo de proyecto, ver tabla \ref{table:coeficientes}.
+%\end{itemize}
+%
+%\begin{table}[H]
+%\centering
+%\caption{Constantes para el cálculo de distintos aspectos de costes para el modelo COCOMO básico}
+%\label{table:coeficientes}
+%\begin{tabular}{ccccc} 
+%\toprule
+%Tipo de proyecto & \textbf{$a$} & \textbf{$b$} & \textbf{$c$} & \textbf{$d$}  \\
+%\midrule
+%\textbf{Orgánico} & \textbf{2,40} & \textbf{1,05} & \textbf{2,50} & \textbf{0,38} \\
+%Medio    & 3,00 & 1,12 & 2,50 & 0,35 \\
+%Embebido & 3,60 & 1,20 & 2,50 & 0,32 \\
+%\bottomrule
+%\end{tabular}
+%\end{table}
 
 
 %\section{Cómo empaquetar en Canaima GNU/Linux}
@@ -1642,6 +2042,7 @@ Embebido & 3,60 & 1,20 & 2,50 & 0,32 \\
 
 
 % Bibliografía
+\renewcommand{\bibname}{Referencias}
 \bibliographystyle{apa}
 \bibliography{davidh-proyecto-grado}
 
