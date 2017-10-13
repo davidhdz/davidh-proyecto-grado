@@ -2,82 +2,97 @@
 # Modified by David Hernandez <david.vzla@gmail.com>
 # Original: https://anonscm.debian.org/git/collab-maint/package-cycle.git/tree/package-cycle.dot
 digraph cycle {
+    ranksep=1
+    splines = true
+    size=80
+
+    subgraph clusterA {
         label="Flujo de Trabajo para paquetes Debian, 2016"
         labelloc=top
-        graph [ fontname=Liberation fontsize=14 ];
-        node [ fontname=Liberation ];
-        edge [ fontname=Liberation ];
+        graph [ fontname=FreeSans fontsize=14 ]
+        node  [ fontname=FreeSans ]
+        edge  [ fontname=FreeSans ]
+		style=filled
+        color=white
 
         # suites
-        {
-                rank = same                
-                unstable [ label = "inestable" shape=box style=filled fillcolor=red href="https://wiki.debian.org/es/DebianUnstable" ]
-                experimental [ shape=box style=filled fillcolor=red href="https://wiki.debian.org/es/DebianExperimental" ]
-        }
-        {
-                rank = same
-                testing [ label = "en pruebas" shape=box style=filled fillcolor=yellow href="https://wiki.debian.org/es/DebianTesting" ]
-                tpu [ label = "actualizaciones propuestas a pruebas" shape=box style=filled fillcolor=red href="https://wiki.debian.org/TestingProposedUpdates" ]
-        }
-        {
-                rank = same
-                pu [ label = "actualizaciones propuestas a estable" shape=box style=filled fillcolor=yellow href="https://wiki.debian.org/es/StableProposedUpdates" ]
-                stable [ label = "estable" shape=box style=filled fillcolor=green href="https://wiki.debian.org/DebianEstable" ]
-                security [ label = "seguridad" shape=box style=filled fillcolor=green href="https://www.debian.org/security/" ]
-                su [ label = "actualizaciones a estables" shape=box style=filled fillcolor=green href="https://wiki.debian.org/es/StableUpdates" ]
-                backports [ shape=box style=filled fillcolor=green href="https://wiki.debian.org/es/Backports/" ]
-        }
-        {
-                rank=same
-                oldstable [ shape=box style=filled fillcolor=grey href="https://wiki.debian.org/es/DebianOldStable" ]
-                note [ label="Note: antigua estable (oldstable) tiene la misma\nconfiguración que el estable.\nNo se detalla aquí para evitar desorden" shape=note ]
-                # make sure note is next to oldstable
-                note -> oldstable [ style=invis ]
-        }
-        archive [ label = "archivo" href="http://archive.debian.org" shape=box ]
+            {
+            rank = same                
+            unstable [ label = "inestable" shape=box style=filled fillcolor=red href="https://wiki.debian.org/es/DebianUnstable" ]
+            experimental [ shape=box style=filled fillcolor=red href="https://wiki.debian.org/es/DebianExperimental" ]
+            tpu [ label = "actualizaciones propuestas a pruebas" shape=box style=filled fillcolor=red href="https://wiki.debian.org/TestingProposedUpdates" ]
+            }
+            {
+            rank = same
+            testing [ label = "en pruebas" shape=box style=filled fillcolor=yellow href="https://wiki.debian.org/es/DebianTesting" ]
+            pu [ label = "actualizaciones propuestas a estable" shape=box style=filled fillcolor=yellow href="https://wiki.debian.org/es/StableProposedUpdates" ]
+            }
+            {
+            rank = same
+            stable [ label = "estable" shape=box style=filled fillcolor=green href="https://wiki.debian.org/DebianEstable" ]
+            security [ label = "seguridad" shape=box style=filled fillcolor=green href="https://www.debian.org/security/" ]
+            su [ label = "actualizaciones a estables" shape=box style=filled fillcolor=green href="https://wiki.debian.org/es/StableUpdates" ]
+            backports [ shape=box style=filled fillcolor=green href="https://wiki.debian.org/es/Backports/" ]
+            }
+            {
+            rank=same
+            oldstable [ label = "antigua estable" shape=box style=filled fillcolor=grey href="https://wiki.debian.org/es/DebianOldStable" ]
+            note [ label=<Nota: antigua estable (<i>oldstable</i>) tiene<br/>la misma configuración que el estable.<br/>No se detalla aquí para evitar desorden> shape=note ]
+            # make sure note is next to oldstable
+            note -> oldstable [ style=invis ]
+            }
+            {
+            rank=same
+            archive [ label = "archivo" href="http://archive.debian.org" shape=box ]
+            }
 
-        # developers
-        subgraph clusterdevs {
-                label = "subidores"
-                maint [ label="mantenedores" href="https://wiki.debian.org/Maintainers" ]
-                secteam [ label="equipo de seguridad" href="https://wiki.debian.org/Teams/Security" ]
-        }
+            maint [ label="mantenedores" href="https://wiki.debian.org/Maintainers" ]
+            secteam [ label="equipo de seguridad" href="https://wiki.debian.org/Teams/Security" ]
+    }
 
-        # upload workflow
-        secteam -> unstable [ arrowhead=empty ]
-        secteam -> security [ arrowhead=empty ]
-        maint -> unstable [ arrowhead=empty ]
-        maint -> pu [ arrowhead=empty ]
-        maint -> experimental [ arrowhead=empty ]
-        maint -> tpu [ style=dashed arrowhead=empty ]
+    # upload workflow
+    secteam -> unstable [ arrowhead=empty ]
+    secteam -> security [ arrowhead=empty ]
+    maint -> unstable [ arrowhead=empty ]
+    maint -> pu [ arrowhead=empty ]
+    maint -> experimental [ arrowhead=empty ]
+    maint -> tpu [ style=dashed arrowhead=empty ]
+    # make sure it's close to testing
+    testing -> backports [ arrowhead=empty style=invis ]
+    unstable -> testing [ href="https://www.debian.org/doc/manuals/developers-reference/pkgs.html#testing-unstable" ]
+    testing -> stable -> oldstable -> archive [ arrowhead=empty ]
+    security -> pu [ arrowhead=empty ]
+    pu -> stable [ arrowhead=dot, href="https://wiki.debian.org/Teams/ReleaseTeam" ]
+    pu -> testing [ arrowhead=dot href="https://wiki.debian.org/Teams/ReleaseTeam" style=dashed ]
+    tpu -> testing [ arrowhead=dot href="https://wiki.debian.org/Teams/ReleaseTeam" ]
+    pu -> su [ arrowhead=empty ]
+    maint -> backports [ arrowhead=empty ] # headlabel="desde\npruebas" ]
 
-        # make sure it's close to testing
-        testing -> backports [ arrowhead=empty style=invis ]
-        unstable -> testing [ href="https://www.debian.org/doc/manuals/developers-reference/pkgs.html#testing-unstable" ]
-        testing -> stable -> oldstable -> archive [ arrowhead=empty ]
-        
-        security -> pu [ arrowhead=empty ]
-        pu -> stable [ arrowhead=dot, href="https://wiki.debian.org/Teams/ReleaseTeam" ]
-        pu -> testing [ arrowhead=dot href="https://wiki.debian.org/Teams/ReleaseTeam" style=dashed ]
-        maint -> backports [ arrowhead=empty headlabel="desde\npruebas" ]
-        tpu -> testing [ arrowhead=dot href="https://wiki.debian.org/Teams/ReleaseTeam" ]
-        pu -> su [ arrowhead=empty ]
+    subgraph cluster1 {
+        label="Leyenda"
+        labelloc=top
+        graph [ fontname=FreeSans fontsize=14 ]
+        node  [ fontname=FreeSans ]
+        edge  [ fontname=FreeSans ]
 
-        subgraph clusterlegend {
-                label="leyenda"
-                persona
-                repository [ label="repositorio" shape=box ]
-                persona -> repository [ arrowhead=empty label="subido a" ]
-                subrepository [ shape=box label="repositorio" ]
-                repository -> subrepository [ label="automático" ]
-                repository -> subrepository [ arrowhead=empty label="manual" ]
-                repository -> subrepository [ arrowhead=dot label="aprobado" ]
-                repository -> subrepository [ style=dashed label="inusal" ]
-                production [ label="producción" shape=box style=filled fillcolor=green ]
-                test [ shape=box style=filled fillcolor=yellow label="pruebas" ]
-                development [ label="desarrollo" shape=box style=filled fillcolor=red ]
-                deprecated [ shape=box style=filled fillcolor=grey label="depreciado, LTS" ]
-                unsupported [ label="sin soporte" shape=box ]
-                development -> test -> production -> deprecated -> unsupported
-        }
+        persona [ label="subidores" ]
+        subrepository [ shape=box label="repositorio" ]
+        repository [ label="repositorio" shape=box ]
+        paquete [ label="paquete\naceptado" shape=egg ]
+
+        production [ label="producción" shape=box style=filled fillcolor=green ]
+        development [ label="desarrollo" shape=box style=filled fillcolor=red ]
+        test [ shape=box style=filled fillcolor=yellow label="pruebas" ]
+        production [ label="producción" shape=box style=filled fillcolor=green ]
+        deprecated [ shape=box style=filled fillcolor=grey label="depreciado, LTS" ]
+        unsupported [ label="sin soporte" shape=box ]
+
+        persona -> repository [ arrowhead=empty label="subido a" ] 
+        repository -> subrepository [ label="automático" ]
+        repository -> subrepository [ arrowhead=empty label="manual" ]
+        repository -> subrepository [ arrowhead=dot label="aprobado" ]
+        repository -> subrepository [ style=dashed label="inusal" ]
+
+        paquete -> development -> test -> production -> deprecated -> unsupported  
+    }
 }

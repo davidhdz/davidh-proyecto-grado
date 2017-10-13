@@ -34,6 +34,8 @@
 \usepackage{textcomp}
 \usepackage{anyfontsize}
 
+\usepackage{tikz}
+
 \lstset{
   language=python,
   alsolanguage=bash,
@@ -806,7 +808,7 @@ El contrato social de Debian está disponible en \url{https://www.debian.org/soci
 
 \subsection{Versiones Debian}
 
-Oficialmente el proyecto Debian presta soporte a 4 ramas de desarrollo. 
+El proyecto Debian presta soporte a 4 ramas de desarrollo. 
 
 \begin{description}
 \item [Antigua estable (\textit{oldstable}):] Esta versión contiene la  versión inmediatamente anterior a la versión estable.
@@ -817,10 +819,10 @@ Oficialmente el proyecto Debian presta soporte a 4 ramas de desarrollo.
 
 La rama estable tiene soporte completo de seguridad. Los lanzamientos de nuevas versiones suceden aproximadamente cada dos años. Cuando una versión estable pasa a la fase antigua estable recibe soporte del equipo de seguridad por aproximadamente un año mas. 
 
-Existe un proyecto que inició con la versión 6 (Squeeze) de Debian para dar soporte a largo plazo (LTS) a todas las versiones estables, el objetivo es extender por dos años adicionales el soporte a las ramas. El equipo está integrado por voluntarios que toman la responsabilidad del mantenimiento de la seguridad una vez que el equipo de seguridad de Debian haya culminado el plazo establecido de soporte. De este modo se tiene, dos años aproximadamente de soporte mientras la rama está en su fase estable, un año mientras es antigua estable, y dos años más como LTS para un aproximado de 5 años en total.
+Existe un proyecto que inició con la versión 6 (Squeeze) de Debian para dar soporte a largo plazo (LTS) a todas las versiones estables, el objetivo es extender por dos años adicionales el soporte a las ramas. El equipo está integrado por voluntarios que toman la responsabilidad del mantenimiento de la seguridad una vez que el equipo de seguridad de Debian haya culminado el plazo establecido de soporte. De este modo se tiene, dos años aproximadamente de soporte mientras la rama está en su fase estable, un año mientras es antigua estable, y dos años de soporte adicionales como LTS para un aproximado de 5 años en total.
 
 \subsection{Lanzamientos}
-La Tabla \ref{table:lanzamientosdebian} muestra la fecha de lanzamiento de las diferentes versiones de la distribución Debian.
+La Tabla \ref{table:lanzamientosdebian} muestra la fecha de lanzamiento de las diferentes versiones de la distribución Debian. 
 
 \begin{savenotes}
 \begin{table}[H]
@@ -861,6 +863,7 @@ La Tabla \ref{table:lanzamientosdebian} muestra la fecha de lanzamiento de las d
 \end{table}
 \end{savenotes}
 
+Así se aprecia en las primeras versiones un comportamiento de lanzamientos constantes en cortos períodos de tiempo para luego presentar un comportamiento más estable con lanzamientos bienales.
 
 \subsection{Histórico de distribuciones}
 El hecho de que una distribución mantenga un archivo donde se almacenan las versiones publicadas durante su vida añade la posibilidad de explorar aspectos históricos y técnicos de la distribución.
@@ -910,8 +913,136 @@ s390x   & System z \\
 \end{table}
 \end{savenotes}
 
+De las tres distribuciones en este estudio, Debian es la que más soporte ofrece a distintas arquitecturas y plataformas. La tabla~\ref{table:archdebian} sólo muestra los trabajos de soporte oficiales, pero también existen adaptaciones en desarrollo\footnote{\url{https://www.debian.org/ports/index.es.html\#portlist-other}} para el funcionamiento de la distribución en otros sistemas como GNU/Hurd y FreeBSD.
 
 \subsection{Roles}
+
+La estructura organizativa de Debian expone una organización jerárquica. Está explicada en la ``Constitución de Debian'' cuya primera versión (versión 1.0) fue ratificada el 2 de diciembre de 1998 y su última versión (versión 1.7) ratificada el 14 de agosto de 2016\footnote{\url{https://www.debian.org/devel/constitution}}. El documento describe la estructura organizativa para la toma de decisiones y resolución de conflictos dentro del Proyecto Debian. Esta estructura está compuesto por: el Líder del Proyecto (DLP), el Comité Técnico, el Secretario del Proyecto, los Delegados del Líder del Proyecto, los Desarrolladores Individuales y los nombrados mediante una Resolución General o elección.
+
+\begin{description}
+\item [El Líder del Proyecto] es el representante oficial del Proyecto Debian. El cargo tiene validez por un año. Cualquier Desarrollador Debian tiene derecho a postularse como candidato y su designación se hace a través de una elección donde todos los Desarrolladores Debian tienen derecho a voto.
+
+Entre sus atribuciones se tienen las siguientes tareas: designar delegados, asignar autoridad a otros desarrolladores, tomar decisiones urgentes, nombrar nuevos miembros del Comité Técnico (junto con el Comité).
+
+%Atribuciones del Líder del Proyecto:
+%\begin{itemize}
+%\item Designar delegados o delegar decisiones al Comité Técnico.
+%\item Dotar de autoridad a otros desarrolladores.
+%\item Tomar cualquier decisión que requiera acción urgente.
+%\item Tomar cualquier decisión sobre la cual nadie más tenga responsabilidad.
+%\item Proponer borradores de Resoluciones Generales y enmiendas.
+%\item Junto al Comité Técnico, nombrar nuevos miembros del Comité.
+%\item Usar su voto decisivo cuando los Desarrolladores votan.
+%\item Variar el periodo de discusión de las votaciones de los desarrolladores.
+%\item Dirigir discusiones entre Desarrolladores.
+%\item En consulta a los desarrolladores, tomar decisiones afectando a propiedades que estén en custodia de proyectos relacionados con Debian.
+%\item Añadir o eliminar organizaciones de la lista de organizaciones de confianza que están autorizadas a aceptar y mantener en custodia bienes para Debian.
+%\end{itemize}
+
+\item [El Comité Técnico] es el organismo facultado para tomar decisiones finales sobre las disputas técnicas en el proyecto Debian. Está compuesto por un máximo de ocho Desarrolladores y debe tener un mínimo de cuatro miembros. Cuando el puesto queda vacante, se debe elegir a un presidente de entre y por los miembros del comité quienes son nominados automáticamente para este cargo. Si para el 1 de enero de cada año existiera algún miembro que ha servido por mas de 42 meses y además es uno de los dos miembros mas antiguos, entonces su nombramiento expira el 31 de diciembre de ese año. 
+
+Algunas de las atribuciones del Comité son: decidir sobre cualquier norma en materia técnica, tomar una decisión cuando se le solicite, nombrar nuevos miembros para sí mismo (junto con el Líder del Proyecto) o eliminar miembros existentes, nombrar al Presidente del Consejo Técnico, ejercer las funciones de Líder del Proyecto (junto con el Secretario).
+%Atribuciones del Comité Técnico:
+%\begin{itemize}
+%\item Decidir sobre cualquier norma en materia técnica.
+%\item Decidir sobre cualquier materia técnica donde se solape la jurisdicción de los Desarrolladores.
+%\item Tomar una decisión cuando se le pida.
+%\item Imponer su decisión sobre la de un Desarrollador.
+%\item Ofrecer consejo.
+%\item Junto con el Líder del Proyecto, nombrar nuevos miembros para sí mismo, o eliminar a los existentes.
+%\item Nombrar al Presidente del Comité Técnico.
+%\item Junto con el Secretario, ejercer las funciones de Líder del Proyecto.
+%\end{itemize}
+
+\item [El Secretario del Proyecto] es nombrado por el Líder del Proyecto y el saliente Secretario del Proyecto. Cualquier Desarrollador Debian puede ser candidato. El cargo tiene una duración de un año con opción a ratificación.
+
+Entre sus funciones se lista: el llevar a cabo votaciones, ejercer las funciones de Líder del Proyecto (junto con el Presidente del Comité Técnico), delegar parte de sus funciones a otro miembro.
+
+%Atribuciones del Secretario del Proyecto:
+%\begin{itemize}
+%\item Llevar a cabo votaciones.
+%\item Junto con el Presidente del Comité Técnico, ejercer las funciones de Líder del Proyecto.
+%\item Juzga cualquier disputa sobre interpretaciones de la constitución.
+%\item Puede delegar parte de su autoridad en cualquier otro, o derogar tal delegación en cualquier momento.
+%\end{itemize}
+
+\item [Los Delegados nombrados por el Líder del Proyecto] para tareas específicas, son nombrados por el Líder del Proyecto y pueden ser reemplazados a discreción del mismo.
+
+Cumplen dos tareas principales: disponer de las atribuciones que el Líder del Proyecto haya delegado en ellos y tomar ciertas decisiones que el Líder no puede tomar directamente.
+%Atribuciones:
+%\begin{itemize}
+%\item Disponen de las atribuciones que el Líder del Proyecto haya delegado en ellos.
+%\item Tomar ciertas decisiones que el Líder no puede tomar directamente.
+%\end{itemize}
+
+\item [Los Desarrolladores individuales] son voluntarios que comparten los objetivos del proyecto y trabajan en consecuencia para lograrlos mientras participan en el proyecto.
+
+Se cuenta entre sus concesiones: postularse como candidato a Líder del Proyecto, votar en las Resoluciones Generales y en las elecciones a Líder.
+
+%Atribuciones:
+%\begin{itemize}
+%\item Tomar una decisión técnica o no técnica con respecto a su propio trabajo.
+%\item Proponer o patrocinar borradores de Resoluciones Generales.
+%\item Proponerse a sí mismo como candidato a Líder del Proyecto durante las elecciones.
+%\item Votar en las Resolución Generales y en las elecciones a Líder.
+%\end{itemize}
+
+\item [Los Desarrolladores mediante una Resolución General o elección.]
+
+Tienen el derecho de: elegir o cesar al Líder del Proyecto, enmendar la constitución previa mayoría de las tres cuartas partes de los miembros, tomar o anular algunas decisiones.
+
+%\begin{itemize}
+%\item Elegir o cesar al Líder del Proyecto.
+%\item Enmendar esta constitución, siempre que esté de acuerdo con una mayoría de las tres cuartas partes.
+%\item Tomar o anular cualquier decisión autorizada por las atribuciones del Líder del Proyecto o uno de sus Delegados.
+%\item Tomar o anular cualquier decisión autorizada por las atribuciones del Comité Técnico, siempre y cuándo estén de acuerdo dos terceras partes.
+%\item Generar, sustituir y retirar documentos no técnicos sobre normas y declaraciones.
+%\item Tomar decisiones sobre las propiedades mantenidas en custodia para propósitos relacionados con Debian.
+%\item En caso de desacuerdo entre el líder de proyecto y el secretario que le incumba, designar un secretario nuevo.
+%\end{itemize}
+
+\end{description}
+
+%\begin{figure}[H]
+%\caption{Integrantes de la estructura organizativa de Debian }
+%\label{fig:constitucion}
+%\centering
+%\begin{tikzpicture}
+%  \begin{scope}[blend group = soft light]
+%    \fill[red!30!white]    ( 90:2.84) circle (2);
+%    \fill[green!30!white]  (180:2.84) circle (2);
+%    \fill[blue!30!white]   (270:2.84) circle (2);
+%    \fill[yellow!30!white] (360:2.84) circle (2);
+%    \fill[black!15!white]     (  0:0) circle (4.85);
+%  \end{scope}
+%  \node [font=\footnotesize\bfseries, align=center] at (90:3) {Líder \\ del Proyecto};
+%  \node [font=\footnotesize, align=center] at (180:3) {Comité \\ Técnico};
+%  \node [font=\footnotesize] at (270:3) {Delegados};
+%  \node [font=\footnotesize, align=center] at (360:3) {Secretario \\ del Proyecto};
+%  \node [font=\bfseries\small] {Desarrolladores};
+%\end{tikzpicture}
+%\end{figure}
+
+\begin{figure}[H]
+\caption{Integrantes de la estructura organizativa de Debian }
+\label{fig:constitucion}
+\centering
+\begin{tikzpicture}
+  \begin{scope}[blend group = soft light]
+    \fill[red!50]          (0:0) circle (1.5);
+    \fill[ForestGreen!50] (90:3) circle (1.5);
+    \fill[RoyalBlue!75]  (210:3) circle (1.5);
+    \fill[yellow!50]     (330:3) circle (1.5);
+    \fill[ProcessBlue!30]  (0:0) circle (4.5);
+  \end{scope}
+  \node [font=\footnotesize\bfseries, align=center] at (0:0) {Líder \\ del Proyecto \\(DLP)};
+  \node [font=\footnotesize, align=center] at (90:3) {Comité \\ Técnico};
+  \node [font=\footnotesize] at (210:3) {Delegados};
+  \node [font=\footnotesize, align=center] at (330:3) {Secretario \\ del Proyecto};
+  \node [font=\bfseries\small] at (20:3) {Desarrolladores};
+\end{tikzpicture}
+\end{figure}
+
 En la comunidad de desarrollo de Debian se pueden distinguir diferentes roles:
 \begin{description}
 \item [Autor original (\textit{upstream author}):] es la persona que escribió el programa original.
