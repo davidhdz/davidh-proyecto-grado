@@ -21,8 +21,8 @@
    inkscape:version="0.91 r13725"
    sodipodi:docname="package-cycle.svg"
    inkscape:export-filename="/home/davidh/proyecto de grado/davidh-proyecto-grado/imagenes/package-cycle.png"
-   inkscape:export-xdpi="300"
-   inkscape:export-ydpi="300">
+   inkscape:export-xdpi="150"
+   inkscape:export-ydpi="150">
   <metadata
      id="metadata445">
     <rdf:RDF>
@@ -46,16 +46,18 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1280"
-     inkscape:window-height="782"
+     inkscape:window-height="764"
      id="namedview441"
      showgrid="false"
-     inkscape:zoom="0.40119241"
-     inkscape:cx="319.13135"
-     inkscape:cy="445.14571"
+     inkscape:zoom="0.86507113"
+     inkscape:cx="456.2547"
+     inkscape:cy="562.68896"
      inkscape:window-x="0"
-     inkscape:window-y="118"
+     inkscape:window-y="136"
      inkscape:window-maximized="0"
-     inkscape:current-layer="svg2" />
+     inkscape:current-layer="svg2"
+     showguides="true"
+     inkscape:guide-bbox="true" />
   <polygon
      style="fill:#ffffff;stroke:none"
      id="polygon7"
@@ -64,7 +66,7 @@
   <polygon
      points="8,-8 8,-8 8,-678.879 529,-678.879 529,-8 "
      id="polygon12"
-     style="fill:#ffffff;stroke:#ffffff"
+     style="fill:#ffffff;stroke:#ffffff;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:1,48;stroke-dashoffset:0"
      transform="translate(4,699.759)" />
   <text
      x="272.5"
@@ -92,16 +94,20 @@
        style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:FreeSans;-inkscape-font-specification:'FreeSans Semi-Bold'">Leyenda</tspan>
   </text>
   <polygon
-     points="127.5,-480 127.5,-516 127.5,-516 56.5,-516 56.5,-480 "
+     points="56.5,-516 56.5,-480 127.5,-480 127.5,-516 127.5,-516 "
      id="polygon29"
      style="fill:#ff5555;stroke:#000000"
-     transform="translate(4,699.759)" />
+     transform="translate(285.13295,699.759)" />
   <text
-     x="96"
+     x="377.13293"
      y="205.45901"
      font-size="14.00"
      id="text31"
-     style="font-size:14px;font-family:FreeSans;text-anchor:middle">inestable</text>
+     style="font-size:14px;font-family:FreeSans;text-anchor:middle">
+    <tspan
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:FreeSans;-inkscape-font-specification:'FreeSans Semi-Bold'"
+       id="tspan4325">inestable</tspan>
+  </text>
   <polygon
      points="393,-357 393,-393 393,-393 309,-393 309,-357 "
      id="polygon39"
@@ -112,30 +118,22 @@
      y="328.45901"
      font-size="14.00"
      id="text41"
-     style="font-size:14px;font-family:FreeSans;text-anchor:middle">en pruebas</text>
-  <g
-     class="edge"
-     id="edge9"
-     transform="translate(4,699.759)">
-    <title
-       id="title44">unstable-&gt;testing</title>
-    <g
-       id="a_edge9">
-      <a
-         id="a47"
-         xlink:href="https://www.debian.org/doc/manuals/developers-reference/pkgs.html#testing-unstable">
-        <path
-           style="fill:none;stroke:#000000"
-           inkscape:connector-curvature="0"
-           id="path49"
-           d="m 127.741,-480.303 c 46.246,21.606 126.876,59.275 177.537,82.942" />
-        <polygon
-           style="fill:#000000;stroke:#000000"
-           id="polygon51"
-           points="303.832,-394.173 306.795,-400.515 306.795,-400.515 314.374,-393.111 " />
-      </a>
-    </g>
-  </g>
+     style="font-size:14px;font-family:FreeSans;text-anchor:middle">
+    <tspan
+       style="-inkscape-font-specification:'FreeSans Semi-Bold';font-family:FreeSans;font-weight:600;font-style:normal;font-stretch:normal;font-variant:normal"
+       id="tspan4327">en pruebas</tspan>
+  </text>
+  <path
+     sodipodi:nodetypes="cc"
+     d="m 376.96018,220.10992 -0.98256,77.05674"
+     id="path49"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000" />
+  <polygon
+     points="303.832,-394.173 306.795,-400.515 306.795,-400.515 314.374,-393.111 "
+     id="polygon51"
+     style="fill:#000000;stroke:#000000"
+     transform="matrix(0.43073096,0.90248039,-0.90248039,0.43073096,-114.09347,190.93936)" />
   <polygon
      points="521,-480 521,-516 521,-516 427,-516 427,-480 "
      id="polygon59"
@@ -148,12 +146,12 @@
      id="text61"
      style="font-size:14px;font-family:FreeSans;text-anchor:middle">experimental</text>
   <polygon
-     points="388.5,-480 388.5,-516 388.5,-516 145.5,-516 145.5,-480 "
+     points="145.5,-516 145.5,-480 388.5,-480 388.5,-516 388.5,-516 "
      id="polygon69"
      style="fill:#ff5555;stroke:#000000"
-     transform="translate(4,699.759)" />
+     transform="translate(-68.132796,699.759)" />
   <text
-     x="271"
+     x="198.86719"
      y="205.45901"
      font-size="14.00"
      id="text71"
@@ -193,23 +191,22 @@
      y="437.45901"
      font-size="14.00"
      id="text91"
-     style="font-size:14px;font-family:FreeSans;text-anchor:middle">estable</text>
-  <g
-     class="edge"
-     id="edge10"
-     transform="translate(4,699.759)">
-    <title
-       id="title94">testing-&gt;stable</title>
-    <path
-       style="fill:none;stroke:#000000"
-       inkscape:connector-curvature="0"
-       id="path96"
-       d="m 347.947,-356.809 c -3.005,16.926 -7.641,43.031 -11.141,62.742" />
-    <polygon
-       style="fill:none;stroke:#000000"
-       id="polygon98"
-       points="333.347,-294.607 340.24,-293.383 340.24,-293.383 335.045,-284.149 " />
-  </g>
+     style="font-size:14px;font-family:FreeSans;text-anchor:middle">
+    <tspan
+       style="-inkscape-font-specification:'FreeSans Semi-Bold';font-family:FreeSans;font-weight:600;font-style:normal;font-stretch:normal;font-variant:normal"
+       id="tspan4329">estable</tspan>
+  </text>
+  <path
+     sodipodi:nodetypes="cc"
+     d="M 340.8304,342.62317 340.806,404.5359"
+     id="path96"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000;stroke-width:0.98708624" />
+  <polygon
+     points="340.24,-293.383 340.24,-293.383 335.045,-284.149 333.347,-294.607 "
+     id="polygon98"
+     style="fill:none;stroke:#000000"
+     transform="matrix(0.98480365,-0.17367145,0.17367145,0.98480365,60.333708,752.47344)" />
   <polygon
      points="456,-248 456,-284 456,-284 380,-284 380,-248 "
      id="polygon106"
@@ -319,22 +316,25 @@
      y="553.45898"
      font-size="14.00"
      id="text165"
-     style="font-size:14px;font-family:FreeSans;text-anchor:middle">antigua estable</text>
+     style="font-size:14px;font-family:FreeSans;text-anchor:middle">
+    <tspan
+       style="-inkscape-font-specification:'FreeSans Semi-Bold';font-family:FreeSans;font-weight:600;font-style:normal;font-stretch:normal;font-variant:normal"
+       id="tspan4331">antigua estable</tspan>
+  </text>
   <g
-     class="edge"
-     id="edge11"
-     transform="translate(4,699.759)">
-    <title
-       id="title168">stable-&gt;oldstable</title>
+     id="g4352"
+     transform="translate(3.1211306,0)">
     <path
-       style="fill:none;stroke:#000000"
+       style="fill:none;stroke:#000000;stroke-width:0.98786569"
        inkscape:connector-curvature="0"
        id="path170"
-       d="m 336.101,-247.686 c 4.386,18.521 11.401,48.139 16.512,69.719" />
+       d="m 337.81229,452.07301 5.7e-4,67.71585"
+       sodipodi:nodetypes="cc" />
     <polygon
+       transform="matrix(0.97348541,0.22874909,-0.22874909,0.97348541,-46.261617,612.21511)"
        style="fill:none;stroke:#000000"
        id="polygon172"
-       points="349.239,-177.028 356.05,-178.641 356.05,-178.641 354.949,-168.104 " />
+       points="356.05,-178.641 356.05,-178.641 354.949,-168.104 349.239,-177.028 " />
   </g>
   <polygon
      points="92,-248 92,-284 92,-284 16,-284 16,-248 "
@@ -482,22 +482,17 @@
       </a>
     </g>
   </g>
-  <g
-     class="edge"
-     id="edge4"
-     transform="translate(4,699.759)">
-    <title
-       id="title238">maint-&gt;unstable</title>
-    <path
-       style="fill:none;stroke:#000000"
-       inkscape:connector-curvature="0"
-       id="path240"
-       d="m 257.825,-612.954 c -33.126,22.764 -94.206,64.738 -132.273,90.898" />
-    <polygon
-       style="fill:none;stroke:#000000"
-       id="polygon242"
-       points="123.126,-524.636 127.09,-518.867 127.09,-518.867 116.866,-516.088 " />
-  </g>
+  <path
+     sodipodi:nodetypes="cc"
+     d="m 299.04455,87.45892 c 12.97265,17.79456 46.87569,55.70102 68.58605,86.456"
+     id="path240"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000" />
+  <polygon
+     transform="matrix(0.02639937,-0.99965148,0.99965148,0.02639937,886.27763,312.60602)"
+     points="116.866,-516.088 123.126,-524.636 127.09,-518.867 127.09,-518.867 "
+     id="polygon242"
+     style="fill:none;stroke:#000000" />
   <g
      class="edge"
      id="edge6"
@@ -546,22 +541,12 @@
        id="polygon263"
        points="114.355,-395.516 118.111,-401.423 118.111,-401.423 124.672,-393.104 " />
   </g>
-  <g
-     class="edge"
-     id="edge18"
-     transform="translate(4,699.759)">
-    <title
-       id="title266">maint-&gt;backports</title>
-    <path
-       style="fill:none;stroke:#000000"
-       inkscape:connector-curvature="0"
-       id="path268"
-       d="m 306.04,-612.819 c 27.651,19.284 70.905,54.393 90.96,96.819 35.003,74.047 29.8,174.302 24.655,221.838" />
-    <polygon
-       style="fill:none;stroke:#000000"
-       id="polygon270"
-       points="418.158,-294.39 425.111,-293.577 425.111,-293.577 420.473,-284.051 " />
-  </g>
+  <path
+     sodipodi:nodetypes="cc"
+     d="m 408.34669,219.49639 c 29.65917,72.26052 22.24507,161.52095 17.88049,184.38407"
+     id="path268"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:4, 2;stroke-dashoffset:0" />
   <g
      class="node"
      id="node14"
@@ -590,22 +575,17 @@
       </a>
     </g>
   </g>
-  <g
-     class="edge"
-     id="edge2"
-     transform="translate(4,699.759)">
-    <title
-       id="title283">secteam-&gt;unstable</title>
-    <path
-       style="fill:none;stroke:#000000"
-       inkscape:connector-curvature="0"
-       id="path285"
-       d="m 104.141,-611.632 c -2.343,21.736 -6.3986,59.359 -9.1726,85.094" />
-    <polygon
-       style="fill:none;stroke:#000000"
-       id="polygon287"
-       points="91.4587,-526.636 98.4184,-525.886 98.4184,-525.886 93.8668,-516.318 " />
-  </g>
+  <path
+     sodipodi:nodetypes="cc"
+     d="m 108.141,88.127 c -2.343,21.736 129.05255,28.50523 229.23654,87.67001"
+     id="path285"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000" />
+  <polygon
+     points="98.4184,-525.886 93.8668,-516.318 91.4587,-526.636 98.4184,-525.886 "
+     id="polygon287"
+     style="fill:none;stroke:#000000"
+     transform="matrix(0.53796508,-0.84296712,0.84296712,0.53796508,730.11516,539.18889)" />
   <g
      class="edge"
      id="edge3"
@@ -933,4 +913,20 @@
        id="polygon4855"
        style="fill:#2ca02c;stroke:#000000" />
   </g>
+  <path
+     style="fill:none;stroke:#000000"
+     inkscape:connector-curvature="0"
+     id="path4364"
+     d="m 382.14639,342.95 c 6.705,17.082 16.2626,41.71473 24.0236,61.48773"
+     sodipodi:nodetypes="cc" />
+  <polygon
+     style="fill:none;stroke:#000000"
+     id="polygon4366"
+     points="189.873,-294.736 189.873,-294.736 190.269,-284.149 183.357,-292.178 "
+     transform="translate(219.74447,698.12421)" />
+  <polygon
+     transform="matrix(0.2711616,0.96253384,-0.96253384,0.2711616,-39.022502,217.89215)"
+     style="fill:#000000;stroke:#000000"
+     id="polygon4370"
+     points="306.795,-400.515 306.795,-400.515 314.374,-393.111 303.832,-394.173 " />
 </svg>

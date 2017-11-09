@@ -18,25 +18,25 @@ digraph cycle {
         # suites
             {
             rank = same                
-            unstable [ label = "inestable" shape=box style=filled fillcolor=red href="https://wiki.debian.org/es/DebianUnstable" ]
+            unstable [ label = <<b>inestable</b>> shape=box style=filled fillcolor=red href="https://wiki.debian.org/es/DebianUnstable" ]
             experimental [ shape=box style=filled fillcolor=red href="https://wiki.debian.org/es/DebianExperimental" ]
             tpu [ label = "actualizaciones propuestas a pruebas" shape=box style=filled fillcolor=red href="https://wiki.debian.org/TestingProposedUpdates" ]
             }
             {
             rank = same
-            testing [ label = "en pruebas" shape=box style=filled fillcolor=yellow href="https://wiki.debian.org/es/DebianTesting" ]
+            testing [ label = <<b>en pruebas</b>> shape=box style=filled fillcolor=yellow href="https://wiki.debian.org/es/DebianTesting" ]
             pu [ label = "actualizaciones propuestas a estable" shape=box style=filled fillcolor=yellow href="https://wiki.debian.org/es/StableProposedUpdates" ]
             }
             {
             rank = same
-            stable [ label = "estable" shape=box style=filled fillcolor=green href="https://wiki.debian.org/DebianEstable" ]
+            stable [ label = <<b>estable</b>> shape=box style=filled fillcolor=green href="https://wiki.debian.org/DebianEstable" ]
             security [ label = "seguridad" shape=box style=filled fillcolor=green href="https://www.debian.org/security/" ]
             su [ label = "actualizaciones a estables" shape=box style=filled fillcolor=green href="https://wiki.debian.org/es/StableUpdates" ]
             backports [ shape=box style=filled fillcolor=green href="https://wiki.debian.org/es/Backports/" ]
             }
             {
             rank=same
-            oldstable [ label = "antigua estable" shape=box style=filled fillcolor=grey href="https://wiki.debian.org/es/DebianOldStable" ]
+            oldstable [ label = <<b>antigua estable</b>> shape=box style=filled fillcolor=grey href="https://wiki.debian.org/es/DebianOldStable" ]
             note [ label=<Nota: antigua estable (<i>oldstable</i>) tiene<br/>la misma configuración que el estable.<br/>No se detalla aquí para evitar desorden> shape=note ]
             # make sure note is next to oldstable
             note -> oldstable [ style=invis ]

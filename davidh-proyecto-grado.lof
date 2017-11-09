@@ -1,24 +1,25 @@
 \select@language {spanish}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Crecimiento en el n\'umero de Desarrolladores Debian y paquetes del repositorio principal entre los a\~nos 1999 y 2017\relax }}{3}{figure.caption.4}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Grupos de los procesos del ciclo de vida\relax }}{8}{figure.caption.4}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Grupos de los procesos del ciclo de vida\relax }}{9}{figure.caption.5}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Integrantes de la estructura organizativa de Debian \relax }}{27}{figure.caption.13}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Actividad de la lista de correos \textit {Users} de Debian\relax }}{29}{figure.caption.14}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Actividad de la lista de correos \textit {Developers} de Debian\relax }}{30}{figure.caption.15}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Flujo de trabajo de paquetes Debian para 2016\relax }}{31}{figure.caption.16}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Porcentaje de archivos por lenguaje dentro del componente \textit {main} de Debian\relax }}{33}{figure.caption.18}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Cantidad de l\IeC {\'\i }neas vac\IeC {\'\i }a, comentarios y l\IeC {\'\i }neas de c\'odigo fuente en los lenguajes del componente \textit {main} de Debian\relax }}{34}{figure.caption.19}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Actividad de la lista de correos \textit {Users} de Ubuntu\relax }}{39}{figure.caption.24}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Actividad de la lista de correos \textit {Developers} de Ubuntu\relax }}{40}{figure.caption.25}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Porcentaje de archivos por lenguaje dentro del componente \textit {main} de Ubuntu\relax }}{44}{figure.caption.29}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Cantidad de l\IeC {\'\i }neas vac\IeC {\'\i }a, comentarios y l\IeC {\'\i }neas de c\'odigo fuente en los lenguajes del componente \textit {main} de Ubuntu\relax }}{45}{figure.caption.30}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Actividad de la lista de correos \textit {Discusi\'on} de Canaima\relax }}{50}{figure.caption.35}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Actividad de la lista de correos \textit {Desarrolladores} de Canaima\relax }}{51}{figure.caption.36}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Porcentaje de archivos por lenguaje dentro del componente \textit {usuarios} de Canaima\relax }}{55}{figure.caption.40}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Cantidad de l\IeC {\'\i }neas vac\IeC {\'\i }a, comentarios y l\IeC {\'\i }neas de c\'odigo fuente en los lenguajes del componente \textit {usuarios} de Canaima\relax }}{56}{figure.caption.41}
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Presupuesto asignado al desarrollo de la distribuci\'on Canaima GNU/Linux\relax }}{58}{figure.caption.44}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Integrantes de la estructura organizativa de Debian \relax }}{25}{figure.caption.10}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Actividad de la lista de correos \textit {Users} de Debian\relax }}{31}{figure.caption.15}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Actividad de la lista de correos \textit {Developers} de Debian\relax }}{32}{figure.caption.16}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Flujo de trabajo de paquetes Debian para 2016\relax }}{33}{figure.caption.17}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Cantidad de l\IeC {\'\i }neas vac\IeC {\'\i }a, comentarios y l\IeC {\'\i }neas de c\'odigo fuente en los lenguajes del componente \textit {main} de Debian\relax }}{36}{figure.caption.19}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Porcentaje de archivos por lenguaje dentro del componente \textit {main} de Debian\relax }}{37}{figure.caption.20}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Actividad de la lista de correos \textit {Users} de Ubuntu\relax }}{43}{figure.caption.25}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Actividad de la lista de correos \textit {Developers} de Ubuntu\relax }}{44}{figure.caption.26}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Porcentaje de archivos por lenguaje dentro del componente \textit {main} de Ubuntu\relax }}{48}{figure.caption.30}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Cantidad de l\IeC {\'\i }neas vac\IeC {\'\i }a, comentarios y l\IeC {\'\i }neas de c\'odigo fuente en los lenguajes del componente \textit {main} de Ubuntu\relax }}{49}{figure.caption.31}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Actividad de la lista de correos \textit {Discusi\'on} de Canaima\relax }}{54}{figure.caption.36}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Actividad de la lista de correos \textit {Desarrolladores} de Canaima\relax }}{55}{figure.caption.37}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Porcentaje de archivos por lenguaje dentro del componente \textit {usuarios} de Canaima\relax }}{59}{figure.caption.41}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Cantidad de l\IeC {\'\i }neas vac\IeC {\'\i }a, comentarios y l\IeC {\'\i }neas de c\'odigo fuente en los lenguajes del componente \textit {usuarios} de Canaima\relax }}{60}{figure.caption.42}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Presupuesto asignado al desarrollo de la distribuci\'on Canaima GNU/Linux\relax }}{62}{figure.caption.45}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Ciclo de desarrollo de Canaima GNU/Linux\relax }}{60}{figure.caption.45}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Sistemas de operaci\'on en las estaciones de trabajo de la APN\relax }}{62}{figure.caption.46}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Ciclo de desarrollo de Canaima GNU/Linux\relax }}{64}{figure.caption.46}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Sistemas de operaci\'on en las estaciones de trabajo de la APN\relax }}{66}{figure.caption.47}
 \addvspace {10\p@ }

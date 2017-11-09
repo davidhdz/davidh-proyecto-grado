@@ -313,18 +313,29 @@ Este proyecto tiene como objetivo evaluar la productividad asociada o asociable 
 \section{Antecedentes}
 La Organización Internacional para la Normalización (\textit{International Organization for Standardization}, ISO en inglés) presenta en 2008 la última modificación hasta la fecha de la norma para los procesos de vida del software ISO/IEC 12207, publicada por primera vez en 1995. Aquí se define \emph{ciclo de vida} como la evolución de un sistema, producto, servicio, proyecto u otra entidad concebida por humanos, desde su concepción hasta su retiro \citep{iso08}. También se explica el \emph{modelo de ciclo de vida} como la descripción de procesos y actividades relacionadas con el ciclo de vida que pueden estar organizadas en etapas, las cuales también actúan como referencia común para su comunicación y entendimiento \citep{iso08}.
 
-El \cite{ieee97} en su norma para la creación de procesos de software define \emph{ciclo de vida del software} como la secuencia de actividades específicas a un proyecto que son creadas asignando las actividades de esta norma a un modelo de ciclo de vida de software seleccionado. A su vez, un \emph{modelo de ciclo de vida del software} es determinado como el marco de trabajo, seleccionado por cada organización, en el cuál se asignan actividades a esta norma para producir el ciclo de vida del software \citep{ieee97}. Finalmente se define \emph{procesos de ciclo de vida del software} como la descripción específica de los procesos de proyectos basados en el ciclo de vida del software y en los mecanismos que definen el entorno del proyecto dentro de la organización. \citep{ieee97}. 
+El \cite{ieee97}, en su norma para la creación de procesos de software, define \emph{ciclo de vida del software} como la secuencia de actividades específicas a un proyecto que son creadas asignando las actividades de esta norma a un modelo de ciclo de vida de software seleccionado. A su vez, un \emph{modelo de ciclo de vida del software} es determinado como el marco de trabajo, seleccionado por cada organización, en el cuál se asignan actividades a esta norma para producir el ciclo de vida del software \citep{ieee97}. Finalmente se define \emph{procesos de ciclo de vida del software} como la descripción específica de los procesos de proyectos basados en el ciclo de vida del software y en los mecanismos que definen el entorno del proyecto dentro de la organización. \citep{ieee97}. 
 
-\cite{Capiluppi07} realizaron un estudio empírico del ciclo de vida de los proyectos basados en comunidades de voluntarios, concluyendo que los proyectos de software libre comienzan con una fase catedral, de desarrollo cerrado y de pocos desarrolladores, y luego migran a una fase bazar, desarrollo con un gran número de voluntarios y contribuciones\footnote{Tomando como referencia el ensayo \textit{La Catedral y el Bazar} de \cite{Raymond99}}.
+\cite{Capiluppi07} realizaron un estudio empírico del ciclo de vida en dos proyectos de software libre basados en comunidades de voluntarios para estudiar las fases catedral y bazar. Los autores parten de la hipótesis que estas dos fases no son mutuamente excluyentes, y afirman. ``Los proyectos de software libre comienzan en una fase de catedral, y de manera potencial migran a una fase de bazar'' \citep[p.15]{Capiluppi07}. También identifican una fase de transición a la que se refieren como ``fundamental para lograr un verdadero éxito y que el proyecto resulte popular'' \citep[p.16]{Capiluppi07}. Dice \cite{Raymond99} que, el enfoque estilo catedral en la programación, se distingue en proyectos de pocos desarrolladores y con largos periodos entre la liberación de las versiones, estos largos periodos se deben al tiempo que les toma corregir los errores. En el enfoque estilo bazar, al contrario, se liberan versiones con más frecuencia buscando llegar al mayor número de desarrolladores que puedan ayudar a ubicar errores y además colaborar en su corrección.
  
-Por su parte, \cite{amor05a} realizaron una investigación en la que utiliza la versión 3.1 de la distribución Debian como caso de estudio de medición de software libre. Allí se concluye que el crecimiento de Debian se incrementa año tras año, al igual que el número de voluntarios  y el número de paquetes. Así, señalan a Debian como uno de los mayores sistemas de software del mundo, sino el más grande. Sin embargo, la sostenibilidad del proyecto es cuestionada al apuntar un comportamiento inestable en el tamaño medio del proyecto ``probablemente debido a un crecimiento de los paquetes más rápido que el número de mantenedores de Debian'' \citep[p.14]{amor05a}.
+Por su parte, \cite{amor05a} realizaron una investigación en la que utilizan la versión 3.1 de la distribución Debian como caso de estudio de medición de software libre. Allí se concluye que el crecimiento de Debian se incrementa año tras año, al igual que el número de voluntarios  y el número de paquetes. Así, señalan a Debian como uno de los mayores sistemas de software del mundo, sino el más grande. Sin embargo, la sostenibilidad del proyecto es cuestionada al apuntar un comportamiento inestable en el tamaño medio del proyecto ``probablemente debido a un crecimiento de los paquetes más rápido que el número de mantenedores de Debian'' \citep[p.14]{amor05a}. En la Figura~\ref{fig:dd-paquetes} se advierte un crecimiento sostenido de forma lineal en la cantidad de paquetes dentro del repositorio \textit{main} de la distribución Debian, mientras que la cantidad de Desarrolladores presenta un comportamiento con poca variabilidad a lo largo del tiempo. 
+
+\begin{savenotes}
+\begin{figure}[h]
+\caption{Crecimiento en el número de Desarrolladores Debian y paquetes del repositorio principal entre los años 1999 y 2017}
+\centering
+\includegraphics[width=\textwidth]{dd-paquetes}
+
+{\footnotesize Fuentes: Wikipedia\footnote{\url{https://en.wikipedia.org/wiki/Debian}}, Archivo Debian\footnote{\url{http://archive.debian.org/}}, Repositorio Debian\footnote{\url{http://ftp.debian.org/debian/}} y Listado de Desarrolladores Debian\footnote{\url{https://nm.debian.org/public/people/dd_all}}}
+\label{fig:dd-paquetes}
+\end{figure}
+\end{savenotes}
 
 La técnica de medición de líneas de código fuente físicas (\textit{Source Lines of Code} o SLOC en inglés) permite realizar una serie de cálculos para estimar el tiempo de desarrollo y esfuerzo de un proyecto aplicando el Modelo Constructivo de Costos (\textit{Constructive Cost Model} -- COCOMO) \citep{boehm81}.
 
 Esta técnica ``es una de las más simples y de las más ampliamente usadas para la comparación de piezas de software.'' \citep[p.6]{gonzalez-barahona03}. Ya en el pasado se ha utilizado este método por medio de la utilización de paquetes de software que facilitan el cálculo de las líneas de código como muestran los trabajos de Wheeler, González, Amor y otros autores \citep{wheeler01,gonzalez01,gonzalez-barahona03,amor04,amor05a,amor05b,amor07,amor09,herraiz06}.
 
 \section{Planteamiento del Problema}
-En el software libre el modelo participativo es vital para el éxito y superviviencia de los proyectos, para ello cada proyecto define los protocolos para aceptar y facilitar la colaboración de terceros. Las contribuciones se pueden presentar, por ejemplo, proponiendo modificaciones de código en un repositorio con control de versiones, reportando un mal funcionamiento del software, proponiendo nuevas ideas para ser implementadas en un futuro, colaborando con la traducción a diferentes idiomas y otros.
+En el software libre el modelo participativo es vital para el éxito y superviviencia de los proyectos. Para ello, cada proyecto define los protocolos para aceptar y facilitar la colaboración de terceros. Las contribuciones se pueden presentar, por ejemplo, proponiendo modificaciones de código en un repositorio con control de versiones, reportando un mal funcionamiento del software, proponiendo nuevas ideas para ser implementadas en un futuro, colaborando con la traducción a diferentes idiomas y otros.
 
 La distribución Canaima GNU/Linux nace desde la necesidad de centrar esfuerzos para el desarrollo, mantenimiento y soporte de un sistema operativo libre, con estándares abiertos y para ser usado como una plataforma tecnológica común en las instituciones de la Administración Pública Nacional (APN). Adicionalmente, se busca disminuir el gasto público destinado a la compra de licencias de software privativo que poco aportan al plan nacional de desarrollo el cual, entre otras aspectos, impulsa el carácter libre del conocimiento y fortalece el modelo de trabajo colaborativo.
 
@@ -440,7 +451,7 @@ El documento está organizado en 5 capítulos:
 \noindent\rule{\textwidth}{0.4pt}
 \newline
 
-La naturaleza libre de las distribuciones linux permite que se realicen diversos estudios sobre esos desarrollos. A partir de repositorios públicos, por cada versión liberada se pueden extraer una serie datos que sirven como insumo para alimentar bases de conocimientos que caracterizan estas distros; por ejemplo, determinar los lenguajes utilizados, cantidad de líneas de código, número de paquetes de software en una distribución, frecuencia de lanzamiento de nuevas versiones, etc., datos que a su vez permiten mostrar la evolución de las distribuciones en el tiempo.
+La naturaleza de las distribuciones de software libre basadas en linux permite que se realicen diversos estudios sobre esos desarrollos. A partir de repositorios públicos, por cada versión liberada se pueden extraer una serie datos que sirven como insumo para alimentar bases de conocimientos que caracterizan estas distros; por ejemplo, determinar los lenguajes utilizados, cantidad de líneas de código, número de paquetes de software en una distribución, frecuencia de lanzamiento de nuevas versiones, etc., datos que a su vez permiten mostrar la evolución de las distribuciones en el tiempo.
 
 Para poder describir el ciclo de vida de la distribución Canaima GNU/Linux se hace un recuento histórico del proyecto desde sus primeras versiones liberadas en 2007 hasta la fecha actual. Se determinan en este estudio los factores claves que forman parte de los procesos mas relevantes de un ciclo de vida para ubicar el modelo de desarrollo que hoy en día es aplicado en el proyecto Canaima.
 
@@ -460,16 +471,16 @@ Las diferencias principales se pueden apreciar en los modelos de gobernanza y en
 \section{Ciclo de Vida}
 ``Un ciclo de vida para un proyecto se compone de fases sucesivas compuestas por tareas que se pueden planificar'' \citep[p.24]{inteco09}.
 
-La vida de un sistema o de un producto de software puede ser modelado a través de un modelo de ciclo de vida basado en fases. Los modelos pueden ser usados para representar toda su vida, desde la concepción hasta su retiro, o la representación de una porción de vida correspondiente al proyecto actual. El modelo de ciclo de vida está comprendido por una secuencia de fases que se pueden solapar y/o iterar, según sea apropiado para el alcance, magnitud, complejidad, necesidades y oportunidades cambiantes del proyecto. Cada etapa es descrita como una declaración de propósitos y resultados. Los procesos y actividades del ciclo de vida son seleccionados y empleados en una etapa para cumplir el propósito y los resultados de esa fase \citep{iso08}.
+Como se dijo en el capítulo anterior, la vida de un sistema o de un producto de software puede ser modelado a través de un modelo de ciclo de vida basado en fases. Los modelos pueden ser usados para representar toda su vida, desde la concepción hasta su retiro, o la representación de una porción de vida correspondiente al proyecto actual. El modelo de ciclo de vida está comprendido por una secuencia de fases que se pueden solapar y/o iterar, según sea apropiado para el alcance, magnitud, complejidad, necesidades y oportunidades cambiantes del proyecto. Cada etapa es descrita como una declaración de propósitos y resultados. Los procesos y actividades del ciclo de vida son seleccionados y empleados en una etapa para cumplir el propósito y los resultados de esa fase \citep{iso08}.
 
 ``El modelo ISO/IEC 12207 divide a sus procesos en dos grupos: procesos del ciclo de vida de los sistemas en general y procesos específicos del ciclo de vida del sistema de software'' \citep[p.86]{renteria12}. Dentro de estos dos procesos principales las actividades que pueden ser ejecutadas durante el ciclo de vida de un sistema de software se agrupan en siete procesos. Cada uno de los procesos del ciclo de vida dentro de esos grupos es descrito en términos de su propósito y resultados deseados y lista las actividades y tareas que deben realizarse para alcanzar esos resultados \citep{iso08}.
 
 Los siete procesos descritos en el estándar son: procesos de acuerdo; procesos de habilitación de proyectos organizacionales; procesos de proyecto; procesos técnicos; procesos de implementación de software; procesos de soporte de software y procesos de reutilización de software. La figura~\ref{fig:grupo-procesos-cvs} muestra la categorización de los grupos y subgrupos de los procesos del ciclo de vida según el estándar de la ISO.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \caption{Grupos de los procesos del ciclo de vida}
 \centering
-\includegraphics[width=\textwidth]{grupos-procesos-cvs}
+\includegraphics[width=.97\textwidth]{grupos-procesos-cvs}
 
 {\footnotesize Fuente: \cite{iso08}}
 \label{fig:grupo-procesos-cvs}
@@ -495,7 +506,7 @@ También, \cite{somerville05}, hace una definición de un modelo de proceso del so
 Un modelo de procesos del software es una descripción simplificada de un proceso del software que presenta una visión de ese proceso. Estos modelos pueden incluir actividades que son parte de los procesos y productos de software y el papel de las personas involucradas en la ingeniería del software. (p.8)
 \end{quote}
 
-Canaima es descrito como un proyecto socio-tecnológico-productivo abierto\footnote{?`Qué es Canaima? \url{http://canaima.softwarelibre.gob.ve/canaima/que-es-canaima} Recuperado en marzo de 2017.}, por ello, la tarea de describir su ciclo de vida va más allá del mero enfoque técnico. En otras palabras \cite{somerville05} dice que, los sistemas socio-técnicos no sólo incluyen componentes de hardware y software sino que también incluyen personas, políticas y reglas organizacionales. 
+Canaima es descrito como un proyecto socio-tecnológico-productivo abierto\footnote{?`Qué es Canaima? \url{http://canaima.softwarelibre.gob.ve/canaima/que-es-canaima} Recuperado en marzo de 2017.}. Por ello, la tarea de describir su ciclo de vida va más allá del mero enfoque técnico. En otras palabras \cite{somerville05} dice que, los sistemas socio-técnicos no sólo incluyen componentes de hardware y software sino que también incluyen personas, políticas y reglas organizacionales. 
 
 Estos factores serán explicados en el capítulo siguiente, como parte de la caracterización de los procesos que componen el desarrollo de la distribución Canaima y así dibujar el ciclo de vida, y el modelo de ciclo de vida, que mejor corresponda con las prácticas empleadas en este proyecto.
 
@@ -524,7 +535,7 @@ Adicionalmente, sobre los modelos que operan dentro de COCOMO, \cite{gomez00} di
 COCOMO' 81 está compuesto por tres modelos que corresponden a distintos niveles de detalle y precisión. Mencionados en orden creciente son: Modelo Básico, Intermedio y Detallado. La estimación es más precisa a medida que se toman en cuenta mayor cantidad de factores que influyen en el desarrollo de un producto de software. (p.6)
 \end{quote}
 
-El modelo COCOMO básico utiliza el número de líneas de código fuente de los paquetes para estimar los recursos mínimos que se necesitan para construir el sistema \citep{gonzalez-barahona03}, pero debe tomarse en cuenta que, sin embargo, el modelo utilizado para esta estimación asume en cualquier caso un entorno de desarrollo privativo ``clásico'', por lo que debe considerarse con cierto cuidado \citep{gonzalez01}. En cualquier caso, las estimaciones devenidas de este modelo tienen la intención de darnos una idea de los costos de tiempo, esfuerzo y personal que tomarían los proyectos evaluados aplicando modelos de desarrollo privativo.
+El modelo COCOMO básico utiliza el número de líneas de código fuente de los paquetes para estimar los recursos mínimos que se necesitan para construir el sistema \citep{gonzalez-barahona03}. Pero debe tomarse en cuenta que, el modelo utilizado para esta estimación asume en cualquier caso un entorno de desarrollo privativo ``clásico'', por lo que debe considerarse con cierto cuidado \citep{gonzalez01}. En cualquier caso, las estimaciones obtenidas de este modelo tienen la intención de darnos una idea de los costos de tiempo, esfuerzo y personal que tomarían los proyectos evaluados aplicando modelos de desarrollo privativo.
 
 Para los cálculos efectuados en el estudio se asume un modelo orgánico. Se selecciona este modelo fundamentado que una distribución linux, es una colección de paquetes de software diseñados para interactuar en ambientes basados en el núcleo linux, organizados y configurados de tal forma que permiten hacer funcionar una computadora para poder efectuar una gran variedad de tareas. Cada paquete admitido en una distro es un proyecto, generalmente pequeño, compuesto por un grupo de programadores con pericia en el desarrollo de aplicaciones similares. Cada proyecto tiene sus modos de disponer de los tiempos de entrega y procedimientos. Cada vez que se hace un lanzamiento de una nueva versión de una distribución, se selecciona la última versión estable de cada paquete, los mantenedores se encargan de velar porque los paquetes cumplan con todos los requisitos de calidad de cada distribución antes de ser admitidos en los repositorios.
 
@@ -568,11 +579,11 @@ El código para automatización de descarga de paquetes fuentes se aprecia en el C
 
 Los archivos fuentes se descargan en un formato empaquetado (o comprimido). A modo de mantener un orden y para efectos de contabilizar cada directorio como un proyecto diferente, el script crea un directorio para cada uno de los paquetes, esto ayuda entre otras cosas a evitar sobreescritura de archivos en un directorio de descompresión común debido a nombres de archivos y directorios iguales, y organiza cada subproyecto (paquete de código) en un espacio propio.
 
-Los directorios creados inician con el símbolo guión bajo (\_), esto se debe porque la orden utilizada para descomprimir los paquetes no permite la creación de un directorio con el mismo nombre que el archivo a desempaquetar.  El conjunto de instrucciones utilizado para ejecutar todos estos pasos se aprecia en el Código~\ref{code2} del Apéndice.
+Los directorios creados inician con el símbolo guión bajo (\_). Esto se debe a que la orden utilizada para descomprimir los paquetes no permite la creación de un directorio con el mismo nombre que el archivo a desempaquetar.  El conjunto de instrucciones utilizado para ejecutar todos estos pasos se aprecia en el Código~\ref{code2} del Apéndice.
 
 \subsubsection{Cantidad de líneas de Código Fuente}
 
-Previo al uso de \texttt{cloc} se prepara un ambiente de trabajo para cada distribución a evaluar con el fin de operar en un ambiente limpio, recién instalado. Los pasos para ello se describen a continuación tomando como ejemplo la distribución Debian:
+Previo al uso de \texttt{cloc} se prepara el ambiente de trabajo donde será instalada una nueva instancia de la distribución a evaluar. Es decir, se instalará un nuevo sistema operativo dentro de un directorio del sistema operativo actual. De este modo, se dispone de un entorno operativo limpio, recién instalado, y sin riesgo de afectar el sistema operativo anfitrión. Los pasos para ello se describen a continuación tomando como ejemplo la distribución Debian:
 
 Instalación de los paquetes necesarios para crear una jaula.
 
@@ -659,7 +670,7 @@ Para la estimación de los valores en el caso del repositorio Debian se ha debido
 
 Para correr \texttt{cloc} en cada directorio por separado se utilizó un script que genera un archivo de reporte csv por cada paquete procesado satisfactoriamente. El código se muestra en el Código~\ref{code3} del Apéndice.
 
-Una vez con todos los reportes generados se procede a evaluar esta información compilando los datos para generar un reporte global. Para ello también se ha creado un programa en python que hace uso de la biblioteca \texttt{pandas}\footnote{\url{http://pandas.pydata.org/}} para el análisis de los datos. El código fuente de este programa se aprecia en el Código~\ref{code4} del Apéndice.
+Una vez con todos los reportes generados se procedió a evaluar esta información compilando los datos para generar un reporte global. Para ello también se ha creado un programa en python que hace uso de la biblioteca \texttt{pandas}\footnote{\url{http://pandas.pydata.org/}} para el análisis de los datos. El código fuente de este programa se aprecia en el Código~\ref{code4} del Apéndice.
 
 %\lstinputlisting[label=code4,caption=analisis\_cloc\_debian.py]{programas/analisis_cloc_debian.py}
 
@@ -713,10 +724,10 @@ Epm = a\times(KSLOC)^b
 \label{eq:Esfuerzo}
 \end{equation}
 
-\begin{equation}
-Prod = \frac{KSLOC}{Epm}
-\label{eq:Productividad}
-\end{equation}
+%\begin{equation}
+%Prod = \frac{KSLOC}{Epm}
+%\label{eq:Productividad}
+%\end{equation}
 
 \begin{equation}
 Tdev = c\times(Epm)^d
@@ -738,7 +749,7 @@ Donde:
 \begin{itemize}
 \item[$Epm$:] es la estimación del esfuerzo de desarrollo, en persona-mes.
 \item[$KSLOC$:] es el número de líneas de código fuente físicas, en miles.
-\item[$Prod$:] es la productividad del proyecto.
+%\item[$Prod$:] es la productividad del proyecto.
 \item[$Tdev$:] es la estimación del tiempo de desarrollo del proyecto, en meses.
 \item[$Per$:] es el número de personas requeridas, en personas.
 \item[$Ctd$:] es el costo total estimado de desarrollo del proyecto, en US\$.
@@ -775,7 +786,7 @@ Continuando con el ejemplo usando los paquetes \texttt{zygrib}, \texttt{zyn}, \t
 \toprule
 Líneas de código fuente:                        &      127.005 \\
 Esfuerzo estimado de desarrollo (persona--mes): &       388,35 \\
-Productividad estimada:                         &         0,33 \\
+%Productividad estimada:                         &         0,33 \\
 Tiempo de desarrollo estimado (meses):          &        24,09 \\
 Personas requeridas estimadas (personas):       &        16,12 \\
 Costo total estimado del proyecto (US\$):       & 1.190.288,83 \\
@@ -797,127 +808,19 @@ La calidad de estas estimaciones de productividad depende crucialmente de la obt
 
 \section{Debian}
 \subsection{Definición}
-Debian es una de las primeras distribuciones basadas en el núcleo Linux, también es una de las más prolíficas derivándose de ella otras cientos de distribuciones \citep{wiki17}. \cite{debian15} establecen que el proyecto Debian fue creado por Ian Murdock en agosto de 1993. En la página web del proyecto\footnote{\url{https://www.debian.org/intro/about}} definen a Debian como un sistema operativo libre, dispone de versiones para el núcleo Linux y el núcleo FreeBSD. Además, Debian se presenta con mas de 43000 paquetes de software.
+Debian es una de las primeras distribuciones basadas en el núcleo Linux, también es una de las más prolíficas derivándose de ella otras cientos de distribuciones \citep{wiki17}. \cite{debian15} establecen que el proyecto Debian fue creado por Ian Murdock en agosto de 1993. En la página web del proyecto\footnote{\url{https://www.debian.org/intro/about}} definen a Debian como un sistema operativo libre, dispone de versiones para el núcleo Linux y el núcleo FreeBSD. Además, Debian se presenta con mas de 43000 paquetes de software. Debian está sostenida por una comunidad de voluntarios, organizados bajo directrices y estructuras que se explican a continuación.
 
-\subsection{Política}
-Debian ha creado un documento que marca los principios filosóficos  para el trabajo en torno al proyecto. Allí se especifican los puntos que fundamentan la distribución. 
+\subsection{Gobernanza}
 
-Se divide en dos secciones: el ``contrato social'' con la comunidad de software libre, y luego, las directrices de software libre de Debian (DFSG). La primera parte establece los compromisos con la comunidad de software Libre y la segunda parte dispone las normas que deben cumplirse para que las contribuciones sean aceptadas y admitidas en el proyecto.
+\subsubsection{Política}
+Debian ha creado un documento denominado Contrato social de Debian\footnote{\url{https://www.debian.org/social_contract}} que enmarca los principios filosóficos  para el trabajo en torno al proyecto. Allí se especifican los puntos que fundamentan la distribución. 
 
-El contrato social de Debian está disponible en \url{https://www.debian.org/social_contract}
+Se divide en dos secciones: el ``contrato social'' con la comunidad de software libre, y luego, las directrices de software libre de Debian (\textit{Debian Free Software Guidelines -- DFSG}). La primera parte establece los compromisos con la comunidad de software Libre y la segunda parte dispone las normas que deben cumplirse para que las contribuciones sean aceptadas y admitidas en el proyecto. Las directrices, de una manera más extendida, describen que el software debe ser compatible con las 4 libertades del Software Libre. De hecho, la Definición de Código Abierto\footnote{\url{https://opensource.org/osd}} (\textit{Open Source Definition -- OSD}) está basada directamente en las DFSG.
 
-\subsection{Versiones Debian}
+\subsubsection{Organización}
 
-El proyecto Debian presta soporte a 4 ramas de desarrollo. 
+La estructura organizativa de Debian expone una organización jerárquica. Está explicada en la ``Constitución de Debian'' cuya primera versión (versión 1.0) fue ratificada el 2 de diciembre de 1998 y su última versión (versión 1.7) ratificada el 14 de agosto de 2016\footnote{\url{https://www.debian.org/devel/constitution}}. El documento describe la estructura organizativa para la toma de decisiones y resolución de conflictos dentro del Proyecto Debian. Esta estructura está compuesto por: el Líder del Proyecto (\textit{Debian Leader Project -- DLP}), el Comité Técnico, el Secretario del Proyecto, los Delegados del Líder del Proyecto, los Desarrolladores Individuales y los nombrados mediante una Resolución General o elección. Ver Figura~\ref{fig:constitucion}.
 
-\begin{description}
-\item [Antigua estable (\textit{oldstable}):] Esta versión contiene la  versión inmediatamente anterior a la versión estable.
-\item [Estable (\textit{stable}):] La versión estable contiene la \'ultima versión oficial de la distribución Debian.
-\item [En pruebas (\textit{testing}):] La versión de pruebas contiene paquetes que a\'un no han sido aceptados dentro de la versión estable, pero se encuentra en cola para ello.
-\item [Inestable (\textit{unstable}):] La versión inestable es la version que se encuentra en desarrollo constante. Esta versión siempre es llamada por el nombre clave ``Sid''.
-\end{description}
-
-La rama estable tiene soporte completo de seguridad. Los lanzamientos de nuevas versiones suceden aproximadamente cada dos años. Cuando una versión estable pasa a la fase antigua estable recibe soporte del equipo de seguridad por aproximadamente un año mas. 
-
-Existe un proyecto que inició con la versión 6 (Squeeze) de Debian para dar soporte a largo plazo (LTS) a todas las versiones estables, el objetivo es extender por dos años adicionales el soporte a las ramas. El equipo está integrado por voluntarios que toman la responsabilidad del mantenimiento de la seguridad una vez que el equipo de seguridad de Debian haya culminado el plazo establecido de soporte. De este modo se tiene, dos años aproximadamente de soporte mientras la rama está en su fase estable, un año mientras es antigua estable, y dos años de soporte adicionales como LTS para un aproximado de 5 años en total.
-
-\subsection{Lanzamientos}
-La Tabla \ref{table:lanzamientosdebian} muestra la fecha de lanzamiento de las diferentes versiones de la distribución Debian. 
-
-\begin{savenotes}
-\begin{table}[H]
-\caption{Lanzamientos de versiones de Debian}
-\label{table:lanzamientosdebian}
-\centering
-\resizebox{.55\textwidth}{!}{%
-\begin{threeparttable}
-\begin{tabular}{lcr} 
-\toprule
-\textbf{Versión} & \textbf{Nombre Clave} & \textbf{Fecha de Lanzamiento} \\
-\midrule
-0.1--0.90 & Debian  & agosto--diciembre 1993 \\
-0.91      & Debian  & enero 1994 \\
-0.93R5    & Debian  & marzo 1995 \\
-0.93R6    & Debian  & 26/10/1995 \\
-1.1       & Buzz    & 17/06/1996 \\
-1.2       & Rex     & 12/12/1996 \\
-1.3       & Bo      & 02/07/1997 \\
-2.0       & Hamm    & 24/07/1998 \\
-2.1       & Slink   & 09/03/1999 \\
-2.2       & Potato  & 15/08/2000 \\
-3.0       & Woody   & 19/07/2002 \\
-3.1       & Sarge   & 06/06/2005 \\
-4.0       & Etch    & 08/04/2007 \\
-5.0       & Lenny   & 14/02/2009 \\
-6.0       & Squeeze & 06/02/2011 \\
-7.0       & Wheezy  & 04/05/2013 \\
-8.0       & Jessie  & 25/04/2015 \\
-%9.0       & Stretch & 17/06/2017 \\
-\bottomrule
-\end{tabular}
-\begin{tablenotes}
-\small
-\item Fuentes: \cite{debian15} y \textit{DebianReleases}\footnote{\url{https://wiki.debian.org/DebianReleases}}
-\end{tablenotes}
-\end{threeparttable}}
-\end{table}
-\end{savenotes}
-
-Así se aprecia en las primeras versiones un comportamiento de lanzamientos constantes en cortos períodos de tiempo para luego presentar un comportamiento más estable con lanzamientos bienales.
-
-\subsection{Histórico de distribuciones}
-El hecho de que una distribución mantenga un archivo donde se almacenan las versiones publicadas durante su vida añade la posibilidad de explorar aspectos históricos y técnicos de la distribución.
-
-Debian mantiene un registro de la mayoría de las versiones liberadas hasta la fecha, específicamente desde la versión 3.0  (Woody). Este directorio puede encontrarse en la dirección \url{http://cdimage.debian.org/mirror/cdimage/archive/}.
-
-\subsection{Componentes}
-Debian categoriza los paquetes incluidos en su sistema dentro de tres repositorios según su compatibilidad con las directrices de software libre de Debian (DFSG)\footnote{\url{https://www.debian.org/social_contract.es.html\#guidelines}}, estos repositorios son:
-
-\begin{description}
-\item[main:] Paquetes compatibles con las DFSG, que además no dependen de paquetes que se encuentren fuera de este componente para su operación. Estos paquetes son los únicos que se consideran parte de la distribución Debian.
-\item[contrib:] Paquetes compatibles con las DFSG pero que tienen dependencias fuera de \textit{main}, incluida la posibilidad de tener dependencias en el componente \textit{non-free}. 
-\item[non-free:] Paquetes no compatibles con las DFSG. 
-\end{description}
-
-\subsection{Arquitecturas}
-Hasta la versión 8.0 (Jessie) Debian soporta las arquitecturas mostradas en la tabla~\ref{table:archdebian}.
-
-\begin{savenotes}
-\begin{table}[H]
-\begin{center}
-\caption{Arquitecturas soportadas oficialmente por Debian}
-\label{table:archdebian}
-\begin{threeparttable}
-\begin{tabular}{ll} 
-\toprule
-\textbf{Adaptación} & \multicolumn{1}{c}{\textbf{Arquitectura}} \\
-\midrule
-amd64   & PC de 64 bits (amd64) \\
-arm64   & ARM de 64 bits (AArch64) \\
-armel   & EABI ARM \\
-armhf   & ABI ARM de punto flotante \\
-i386    & PC de 32 bits (i386) \\
-mips    & MIPS (modo big-endian) \\
-mipsel  & MIPS (modo little-endian) \\
-powerpc & Motorola/IBM PowerPC \\
-ppc64el & POWER7+, POWER8 \\
-s390x   & System z \\
-\bottomrule
-\end{tabular}
-\begin{tablenotes}
-\small
-\item Fuentes: Debian\footnote{\url{https://www.debian.org/ports/index.es.html\#portlist-released}}, DistroWatch\footnote{\url{https://distrowatch.com/table.php?distribution=debian}}
-\end{tablenotes}
-\end{threeparttable}
-\end{center}
-\end{table}
-\end{savenotes}
-
-De las tres distribuciones en este estudio, Debian es la que más soporte ofrece a distintas arquitecturas y plataformas. La tabla~\ref{table:archdebian} sólo muestra los trabajos de soporte oficiales, pero también existen adaptaciones en desarrollo\footnote{\url{https://www.debian.org/ports/index.es.html\#portlist-other}} para el funcionamiento de la distribución en otros sistemas como GNU/Hurd y FreeBSD.
-
-\subsection{Roles}
-
-La estructura organizativa de Debian expone una organización jerárquica. Está explicada en la ``Constitución de Debian'' cuya primera versión (versión 1.0) fue ratificada el 2 de diciembre de 1998 y su última versión (versión 1.7) ratificada el 14 de agosto de 2016\footnote{\url{https://www.debian.org/devel/constitution}}. El documento describe la estructura organizativa para la toma de decisiones y resolución de conflictos dentro del Proyecto Debian. Esta estructura está compuesto por: el Líder del Proyecto (DLP), el Comité Técnico, el Secretario del Proyecto, los Delegados del Líder del Proyecto, los Desarrolladores Individuales y los nombrados mediante una Resolución General o elección.
 
 \begin{description}
 \item [El Líder del Proyecto] es el representante oficial del Proyecto Debian. El cargo tiene validez por un año. Cualquier Desarrollador Debian tiene derecho a postularse como candidato y su designación se hace a través de una elección donde todos los Desarrolladores Debian tienen derecho a voto.
@@ -1003,26 +906,6 @@ Tienen el derecho de: elegir o cesar al Líder del Proyecto, enmendar la constitu
 
 \end{description}
 
-%\begin{figure}[H]
-%\caption{Integrantes de la estructura organizativa de Debian }
-%\label{fig:constitucion}
-%\centering
-%\begin{tikzpicture}
-%  \begin{scope}[blend group = soft light]
-%    \fill[red!30!white]    ( 90:2.84) circle (2);
-%    \fill[green!30!white]  (180:2.84) circle (2);
-%    \fill[blue!30!white]   (270:2.84) circle (2);
-%    \fill[yellow!30!white] (360:2.84) circle (2);
-%    \fill[black!15!white]     (  0:0) circle (4.85);
-%  \end{scope}
-%  \node [font=\footnotesize\bfseries, align=center] at (90:3) {Líder \\ del Proyecto};
-%  \node [font=\footnotesize, align=center] at (180:3) {Comité \\ Técnico};
-%  \node [font=\footnotesize] at (270:3) {Delegados};
-%  \node [font=\footnotesize, align=center] at (360:3) {Secretario \\ del Proyecto};
-%  \node [font=\bfseries\small] {Desarrolladores};
-%\end{tikzpicture}
-%\end{figure}
-
 \begin{figure}[H]
 \caption{Integrantes de la estructura organizativa de Debian }
 \label{fig:constitucion}
@@ -1043,7 +926,31 @@ Tienen el derecho de: elegir o cesar al Líder del Proyecto, enmendar la constitu
 \end{tikzpicture}
 \end{figure}
 
-En la comunidad de desarrollo de Debian se pueden distinguir diferentes roles:
+%\begin{figure}[H]
+%\caption{Integrantes de la estructura organizativa de Debian }
+%\label{fig:constitucion}
+%\centering
+%\begin{tikzpicture}
+%  \begin{scope}[blend group = soft light]
+%    \fill[red!30!white]    ( 90:2.84) circle (2);
+%    \fill[green!30!white]  (180:2.84) circle (2);
+%    \fill[blue!30!white]   (270:2.84) circle (2);
+%    \fill[yellow!30!white] (360:2.84) circle (2);
+%    \fill[black!15!white]     (  0:0) circle (4.85);
+%  \end{scope}
+%  \node [font=\footnotesize\bfseries, align=center] at (90:3) {Líder \\ del Proyecto};
+%  \node [font=\footnotesize, align=center] at (180:3) {Comité \\ Técnico};
+%  \node [font=\footnotesize] at (270:3) {Delegados};
+%  \node [font=\footnotesize, align=center] at (360:3) {Secretario \\ del Proyecto};
+%  \node [font=\bfseries\small] {Desarrolladores};
+%\end{tikzpicture}
+%\end{figure}
+
+
+
+A su vez, dentro de la comunidad de desarrolladores también se presentan diferentes roles, y en Debian reciben distintas denominaciones según su actividad y permisos para la publicación de paquetes en los repositorios de Debian.
+
+De este modo, dentro del entorno Debian los desarrolladores se distinguen en:
 \begin{description}
 \item [Autor original (\textit{upstream author}):] es la persona que escribió el programa original.
 \item [Mantenedor actual (\textit{upstream maintainer}):] es la persona que actualmente se encarga de mantener el programa.
@@ -1054,7 +961,7 @@ En la comunidad de desarrollo de Debian se pueden distinguir diferentes roles:
 \item [Desarrollador Debian (DD) (\textit{Debian Developer}):] es un miembro del proyecto Debian con permisos plenos de subida de paquetes al repositorio oficial de paquetes Debian.
 \end{description}
 
-\subsection{Colaboradores}
+\subsubsection{Colaboradores}
 Para finales del año 2016 existían poco más de 1300 colaboradores del proyecto Debian entre Mantenedores Debian y Desarrolladores Debian.
 
 \begin{itemize}
@@ -1062,45 +969,190 @@ Para finales del año 2016 existían poco más de 1300 colaboradores del proyecto D
 \item 1043 Desarrolladores Debian\footnote{\url{https://nm.debian.org/public/people/dd_all} [Consultado 14 de noviembre de 2016]}
 \end{itemize}
 
+\subsection{Histórico de distribuciones}
+El hecho de que una distribución mantenga un archivo donde se almacenan las versiones publicadas durante su vida añade la posibilidad de explorar aspectos históricos y técnicos de la distribución.
+
+Debian mantiene un registro de la mayoría de las versiones liberadas hasta la fecha, específicamente desde la versión 3.0  (Woody). Este directorio puede encontrarse en la dirección \url{http://cdimage.debian.org/mirror/cdimage/archive/}.
+
+
+\subsection{Lanzamientos}
+La Tabla \ref{table:lanzamientosdebian} muestra la fecha de lanzamiento de las diferentes versiones de la distribución Debian. 
+
+\begin{savenotes}
+\begin{table}[H]
+\caption{Lanzamientos de versiones de Debian}
+\label{table:lanzamientosdebian}
+\centering
+\resizebox{.55\textwidth}{!}{%
+\begin{threeparttable}
+\begin{tabular}{lcr} 
+\toprule
+\textbf{Versión} & \textbf{Nombre Clave} & \textbf{Fecha de Lanzamiento} \\
+\midrule
+0.1--0.90 & Debian  & agosto--diciembre 1993 \\
+0.91      & Debian  & enero 1994 \\
+0.93R5    & Debian  & marzo 1995 \\
+0.93R6    & Debian  & 26/10/1995 \\
+1.1       & Buzz    & 17/06/1996 \\
+1.2       & Rex     & 12/12/1996 \\
+1.3       & Bo      & 02/07/1997 \\
+2.0       & Hamm    & 24/07/1998 \\
+2.1       & Slink   & 09/03/1999 \\
+2.2       & Potato  & 15/08/2000 \\
+3.0       & Woody   & 19/07/2002 \\
+3.1       & Sarge   & 06/06/2005 \\
+4.0       & Etch    & 08/04/2007 \\
+5.0       & Lenny   & 14/02/2009 \\
+6.0       & Squeeze & 06/02/2011 \\
+7.0       & Wheezy  & 04/05/2013 \\
+8.0       & Jessie  & 25/04/2015 \\
+9.0       & Stretch & 17/06/2017 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item Fuentes: \cite{debian15} y \textit{DebianReleases}\footnote{\url{https://wiki.debian.org/DebianReleases}}
+\end{tablenotes}
+\end{threeparttable}}
+\end{table}
+\end{savenotes}
+
+En la tabla se distinguen dos etapas, la primera se da durante la primera década de vida, con lanzamientos constantes en cortos períodos de tiempo para luego entrar a la segunda etapa más estable con lanzamientos bienales.
+
+\subsection{Arquitecturas}
+Hasta la versión 8.0 (Jessie) Debian soporta las arquitecturas mostradas en la tabla~\ref{table:archdebian}.
+
+\begin{savenotes}
+\begin{table}[H]
+\begin{center}
+\caption{Arquitecturas soportadas oficialmente por Debian}
+\label{table:archdebian}
+\begin{threeparttable}
+\begin{tabular}{ll} 
+\toprule
+\textbf{Adaptación} & \multicolumn{1}{c}{\textbf{Arquitectura}} \\
+\midrule
+amd64   & PC de 64 bits (amd64) \\
+arm64   & ARM de 64 bits (AArch64) \\
+armel   & EABI ARM \\
+armhf   & ABI ARM de punto flotante \\
+i386    & PC de 32 bits (i386) \\
+mips    & MIPS (modo big-endian) \\
+mipsel  & MIPS (modo little-endian) \\
+powerpc & Motorola/IBM PowerPC \\
+ppc64el & POWER7+, POWER8 \\
+s390x   & System z \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item Fuentes: Debian\footnote{\url{https://www.debian.org/ports/index.es.html\#portlist-released}}, DistroWatch\footnote{\url{https://distrowatch.com/table.php?distribution=debian}}
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{table}
+\end{savenotes}
+
+De las tres distribuciones en este estudio, Debian es la que más soporte ofrece a distintas arquitecturas y plataformas. La tabla~\ref{table:archdebian} sólo muestra los trabajos de soporte oficiales, pero también existen adaptaciones en desarrollo\footnote{\url{https://www.debian.org/ports/index.es.html\#portlist-other}} para el funcionamiento de la distribución en otros sistemas como GNU/Hurd y FreeBSD.
+
+\subsection{Repositorios Debian}
+
+El proyecto Debian puede prestar soporte a los paquetes en 4 repositorios de aplicaciones de forma simultánea. %definición ramas
+
+\begin{description}
+\item [Antigua estable (\textit{oldstable}):] Esta versión contiene la  versión inmediatamente anterior a la versión estable.
+\item [Estable (\textit{stable}):] La versión estable contiene la \'ultima versión oficial de la distribución Debian.
+\item [En pruebas (\textit{testing}):] La rama de pruebas contiene paquetes que a\'un no han sido aceptados dentro de la versión estable, pero se encuentra en cola para ello.
+\item [Inestable (\textit{unstable}):] La versión inestable es la version que se encuentra en desarrollo constante. Esta versión siempre es llamada por el nombre clave ``Sid''.
+\end{description}
+
+Debian también alberga un directorio \textit{\textbf{Experimental}}. Esta rama aloja algunos paquetes en fases muy tempranas de desarrollo. Es más un repositorio de trabajo aislado pensado para el uso de los desarrolladores y empaquetadores a modo de laboratorio para ir probando sus paquetes y recibir comentarios de otros desarrolladores mientras alcanzan etapas estables de desarrollo.
+
+La rama estable tiene soporte completo de seguridad. Los lanzamientos de nuevas versiones suceden aproximadamente cada dos años. Cuando una versión estable pasa a la fase antigua estable recibe soporte del equipo de seguridad por aproximadamente un año mas. 
+
+Existe un proyecto que inició con la versión 6 (Squeeze) de Debian para dar soporte a largo plazo (\textit{Long Term Support} -- LTS, en inglés) a todas las versiones estables, el objetivo es extender por dos años adicionales el soporte a las ramas. El equipo está integrado por voluntarios que toman la responsabilidad del mantenimiento de la seguridad una vez que el equipo de seguridad de Debian haya culminado el plazo establecido de soporte. De este modo se tiene, dos años aproximadamente de soporte mientras la rama está en su fase estable, un año mientras es antigua estable, y dos años de soporte adicionales como LTS para un aproximado de 5 años en total para cada versión publicada.
+
+\subsection{Componentes}
+Según su compatibilidad con las directrices de software libre de Debian (DFSG)\footnote{\url{https://www.debian.org/social_contract.es.html\#guidelines}} Debian categoriza los paquetes incluidos en su sistema dentro de tres componentes, estos son:
+
+\begin{description}
+\item[main:] Paquetes compatibles con las DFSG, que además no dependen de paquetes que se encuentren fuera de este componente para su operación. Estos paquetes son los únicos que se consideran parte de la distribución Debian.
+\item[contrib:] Paquetes compatibles con las DFSG pero que tienen dependencias fuera de \textit{main}, incluida la posibilidad de tener dependencias en el componente \textit{non-free}. 
+\item[non-free:] Paquetes no compatibles con las DFSG. 
+\end{description}
+
+
+
+
 \subsection{Listas de discusión}
+
+La cantidad de personas involucradas en los proyectos colaborativos así como la distribución geográfica desde donde participan hacen necesaria la búsqueda de herramientas que posibiliten una adecuada interacción entre los actores. 
+
+La lista de correo es quizás la herramienta que mejor se adapta a los fines comunicacionales en las comunidades de desarrollo distribuido. Permite el envío y recepción de mensajes a múltiples usuarios de manera inmediata o compiladas en tiempos preestablecidos y facilita la persistencia de un registro de mensajes ordenados cronológicamente.
+
+En este trabajo se cuantifica la actividad en dos listas públicas de correos específicas para cada distribución, la lista de discusión de usuarios y la lista de desarrolladores. Esto, con el objetivo de mostrar el movimiento y la interacción de la comunidad que integra dichas listas. Las listas de usuarios están entendidas para el soporte y asistencia de los usuarios de las distribuciones y la listas de desarrolladores para temas más técnicos. 
+
 \subsubsection{Lista de usuarios}
+La Figura~\ref{fig:debusers} muestra un crecimiento constante. El pico de actividad más alto en la lista es alcanzado en octubre del año 2002 superando la barrera de los 6500 mensajes en ese mes, centrándose en temas de soporte y discusión. Luego comienza un paulatino descenso hasta marzo de 2007 donde se aprecia un repunte de 5499 mensajes en donde se presentan discusiones interesantes sobre derechos de autor, soporte y opiniones devenidas en una declaración de Ian Murdock sobre el impacto de Ubuntu en los usuarios de Debian\footnote{\url{https://lists.debian.org/debian-user/2007/03/msg03347.html}}. Luego continua su descenso en la actividad, presentando breves momentos de actividad intensificada, con temas relacionados a soporte.
+
+
 \begin{figure}[H]
 \caption{Actividad de la lista de correos \textit{Users} de Debian}
+\label{fig:debusers}
 \centering
-\includegraphics[width=\textwidth]{lista_debian_user}
+\includegraphics[width=.9\textwidth]{lista_debian_user}
 
 \footnotesize{Fuente: \url{https://lists.debian.org/debian-user/} (Recuperado 06/06/2017)}
 \end{figure}
 
 \subsubsection{Lista de desarrolladores}
+
+Para el caso de la actividad en la lista de desarrolladores de Debian, presentada en la Figura~\ref{fig:debdev}, se percibe un comportamiento ligeramente similar,  pero con picos de actividad más intensificados y más frecuentes. Los periodos de mayor actividad se encuentra entre los años 1998 y 2006, no llegando a superar los 3500 mensajes al mes.
+
 \begin{figure}[H]
 \caption{Actividad de la lista de correos \textit{Developers} de Debian}
-\begin{center}
-\includegraphics[width=\textwidth]{lista_debian-developers}
-\end{center}
-Fuente: https://lists.debian.org/debian-devel/ (Recuperado 07/06/2017)
+\label{fig:debdev}
+\centering
+\includegraphics[width=.9\textwidth]{lista_debian-developers}
+
+{\footnotesize Fuente: \url{https://lists.debian.org/debian-devel/} (Recuperado 07/06/2017})
 \end{figure}
 
 \subsection{Ciclo de vida de un paquete en Debian}
 
 En la figura~\ref{fig:ciclodebian} se presenta el diagrama de flujo de paquetes entre las diferentes versiones de Debian.
+
+Allí se describe las posibles rutas que atraviesa un paquete aceptado a través las diferentes ramas y repositorios del sistema Debian. Los repositorios en negrita representan aquellos que contienen el sistema base, es decir, ese repositorio contiene los paquetes requeridos para poder tener un sistema operativo funcional, mientras que el resto de repositorios solamente contienen algunos paquetes y no podrían funcionar por sí solos.
+
+El diagrama se explica de la siguiente forma. Un paquete puede ser subido por el equipo de seguridad a la rama de desarrollo (inestable) o directamente al repositorio de seguridad para corregir errores urgentes que puedan vulnerar el sistema. 
+
 \begin{savenotes}
 \begin{figure}[H]
 \caption{Flujo de trabajo de paquetes Debian para 2016}
 \label{fig:ciclodebian}
 \begin{center}
-\includegraphics[width=\textwidth]{package-cycle}
+\includegraphics[width=.95\textwidth]{package-cycle}
 \end{center}
 Fuente: Imagen basada en el código de Antoine Beaupré\footnote{\url{https://anonscm.debian.org/git/collab-maint/package-cycle.git/tree/package-cycle.dot} (Recuperado Junio 2017)}
 \end{figure}
 \end{savenotes}
+
+La otra forma es transitar por el proceso regular. El paquete sube a los repositorios de desarrollo, al repositorio inestable, donde será compilado para las diferentes arquitecturas y será probado hasta que éste se encuentre en un estado sin fallos críticos y sin modificaciones recientes.
+
+Para pasar de la fase en pruebas o \textit{testing} a la versión estable, primero se debe anunciar una etapa de congelamiento conocida como ``\textit{freeze}''. En esta etapa se impide la subida de nuevas versiones para evitar agregar paquetes con nuevos errores. Cada paquete se prueba para su aprobación final y aquellos paquetes en los que no se hayan corregidos sus errores serán eliminados del repositorio. 
+
+Culminada la etapa de congelamiento y comprobado todo el repositorio, este pasa a ser el nuevo repositorio estable, y el que era estable, pasa a antiguo estable. A su vez, el que era antigua estable deja de tener soporte del proyecto Debian y pasa a manos de voluntarios que prestarán soporte de seguridad como versión LTS por dos años más para luego finalizar en los archivos del proyecto.
+
+La figura~\ref{fig:ciclodebian} también muestra repositorios especiales como los repositorios de actualizaciones propuestas a las diferentes versiones, el repositorio de seguridad, y el de retroimportaciones (\textit{backports} en inglés).
+
+Los repositorios ``Actualizaciones Propuestas para pruebas'', ``Actualizaciones Propuestas para estable'' y ``Actualizaciones de estable'' son repositorios donde se van colocando los paquetes listos para ser incluidos en la próxima ``actualización puntual'', cada dos meses se hace una nueva actualización de la versión estable.
+
+El repositorio de retroimportaciones toma los paquetes de la versión en pruebas y se ajustan y recompilan para su uso en la versión estable. De esta forma, se tiene un repositorio en la versión estable con paquetes que ya están actualizados y están siendo utilizados en la versión de pruebas.
+
 \subsection{Estimación de costos}
-\subsubsection{Componente \textit{main}}
-\begin{itemize}
-\item Fecha del archivo Source: 06/05/2017
-\item Número de paquetes descargados: 20.981
-\item Cantidad de lenguajes reconocidos: 179
-\end{itemize}
+%Como se explicó en el capítulo previo, las estimaciones se realizan utilizando los datos obtenidos del repositorio \textit{main} de la distribución. 
+
+La Tabla~\ref{table:slocdebian} expone un resumen con los datos obtenidos del análisis realizado sobre el componente \textit{main} de Debian. Se estudiaron 20.981 paquetes de software y se detectaron 179 lenguajes.
 
 \begin{table}[H]
 \begin{center}
@@ -1111,10 +1163,10 @@ Fuente: Imagen basada en el código de Antoine Beaupré\footnote{\url{https://anon
 \multirow{2}{*}{\textbf{Lenguaje}} & \multicolumn{1}{c}{\textbf{Cantidad de}} &  \multicolumn{1}{c}{\textbf{Líneas en}} & \multicolumn{1}{c}{\textbf{Líneas con}}  & \multicolumn{1}{c}{\textbf{Líneas de}}\\
  & \multicolumn{1}{c}{\textbf{archivos}} & \multicolumn{1}{c}{\textbf{blanco}} & \multicolumn{1}{c}{\textbf{comentarios}}  & \multicolumn{1}{c}{\textbf{código fuente}}\\
 \midrule
-C                 & 534.083 & 40.610.907 & 45.978.259 & 228.239.179 \\
+C                 & 534.083 & \textbf{40.610.907} & \textbf{45.978.259} & \textbf{228.239.179} \\
 C++               & 484.030 & 26.725.540 & 24.715.793 & 141.455.570 \\
 Bourne Shell      &  95.241 & 14.824.473 & 15.983.187 &  99.179.801 \\
-Cabecera C/C++    & 809.250 & 19.839.105 & 36.676.482 &  88.063.518 \\
+Cabecera C/C++    & \textbf{809.250} & 19.839.105 & 36.676.482 &  88.063.518 \\
 HTML              & 365.730 &  6.967.723 &  1.841.372 &  65.097.778 \\
 m4                &  49.654 &  3.183.855 &    698.068 &  56.911.113 \\
 Java              & 398.850 &  9.858.765 & 23.133.295 &  47.973.926 \\
@@ -1131,29 +1183,56 @@ Lisp              &  18.520 &  1.092.827 &  1.537.110 &   7.339.162 \\
 Module Definition &   8.624 &     96.572 &     48.120 &   7.095.719 \\
 PHP               &  52.913 &  1.161.255 &  3.146.443 &   6.469.612 \\
 Otros             & 731.630 & 13.414.341 & 14.506.986 &  96.629.959 \\
+\midrule
 \textbf{Total}    & \textbf{4.326.711} & \textbf{159.384.994} & \textbf{200.438.168} & \textbf{1.015.218.011} \\
 \bottomrule
 \end{tabular}
 \end{center}
 \end{table}
 
-\begin{figure}[H]
-\caption{Porcentaje de archivos por lenguaje dentro del componente \textit{main} de Debian}
-\begin{center}
-\includegraphics[width=\textwidth]{pie_debian}
-\end{center}
-%Fuente: http://canaima.softwarelibre.gob.ve/canaima/soporte
-\end{figure}
+%\subsubsection{Datos del componente \textit{main}}
+\begin{flushright}
+%\noindent\textbf{Datos del componente \textit{main}}\\
+Fecha del archivo Source: 06/05/2017\\
+Número de paquetes descargados: 20.981\\
+Cantidad de lenguajes reconocidos: 179\\
+\end{flushright}
 
+\pagebreak
+
+Se aprecia como el lenguaje C domina en cantidad de líneas en blanco, líneas con comentarios y líneas de código fuente. La Figura~\ref{fig:debianbar} visualiza los resultados de este análisis.
+
+
+%\vfill
 \begin{figure}[H]
 \caption{Cantidad de líneas vacía, comentarios y líneas de código fuente en los lenguajes del componente \textit{main} de Debian}
+\label{fig:debianbar}
 \begin{center}
 \includegraphics[width=\textwidth]{barplot_debian}
 \end{center}
-%Fuente: http://canaima.softwarelibre.gob.ve/canaima/soporte
 \end{figure}
+%\vfill
+
+
+%El lenguaje con mayor cantidad de archivos presente en el repositorio es liderado por los archivos de cabecera C/C++ con un 19\% del total analizado, seguido de los archivos codificados en lenguaje C y C++ con 12\% y 11\%  respectivamente, tal como se aprecia en la Figura~\ref{fig:debianpie}.
+
+
+Los archivos de cabecera C/C++ lideran como el lenguaje con mayor cantidad de archivos presente en el repositorio, con un 19\% del total analizado, seguido de los archivos codificados en lenguaje C y C++ con 12\% y 11\%  respectivamente, tal como se muestra en la Figura~\ref{fig:debianpie}.
+
+%\vfill
+\begin{figure}[H]
+\caption{Porcentaje de archivos por lenguaje dentro del componente \textit{main} de Debian}
+\label{fig:debianpie}
+\begin{center}
+\includegraphics[width=\textwidth]{pie_debian}
+\end{center}
+\end{figure}
+%\vfill
 
 \subsubsection{COCOMO}
+
+La cantidad de líneas de código fuente es el insumo principal para la estimación de esfuerzo y costos utilizando COCOMO básico. El total de código fuente de todos los paquetes analizados en el componente \textit{main} de Debian en su versión 8.0 supera las 1.015 millones de líneas. La Tabla~\ref{table:cocomodebian} presenta los valores obtenidos aplicando COCOMO Básico.
+
 \begin{savenotes}
 \begin{table}[H]
 \begin{center}
@@ -1166,7 +1245,7 @@ Otros             & 731.630 & 13.414.341 & 14.506.986 &  96.629.959 \\
 \toprule
 Líneas de código fuente:                        &  1.015.218.011 \\
 Esfuerzo estimado de desarrollo (persona--mes): &   4.865.175,62 \\
-Productividad estimada:                         &           0,21 \\
+%Productividad estimada:                         &           0,21 \\
 Tiempo de desarrollo estimado (meses):          &         869,04 \\
 Personas requeridas estimadas (personas):       &       5.598,36 \\
 Costo total estimado del proyecto (US\$):       & 413.366.347,61 \\
@@ -1181,10 +1260,52 @@ Costo total estimado del proyecto (US\$):       & 413.366.347,61 \\
 \end{table}
 \end{savenotes}
 
+Así, para enero de 2017, el desarrollo de Debian costaría aproximadamente US\$~413.366.347,61, tomando como referencia el salario calculado a US\$ 73.837 y cerca de 5600 personas. El tiempo requerido para completar el proyecto sería de 72 años aproximadamente.
+
 
 \section{Ubuntu}
+
 \subsection{Definición}
-Ubuntu es una distribución GNU/Linux basada en Debian, concebida por Mark Shuttleworth en 2004. Según el equipo que trabaja en el Manual de Ubuntu, se estima que Ubuntu está instalado en el 2\% de las computadoras a nivel mundial, esto equivale a diez millones de usuarios en todo el mundo \citep{ubuntu16}. Sin embargo, la página ``Ubuntu Insights''\footnote{\url{https://insights.ubuntu.com/about}} de Ubuntu afirma, para mayo de 2017, que existen mas de 40 millones de usuarios de escritorio.
+Ubuntu es una distribución GNU/Linux basada en Debian, concebida por Mark Shuttleworth en 2004. Según el equipo que trabaja en el Manual de Ubuntu, se estima que Ubuntu está instalado en el 2\% de las computadoras a nivel mundial, esto equivale a diez millones de usuarios en todo el mundo \citep{ubuntu16}. Sin embargo, la página ``Ubuntu Insights''\footnote{\url{https://insights.ubuntu.com/about}} de Ubuntu afirma que, para mayo de 2017, existían más de 40 millones de usuarios de escritorio.
+
+El soporte comercial de Ubuntu proviene de la empresa Canonical\footnote{\url{https://www.canonical.com}}, propiedad también de Mark Shuttleworth. Luego, la distribución Ubuntu es un proyecto que mezcla un proyecto colaborativo entre empresa privada y comunidad de desarrolladores. Esta aleación empresa--comunidad se ve esquematizada en la estructura organizativa del proyecto, la cual se describe en seguida.
+
+\subsection{Gobernanza}
+\subsubsection{Política}
+Ubuntu explica sus políticas a través de varias páginas en su web y al igual que Debian, Ubuntu comparte los principios del movimiento de Software Libre y de Código Abierto.
+
+La filosofía de la distribución traza los objetivos principales que conducen el trabajo dentro del proyecto: El software debe ser libre y accesible a todo el mundo\footnote{\url{https://www.ubuntu.com/about/about-ubuntu/our-philosophy}}. 
+
+De este modo, Ubuntu cree que cada usuario de computadora debería: 
+
+\begin{itemize}
+\item Poseer la libertad de descarga, ejecución, copia, distribución, estudio, compartición, modificación y mejoramiento del software para cualquier propósito, sin tener que pagar por licencias. 
+\item Ser capaz de usar su software en la lengua de su elección.
+\item Poder usar todo el software independientemente de su discapacidad.
+\end{itemize}
+
+Asimismo, Ubuntu estableció un Código de Conducta\footnote{\url{https://www.ubuntu.com/about/about-ubuntu/conduct}} que sirve como carta de compromiso entre los miembros de Ubuntu para la interacción de los mismos. El Código de Conducta es la pauta que indica como se deben dirimir los conflictos dentro del proyecto. Al mismo tiempo, es una guía que incentiva la colaboración y el liderazgo.
+
+
+
+\subsubsection{Organización}
+\begin{description}
+\item [Patrocinador (\textit{sponsors}):] Es la persona que puede revisar el paquete y subirlo a los repositorios. 
+\item [Desarrollador prospecto de Ubuntu (\textit{Ubuntu Prospective Developers}):] Es aquella persona que reci\'en comienza a contribuir con Ubuntu.
+\item [Desarrollador contribuidor de Ubuntu (\textit{Ubuntu Contributing Developers}):] Es aquella persona reconocida con una membres\'ia de Ubuntu.
+\item [Desarrollador Ubuntu de equipos delegados (\textit{Ubuntu Developers from delegated teams}):] Es la persona que puede subir paquetes a determinados grupos de trabajo.
+\item [MOTU (\textit{Master of the Universe}):] Es aquella persona que puede subir paquetes a los repositorios \textit{Universe} and \textit{Multiverse}.
+\item [Desarrollador del n\'ucleo de Ubuntu (core-dev) (\textit{Ubuntu Core Developers}):] Es aquella persona que puede subir paquetes a todas las \'areas de Ubuntu.
+\item [Subidor por paquete (Per-package Uploaders):] Es aquella persona que puede subir paquetes espec\'ificos.
+\end{description}
+
+\subsubsection{Colaboradores}
+\begin{itemize}
+\item 87 Ubuntu Core Developers\footnote{\url{https://launchpad.net/~ubuntu-core-dev} [Consultado 14 de noviembre de 2016]} 
+\item 159 Ubuntu Contributing Developers\footnote{\url{https://launchpad.net/~ubuntu-developer-members} [Consultado 14 de noviembre de 2016]}
+\item 148 MOTU\footnote{\url{https://launchpad.net/~motu} [Consultado 14 de noviembre de 2016]}
+\item 734 Ubuntu Members\footnote{\url{https://launchpad.net/~ubuntumembers} [Consultado 14 de noviembre de 2016]}
+\end{itemize}
 
 \subsection{Componentes}
 Ubuntu categoriza los paquetes incluidos en su sistema dentro de cuatro repositorios, de acuerdo a si son libres o no, según la Filosofía de Software Libre de Ubuntu\footnote{\url{https://www.ubuntu.com/about/about-ubuntu/our-philosophy}}, estos repositorios son:
@@ -1227,24 +1348,7 @@ powerpc & IBM/Motorola PowerPC \\
 \end{table}
 \end{savenotes}
 
-\subsection{Roles}
-\begin{description}
-\item [Patrocinador (\textit{sponsors}):] Es la persona que puede revisar el paquete y subirlo a los repositorios. 
-\item [Desarrollador prospecto de Ubuntu (\textit{Ubuntu Prospective Developers}):] Es aquella persona que reci\'en comienza a contribuir con Ubuntu.
-\item [Desarrollador contribuidor de Ubuntu (\textit{Ubuntu Contributing Developers}):] Es aquella persona reconocida con una membres\'ia de Ubuntu.
-\item [Desarrollador Ubuntu de equipos delegados (\textit{Ubuntu Developers from delegated teams}):] Es la persona que puede subir paquetes a determinados grupos de trabajo.
-\item [MOTU (\textit{Master of the Universe}):] Es aquella persona que puede subir paquetes a los repositorios \textit{Universe} and \textit{Multiverse}.
-\item [Desarrollador del n\'ucleo de Ubuntu (core-dev) (\textit{Ubuntu Core Developers}):] Es aquella persona que puede subir paquetes a todas las \'areas de Ubuntu.
-\item [Subidor por paquete (Per-package Uploaders):] Es aquella persona que puede subir paquetes espec\'ificos.
-\end{description}
 
-\subsection{Colaboradores}
-\begin{itemize}
-\item 87 Ubuntu Core Developers\footnote{\url{https://launchpad.net/~ubuntu-core-dev} [Consultado 14 de noviembre de 2016]} 
-\item 159 Ubuntu Contributing Developers\footnote{\url{https://launchpad.net/~ubuntu-developer-members} [Consultado 14 de noviembre de 2016]}
-\item 148 MOTU\footnote{\url{https://launchpad.net/~motu} [Consultado 14 de noviembre de 2016]}
-\item 734 Ubuntu Members\footnote{\url{https://launchpad.net/~ubuntumembers} [Consultado 14 de noviembre de 2016]}
-\end{itemize}
 
 
 
@@ -1261,10 +1365,7 @@ powerpc & IBM/Motorola PowerPC \\
 %\item Xubuntu versi\'on de Ubuntu con el entorno XFCE.
 %\end{itemize}
 
-\subsection{Política}
-\begin{itemize}
-\item Codigo de conducta de Ubuntu \url{https://www.ubuntu.com/about/about-ubuntu/conduct}
-\end{itemize}
+
 
 \subsection{Tiempos de soporte}
 Ubuntu hace lanzamientos con diferentes tiempos de soporte, cada seis meses se publica una versión estable, y las versiones estable con soporte de larga duración se publican cada dos años.
@@ -1442,14 +1543,14 @@ Canaima GNU/Linux es una metadistribución Linux basada en Debian, forma parte de
 
 Canaima se crea ``con el propósito de lograr inter-operabilidad, homogeneidad y sustentabilidad de la plataforma informática que utilizan los servidores públicos en sus procesos de producción intelectual y gestión'' \citep[p.7]{canaima09}. Además, ``su objetivo estratégico es apalancar el proceso de migración a Software Libre en las instituciones de la Administración Pública Nacional, para avanzar hacia la independencia tecnológica, con pleno ejercicio de la soberanía nacional'' \citep[p.7]{canaima09}.
 
-Así pues, 3 años luego del Decreto 3390 nace la primera versión de la Distribución GNU/Linux del Estado Venezolano desarrollada en primera instancia para el Ministerio de Ciencia y Tecnología \cite{discusion12}, y que poco después adoptaría el nombre de Canaima.
+Así pues, 3 años luego del Decreto 3390, en 2007, nace la primera versión de la Distribución GNU/Linux del Estado Venezolano desarrollada en primera instancia para el Ministerio de Ciencia y Tecnología \cite{discusion12}, y que poco después adoptaría el nombre de Canaima.
 
 Sobre la distribución y el proyecto Canaima \cite{figueira13} nos dice:
 \begin{quote}
 Para su generación y mantenimiento, se creó el Proyecto Canaima, que ha evolucionado desde un producto de una institución particular, hasta un complejo y rico proyecto socio-tecnológico con diversas ramificaciones, donde participan decenas de personas distribuidas en toda la geografía nacional, a título individual o provenientes de instituciones, colectivos sociales y organizaciones diversas. (p.198)
 \end{quote}
 
-El desarrollo de Canaima inicia con un estilo del tipo catedral, que poco a poco ha devenido en un estilo del tipo bazar, aunque todavía no lo alcance de manera cabal pues la posibilidad para la colaboración presenta aún algunas limitaciones. 
+El desarrollo de Canaima inicia con un estilo del tipo catedral, que poco a poco muestra una migración a un estilo del tipo bazar. %, aunque todavía no lo alcance de manera cabal pues la posibilidad para la colaboración presenta aún algunas limitaciones. 
 
 \subsection{Componentes}
 

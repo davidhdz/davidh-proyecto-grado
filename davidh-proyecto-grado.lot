@@ -1,22 +1,22 @@
 \select@language {spanish}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces SLOC agrupados por lenguaje\relax }}{18}{table.caption.5}
-\contentsline {table}{\numberline {2.2}{\ignorespaces Constantes para el c\'alculo de distintos aspectos de costes para el modelo COCOMO b\'asico\relax }}{19}{table.caption.6}
-\contentsline {table}{\numberline {2.3}{\ignorespaces Estimaciones de esfuerzo y costos para los paquetes \texttt {zygrib}, \texttt {zyn}, \texttt {zynaddsubfx} y \texttt {zypper} de la distribuci\'on Debian 8.0 aplicando COCOMO B\'asico\relax }}{20}{table.caption.7}
+\contentsline {table}{\numberline {2.1}{\ignorespaces SLOC agrupados por lenguaje\relax }}{19}{table.caption.6}
+\contentsline {table}{\numberline {2.2}{\ignorespaces Constantes para el c\'alculo de distintos aspectos de costes para el modelo COCOMO b\'asico\relax }}{20}{table.caption.7}
+\contentsline {table}{\numberline {2.3}{\ignorespaces Estimaciones de esfuerzo y costos para los paquetes \texttt {zygrib}, \texttt {zyn}, \texttt {zynaddsubfx} y \texttt {zypper} de la distribuci\'on Debian 8.0 aplicando COCOMO B\'asico\relax }}{21}{table.caption.8}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Lanzamientos de versiones de Debian\relax }}{23}{table.caption.9}
-\contentsline {table}{\numberline {3.2}{\ignorespaces Arquitecturas soportadas oficialmente por Debian\relax }}{25}{table.caption.11}
-\contentsline {table}{\numberline {3.3}{\ignorespaces SLOC agrupados por lenguaje para Debian\relax }}{32}{table.caption.17}
-\contentsline {table}{\numberline {3.4}{\ignorespaces Estimaciones de esfuerzo y costos para el componente \textit {main} de Debian aplicando COCOMO B\'asico\relax }}{35}{table.caption.20}
-\contentsline {table}{\numberline {3.5}{\ignorespaces Arquitecturas soportadas oficialmente por Ubuntu\relax }}{36}{table.caption.22}
-\contentsline {table}{\numberline {3.6}{\ignorespaces Lanzamientos de versiones de Ubuntu\relax }}{41}{table.caption.26}
-\contentsline {table}{\numberline {3.7}{\ignorespaces SLOC agrupados por lenguaje para Ubuntu\relax }}{43}{table.caption.28}
-\contentsline {table}{\numberline {3.8}{\ignorespaces Estimaciones de esfuerzo y costos para el componente \textit {main} de Ubuntu aplicando COCOMO B\'asico\relax }}{46}{table.caption.31}
-\contentsline {table}{\numberline {3.9}{\ignorespaces Arquitecturas soportadas oficialmente por Canaima GNU/Linux\relax }}{48}{table.caption.33}
-\contentsline {table}{\numberline {3.10}{\ignorespaces Lanzamientos de versiones de Canaima\relax }}{52}{table.caption.37}
-\contentsline {table}{\numberline {3.11}{\ignorespaces SLOC agrupados por lenguaje para Canaima\relax }}{54}{table.caption.39}
-\contentsline {table}{\numberline {3.12}{\ignorespaces Estimaciones de esfuerzo y costos para el componente \textit {usuarios} de Canaima aplicando COCOMO B\'asico\relax }}{57}{table.caption.42}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Lanzamientos de versiones de Debian\relax }}{27}{table.caption.11}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Arquitecturas soportadas oficialmente por Debian\relax }}{28}{table.caption.13}
+\contentsline {table}{\numberline {3.3}{\ignorespaces SLOC agrupados por lenguaje para Debian\relax }}{35}{table.caption.18}
+\contentsline {table}{\numberline {3.4}{\ignorespaces Estimaciones de esfuerzo y costos para el componente \textit {main} de Debian aplicando COCOMO B\'asico\relax }}{38}{table.caption.21}
+\contentsline {table}{\numberline {3.5}{\ignorespaces Arquitecturas soportadas oficialmente por Ubuntu\relax }}{41}{table.caption.23}
+\contentsline {table}{\numberline {3.6}{\ignorespaces Lanzamientos de versiones de Ubuntu\relax }}{45}{table.caption.27}
+\contentsline {table}{\numberline {3.7}{\ignorespaces SLOC agrupados por lenguaje para Ubuntu\relax }}{47}{table.caption.29}
+\contentsline {table}{\numberline {3.8}{\ignorespaces Estimaciones de esfuerzo y costos para el componente \textit {main} de Ubuntu aplicando COCOMO B\'asico\relax }}{50}{table.caption.32}
+\contentsline {table}{\numberline {3.9}{\ignorespaces Arquitecturas soportadas oficialmente por Canaima GNU/Linux\relax }}{52}{table.caption.34}
+\contentsline {table}{\numberline {3.10}{\ignorespaces Lanzamientos de versiones de Canaima\relax }}{56}{table.caption.38}
+\contentsline {table}{\numberline {3.11}{\ignorespaces SLOC agrupados por lenguaje para Canaima\relax }}{58}{table.caption.40}
+\contentsline {table}{\numberline {3.12}{\ignorespaces Estimaciones de esfuerzo y costos para el componente \textit {usuarios} de Canaima aplicando COCOMO B\'asico\relax }}{61}{table.caption.43}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Cuota de mercado para mayo de 2017 de sistemas operativos basados en Linux instalados en computadoras de escritorio con acceso a internet.\relax }}{64}{table.caption.47}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Cuota de mercado para mayo de 2017 de sistemas operativos basados en Linux instalados en computadoras de escritorio con acceso a internet.\relax }}{68}{table.caption.48}
