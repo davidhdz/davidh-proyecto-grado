@@ -46,7 +46,6 @@ cat("Líneas de código fuente (K): \t", format(KSLOC, digits=2, nsmall=2, decim
 cat("Estimaciones aplicando el Modelo COCOMO Básico\n")
 cat("==============================================================\n")
 cat("Esfuerzo estimado de desarrollo:\t", format(Epm, digits=2, nsmall=2, decimal.mark=",", big.mark=".", scientific=FALSE),"\n")
-cat("Productividad estimada:\t\t\t", format(Prod, digits=2, nsmall=2, decimal.mark=",", big.mark=".", scientific=FALSE),"\n")
 cat("Tiempo de desarrollo estimado:\t\t", format(Tdev, digits=2, nsmall=2, decimal.mark=",", big.mark=".", scientific=FALSE),"\n")
 cat("Personas requeridas estimadas:\t\t", format(Per, digits=2, nsmall=2, decimal.mark=",", big.mark=".", scientific=FALSE),"\n")
 cat("\nCosto total estimado del proyecto(*):\t", format(Ctd, digits=2, nsmall=2, decimal.mark=",", big.mark=".", scientific=FALSE), "\n\n")

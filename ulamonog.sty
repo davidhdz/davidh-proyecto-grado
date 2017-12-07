@@ -95,7 +95,7 @@
 \def\presentaciondia#1{\gdef\@presentaciondia{#1}\presen@tatrue}
 \def\presentacionlugar#1{\gdef\@presentacionlugar{#1}}
 \def\mencionespecial#1{\gdef\@mencionespecial{#1}\men@tiontrue}
-%\def\copyrightyear#1{\gdef\@copyrightyear{#1}} % \author, \title in report
+\def\copyrightyear#1{\gdef\@copyrightyear{#1}} % \author, \title in report
 \def\grado#1{\gdef\@grado{#1}}
 \def\opcion#1{\gdef\@opcion{#1}}
 \def\gradoinitial#1{\gdef\@gradoinitial{#1}}
@@ -136,7 +136,7 @@
   Enero\or Febrero\or Marzo\or Abril\or Mayo\or Junio\or
   Julio\or Agosto\or Septiembre\or Octubre\or Noviembre\or Diciembre\fi
   \space \number\the\year}
-%\def\@copyrightyear{\number\the\year}
+\def\@copyrightyear{\number\the\year}
 
 
 \def\draft{\renewcommand{\properpagestyle}{\pagestyle{myheadings}
@@ -245,7 +245,7 @@
         \includegraphics[width=2cm]{imagenes/ula.png}
         \end{center}
     \fi
-   %     \copyright\@copyrightyear\ \@universidad\space \expandafter{\@direccion}
+        \copyright\@copyrightyear\ \@universidad\space \expandafter{\@direccion}
     \end{center}%
 }
 
