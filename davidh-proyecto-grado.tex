@@ -127,7 +127,7 @@ draft=false
 \logoarriba{}
 
 % Año en el cual se entrega el proyecto de grado o la propuesta
-%\copyrightyear{2016}
+\copyrightyear{2017}
 
 % Al final cuando hayan presentado, sin comentar,
 % deberia ser el número de tesis presentada y la opción, IO por ejemplo
@@ -221,7 +221,8 @@ draft=false
 \opcion{Sistemas Computacionales}
 
 % Aquí se escribe el resumen de la monografía
-\resumen{Se realizó un estudio en el que se describe el ciclo de vida del desarrollo de software libre aplicado a una distribución Linux, usando como objeto de investigación la distribución Canaima GNU/Linux. Para ello se muestra la manera en que se ha llevado a cabo su desarrollo través de la historia de la distribución, y se hace un cotejo con otras distribuciones, como estrategia comparativa para establecer casos de éxito y/o fracaso en las diferentes fases de desarrollo de la misma.}
+%\resumen{Se realizó un estudio en el que se describe el ciclo de vida del desarrollo de software libre aplicado a una distribución Linux, usando como objeto de investigación la distribución Canaima GNU/Linux. Para ello se muestra la manera en que se ha llevado a cabo su desarrollo través de la historia de la distribución, y se hace un cotejo con otras distribuciones, como estrategia comparativa para establecer casos de éxito y/o fracaso en las diferentes fases de desarrollo de la misma.}
+\resumen{Este proyecto evalúa el esfuerzo asociado o asociable a una distribución de Software Libre o distro. Para ello, se hace un estudio de los paquetes de software distribuidos en el repositorio principal de 3 distribuciones Linux: Debian, Ubuntu y Canaima. Se presentan datos referenciales de las tres distribuciones y se revisa la participación de la comunidad de usuarios en los procesos del ciclo de vida de la distribución Canaima GNU/Linux. De ello se desprende la importancia que tiene la participación de las comunidades de usuarios para lograr mantener la buena salud de un proyecto de Software Libre.}
 
 % Aquí se escriben las palabras claves de la monografía
 \descriptores{Linux, Software libre, Distribuci\'on Linux, Ciclo de vida, Canaima GNU/Linux, Desarrollo colaborativo, Debian, Ubuntu, COCOMO, SLOC.}
@@ -316,7 +317,9 @@ Daniel Kon.}
 \chapter{Introducci\'on y Antecedentes}
 \noindent\rule{\textwidth}{0.4pt}
 \section{Introducción}
-Este proyecto tiene como objetivo evaluar el esfuerzo asociado o asociable a una distribución de software libre o distro. Para ello, se revisa el concepto de ciclo de vida del software, y se usa como una aproximación a la correspondiente noción de ciclo de vida de toda una distribución, un concepto claramente más complejo y difícil de abordar. Algunos indicadores complementarios son convocados para esta tarea y se los justifica a partir de esfuerzos previos en el área como los que se describen a continuación.
+Este trabajo busca destacar la importancia que tiene la comunidad de usuarios en los procesos que intervienen  para el desarrollo de una distribución Linux. Para llegar a ello se evalúa el esfuerzo requerido para el desarrollo de proyectos mediante la aplicación del Modelo Constructivo de Costos. Además, se revisa el concepto de ciclo de vida del software, y se usa como una aproximación a la correspondiente noción de ciclo de vida de toda una distribución, un concepto claramente más complejo y difícil de abordar. Algunos indicadores complementarios son convocados para esta tarea y se los justifica a partir de esfuerzos previos en el área como los que se describen a continuación.
+
+%Este proyecto tiene como objetivo evaluar el esfuerzo asociado o asociable a una distribución de software libre o distro. Para ello, se revisa el concepto de ciclo de vida del software, y se usa como una aproximación a la correspondiente noción de ciclo de vida de toda una distribución, un concepto claramente más complejo y difícil de abordar. Algunos indicadores complementarios son convocados para esta tarea y se los justifica a partir de esfuerzos previos en el área como los que se describen a continuación.
 
 \section{Antecedentes}
 La Organización Internacional para la Normalización (\textit{International Organization for Standardization}, ISO en inglés) presenta en 2008 la última modificación hasta la fecha de la norma para los procesos de vida del software ISO/IEC 12207, publicada por primera vez en 1995. Aquí se define \emph{ciclo de vida} como la evolución de un sistema, producto, servicio, proyecto u otra entidad concebida por humanos, desde su concepción hasta su retiro \citep{iso08}. También se explica el \emph{modelo de ciclo de vida} como la descripción de procesos y actividades relacionadas con el ciclo de vida que pueden estar organizadas en etapas, las cuales también actúan como referencia común para su comunicación y entendimiento \citep{iso08}.
@@ -331,7 +334,7 @@ Por su parte, \cite{amor05a} realizaron una investigación en la que utilizan la 
 \begin{figure}[h]
 \caption{Crecimiento en el número de Desarrolladores Debian y paquetes del repositorio principal entre los años 1999 y 2017}
 \centering
-\includegraphics[width=\textwidth]{dd-paquetes}
+\includegraphics[width=.9\textwidth]{dd-paquetes}
 
 {\footnotesize Fuentes: Wikipedia\footnote{\url{https://en.wikipedia.org/wiki/Debian}}, Archivo Debian\footnote{\url{http://archive.debian.org/}}, Repositorio Debian\footnote{\url{http://ftp.debian.org/debian/}} y Listado de Desarrolladores Debian\footnote{\url{https://nm.debian.org/public/people/dd_all}}}
 \label{fig:dd-paquetes}
