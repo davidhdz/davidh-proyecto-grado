@@ -221,7 +221,6 @@ draft=false
 \opcion{Sistemas Computacionales}
 
 % Aquí se escribe el resumen de la monografía
-%\resumen{Se realizó un estudio en el que se describe el ciclo de vida del desarrollo de software libre aplicado a una distribución Linux, usando como objeto de investigación la distribución Canaima GNU/Linux. Para ello se muestra la manera en que se ha llevado a cabo su desarrollo través de la historia de la distribución, y se hace un cotejo con otras distribuciones, como estrategia comparativa para establecer casos de éxito y/o fracaso en las diferentes fases de desarrollo de la misma.}
 \resumen{Este proyecto evalúa el esfuerzo asociado o asociable a una distribución de Software Libre o distro. Para ello, se hace un estudio de los paquetes de software distribuidos en el repositorio principal de 3 distribuciones Linux: Debian, Ubuntu y Canaima. Se presentan datos referenciales de las tres distribuciones y se revisa la participación de la comunidad de usuarios en los procesos del ciclo de vida de la distribución Canaima GNU/Linux. De ello se desprende la importancia que tiene la participación de las comunidades de usuarios para lograr mantener la buena salud de un proyecto de Software Libre.}
 
 % Aquí se escriben las palabras claves de la monografía
@@ -314,10 +313,9 @@ draft=false
 %\addtolength{\parskip}{\baselineskip}
 \chapter{Introducci\'on y Antecedentes}
 \noindent\rule{\textwidth}{0.4pt}
+
 \section{Introducción}
 Este trabajo busca destacar la importancia que tiene la comunidad de usuarios en los procesos que intervienen  para el desarrollo de una distribución Linux. Para llegar a ello se evalúa el esfuerzo requerido para el desarrollo de proyectos mediante la aplicación del Modelo Constructivo de Costos. Además, se revisa el concepto de ciclo de vida del software, y se usa como una aproximación a la correspondiente noción de ciclo de vida de toda una distribución, un concepto claramente más complejo y difícil de abordar. Algunos indicadores complementarios son convocados para esta tarea y se los justifica a partir de esfuerzos previos en el área como los que se describen a continuación.
-
-%Este proyecto tiene como objetivo evaluar el esfuerzo asociado o asociable a una distribución de software libre o distro. Para ello, se revisa el concepto de ciclo de vida del software, y se usa como una aproximación a la correspondiente noción de ciclo de vida de toda una distribución, un concepto claramente más complejo y difícil de abordar. Algunos indicadores complementarios son convocados para esta tarea y se los justifica a partir de esfuerzos previos en el área como los que se describen a continuación.
 
 \section{Antecedentes}
 La Organización Internacional para la Normalización (\textit{International Organization for Standardization}, ISO en inglés) presenta en 2008 la última modificación hasta la fecha de la norma para los procesos de vida del software ISO/IEC 12207, publicada por primera vez en 1995. Aquí se define \emph{ciclo de vida} como la evolución de un sistema, producto, servicio, proyecto u otra entidad concebida por humanos, desde su concepción hasta su retiro \citep{iso08}. También se explica el \emph{modelo de ciclo de vida} como la descripción de procesos y actividades relacionadas con el ciclo de vida que pueden estar organizadas en etapas, las cuales también actúan como referencia común para su comunicación y entendimiento \citep{iso08}.
@@ -359,45 +357,24 @@ La distribución Canaima GNU/Linux nace desde la necesidad de centrar esfuerzos p
 A casi 10 años de la publicación de la primera versión ?`En que medida el esfuerzo invertido en el desarrollo de Canaima ha sido influenciado por la comunidad de usuarios?
 
 La presente investigación está orientada a mostrar por una parte, el esfuerzo requerido para el desarrollo de Canaima GNU/Linux comparándola con otras distribuciones de referencia; y por la otra, presentar la facilidad o dificultad que tiene la misma para recibir contribuciones de parte de la comunidad de desarrolladores; y con ello formular algunas recomendaciones para mejorar el trabajo colaborativo en torno a la distribución Canaima GNU/Linux. 
-%entendiéndose principalmente en lo referido a la posible admisión de nuevos paquetes de software en los repositorios oficiales distribución. 
 
 \section{Hipótesis}
-%La participación directa de las comunidades de usuario inciden en el esfuerzo invertido dentro de un proyecto de software libre.
 Las formas de conducción del Proyecto Canaima GNU/Linux bajo las dinámicas de una institución gubernamental venezolana inciden directamente en las contribuciones que pueda recibir de parte de la comunidad.
-%La conducción del Proyecto Canaima es el asunto medular que ofrece razón a esta situación, tales como: planificación equívoca en la aplicación del proyecto; insuficiencia de personal el cual además no se encuentra a dedicación exclusiva del mismo y otros. Esto quiere decir que, existen pocas personas dedicadas a este proyecto cuyas dimensiones socio-técnicas requieren de un equipo amplio y multidisciplinario que garantice la concreción de los objetivos para los cuales fue concebida esta distribución.
-
-% Area: Informática
-% Tema: Contribución en desarrollos de software
-% Título: Ciclos de vida del software libre. Caso de estudio Distribución Canaima
-
-% Var A: contribuciones por parte de la comunidad de desarrolladores
-% Var B: distribución Canaima GNU/Linux
-
-% Hay pocas contribuciones de de desarrollo de software por parte de la comunidad.
-% Aumentar contribuciones y uso de la distribución
-% Número de contribuciones de parte de la comunidad
-
 
 \section{Objetivos}
 Evaluar el esfuerzo requerido de una distro es, como se ha sugerido, un desafío complejo. En este proyecto nos concentramos en evaluar el esfuerzo asociado al proyecto Canaima, un proyecto nacional que ha tenido el apoyo financiero estatal.
 
 \subsection{Objetivo General}
-%Realizar un estudio del ciclo de vida de la Distribución Canaima GNU/Linux
 \begin{itemize}
 \item Evaluar el esfuerzo estimado para el desarrollo de la metadistribución de Software Libre Canaima GNU/Linux.
 \end{itemize}
 
 \subsection{Objetivos Específicos}
 \begin{enumerate}
-%\item Comparar el ciclo de vida de la distribución Canaima con respecto a Ubuntu.
-%\item Comparar el ciclo de vida de la distribución Canaima con respecto a Debian.
-%\item Analizar el uso de la distribución en Venezuela.
-%\item Identificar y analizar las probables causas por las cuales la colaboración de la comunidad no es efectiva.
 \item Caracterizar el ciclo de vida del software libre de la distribución Canaima.
 \item Recolectar datos relevantes a esos indicadores para un conjunto de distribuciones Linux  referenciales.
 \item Comparar la distro Canaima GNU/Linux con esas distribuciones referenciales.
 \item Analizar el estado actual del proyecto Canaima y explicar las razones para sus niveles actuales de costos y esfuerzo.
-%\item Conclusiones y recomendaciones.
 \end{enumerate}
 
 Para alcanzar los objetivos descritos, se han realizado una serie de actividades que incluyen la recolección de datos para cada distro objeto de referencia, la estimación de esfuerzo y costos empleados en el desarrollo de cada proyecto, y la caracterización del modelo de desarrollo del proyecto Canaima.\\
@@ -413,58 +390,6 @@ El documento está organizado en 5 capítulos:
 \end{itemize}
 
 
-%\section{Método de Desarrollo}
-%Para la realización de este trabajo se utilizará el método hipotético-deductivo, partiendo de la hipótesis que la la distribución Canaima GNU/Linux es poco usada y recibe pocas contribuciones de parte delos desarrolladores. Se identificarán las causas y consecuencias de la hipótesis, se harán comparaciones con otras distribuciones GNU/Linux que sustentarán o refutarán estas hipótesis.
-
-
-%\section{Cronograma de trabajo}
-%En el Cuadro~\ref{tab:cronograma} se muestra el cronograma de actividades a seguir durante la elaboración del proyecto de grado.
-%\begin{longtable}[width=0.7\textwidth]{l | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c |}
-%\cline{2-16}
-%&\multicolumn{16}{|>{\columncolor{green}} c|}{\small{Semana}} \\
-%\cline{2-16}
-%&\cellcolor{red}\small{1} &\cellcolor{red}\small{2} &\cellcolor{red}\small{3} &\cellcolor{red}\small{4} 
-%&\cellcolor{red}\small{5} &\cellcolor{red}\small{6} &\cellcolor{red}\small{7} &\cellcolor{red}\small{8} 
-%&\cellcolor{red}\small{9} &\cellcolor{red}\small{10} &\cellcolor{red}\small{11} &\cellcolor{red}\small{12} 
-%&\cellcolor{red}\small{13} &\cellcolor{red}\small{14} &\cellcolor{red}\small{15} &\cellcolor{red}\small{16}\\
-%\hline
-%\multicolumn{1}{|l|}{\tiny Reunión con el tutor} &\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}\\
-%\hline
-%\multicolumn{1}{|l|}{\tiny Revisión bibliográfica} &\cellcolor{blue}&\cellcolor{blue}&&&&&&&&&&&&&& \\
-%\hline
-%\multicolumn{1}{|l|}{\tiny Culminación de las 2 fases iniciales} &\cellcolor{blue}&\cellcolor{blue}&&&&&&&&&&&&&& \\
-%\hline
-%\multicolumn{1}{|l|}{\tiny Especificación de requerimientos} &&&\cellcolor{blue}&\cellcolor{blue}&&&&&&&&&&&& \\
-%\hline
-%\multicolumn{1}{|l|}{\tiny Análisis y diseño} &&&&&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&&&&&&&&& \\
-%\hline
-%\multicolumn{1}{|l|}{\tiny Codificación} &&&&&&&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&& \\
-%\hline
-%\multicolumn{1}{|l|}{\tiny Presentación de avance} &&&&&&&&&\cellcolor{blue}&&&&&&& \\
-%\hline
-%\multicolumn{1}{|l|}{\tiny Pruebas} &&&&&&&&&&&&&&\cellcolor{blue}&\cellcolor{blue}& \\
-%\hline
-%\multicolumn{1}{|l|}{\tiny Liberación} &&&&&&&&&&&&&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}& \\
-%\hline
-%\multicolumn{1}{|l|}{\tiny Redacción del informe final} &&&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&\cellcolor{blue}&& \\
-%\hline
-%\multicolumn{1}{|l|}{\tiny Consignación de documentos} &&&&&&&&&&&&&&&\cellcolor{blue}& \\
-%\hline
-%\multicolumn{1}{|l|}{\tiny Presentación del informe final} &&&&&&&&&&&&&&&&\cellcolor{blue} \\
-%\hline
-%\multicolumn{1}{|l|}{\tiny Defensa del Proyecto de Grado} &&&&&&&&&&&&&&&&\cellcolor{blue} \\
-%\hline
-%\caption{Cronograma de actividades}\label{tab:cronograma}
-%\end{longtable}
-
-
-%\section{Cronograma de Evaluación}
-%Se mantendrá contacto semanal con el tutor para informarle del avance del proyecto y se realizará una reunión presencial, al menos una vez por semana, para discutir el trabajo realizado hasta el momento y se utilizarán herramientas informáticas de seguimiento.
-%
-%Cumplidos dos meses de haberse iniciado el Proyecto de Grado, se presentará un avance del mismo que permita ver el desarrollo del proyecto y a su vez permita se hagan observaciones y correcciones al mismo.
-
-
-
 \chapter{Sobre el ciclo de vida del software libre y estimación de costos}
 \noindent\rule{\textwidth}{0.4pt}
 \newline
@@ -478,11 +403,6 @@ Tener otras figuras con las cuales comparar la distribución nacional ayuda estab
 Las consideraciones tomadas para la selección de estas distribuciones radican principalmente en que parten de la misma rama. Debian es la distribución madre de Ubuntu y de Canaima, esto significa que las distribuciones son derivaciones directas de Debian, se basan en ella para su construcción y por ello comparten algunas características: son distribuciones gratuitas, tienen soporte para los mismos sistemas de archivos\footnote{Según la versión de Debian en las que estén basadas.}, tienen un modelo de lanzamiento fijo, comparten el mismo sistema de gestión de paquetes (DEB) y tienen un sistema de repositorios equivalente. 
 
 Las diferencias principales se pueden apreciar en los modelos de gobernanza y en la gestión de los diferentes procesos del desarrollo de las  distribuciones, y son estas diferencias las que servirán para descubrir el ciclo de vida de Canaima/GNU Linux.
-
-
-%La documentación sobre cada una de las distribuciones y las comunidades que hacen vida en ellas también es uno de los factores a considerar en el estudio.
-
-%La medición de líneas de código fuente físicas (\textit{Source Lines of Code} o SLOC en inglés) permite realizar una serie de cálculos para estimar el tiempo de desarrollo y esfuerzo de un proyecto aplicando el Modelo Constructivo de Costos (COCOMO) \citep{boehm81}.
 
 
 \section{Ciclo de Vida}
@@ -690,7 +610,6 @@ Para correr \texttt{cloc} en cada directorio por separado se utilizó un script q
 
 Una vez con todos los reportes generados se procedió a evaluar esta información compilando los datos para generar un reporte global. Para ello también se ha creado un programa en python que hace uso de la biblioteca \texttt{pandas}\footnote{\url{http://pandas.pydata.org/}} para el análisis de los datos. El código fuente de este programa se aprecia en el Código~\ref{code4} del Apéndice.
 
-%\lstinputlisting[label=code4,caption=analisis\_cloc\_debian.py]{programas/analisis_cloc_debian.py}
 
 \subsection{Datos recolectados}
 Un ejemplo de los resultados arrojados por \texttt{cloc} para los paquetes \texttt{zygrib}, \texttt{zyn}, \texttt{zynaddsubfx} y \texttt{zypper} de la distribución Debian 8.0 se muestran en la tabla~\ref{table:sloc1}.
@@ -719,21 +638,10 @@ Perl               &   1 &      5 &      4 &     36 \\
 \end{center}
 \end{table}
 
-%Finalmente, para esta etapa, se hace uso de un script codificado en lenguaje R para totalizar las líneas de código y obtener el valor de SLOC que será usado para la estimación de costos. Ver Código~\ref{code5} del Apéndice.
-
-
 
 \section{Estimación de valores}
 \label{ap:cocomo}
 Tomando los valores bajo el modelo de estimación COCOMO Básico y aplicando los valores establecidos para el modo orgánico presentados en la Tabla~\ref{table:coeficientes}, se realizan los cálculos de esfuerzo y tiempo de desarrollo mediante un script en lenguaje R (ver Código~\ref{code6} del Apéndice) usando como entrada de datos el mismo archivo csv generado por el programa de medidas de métricas.
-
-%COCOMO puede ser aplicado a tres tipos de proyecto:
-%
-%\begin{description}
-%\item[Orgánicos] Proyectos bajo un ambiente familiar, estable, relativamente sin restricciones y con desarrolladores experimentados. 
-%\item[Semi-empotrados] Proyecto mezcla de los tipos orgánicos y empotrados, puede haber o no desarrolladores expertos y requerimientos mas o menos rígidos.
-%\item[Empotrados] Proyectos ambiciosos con fuertes restricciones y experiencia moderada.
-%\end{description}
 
 \subsection{Ecuaciones}
 
@@ -756,7 +664,7 @@ Per = \frac{Epm}{Tdev}
 Ctd = Per \times Spa
 \label{eq:Coste}
 \end{equation}
-%Ctd = \frac{Epm}{12} \times Spa \times 2.4 (según wheeler)
+
 
 Donde:
 \begin{itemize}
@@ -839,78 +747,21 @@ La estructura organizativa de Debian expone una organización jerárquica. Está ex
 
 Entre sus atribuciones se tienen las siguientes tareas: designar delegados, asignar autoridad a otros desarrolladores, tomar decisiones urgentes, nombrar nuevos miembros del Comité Técnico (junto con el Comité).
 
-%Atribuciones del Líder del Proyecto:
-%\begin{itemize}
-%\item Designar delegados o delegar decisiones al Comité Técnico.
-%\item Dotar de autoridad a otros desarrolladores.
-%\item Tomar cualquier decisión que requiera acción urgente.
-%\item Tomar cualquier decisión sobre la cual nadie más tenga responsabilidad.
-%\item Proponer borradores de Resoluciones Generales y enmiendas.
-%\item Junto al Comité Técnico, nombrar nuevos miembros del Comité.
-%\item Usar su voto decisivo cuando los Desarrolladores votan.
-%\item Variar el periodo de discusión de las votaciones de los desarrolladores.
-%\item Dirigir discusiones entre Desarrolladores.
-%\item En consulta a los desarrolladores, tomar decisiones afectando a propiedades que estén en custodia de proyectos relacionados con Debian.
-%\item Añadir o eliminar organizaciones de la lista de organizaciones de confianza que están autorizadas a aceptar y mantener en custodia bienes para Debian.
-%\end{itemize}
-
 \item [El Comité Técnico] es el organismo facultado para tomar decisiones finales sobre las disputas técnicas en el proyecto Debian. Está compuesto por un máximo de ocho Desarrolladores y debe tener un mínimo de cuatro miembros. Cuando el puesto queda vacante, se debe elegir a un presidente de entre y por los miembros del comité, quienes son nominados automáticamente para este cargo. Si para el 1 de enero de cada año existiere algún miembro que ha servido por más de 42 meses y además sea uno de los dos miembros más antiguos, entonces su nombramiento expiraría el 31 de diciembre de ese año. 
 
 Algunas de las atribuciones del Comité son: decidir sobre cualquier norma en materia técnica, tomar una decisión cuando se le solicite, nombrar nuevos miembros para sí mismo (junto con el Líder del Proyecto) o eliminar miembros existentes, nombrar al Presidente del Consejo Técnico, ejercer las funciones de Líder del Proyecto (junto con el Secretario).
-%Atribuciones del Comité Técnico:
-%\begin{itemize}
-%\item Decidir sobre cualquier norma en materia técnica.
-%\item Decidir sobre cualquier materia técnica donde se solape la jurisdicción de los Desarrolladores.
-%\item Tomar una decisión cuando se le pida.
-%\item Imponer su decisión sobre la de un Desarrollador.
-%\item Ofrecer consejo.
-%\item Junto con el Líder del Proyecto, nombrar nuevos miembros para sí mismo, o eliminar a los existentes.
-%\item Nombrar al Presidente del Comité Técnico.
-%\item Junto con el Secretario, ejercer las funciones de Líder del Proyecto.
-%\end{itemize}
 
 \item [El Secretario del Proyecto] es nombrado por el Líder del Proyecto en conjunto con el saliente Secretario del Proyecto. Cualquier Desarrollador Debian puede ser candidato. El cargo tiene una duración de un año con opción a ratificación.
 
 Entre sus funciones se lista: el llevar a cabo votaciones, ejercer las funciones de Líder del Proyecto (junto con el Presidente del Comité Técnico), delegar parte de sus funciones a otro miembro.
 
-%Atribuciones del Secretario del Proyecto:
-%\begin{itemize}
-%\item Llevar a cabo votaciones.
-%\item Junto con el Presidente del Comité Técnico, ejercer las funciones de Líder del Proyecto.
-%\item Juzga cualquier disputa sobre interpretaciones de la constitución.
-%\item Puede delegar parte de su autoridad en cualquier otro, o derogar tal delegación en cualquier momento.
-%\end{itemize}
-
 \item [Los Delegados nombrados por el Líder del Proyecto] para tareas específicas, son nombrados por el Líder del Proyecto y pueden ser reemplazados a discreción del mismo.
 
 Cumplen dos tareas principales: disponer de las atribuciones que el Líder del Proyecto haya delegado en ellos y tomar ciertas decisiones que el Líder no pueda tomar directamente.
-%Atribuciones:
-%\begin{itemize}
-%\item Disponen de las atribuciones que el Líder del Proyecto haya delegado en ellos.
-%\item Tomar ciertas decisiones que el Líder no puede tomar directamente.
-%\end{itemize}
 
 \item [Los Desarrolladores individuales] son voluntarios que comparten los objetivos del proyecto y trabajan en consecuencia para lograrlos mientras participan en el proyecto. Se cuenta entre sus concesiones: postularse como candidato a Líder del Proyecto, votar en las Resoluciones Generales y en las elecciones a Líder.
 
-%Atribuciones:
-%\begin{itemize}
-%\item Tomar una decisión técnica o no técnica con respecto a su propio trabajo.
-%\item Proponer o patrocinar borradores de Resoluciones Generales.
-%\item Proponerse a sí mismo como candidato a Líder del Proyecto durante las elecciones.
-%\item Votar en las Resolución Generales y en las elecciones a Líder.
-%\end{itemize}
-
 \item [Los Desarrolladores mediante una Resolución General o elección] tienen~el derecho de: elegir o cesar al Líder del Proyecto, enmendar la constitución, previa mayoría de las tres cuartas partes de los miembros, tomar o anular algunas decisiones.
-
-%\begin{itemize}
-%\item Elegir o cesar al Líder del Proyecto.
-%\item Enmendar esta constitución, siempre que esté de acuerdo con una mayoría de las tres cuartas partes.
-%\item Tomar o anular cualquier decisión autorizada por las atribuciones del Líder del Proyecto o uno de sus Delegados.
-%\item Tomar o anular cualquier decisión autorizada por las atribuciones del Comité Técnico, siempre y cuándo estén de acuerdo dos terceras partes.
-%\item Generar, sustituir y retirar documentos no técnicos sobre normas y declaraciones.
-%\item Tomar decisiones sobre las propiedades mantenidas en custodia para propósitos relacionados con Debian.
-%\item En caso de desacuerdo entre el líder de proyecto y el secretario que le incumba, designar un secretario nuevo.
-%\end{itemize}
 \end{description}
 
 \begin{figure}[H]
@@ -932,28 +783,6 @@ Cumplen dos tareas principales: disponer de las atribuciones que el Líder del Pr
   \node [font=\bfseries\small] at (20:3) {Desarrolladores};
 \end{tikzpicture}
 \end{figure}
-
-%\begin{figure}[H]
-%\caption{Integrantes de la estructura organizativa de Debian }
-%\label{fig:constitucion}
-%\centering
-%\begin{tikzpicture}
-%  \begin{scope}[blend group = soft light]
-%    \fill[red!30!white]    ( 90:2.84) circle (2);
-%    \fill[green!30!white]  (180:2.84) circle (2);
-%    \fill[blue!30!white]   (270:2.84) circle (2);
-%    \fill[yellow!30!white] (360:2.84) circle (2);
-%    \fill[black!15!white]     (  0:0) circle (4.85);
-%  \end{scope}
-%  \node [font=\footnotesize\bfseries, align=center] at (90:3) {Líder \\ del Proyecto};
-%  \node [font=\footnotesize, align=center] at (180:3) {Comité \\ Técnico};
-%  \node [font=\footnotesize] at (270:3) {Delegados};
-%  \node [font=\footnotesize, align=center] at (360:3) {Secretario \\ del Proyecto};
-%  \node [font=\bfseries\small] {Desarrolladores};
-%\end{tikzpicture}
-%\end{figure}
-
-
 
 A su vez, dentro de la comunidad de desarrolladores también se presentan diferentes roles, y en Debian reciben distintas denominaciones según su actividad y permisos para la publicación de paquetes en los repositorios de Debian.
 
@@ -1021,7 +850,6 @@ La Tabla \ref{table:lanzamientosdebian} muestra la fecha de lanzamiento de las d
 En la tabla se distinguen dos etapas, la primera se presenta durante la primera década de vida, con lanzamientos constantes en cortos períodos de tiempo, para luego entrar a la segunda etapa más estable con lanzamientos bienales.
 
 \subsection{Histórico de distribuciones}
-%El hecho de que una distribución mantenga un archivo donde se almacenan las versiones publicadas durante su vida añade la posibilidad de explorar aspectos históricos y técnicos de la distribución.
 
 Debian mantiene un registro de la mayoría de las versiones liberadas hasta la fecha, específicamente desde la versión 3.0  (Woody). Este directorio puede encontrarse en la dirección \url{http://cdimage.debian.org/mirror/cdimage/archive/}.
 
@@ -1064,7 +892,7 @@ De las tres distribuciones en este estudio, Debian es la que más soporte ofrece 
 
 \subsection{Soporte}
 
-El proyecto Debian puede prestar soporte a los paquetes en 4 repositorios de aplicaciones de forma simultánea. %definición ramas
+El proyecto Debian puede prestar soporte a los paquetes en 4 repositorios de aplicaciones de forma simultánea. 
 
 \begin{description}
 \item [Antigua estable (\textit{oldstable}):] Esta versión contiene la  versión inmediatamente anterior a la versión estable.
@@ -1087,9 +915,6 @@ Según su compatibilidad con las directrices de software libre de Debian (DFSG)\f
 \item[contrib:] Paquetes compatibles con las DFSG pero que tienen dependencias fuera de \textit{main}, incluida la posibilidad de tener dependencias en el componente \textit{non-free}. 
 \item[non-free:] Paquetes no compatibles con las DFSG. 
 \end{description}
-
-
-
 
 \subsection{Listas de discusión}
 
@@ -1157,7 +982,6 @@ Los repositorios ``Actualizaciones Propuestas para pruebas'', ``Actualizaciones 
 El repositorio de retroimportaciones toma los paquetes de la versión en pruebas y se ajustan y recompilan para su uso en la versión estable. De esta forma, se tiene un repositorio en la versión estable con paquetes que ya están actualizados y están siendo utilizados en la versión de pruebas.
 
 \subsection{Estimación de costos}
-%Como se explicó en el capítulo previo, las estimaciones se realizan utilizando los datos obtenidos del repositorio \textit{main} de la distribución. 
 
 La Tabla~\ref{table:slocdebian} expone un resumen con los datos obtenidos del análisis realizado sobre el componente \textit{main} de Debian 8.0. Se estudiaron 20.981 paquetes de software y se detectaron 179 lenguajes.
 
@@ -1197,9 +1021,7 @@ Otros             & 731.630 & 13.414.341 & 14.506.986 &  96.629.959 \\
 \end{center}
 \end{table}
 
-%\subsubsection{Datos del componente \textit{main}}
 \begin{flushright}
-%\noindent\textbf{Datos del componente \textit{main}}\\
 Fecha del archivo Source: 06/05/2017\\
 Número de paquetes descargados: 20.981\\
 Cantidad de lenguajes reconocidos: 179\\
@@ -1210,29 +1032,23 @@ Cantidad de lenguajes reconocidos: 179\\
 Se aprecia como el lenguaje C domina en cantidad de líneas en blanco, líneas con comentarios y líneas de código fuente. La Figura~\ref{fig:debianbar} visualiza los resultados de este análisis.
 
 
-%\vfill
 \begin{figure}[H]
 \caption{Cantidad de líneas vacías, comentarios y líneas de código fuente en los lenguajes del componente \textit{main} de Debian 8.0}
 \label{fig:debianbar}
 \centering
 \includegraphics[width=\textwidth]{barplot_debian}
 \end{figure}
-%\vfill
-
-
-%El lenguaje con mayor cantidad de archivos presente en el repositorio es liderado por los archivos de cabecera C/C++ con un 19\% del total analizado, seguido de los archivos codificados en lenguaje C y C++ con 12\% y 11\%  respectivamente, tal como se aprecia en la Figura~\ref{fig:debianpie}.
 
 
 Los archivos de cabecera C/C++ lideran como el lenguaje con mayor cantidad de archivos presente en el repositorio, con un 19\% del total analizado, seguido de los archivos codificados en lenguaje C y C++ con 12\% y 11\%  respectivamente, tal como se muestra en la Figura~\ref{fig:debianpie}.
 
-%\vfill
 \begin{figure}[H]
 \caption{Porcentaje de archivos por lenguaje dentro del componente \textit{main} de Debian 8.0}
 \label{fig:debianpie}
 \centering
 \includegraphics[width=\textwidth]{pie_debian}
 \end{figure}
-%\vfill
+
 
 \subsubsection{COCOMO}
 
@@ -1245,8 +1061,6 @@ La cantidad de líneas de código fuente es el insumo principal para la estimación
 \label{table:cocomodebian}
 \begin{threeparttable}
 \begin{tabular}{lr}
-%\toprule
-%\textbf{} & \textbf{}\\
 \toprule
 Líneas de código fuente:                        &  1.015.218.011 \\
 Esfuerzo estimado de desarrollo (persona--mes): &   4.865.175,62 \\
@@ -1265,7 +1079,6 @@ Costo total estimado del proyecto (US\$):       & 413.366.347,61 \\
 \end{savenotes}
 
 Así, para enero de 2017, el desarrollo de Debian costaría aproximadamente US\$~413.366.347,61, tomando como referencia el salario calculado a US\$ 73.837 y cerca de 5.600 personas. El tiempo requerido para completar el proyecto sería de 72 años aproximadamente.
-
 
 \section{Ubuntu}
 
@@ -1290,7 +1103,6 @@ De este modo, Ubuntu cree que cada usuario de computadora debería:
 
 Asimismo, Ubuntu estableció un Código de Conducta\footnote{\url{https://www.ubuntu.com/about/about-ubuntu/conduct}} que sirve como carta de compromiso entre los miembros de Ubuntu para la interacción y comportamiento de los mismos dentro de cualquier espacio relacionado con el proyecto. El Código de Conducta es la pauta que indica como se deben dirimir los conflictos dentro del proyecto. Al mismo tiempo, es una guía que incentiva la colaboración y el liderazgo.
 
-
 \subsubsection{Organización}
 
 La comunidad Ubuntu está integrada por cientos de colaboradores en todos los ámbitos: traducción, arte, desarrollo, etc. Su organización se basa en el trabajo colaborativo por equipos, la estructura gira en torno a ellos. Como se mencionó anteriormente, todo colaborador con el proyecto debe seguir el Código de Conducta. La firma del Código de Conducta es el requisito principal para pertenecer a cualquier equipo de trabajo y así poder colaborar en la comunidad. 
@@ -1300,9 +1112,10 @@ A continuación se describe la estructura que conforma la forma de organización d
 \begin{description}
 \item [El Ubuntero] es aquel individuo que se ha comprometido a seguir los lineamientos de Ubuntu a través de la firma del Código de Conducta. Es el primer paso para empezar a trabajar dentro de la comunidad y dentro del proyecto como tal.
 
-\item [Equipos de Trabajo.] En Ubuntu los ubunteros se pueden incorporar a distintos grupos de trabajo. Es recomendable, al iniciarse como ubuntero, adherirse al equipo de trabajo local. Los Equipos Locales Comunitarios \textit{Local Community teams}, conocidos en la comunidad Ubuntu como \textit{LoCo Teams} en inglés o equipo local/regional en español, son los equipos que están destinados a agrupar a los colaboradores regionales, geográficamente hablando. Y desde allí organizarse para trabajar en la difusión, soporte, representación y mejoramiento de Ubuntu desde la localidad.  Al día de hoy existen al menos 203\footnote{\url{http://loco.ubuntu.com/teams/}} equipos regionales.%, la lista de estos equipos se consigue en la siguiente dirección: \url{http://loco.ubuntu.com/teams/}.
+\item [Equipos de Trabajo.] En Ubuntu los ubunteros se pueden incorporar a distintos grupos de trabajo. Es recomendable, al iniciarse como ubuntero, adherirse al equipo de trabajo local. Los Equipos Locales Comunitarios \textit{Local Community teams}, conocidos en la comunidad Ubuntu como \textit{LoCo Teams} en inglés o equipo local/regional en español, son los equipos que están destinados a agrupar a los colaboradores regionales, geográficamente hablando. Y desde allí organizarse para trabajar en la difusión, soporte, representación y mejoramiento de Ubuntu desde la localidad.  Al día de hoy existen al menos 203\footnote{\url{http://loco.ubuntu.com/teams/}} equipos regionales.
 
-Otros equipos de trabajo\footnote{\url{https://wiki.ubuntu.com/Teams/}} coexisten para encontrar esfuerzos en áreas específicas. Están los equipos encargados de temas técnicos (núcleo o \textit{kernel} en inglés, escritorio de Ubuntu, seguridad, etc.). De igual forma también se hallan equipos de diseño; equipos enfocados en el aspecto comunitario y comunicacional (accesibilidad, noticias, wiki, planeta, etc.); soporte y documentación; mercadeo; y una gran variedad de equipos más.% La lista completa se encuentra en la siguiente dirección:  \url{https://wiki.ubuntu.com/Teams/}.
+Otros equipos de trabajo\footnote{\url{https://wiki.ubuntu.com/Teams/}} coexisten para encontrar esfuerzos en áreas específicas. Están los equipos encargados de temas técnicos (núcleo o \textit{kernel} en inglés, escritorio de Ubuntu, seguridad, etc.). De igual forma también se hallan equipos de diseño; equipos enfocados en el aspecto comunitario y comunicacional (accesibilidad, noticias, wiki, planeta, etc.); soporte y documentación; mercadeo; y una gran variedad de equipos más.
+
 \pagebreak
 \item [Los Miembros Ubuntu (\textit{Ubuntu Members})] son los miembros oficiales del proyecto. Para optar a este nombramiento se debe presentar soporte del trabajo realizado en el último año en favor de la comunidad y de la distribución Ubuntu. Estos soporte no son exclusivos para actividades de desarrollo de software, también se consideran actividades de divulgación como presentación de charlas, organización de eventos, traducciones, participación en foros de ayuda, diseño, soporte, y más.
 
@@ -1477,21 +1290,6 @@ Ubuntu categoriza los paquetes incluidos en su sistema dentro de cuatro reposito
 \item[restricted:] Controladores propietarios.
 \end{description}
 
-
-%\subsection{Sabores}
-%\begin{itemize}
-%\item Edubuntu incluye aplicaciones para niños y ayuda al profesor a configurar un sal\'on de clase de manera r\'apida y sencilla.
-%\item Kubuntu ofrece el espacio de trabajo KDE Plasma.
-%\item Lubuntu versi\'on de Ubuntu con el entorno LXDE.
-%\item Mythbuntu ofrece el sistema MythTV.
-%\item Ubuntu GNOME versi\'on de Ubuntu con el entorno Gnome.
-%\item Ubuntu Kylin proyecto enfocado para suplir las necesidades de usuarios chinos.
-%\item Ubuntu MATE versi\'on de Ubuntu con el entorno Mate.
-%\item Ubuntu Studio incluye aplicaciones enfocadas para el trabajo audiovisual.
-%\item Xubuntu versi\'on de Ubuntu con el entorno XFCE.
-%\end{itemize}
-
-
 \subsection{Listas de discusión}
 
 En Ubuntu manejan una variedad de herramientas para la comunicación entre la comunidad, destacan las listas de correo y el IRC (\textit{Internet Chat Relay}), pero también coexisten otros recursos como páginas de foro, wikis, planetas, entre otros.
@@ -1500,7 +1298,6 @@ Para la obtención del número de correos enviados a las listas de Ubuntu y Canaim
 
 La técnica consiste en descargar el histórico de archivos de las listas de correos en formato HTML con los registros de cada mes, para luego extraer la información de fecha (mes--año) y cantidad de correos enviados utilizando herramientas propias del sistema operativo GNU/Linux para posteriormente almacenarlos en un archivo csv que es utilizado para la generación de los gráficos.
 
-%La información de actividad de las listas de discusión de usuarios y de desarrolladores se muestran a continuación.
 
 \subsubsection{Lista de usuarios}
 
@@ -1611,7 +1408,6 @@ La Tabla~\ref{table:slocubuntu} expone un resumen con los datos obtenidos del an
 \multirow{2}{*}{\textbf{Lenguaje}} & \multicolumn{1}{c}{\textbf{Cantidad de}} &  \multicolumn{1}{c}{\textbf{Líneas en}} & \multicolumn{1}{c}{\textbf{Líneas con}}  & \multicolumn{1}{c}{\textbf{Líneas de}}\\
  & \multicolumn{1}{c}{\textbf{archivos}} & \multicolumn{1}{c}{\textbf{blanco}} & \multicolumn{1}{c}{\textbf{comentarios}}  & \multicolumn{1}{c}{\textbf{código fuente}}\\
 \midrule
-%Archivos de traducción &    86.830 & 26.421.435 & 35.337.997 &  96.957.936 \\
 C                      &   157.152 & \textbf{11.690.328} & \textbf{12.772.978} &  \textbf{66.131.833} \\
 C++                    &   125.344 &  6.748.270 &  6.123.082 &  37.054.512 \\
 Cabecera C/C++         &   \textbf{208.053} &  5.092.406 &  8.860.093 &  25.843.040 \\
@@ -1663,7 +1459,6 @@ En el renglón de cantidad de archivos totales, también como en Debian son los ar
 \label{fig:ubuntupie}
 \centering
 \includegraphics[width=\textwidth]{pie_ubuntu}
-%Fuente: http://canaima.softwarelibre.gob.ve/canaima/soporte
 \end{figure}
 
 \subsubsection{COCOMO}
@@ -1677,8 +1472,6 @@ Para el componente \textit{main} de Ubuntu, el total de código fuente de todos l
 \label{table:cocomoubuntu}
 \begin{threeparttable}
 \begin{tabular}{lr}
-%\toprule
-%\textbf{} & \textbf{}\\
 \toprule
 Líneas de código fuente:                        &    240.297.751 \\
 Esfuerzo estimado de desarrollo (persona--mes): &   1.071.515,44 \\
@@ -1713,7 +1506,7 @@ El músculo financiero y laboral proviene del Estado Venezolano, con apoyo de la 
 
 Las normas que definen la distribución están supeditadas a las leyes venezolanas. La primera acontece, como se mencionó antes, con el Decreto 3.390. Luego se empiezan a dibujar los lineamientos en varios documentos que servirían como base para lo que luego se convertiría el Proyecto Canaima. 
 
-En el Plan Nacional de Ciencia, Tecnología e Innovación  2005--2030 (PNCTI) se logra percibir objetivos que serán pilares de la política del proyecto Canaima. Por ejemplo, una de las \textit{Metas Estratégicas} dentro del \textit{Marco Político Estratégico} del PNCTI dice, ``Migración de los sistemas de la administración pública nacional a los sistemas de software libre hasta alcanzar absoluta sustitución dentro de las plataformas tecnológicas del Estado, en un plazo no mayor de cinco años'' \citep[p.91]{venezuela05}. Esta meta, aún por alcanzar, se vio respaldada legalmente a través de la Resolución~N\textsuperscript{o}~025 que decreta el uso de Canaima en las estaciones de trabajo de la APN.% de la cual ya se habló antes. 
+En el Plan Nacional de Ciencia, Tecnología e Innovación  2005--2030 (PNCTI) se logra percibir objetivos que serán pilares de la política del proyecto Canaima. Por ejemplo, una de las \textit{Metas Estratégicas} dentro del \textit{Marco Político Estratégico} del PNCTI dice, ``Migración de los sistemas de la administración pública nacional a los sistemas de software libre hasta alcanzar absoluta sustitución dentro de las plataformas tecnológicas del Estado, en un plazo no mayor de cinco años'' \citep[p.91]{venezuela05}. Esta meta, aún por alcanzar, se vio respaldada legalmente a través de la Resolución~N\textsuperscript{o}~025 que decreta el uso de Canaima en las estaciones de trabajo de la APN.
 
 El Proyecto Nacional Simón Bolívar en su Primer Plan Socialista (PPS) del Desarrollo Económico y Social de la Nación para el período 2007--2013, en uno de sus objetivos habla de ``Fomentar la ciencia y la tecnología al servicio del desarrollo nacional y reducir diferencias en el acceso al conocimiento'' \citep{venezuela07}. En el Plan Nacional que lo sucede, \citep{venezuela13}, Segundo Plan Socialista de Desarrollo Económico y Social de la Nación 2013--2019, se divisa aún mas el apoyo a las tecnologías libres y estándares abiertos dedicándole varios \textit{Objetivos Estratégicos y Generales} enmarcados en el \textit{Objetivo Nacional} que busca desarrollar las capacidades científico-tecnológicas vinculadas a las necesidades del pueblo, dentro del \textit{Gran Objetivo Histórico N\textsuperscript{o}~1}. Asimismo, también se ve reflejada la tecnología en la sección dedicada a la \textit{Política y Programas del Sector Ciencia y Tecnología (telecomunicaciones)} del referido escrito.
 
@@ -1935,7 +1728,6 @@ Canaima construye su distro bajo 3 arquitecturas, mostradas en la tabla~\ref{tab
 \caption{Arquitecturas soportadas oficialmente por Canaima GNU/Linux}
 \label{table:archcanaima}
 \centering
-%\resizebox{.5\textwidth}{!}{%
 \begin{threeparttable}
 \begin{tabular}{ll} 
 \toprule
@@ -1950,7 +1742,7 @@ amd64 & PC de 64 bits (amd64,x86\_64) \\
 \small
 \item Fuentes: Repositorio Canaima\footnote{\url{http://repositorio.canaima.softwarelibre.gob.ve/}}, DistroWatch\footnote{\url{https://distrowatch.com/table.php?distribution=canaima}}
 \end{tablenotes}
-\end{threeparttable}%}
+\end{threeparttable}
 \end{table}
 \end{savenotes}
 
@@ -2003,8 +1795,6 @@ Canaima, siendo una distribución derivada de Debian, comparte una estructura sim
 
 Al día de hoy sólo el componente \textit{usuarios} está siendo usado para alojar paquetes. Los componentes \textit{aportes} y \textit{no-libres} fueron creados y pensados para albergar el software desarrollado por la comunidad, pero aún se mantienen vacíos, no porque no haya software hecho por terceros sino que se sigue utilizando el componente \textit{usuarios} para disponer de todos los paquetes de software que no son importados de Debian. 
 
-%En el pasado también se llegó a utilizar el componente \textit{main}, en donde se mezclaban los paquetes provenientes del componente \textit{main} de Debian con los paquetes adaptados para el proyecto Canaima.
-
 
 \subsection{Listas de discusión}
 
@@ -2056,7 +1846,7 @@ En general, la lista de discusión estuvo bastante activa entre mediados de 2010 
 \subsubsection{Lista de desarrolladores}
 
 En cuanto a la actividad en la lista de desarrollo, se distingue una conducta diferente en la frecuencia de envíos comparada con la lista de \textit{Discusión}. En la Figura~\ref{fig:desaca} se advierten 3 momentos de intensa actividad, 2011, 2012 y 2013. En marzo de 2011 se alcanza la marca histórica con 1.056 mensajes. Destacan los repuntes de actividad en meses donde se anuncian lanzamientos de versiones de Canaima y aquellos cuando coinciden con alguna Cayapa Canaima.
-%Un año con bastante movimiento, acaecen sucesos como el lanzamiento de la versión 3.0 de Canaima y previamente sus versiones candidatas; planificación y celebración de la Minicayapa Mérida; Decreto 39.633 con la Resolución N\textsuperscript{o} 025; además de las discusiones técnicas y algunas otras discusiones de índole más controvertidas. En Mayo de 2012 se propone la 
+
  
 \begin{figure}[H]
 \caption{Actividad de la lista de correos \textit{Desarrolladores} de Canaima}
@@ -2071,7 +1861,6 @@ Cabe mencionar que el sistema de gestión y seguimiento de proyectos que se usó e
 A finales de 2015 finaliza el proceso de preparación de una nueva plataforma de gestión, se adopta Gitlab\footnote{\url{http://gitlab.canaima.softwarelibre.gob.ve}}, y en enero de 2016 se empieza a hacer pública la invitación\footnote{\url{http://listas.canaima.softwarelibre.gob.ve/pipermail/discusion/2016-January/012244.html}} a los desarrolladores a participar en ese espacio.
 
 \subsection{Ciclo de Desarrollo}
-%Así llegamos a las versiones más recientes. 
 Se pueden reconocer 5 situaciones clave durante el ciclo de desarrollo de Canaima, representadas en la Figura~\ref{fig:cadevproc}. La fase de inicio del ciclo, la de planificación de tareas y objetivos, la fase de desarrollo de la distribución, la fase de pruebas y finalmente la fase de publicación luego de asegurar una versión estable libre de errores fatales. 
 
 \begin{figure}[H]
@@ -2143,8 +1932,6 @@ Anteriormente el procedimiento implicaba, como \textit{mantenedor}, solicitar a 
 
 El empaquetado debe cumplir los requisitos mínimos de calidad guiándose por los mecanismos de desarrollo de Debian. De igual forma se deben disponer de las fuentes para poder llevar a cabo el proceso.
 
-%El paquete permanecerá en estos repositorios mientras se prueba y se asegura que no produce fallos al sistema. 
-
 \begin{figure}[H]
 \caption{Flujo de trabajo de paquetes Canaima para 2016}
 \label{fig:ciclocan}
@@ -2198,7 +1985,6 @@ El estudio se hace sobre el repositorio \textit{repositorio.canaima.softwarelibr
 \multirow{2}{*}{\textbf{Lenguaje}} & \multicolumn{1}{c}{\textbf{Cantidad de}} &  \multicolumn{1}{c}{\textbf{Líneas en}} & \multicolumn{1}{c}{\textbf{Líneas con}}  & \multicolumn{1}{c}{\textbf{Líneas de}}\\
  & \multicolumn{1}{c}{\textbf{archivos}} & \multicolumn{1}{c}{\textbf{blanco}} & \multicolumn{1}{c}{\textbf{comentarios}}  & \multicolumn{1}{c}{\textbf{código fuente}}\\
 \midrule
-%Archivos de traducción &    358 & 51.676 & 81.546 & 133.367 \\
 JavaScript             &    211 & \textbf{10.421} & \textbf{21.619} &  \textbf{65.567} \\
 C\#                    &    \textbf{341} &  9.921 & 10.647 &  44.215 \\
 CSS                    &     40 &  4.709 &  4.055 &  44.060 \\
@@ -2264,8 +2050,6 @@ Para el componente usuarios de Canaima GNU/Linux, el total de código fuente de t
 \label{table:cocomocanaima}
 \begin{threeparttable}
 \begin{tabular}{lr}
-%\toprule
-%\textbf{} & \textbf{}\\
 \toprule
 Líneas de código fuente:                        &      246.648 \\
 Esfuerzo estimado de desarrollo (persona--mes): &       779,64 \\
@@ -2449,20 +2233,6 @@ A continuación se hace un ejercicio para visualizar la diferencia de inversión e
 
 El escenario con presupuesto de Bs. 5.000.000,00  arroja una inversión de US\$ 7.936,51; mientras que para el segundo escenario, con presupuesto de Bs. 15.000.000,00; la inversión otorgada corresponde a US\$ 23.809,52. El mayor monto sigue siendo aproximadamente $\frac{1}{4}$ del monto otorgado al proyecto Guadalinex\footnote{Para el 1 de julio de 2016 un Euro era equivalente a US\$ 1,1105 al momento de la apertura, por lo que el monto otorgado a Guadalinex era equivalente a US\$ 94.059,35.}.
 
-%\subsection{Proyectos}
-%\begin{itemize}
-%\item 2007 -- 2010. Primeras versiones, Canaima GNU/Linux versiones 1.X - 2.X.
-%\item 2009 -- Actualidad. Canaima Educativo.
-%\item 2011 -- 2014. Canaima Popular.
-%\item 2015 -- Actualidad. Canaima Poder Público.
-%\end{itemize}
-
-
-%Desarrolladores Canaima (5 en promedio aprox.)
-
-%cayapas == propuestas, reflexión, discusión.
-
-%canaima comunitario == comunidad -> testing rolling release (cumaná y barinas)
 
 \section{Migración nacional}
 El proceso de migración en Venezuela ha sido complejo, los datos y la información sobre este proceso es escaso o nulo. Por ejemplo, 2012 fue el último año donde se hicieron públicos los datos sobre el proceso de migración de software libre en la APN\footnote{\url{http://www.cnti.gob.ve/til-venezuela/estadisticas-de-migracion/estadisticas-de-migracion.html}}. Los datos de ese año se alcanzaron a través de un censo realizado entre noviembre de 2012 y febrero de 2013. 126 instituciones de las 580 que conformaban para ese entonces la APN suministraron la información requerida, de allí se obtiene que el 51,14\%, el equivalente a 70.871 de las máquinas evaluadas, tenían instalado Canaima GNU/Linux, le seguía en cantidad el sistema operativo privativo Microsoft Windows con 44,72\%, equivalente a 61.966 máquinas (ver figura \ref{fig:migracion2012}). 
@@ -2525,7 +2295,6 @@ Algunas de estas compañías hacen público parte de estos datos, la tabla~\ref{tab
 \begin{center}
 \caption{Cuota de mercado para mayo de 2017 de sistemas operativos basados en Linux instalados en computadoras de escritorio con acceso a internet.}
 \label{table:cuota_linux}
-%\begin{threeparttable}
 \begin{tabular}{lc}
 \toprule
 \textbf{Fuente de datos} & \textbf{Cuota de mercado (\%)}\\
@@ -2536,19 +2305,10 @@ StatCounter        &      1,66 \\
 statista           &      1,53 \\
 \bottomrule
 \end{tabular}
-%\begin{tablenotes}
-%\small
-%\item 
-%\end{tablenotes}
-%\end{threeparttable}
 \end{center}
 \end{table}
 \end{savenotes}
 
-% http://www.w3counter.com/globalstats.php?year=2017&month=5
-% https://www.netmarketshare.com/report.aspx?qprid=9&qpaf=&qpcustom=Linux&qpcustomb=0&qpcd=1
-% http://gs.statcounter.com/os-market-share/desktop/worldwide#monthly-200901-201705
-% https://www.statista.com/statistics/218089/global-market-share-of-windows-7/
 
 Ahora, se puede hacer una estimación de usuarios Linux basado en estos datos, para ello se toma la cantidad  3.739.698.500\footnote{Dato recuperado de \url{http://www.internetworldstats.com/stats.htm} en mayo de 2017} como el número base de usuarios de internet para mayo de 2017, y usando los valores máximos y mínimos de la tabla~\ref{table:cuota_linux} se obtiene que existen aproximadamente, al menos, entre 57.217.387 y 98.728.040 usuarios con acceso a internet que usan alguna distribución Linux para escritorio.
 
@@ -2561,8 +2321,6 @@ El problema en mantener esta afirmación es que el proyecto inició la entrega de 
 
 Por todo esto, no es preciso alegar que Canaima ``tiene la comunidad de Software Libre más grande del mundo con los más de 5 millones de usuarias y usuarias~[sic] de todo el territorio nacional que tienen su canaimita.'' \citep{hernandez16}. Sin embargo, es un gran indicativo de la cantidad de usuarios a los que se le ha distribuido el sistema operativo nacional. Un número nada despreciable, sin dejar atrás la importancia significativa que representa el programa Canaima Educativo en el ámbito mundial del Software Libre. Es fundamental además, sumarle el número de computadoras que incorporaron Canaima en el plan ``Internet equipado'' de CANTV, plan que funcionó hasta hace pocos años; y por supuesto, las estaciones de trabajo que han sido migradas con éxito dentro de la APN. 
 
-
-%==================================================================================================
 
 \section{Debian, Ubuntu y Canaima}
 Las distribuciones evaluadas, Debian, Ubuntu y Canaima, así como el resto de distribuciones GNU/Linux son proyectos que se encargan de reunir y hacer funcionar una gran cantidad de proyectos individuales, entiéndase paquetes software. La generación de una distribución es un trabajo de integración de cientos e incluso miles de componentes de software.
@@ -2636,11 +2394,9 @@ Por todo esto es imperativo un trabajo conjunto y coordinado entre los actores; 
 
 Para lograr un verdadero ambiente colaborativo libre no sólo hace falta la apropiación del software sino también de los procesos.
 
-
-%Para la reflexión: ?`Cuánto se ha invertido en el hardware de las portátiles del programa Canaima educativo y cuanto se ha invertido en el desarrollo de la distribución?
-
 \chapter{Conclusiones y recomendaciones}
 \noindent\rule{\textwidth}{0.4pt}
+\vskip0.05in
 
 El Esfuerzo estimado de desarrollo de la distribución Canaima GNU/Linux arrojó un resultado de 779,64 persona--mes, esto se puede interpretar así: una persona necesitaría 779,64 meses para desarrollar el código que conforma el componente \textit{Usuarios} de Canaima en su versión 5.0. Para Debian 8.0 y Ubuntu 16.04 el Esfuerzo estimado fue de 4.865.175,62 y 1.071.515,44 persona--mes respectivamente. Diferencias significativas debido a la cantidad de líneas de código fuente obtenidas para cada repositorio de software evaluado.
 
@@ -2715,10 +2471,7 @@ Existía otro portal\footnote{http://cayapa.canaima.softwarelibre.gob.ve/} con do
 \begin{itemize}
 \item Dedicar el máximo esfuerzo a la creación de paquetes y aplicaciones libres que satisfagan las necesidades de la APN y dar un paso atrás con la idea de una distribución. En otras palabras, nutrir un repositorio nacional de aplicaciones libres compatibles con la mayoría de las distribuciones y que tengan como objetivo dar solución a los requerimientos informáticos de las instituciones públicas.
 \end{itemize}
-%exponer caso macri con huayra. 1er intento hcolina [Discusion] Fundación Canaima Comunitario  
 
-
-%========================
 \renewcommand\appendixpage{\clearpage\thispagestyle{empty}\mbox{}\vspace{1.5cm}\begin{flushleft}\Huge\bfseries\addappheadtotoc Apéndices \end{flushleft}}
 
 \begin{appendices}
@@ -2727,168 +2480,20 @@ Existía otro portal\footnote{http://cayapa.canaima.softwarelibre.gob.ve/} con do
 \subsection{Script para descargar paquetes fuente}
 \label{ap:descarga}
 
-%Para descargar el código fuente de cada paquete dentro del repositorio principal de una distribución basada en Debian se ha utilizado el comando \texttt{apt-get --download-only source \textit{nombredelpaquete}},  esta acción descarga un conjunto de archivos que permiten compilar y construir nuevas versiones del paquete desde las fuentes. Las extensiones asociadas a estos archivos posibilita escoger el archivo que interesa para hacer las mediciones, así el programa utilizado para automatizar la descarga de todos los archivos fuente se enfoca en conservar el archivo con el código fuente creado por el autor, con extensión \texttt{.orig.tar.gz}, y elimina el resto de archivos descargados que no son necesarios para el proceso de cálculo de líneas de código. El listado de los paquetes de un repositorio se encuentra en un archivo llamado ``\textit{Sources}'', este archivo se ubica dentro del mismo repositorio público, en un directorio de nombre \texttt{source}, para cada rama del repositorio por cada versión de la distribución. 
-%
-%El código para automatización de descarga de paquetes fuentes se aprecia en el Código~\ref{code1}. Básicamente el programa lee cada línea del archivo \emph{Sources}, el cual es el índice de archivos fuente que aloja el repositorio, y se encarga de identificar y extraer el nombre de cada paquete que se encuentra dentro del índice para luego proceder a la descarga en el disco duro del archivo comprimido que contiene el código fuente del nombre del paquete procesado.\\
-%\\
-
 \lstinputlisting[label=code1,caption=paquetes.py]{programas/paquetes.py}
 
 \subsection{Script para ordenar y descomprimir paquetes fuentes}
 \label{ap:orden}
-%Los archivos fuentes se descargan en un formato empaquetado (o comprimido). A modo de mantener un orden y para efectos de contabilizar cada directorio como un proyecto diferente, se crea un directorio para cada uno de los paquetes, esto ayuda entre otras cosas a evitar sobreescritura de archivos en un directorio de descompresión común debido a nombres de archivos y directorios iguales, y organiza cada subproyecto (paquete de código) en un espacio propio. El conjunto de instrucciones utilizado para ejecutar todos estos pasos se aprecia en el Código~\ref{code2}\\
 
 \lstinputlisting[label=code2,caption=mkdirmv.sh]{programas/mkdirmv.sh}
-
-%\section{Cantidad de líneas de Código Fuente}
-%\label{ap:sloc}
-%\subsection{Procedimiento}
-%Antes de poder hacer uso de \texttt{cloc} se prepara antes un ambiente de trabajo para cada distribución a evaluar. Los pasos para ello se describen a continuación tomando como ejemplo la distribución Debian:\\
-%Instalación de los paquetes necesarios para crear una jaula.
-%\begin{lstlisting}
-%apt install debootstrap
-%\end{lstlisting}
-%
-%Instalación de una jaula Debian Jessie (como root)
-%\begin{lstlisting}
-%debootstrap jessie jaula http://localhost/debian/ 
-%\end{lstlisting}
-%Donde: \\
-%\texttt{debootstrap}: es el comando para construir la jaula.\\
-%\texttt{jessie}: es la distribución a instalar en la jaula.\\
-%\texttt{jaula}: es el nombre del directorio donde se creará la jaula.\\
-%\texttt{http://localhost/debian/}: es la dirección del repositorio local. Al utilizar un repositorio local se disminuye considerablemente el tiempo de descarga de los paquetes.
-%
-%Se copia el script que se encargará de descargar los paquetes de la rama principal de la distribución a estudiar a la jaula recién creada.
-%\begin{lstlisting}
-%sudo cp paquetes.py jaula/home/
-%\end{lstlisting}
-%
-%Se repite la operación con el programa que se encargará de crear directorios y descomprimir los archivos en estos directorios.
-%\begin{lstlisting}
-%sudo cp mkdirmv.sh jaula/home/
-%\end{lstlisting}
-%
-%Se entra a la jaula
-%\begin{lstlisting}
-%sudo chroot jaula
-%\end{lstlisting}
-%
-%En caso de ser necesario se modifica el \texttt{sources.list} para usar solo el repositorio local en su rama principal y se actualiza.
-%\begin{lstlisting}
-%nano /etc/apt/sources.list
-%apt update
-%\end{lstlisting}
-%
-%Se instalan los paquetes necesarios para poder operar dentro de la jaula.
-%\begin{lstlisting}
-%apt install xz-utils tar bzip2 python locales sloccount cloc
-%\end{lstlisting}
-%
-%Se configura el lenguaje del entorno.
-%\begin{lstlisting}
-%locale-gen es_VE es_VE.UTF-8
-%dpkg-reconfigure locales
-%\end{lstlisting}
-%
-%Se descarga el paquete de fuentes desde el repositorio local y se descomprime:
-%\begin{lstlisting}
-%wget http://localhost/debian/dists/jessie/main/source/Sources.gz
-%gzip -d Sources.gz
-%\end{lstlisting}
-%
-%Se procede a correr el script
-%\begin{lstlisting}
-%python paquetes.py
-%\end{lstlisting}
-%
-%Luego se corre el programa que se encarga de ordenar cada archivo en un directorio propio, descomprimirlo y borrar el archivo comprimido.
-%\begin{lstlisting}
-%./mkdirmv.sh
-%\end{lstlisting}
-%
-%Se corre el programa de medidas de métricas\footnote{Asegúrese de haber borrado los programas \texttt{paquetes.py}, \texttt{mkdirmv.sh} y el archivo \texttt{Source} para no incluirlos en las métricas.}
-%%\begin{lstlisting}
-%%sloccount --duplicates --multiproject --personcost 60445 . > metrica.txt
-%%\end{lstlisting}
-%%Donde:\\
-%%\textbf{duplicates}: Cuenta archivos duplicados, normalmente si encuentra archivos con igual contenido determinado por medio del uso de valores hash MD5, este es contabilizado una sola vez.\\
-%%\textbf{multiproject}: Los diferentes directorios representan diferentes proyectos, de otro modo es asumido que todas las fuentes de código pertenecen a un mismo proyecto. Esto no cambia el total de número de archivos o valores SLOC pero sí afecta el esfuerzo y tiempo estimados. Con esta opción habilitada el esfuerzo es calculado de manera separada para cada proyecto y el tiempo es el tiempo estimado de los proyectos mas grandes.\\
-%%\textbf{personcost}: Cambia el salario promedio anual al valor indicado. En este caso se usó el valor obtenido desde la página PayScale\footnote{\url{http://www.payscale.com/research/US/Job=Computer_Programmer/Salary}}
-%
-%\begin{lstlisting}
-%cloc --use-sloccount --exclude-ext=po --csv --report-file=cloc.csv _*
-%\end{lstlisting}
-%
-%\noindent
-%Donde:\\
-%\texttt{cloc}: es el programa para determinar la cantidad de líneas de código.\\
-%\texttt{--use-sloccount}: es la orden que le indica a \texttt{cloc} usar los contadores compilados de \texttt{SLOCCount}\footnote{\url{https://www.dwheeler.com/sloccount/}} para los lenguajes C, java, pascal, php y xml que mejoran el desempeño en tiempo del programa.\\
-%\texttt{--exclude-ext=po}: argumento acompañado de una lista de extensiones que le indica al programa excluir todos los archivos de ese tipo en los cálculos. \\
-%%\texttt{--unix}: es el argumento que anula la lógica de autodetección del sistema operativo y ejecutar en modo UNIX.\\
-%%\texttt{--skip-uniqueness}: es la opción que omite la comprobación de unicidad de archivo. De haberlos, se cuentan archivos con idénticos contenidos varias veces.\\
-%\texttt{--csv}: es el argumento que indica al programa que el resultado se debe presentar con un formato de valores separados por coma (csv).\\
-%\texttt{--report-file=cloc.csv}: es el argumento que ordena al programa a almacenar los resultados en el archivo \texttt{cloc.csv}.\\
-%\texttt{\_*}: ruta de los archivos o directorios que se analizarán, en este caso se analizan todos los archivos y directorios en el directorio actual que inician con guión bajo (\_)
-%
-%\subsection{Caso Debian}
-
-%Para la estimación de los valores en el caso del repositorio Debian se ha debido recurrir a una variación en el método de recolección de datos. Debido a que el programa \texttt{cloc} se quedaba sin responder en un punto del proceso, se procedió a evaluar por separado cada paquete, para luego compilar la información de los 20.498\footnote{De los 20.981 paquetes analizados, 7 paquetes causaban que el programa se quedara sin respuesta y otros 476 no generaron reporte.} reportes generados por \texttt{cloc}.
-%
-%Para correr \texttt{cloc} en cada directorio por separado se utilizó el siguiente script que genera un archivo de reporte csv por cada paquete procesado satisfactoriamente. El código se muestra en el Código~\ref{code3}.\\
 
 \subsection{Script para correr \texttt{cloc} en el caso Debian}
 
 \lstinputlisting[label=code3,caption=cloc\_recargado.sh]{programas/cloc_recargado.sh}
 
-%Una vez con todos los reportes generados, se procede a evaluar la información, compilando los datos para generar un reporte global. Se ha creado el siguiente programa en python para el análisis de los datos. Código~\ref{code4}.\\
-
 \subsection{Script para el análisis de los datos generados por el script \texttt{cloc\_recargado.sh}}
 
 \lstinputlisting[label=code4,caption=analisis\_cloc\_debian.py]{programas/analisis_cloc_debian.py}
-
-%\subsection{Script para el total de Lineas de Código Fuente SLOC}
-%
-%\begin{lstlisting}[language=R,caption=estadisticas.R,label=code5]
-%#! /usr/bin/env Rscript
-%
-%# Copyright 2017 David Hernández
-%#
-%#
-%# This software is free software: you can redistribute it and/or modify
-%# it under the terms of the GNU General Public License as published by
-%# the Free Software Foundation, either version 3 of the License, or
-%# (at your option) any later version.
-%#
-%# This software is distributed in the hope that it will be useful,
-%# but WITHOUT ANY WARRANTY; without even the implied warranty of
-%# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-%# GNU General Public License for more details.
-%#
-%# You should have received a copy of the GNU General Public License
-%# along with estadisticas.R. If not, see <http://www.gnu.org/licenses/>.
-%
-%# Estadísticas básicas de los datos obtenidos por CLOC
-%
-%library(tcltk)
-%
-%#Filtro de extensiones con las que se trabajará en este script
-%Filters   <- matrix(c("csv",".csv"),1, 2, byrow = TRUE)
-%
-%#Cargar el archivo de entrada
-%entrada <- tk_choose.files(default = "", caption = "Seleccione el archivo de entrada",multi = FALSE, filters = Filters, index = 1)
-%
-%cloc <- as.data.frame(read.csv(entrada, header=TRUE))
-%
-%cat("\n\n")
-%cat("==========================================================\n")
-%cat("Total archivos con lenguajes reconocidos:\t", format(sum(cloc$files), digits=2, nsmall=2, decimal.mark=",", big.mark=".", scientific=FALSE),"\n")
-%cat("Total de líneas en blanco:\t\t\t", format(sum(cloc$blank), digits=2, nsmall=2, decimal.mark=",", big.mark=".", scientific=FALSE),"\n")
-%cat("Total de líneas con comentarios:\t\t", format(sum(cloc$comment), digits=2, nsmall=2, decimal.mark=",", big.mark=".", scientific=FALSE),"\n")
-%cat("\nTotal de líneas de código fuente:\t\t", format(sum(cloc$code), digits=2, nsmall=2, decimal.mark=",", big.mark=".", scientific=FALSE),"\n")
-%cat("==========================================================\n\n\n")
-%
-%\end{lstlisting}
 
 \subsection{Script para calcular las estimaciones de esfuerzo}
 
@@ -2948,123 +2553,8 @@ cat("(*) con US$", format(Spa, digits=2, nsmall=2, decimal.mark=",", big.mark=".
 cat("==============================================================\n\n\n")
 \end{lstlisting}
 
-%\subsection{Datos recolectados}
-%Un ejemplo de los resultados arrojados por \texttt{cloc}\footnote{para los paquetes zygrib, zyn, zynaddsubfx y zypper} se muestran en la tabla~\ref{table:sloc1}.
-%\begin{table}[H]
-%\begin{center}
-%\caption{SLOC agrupados por lenguaje}
-%\label{table:sloc1}
-%\begin{tabular}{lrrrr}
-%\toprule
-%\multirow{2}{*}{\textbf{Lenguaje}} & \multicolumn{1}{c}{\textbf{Cantidad de}} &  \multicolumn{1}{c}{\textbf{Líneas en}} & \multicolumn{1}{c}{\textbf{Líneas con}}  & \multicolumn{1}{c}{\textbf{Líneas de}}\\
-% & \multicolumn{1}{c}{\textbf{archivos}} & \multicolumn{1}{c}{\textbf{blanco}} & \multicolumn{1}{c}{\textbf{comentarios}}  & \multicolumn{1}{c}{\textbf{código fuente}}\\
-%\midrule
-%C++                & 280 & 16.125 & 18,203 & 86.929 \\
-%C/C++ Header       & 309 &  7.546 &  9,825 & 20.167 \\
-%Python             &  67 &  2.758 &  1,799 & 10.622 \\
-%C                  &  14 &    708 &    424 &  3.888 \\
-%make               &   7 &    402 &     32 &  3.399 \\
-%CMake              &  29 &    221 &    208 &  1.016 \\
-%IDL                &   3 &     47 &      0 &    439 \\
-%Bourne Shell       &   5 &     27 &     27 &    219 \\
-%Bourne Again Shell &   2 &     29 &      8 &    202 \\
-%XML                &   5 &      0 &      0 &     88 \\
-%Perl               &   1 &      5 &      4 &     36 \\
-%\bottomrule
-%\end{tabular}
-%\end{center}
-%\end{table}
-
-%============
-
-%Hay que tomar en cuenta que SLOCCount deja por fuera una gran variedad de lenguajes que aún no son integrados en el código de reconocimiento del programa, incluido varios lenguajes de marcado, en la tabla \ref{table:unknown} se muestran algunos de ellos, indicando la cantidad total de archivos en el repositorio con las extensiones indicadas.
-
-%\begin{table}[H]
-%\begin{center}
-%\caption{Extensiones desconocidas por SLOCCount}
-%\label{table:unknown}
-%\begin{tabular}{lcr} 
-%\toprule
-%\textbf{Lenguaje} & \textbf{Extensión} & \textbf{Cantidad de archivos} \\
-%\midrule
-%Javascript & .js & 146387 \\
-%C++ (cabecera) & .hxx  & 29369 \\
-%R & .R & 9751 \\
-%QT & .qml  & 9189\\
-%Lua & .lua  & 8624\\
-%Golang & .go  & 5357\\
-%YAML & .yaml  & 2576\\
-%\bottomrule
-%\end{tabular}
-%\end{center}
-%\end{table}
-
-
-%\section{Fórmulas para la estimación de costos}
-%\label{ap:cocomo}
-%Tomando los valores bajo el modelo de estimación COCOMO Básico y aplicando los valores establecidos para el modo orgánico, se realizan los cálculos de esfuerzo y tiempo de desarrollo.
-%
-%COCOMO puede ser aplicado a tres tipos de proyecto:
-%
-%\begin{description}
-%\item[Orgánicos] Proyectos bajo un ambiente familiar, estable, relativamente sin restricciones y con desarrolladores experimentados. 
-%\item[Semi-empotrados] Proyecto mezcla de los tipos orgánicos y empotrados, puede haber o no desarrolladores expertos y requerimientos mas o menos rígidos.
-%\item[Empotrados] Proyectos ambiciosos con fuertes restricciones y experiencia moderada.
-%\end{description}
-%
-%\begin{equation}
-%Epm = a\times(KSLOC)^b
-%\label{eq:Esfuerzo}
-%\end{equation}
-%
-%\begin{equation}
-%Tdev = c\times(Epm)^d
-%\label{eq:Tiempo}
-%\end{equation}
-%
-%\begin{equation}
-%Per = \frac{Epm}{Tdev}
-%\label{eq:Personas}
-%\end{equation}
-%
-%\begin{equation}
-%Ctd = Per \times Spa
-%\label{eq:Coste}
-%\end{equation}
-%%Ctd = \frac{Epm}{12} \times Spa \times 2.4 (según wheeler)
-%
-%Donde:
-%\begin{itemize}
-%\item[$Epm$:] es la estimación del esfuerzo de desarrollo, en persona-mes.
-%\item[$KSLOC$:] es el número de líneas de código fuente físicas, en miles.
-%\item[$Tdev$:] es la estimación del tiempo de desarrollo del proyecto, en meses.
-%\item[$Per$:] es el número de personas requeridas, en personas.
-%\item[$Ctd$:] es el costo total estimado de desarrollo del proyecto, en US\$.
-%\item[$Spa$:] es el salario promedio anual estimado de programadores y analistas\footnote{Se toma como referencia el valor US\$60.445,00 para el mes de enero de 2017, dato obtenido desde \url{http://www.payscale.com/research/US/Job=Computer_Programmer/Salary}}.
-%\item[$a$, $b$, $c$ y $d$:] son los coeficientes según el tipo de proyecto, ver tabla \ref{table:coeficientes}.
-%\end{itemize}
-%
-%\begin{table}[H]
-%\centering
-%\caption{Constantes para el cálculo de distintos aspectos de costes para el modelo COCOMO básico}
-%\label{table:coeficientes}
-%\begin{tabular}{ccccc} 
-%\toprule
-%Tipo de proyecto & \textbf{$a$} & \textbf{$b$} & \textbf{$c$} & \textbf{$d$}  \\
-%\midrule
-%\textbf{Orgánico} & \textbf{2,40} & \textbf{1,05} & \textbf{2,50} & \textbf{0,38} \\
-%Medio    & 3,00 & 1,12 & 2,50 & 0,35 \\
-%Embebido & 3,60 & 1,20 & 2,50 & 0,32 \\
-%\bottomrule
-%\end{tabular}
-%\end{table}
-
-
-%\section{Cómo empaquetar en Canaima GNU/Linux}
 \end{appendices}
 
-
-% Bibliografía
 \renewcommand{\bibname}{Referencias}
 \bibliographystyle{apa}
 \bibliography{davidh-proyecto-grado}
