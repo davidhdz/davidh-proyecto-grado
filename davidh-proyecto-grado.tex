@@ -127,7 +127,7 @@ draft=false
 \logoarriba{}
 
 % Año en el cual se entrega el proyecto de grado o la propuesta
-\copyrightyear{2017}
+\copyrightyear{2018}
 
 % Al final cuando hayan presentado, sin comentar,
 % deberia ser el número de tesis presentada y la opción, IO por ejemplo
@@ -148,7 +148,7 @@ draft=false
 \title{Ciclos de vida del software libre. Caso de estudio Distribuci\'on Canaima GNU/Linux}
 
 % Autor de la monografía, el cual saldrá en la portada
- \author{David A. Hern\'andez Aponte}
+\author{David A. Hern\'andez Aponte}
 
 % La fechaentrega, presentaciondia, presentacionlugar
 % y mencionespecial, es para aquel caso en el cual se
@@ -250,13 +250,11 @@ draft=false
 % ***************************************************************** %
 \dedicatoria{A mi madre.}
 
-\agradecimiento{A quienes corresponda (por definir).\\
-%cesimo\\
-%cenditel\\
-%jacinto\\
-%huntingbear, willicab, e1th0r, joaquin, jesús molina.\\
-%padre\\
-}
+\agradecimiento{\noindent Al Prof. Jacinto Dávila por su acompañamiento y paciencia.\vskip1pc
+\noindent Al Centro de Simulación y Modelos (CESIMO) por haberme abierto las puertas y permitirme aprender, jugar y trabajar con el Software Libre.\vskip1pc
+\noindent Al Centro Nacional de Desarrollo e Investigación en Tecnologías Libres (CENDITEL).\vskip1pc
+\noindent A Luis Martínez, William Cabrera, Héctor Colina, Joaquín Muñoz y Jesús Molina, por sus aportes e información brindada para este trabajo.\vskip1pc
+\noindent A mi padre, por su eterno apoyo.}
 % ***************************************************************** %
 % FIN DE
 % Si tiene dedicatoria
@@ -278,8 +276,8 @@ draft=false
 \newpage
 \vspace*{200px}
 \begin{flushright}
-\textbf{\textit{Quien hace, puede equivocarse. Quien nada hace, ya está equivocado.}\\
-Daniel Kon.}
+\textit{{\large Lo único que importa es el esfuerzo.}}\\
+{\small Antoine de Saint-Exupéry}.
 \end{flushright}
 
 
@@ -343,7 +341,7 @@ Por su parte, \cite{amor05a} realizaron una investigación en la que utilizan la 
 
 La técnica de medición de líneas de código fuente físicas (\textit{Source Lines of Code} o SLOC en inglés) permite realizar una serie de cálculos para estimar el tiempo de desarrollo y esfuerzo de un proyecto aplicando el Modelo Constructivo de Costos (\textit{Constructive Cost Model} -- COCOMO) \citep{boehm81}.
 
-Esta técnica ``es una de las más simples y de las más ampliamente usadas para la comparación de piezas de software.'' \citep[p.6]{gonzalez-barahona03}. Ya en el pasado se ha utilizado este método por medio de la utilización de paquetes de software que facilitan el cálculo de las líneas de código como muestran los trabajos de \cite{wheeler01,gonzalez01,gonzalez-barahona03,amor04,amor05a,amor05b,amor07,amor09,herraiz06} y otros autores.
+Esta técnica ``es una de las más simples y de las más ampliamente usadas para la comparación de piezas de software.'' \citep[p.6]{gonzalez-barahona03}. Ya en el pasado se ha utilizado este método en una gran variedad de investigaciones como muestran los trabajos de \cite{wheeler01,gonzalez01,gonzalez-barahona03,amor04,amor05a,amor05b,amor07,amor09,herraiz06} y otros autores.
 
 Por último, es importante recordar el trabajo realizado en Venezuela previo a Canaima en materia de distribuciones y metadistribuciones GNU/Linux. Quizás el ejemplo más sobresaliente fue el nacido desde la Universidad de Los Andes con el Proyecto ULAnux/ULAnix. Los inicios de ULAnux datan de 2004 y la primera versión beta de ULAnix nace en 2005. En el año 2006 es presentada la tercera versión beta de ULAnix en el 2\textsuperscript{o} Congreso Nacional de Software Libre junto a la metadistribución ULAnux\footnote{\url{http://web.archive.org/web/20061004001640/http://www.cnsl.org.ve/Merida}}. ``ULAnux es una metadistribución libre de software libre, con la cual producimos ULAnix la distribución de software de la Universidad de Los Andes'' \citep{molina07}. La distribución presentaba elementos innovadores: ``Esta distribución es la primera creada en el ambiente universitario de Venezuela. También es la primera distribución venezolana disponible por internet'' \citep{ulanix08}. De ella se derivaron otras variantes que valen destacar: 
 \begin{description}
@@ -559,7 +557,7 @@ Para los cálculos efectuados en el estudio se asume un modelo orgánico. Se selec
 
 
 \subsection{Líneas de código fuente (SLOC)}
-Una línea física de código fuente (\textit{Source Line of Code (SLOC)} en inglés) es aquella que termina en una línea nueva o con un demarcador de fin de archivo, y además contiene, por lo menos, un carácter diferente a  un espacio en blanco  o comentario \citep{wheeler01}. En otras palabras, toda línea que represente un comentario, esté vacía o esté compuesta íntegramente de espacios en blanco o tabulaciones no se consideran como líneas de código.
+Una línea física de código fuente (\textit{Source Line of Code --SLOC--} en inglés) es aquella que termina en una línea nueva o con un demarcador de fin de archivo, y además contiene, por lo menos, un carácter diferente a  un espacio en blanco  o comentario \citep{wheeler01}. En otras palabras, toda línea que represente un comentario, esté vacía o esté compuesta íntegramente de espacios en blanco o tabulaciones no se consideran como líneas de código.
 
 Determinar las estimaciones de costo de desarrollo siguiendo el modelo COCOMO supone conocer la cantidad de líneas de código fuente físicas. El proceso aplicado para obtener estos números implica hacerse del código fuente de los paquetes a evaluar. 
 
@@ -567,7 +565,7 @@ Como se desea realizar comparaciones con términos comunes entre las tres distrib
 
 Ya contando con los paquetes fuentes descomprimidos a evaluar se debe recorrer cada archivo en busca de las líneas de código, comentarios y líneas en blanco.
 
-Para poder calcular el número de líneas de código fuente en el presente estudio se ha optado por utilizar la herramienta \texttt{cloc}\footnote{\url{https://github.com/AlDanial/cloc}}. \texttt{Cloc} es un programa con licencia libre, multiplataforma, hecho en Perl, que analiza los paquetes de software dados y procede a contar las líneas en blanco, líneas con comentarios y las líneas de código fuente físicas, reconociendo más de 200 lenguajes de programación. 
+Para poder calcular el número de líneas de código fuente en el presente estudio se ha optado por utilizar la herramienta \texttt{cloc}\footnote{\url{https://github.com/AlDanial/cloc}}. \texttt{Cloc} es un programa con licencia libre, multiplataforma, hecho en Perl, que analiza los paquetes de software dados y procede a contar las líneas en blanco, líneas con comentarios y las líneas de código fuente físicas, reconociendo 218 lenguajes de programación para la versión 1.74. 
 
 Una vez obtenido el número de líneas de código fuente se efectúan los cálculos respectivos de las diferentes estimaciones, tales como: esfuerzo estimado de desarrollo, tiempo de desarrollo, cantidad de personas requeridas y costo total del proyecto. 
 
@@ -591,7 +589,7 @@ Las extensiones asociadas a estos archivos posibilita escoger el archivo que int
 
 El listado de los paquetes de un repositorio se encuentra en un archivo llamado ``\textit{Sources}''. Este archivo se ubica dentro del mismo repositorio público, en un directorio de nombre \texttt{source}, para cada rama del repositorio y para cada una de las versiones de la distribución. 
 
-El código para automatización de descarga de paquetes fuentes se aprecia en el Código~\ref{code1} del Apéndice. Básicamente el programa lee cada línea del archivo \emph{Sources}, el cual es el índice de archivos fuente que aloja el repositorio, y se encarga de identificar y extraer el nombre de cada paquete que se encuentra dentro del índice para luego proceder a la descarga en el disco duro del archivo comprimido que contiene el código fuente del nombre del paquete procesado.
+El código para automatización de descarga de paquetes fuentes se aprecia en el Código~\ref{code1} del Apéndice. Básicamente el programa lee cada línea del archivo \emph{Sources}, el cual es el índice de archivos fuente que aloja el repositorio, y se encarga de identificar y extraer el nombre de cada paquete que se encuentra dentro del índice para luego proceder a la descarga en el disco duro, del archivo comprimido que contiene el código fuente del nombre del paquete procesado.
 
 \subsubsection{Scripts para ordenar y descomprimir paquetes fuentes}
 
@@ -614,7 +612,7 @@ Instalación de una jaula Debian Jessie (como root)
 debootstrap jessie jaula http://localhost/debian/ 
 \end{lstlisting}
 Donde: \\
-\texttt{deboostrap}: es el comando para construir la jaula.\\
+\texttt{debootstrap}: es el comando para construir la jaula.\\
 \texttt{jessie}: es la distribución a instalar en la jaula.\\
 \texttt{jaula}: es el nombre del directorio donde se creará la jaula.\\
 \texttt{http://localhost/debian/}: es la dirección del repositorio local. Al utilizar un repositorio local se disminuye considerablemente el tiempo de descarga de los paquetes.
@@ -629,7 +627,7 @@ Se repite la operación con el programa que se encargará de crear directorios y d
 sudo cp mkdirmv.sh jaula/home/
 \end{lstlisting}
 
-Se entra a la jaula
+Se entra a la jaula.
 \begin{lstlisting}
 sudo chroot jaula
 \end{lstlisting}
@@ -1102,7 +1100,7 @@ La lista de correo es quizás la herramienta que mejor se adapta a los fines comu
 En este trabajo se cuantifica la actividad en dos listas públicas de correos específicas para cada distribución, la lista de discusión de usuarios y la lista de desarrolladores. Esto, con el objeto de mostrar el movimiento y la interacción de la comunidad que integra dichas listas. Las listas de usuarios están entendidas para el soporte y asistencia de los usuarios de las distribuciones y la listas de desarrolladores para temas más técnicos entre desarrolladores. 
 
 \subsubsection{Lista de usuarios}
-La Figura~\ref{fig:debusers} muestra un crecimiento constante. El pico de actividad más alto en la lista es alcanzado en octubre del año 2002 superando la barrera de los 6500 mensajes en ese mes, centrándose en temas de soporte y discusión. Luego comienza un paulatino descenso hasta marzo de 2007 donde se aprecia un repunte de 5499 mensajes en donde se presentan discusiones interesantes sobre derechos de autor, soporte y opiniones devenidas en una declaración de Ian Murdock sobre el impacto de Ubuntu en los usuarios de Debian\footnote{\url{https://lists.debian.org/debian-user/2007/03/msg03347.html}}. Luego continua su descenso en la actividad, presentando breves momentos de actividad intensificada, con temas relacionados a soporte.
+La Figura~\ref{fig:debusers} muestra un crecimiento constante. El pico de actividad más alto en la lista es alcanzado en octubre del año 2002 superando la barrera de los 6.500 mensajes en ese mes, centrándose en temas de soporte y discusión. Luego comienza un paulatino descenso hasta marzo de 2007 donde se aprecia un repunte de 5.499 mensajes en donde se presentan discusiones interesantes sobre derechos de autor, soporte y opiniones devenidas en una declaración de Ian Murdock sobre el impacto de Ubuntu en los usuarios de Debian\footnote{\url{https://lists.debian.org/debian-user/2007/03/msg03347.html}}. Luego continua su descenso en la actividad, presentando breves momentos de actividad intensificada, con temas relacionados a soporte.
 
 
 \begin{figure}[H]
@@ -1131,7 +1129,7 @@ Para el caso de la actividad en la lista de desarrolladores de Debian, presentad
 
 En la figura~\ref{fig:ciclodebian} se presenta el diagrama de flujo de paquetes entre las diferentes versiones de Debian.
 
-Allí se describe las posibles rutas que atraviesa un paquete aceptado a través las diferentes ramas y repositorios del sistema Debian. Los repositorios en negrita representan aquellos que contienen el sistema base, es decir, ese repositorio contiene los paquetes requeridos para poder tener un sistema operativo funcional, mientras que el resto de repositorios solamente contienen algunos paquetes y no podrían funcionar por sí solos.
+Allí se describe las posibles rutas que atraviesa un paquete aceptado a través de las diferentes ramas y repositorios del sistema Debian. Los repositorios en negrita representan aquellos que contienen el sistema base, es decir, ese repositorio contiene los paquetes requeridos para poder tener un sistema operativo funcional, mientras que el resto de repositorios solamente contienen algunos paquetes y no podrían funcionar por sí solos.
 
 El diagrama se explica de la siguiente forma. Un paquete puede ser subido por el equipo de seguridad a la rama de desarrollo (inestable) o directamente al repositorio de seguridad para corregir errores urgentes que puedan vulnerar el sistema. 
 
@@ -1375,7 +1373,7 @@ La Tabla \ref{table:lanzamientosubuntu} muestra la fecha de lanzamiento de las d
 \caption{Lanzamientos de versiones de Ubuntu}
 \label{table:lanzamientosubuntu}
 \centering
-\resizebox{.48\textwidth}{!}{%
+\resizebox{.59\textwidth}{!}{%
 \begin{threeparttable}
 \begin{tabular}{lcr} 
 \toprule
@@ -1406,6 +1404,7 @@ La Tabla \ref{table:lanzamientosubuntu} muestra la fecha de lanzamiento de las d
 15.10     & Wily Werewolf    & 21/10/2015 \\
 16.04 LTS & Xenial Xerus     & 21/04/2016 \\
 16.10     & Yakkety Yak      & 13/10/2016 \\
+17.04     & Zesty Zapus	     & 13/04/2017 \\
 \bottomrule
 \end{tabular}
 \begin{tablenotes}
@@ -1425,9 +1424,10 @@ Ubuntu está oficialmente soportada y portada para 7 arquitecturas, mostradas en 
 
 \begin{savenotes}
 \begin{table}[H]
-\begin{center}
 \caption{Arquitecturas soportadas oficialmente por Ubuntu}
 \label{table:archubuntu}
+\centering
+\resizebox{.58\textwidth}{!}{%
 \begin{threeparttable}
 \begin{tabular}{ll} 
 \toprule
@@ -1446,8 +1446,7 @@ powerpc & IBM/Motorola PowerPC \\
 \small
 \item Fuentes: Ubuntu Documentation\footnote{\url{https://help.ubuntu.com/community/SupportedArchitectures}}
 \end{tablenotes}
-\end{threeparttable}
-\end{center}
+\end{threeparttable}}
 \end{table}
 \end{savenotes}
 
@@ -2092,7 +2091,7 @@ Al iniciar el ciclo de desarrollo se identifican las necesidades a través de dis
 
 Sobre la base de estos insumos, durante la fase de planificación, se definen las metas que se deben abordar para la entrega del producto y se conforman los grupos de trabajo para dar paso a la fase de desarrollo. 
 
-En la fase de desarrollo se adecua el trabajo publicando versiones alpha para comprobar el avance del proceso de definición de la distribución antes de continuar a la fase de pruebas. Es aquí donde se terminan de corregir los errores hasta asegurar una distribución libre de errores críticos a través de la prueba de versiones beta y versiones candidatas justo antes de la publicación de la versión definitiva.\\
+En la fase de desarrollo se adecua el trabajo publicando versiones alfa para comprobar el avance del proceso de definición de la distribución antes de continuar a la fase de pruebas. Es aquí donde se terminan de corregir los errores hasta asegurar una distribución libre de errores críticos a través de la prueba de versiones beta y versiones candidatas justo antes de la publicación de la versión definitiva.\\
 
 \begin{figure}[H]
 \caption{Hitos}
@@ -2100,7 +2099,7 @@ En la fase de desarrollo se adecua el trabajo publicando versiones alpha para co
 \centering
 \begin{tikzpicture}
     \fill[red!50]     (0:0) circle(1);
-    \node [font=\footnotesize, align=center] at (0:0) {Alpha};
+    \node [font=\footnotesize, align=center] at (0:0) {Alfa};
     \node (rect) at (0:5) [fill=red!50, minimum width=8cm, minimum height=1.8cm, font=\scriptsize, align=center] {
     Etapas tempranas del proceso de desarrollo, \\ 
     comúnmente no incluyen todas las funcionalidades esperadas \\ 
@@ -2182,7 +2181,7 @@ Canaima se define como metadistribución, lo que quiere decir que de ella provee 
 
 {\footnotesize Página: \url{http://caribay.cenditel.gob.ve/}}
 
-\subsubsection{Canaima Comunitario} Aún no es una realidad. Es la versión que pretende ser construida por la comunidad, dirigida al público en general y basada en Canaima Pruebas para brindar una opción con paquetes más actualizados.
+\subsubsection{Canaima Comunitario} Aún no es una realidad. Es la versión que pretende ser construida por la comunidad, dirigida al público en general y basada en Debian \textit{testing} para brindar una opción con paquetes más actualizados.
 
 \subsection{Estimación de costos}
 
@@ -2243,7 +2242,7 @@ Se puede observar que JavaScript es el lenguaje que sobresale en cantidad de lín
 \includegraphics[width=\textwidth]{barplot_canaima}
 \end{figure}
 
-En cuanto a cantidad de archivos, es C\# quien puntea haciéndose de un tercio aproximadamente (34\%) en proporción de la totalidad de archivos, seguido de los archivos de JavaScripts con un 21\% y los scripts de Bourne Shell con 15\% para completar los archivos mas populosos dentro de los paquetes nativos de Canaima 5.0. Ver Figura~\ref{fig:canapiare}.
+En cuanto a cantidad de archivos, es C\# quien puntea haciéndose de un tercio aproximadamente (34\%) en proporción de la totalidad de archivos, seguido de los archivos de JavaScripts con un 21\% y los scripts de Bourne Shell con 15\% para completar los archivos más populosos dentro de los paquetes nativos de Canaima 5.0. Ver Figura~\ref{fig:canapiare}.
 
 \begin{figure}[H]
 \caption{Porcentaje de archivos por lenguaje dentro del componente \textit{usuarios} de Canaima 5.0}
@@ -2448,7 +2447,7 @@ Si se compara el presupuesto otorgado a Canaima con el presupuesto otorgado para
 
 A continuación se hace un ejercicio para visualizar la diferencia de inversión entre ambos proyectos. Se plantean dos escenarios con fecha 1 de julio de 2016, el primer escenario con un presupuesto Bs. 5.000.000,00; valor cercano al máximo otorgado para el proyecto (2013). El segundo escenario corresponde a un presupuesto de Bs. 15.000.000,00; monto cercano al máximo ejecutado (2015) reflejado en la tabla. Para ambos casos se aplican los cálculos con cambio tasado a Bs. 630,00 por US\$~1,00; valor cercano al cambio oficial para mediados de 2016.
 
-El escenario con presupuesto de Bs. 5.000.000,00  arroja una inversión de US\$ 7.936,51; mientras que para el segundo escenario, con presupuesto de Bs. 15.000.000,00; la inversión otorgada corresponde a US\$ 23.809,52. El mayor monto sigue siendo aproximadamente $\frac{1}{4}$ del monto otorgado al proyecto Guadalinex\footnote{Para el 1 de julio de 2016 un Euro era equivalente a US\$ 1,1105 al momento de la apertura.}.
+El escenario con presupuesto de Bs. 5.000.000,00  arroja una inversión de US\$ 7.936,51; mientras que para el segundo escenario, con presupuesto de Bs. 15.000.000,00; la inversión otorgada corresponde a US\$ 23.809,52. El mayor monto sigue siendo aproximadamente $\frac{1}{4}$ del monto otorgado al proyecto Guadalinex\footnote{Para el 1 de julio de 2016 un Euro era equivalente a US\$ 1,1105 al momento de la apertura, por lo que el monto otorgado a Guadalinex era equivalente a US\$ 94.059,35.}.
 
 %\subsection{Proyectos}
 %\begin{itemize}
@@ -2503,7 +2502,7 @@ La Tabla~\ref{table:resumenes} muestra un resumen con los datos relacionados con
 \textbf{Paquetes procesados}          &          20.981 &           2.495 &               35 \\
 \textbf{Archivos procesados}          &       4.326.711 &       1.054.974 &            1.014 \\
 \textbf{Líneas de código fuente}      &   1.015.218.011 &     240.297.751 &          246.648 \\
-\textbf{Esfuerzo (personas--mes)}     &    4.865.175,62 &    1.071.515,44 &           779,64 \\
+\textbf{Esfuerzo (persona--mes)}     &    4.865.175,62 &    1.071.515,44 &           779,64 \\
 \textbf{Tiempo de desarrollo (meses)} &          869,04 &          489,03 &            31,39 \\
 \textbf{Personas requeridas}          &        5.598,36 &        2.191,08 &            24,83 \\
 \textbf{Costo total (US\$)}           &  413.366.347,61 &  161.783.066,47 &     1.833.612,33 \\
@@ -2551,7 +2550,7 @@ statista           &      1,53 \\
 % http://gs.statcounter.com/os-market-share/desktop/worldwide#monthly-200901-201705
 % https://www.statista.com/statistics/218089/global-market-share-of-windows-7/
 
-Ahora, se puede hacer una estimación mínima de usuarios Linux, para ello se toma la cantidad  3.739.698.500\footnote{Dato recuperado de \url{http://www.internetworldstats.com/stats.htm} en mayo de 2017} como el número base de usuarios de internet para mayo de 2017, y usando los valores máximos y mínimos de la tabla~\ref{table:cuota_linux} se obtiene que existen aproximadamente, al menos, entre 57.217.387 y 98.728.040 usuarios con acceso a internet que usan alguna distribución Linux para escritorio.
+Ahora, se puede hacer una estimación de usuarios Linux basado en estos datos, para ello se toma la cantidad  3.739.698.500\footnote{Dato recuperado de \url{http://www.internetworldstats.com/stats.htm} en mayo de 2017} como el número base de usuarios de internet para mayo de 2017, y usando los valores máximos y mínimos de la tabla~\ref{table:cuota_linux} se obtiene que existen aproximadamente, al menos, entre 57.217.387 y 98.728.040 usuarios con acceso a internet que usan alguna distribución Linux para escritorio.
 
 
 \section{Usuarios Canaima}
@@ -2568,30 +2567,30 @@ Por todo esto, no es preciso alegar que Canaima ``tiene la comunidad de Software
 \section{Debian, Ubuntu y Canaima}
 Las distribuciones evaluadas, Debian, Ubuntu y Canaima, así como el resto de distribuciones GNU/Linux son proyectos que se encargan de reunir y hacer funcionar una gran cantidad de proyectos individuales, entiéndase paquetes software. La generación de una distribución es un trabajo de integración de cientos e incluso miles de componentes de software.
 
-\begin{savenotes}
 \begin{table}[H]
 \begin{center}
 \caption{Cuadro Comparativo}
 \label{table:comparativo}
 \begin{tabular}{lrrr}
 \toprule
-                                      & \textbf{Debian} & \textbf{Ubuntu} & \textbf{Canaima} \\
+                                           & \textbf{Debian} & \textbf{Ubuntu} & \textbf{Canaima} \\
 \midrule
-\textbf{Fuente de financiamiento}     &     Comunitario &         Privado &    Gubernamental \\
-\textbf{Paquetes en repo principal}\footnote{Para las versiones evaluadas.}                &
-                                                 20.981 &           2.495 &               35 \\
-\textbf{Cantidad de desarrolladores}  &           1.314 &           1.128 &                5 \\
-\textbf{Periodicidad de lanzamientos} &          Bienal &       Semestral &            Anual \\
-\textbf{Soporte LTS (Años)}           &               5 &               5 &                5 \\
+\textbf{Fuente de financiamiento}          &     Comunitario &         Privado &    Gubernamental \\
+\textbf{Paquetes en repo principal} $^{*}$ &          20.981 &           2.495 &               35 \\
+\textbf{Cantidad de desarrolladores}       &           1.314 &           1.128 &                5 \\
+\textbf{Periodicidad de lanzamientos}      &          Bienal &       Semestral &            Anual \\
+\textbf{Soporte LTS (Años)}                &               5 &               5 &                5 \\
 \bottomrule
 \end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item $^{*}$ Para las versiones evaluadas en este trabajo.
+\end{tablenotes}
 \end{center}
 \end{table}
-\end{savenotes}
+
 
 Canaima GNU/Linux es una distribución cuyo soporte financiero, técnico y humano proviene fundamentalmente de un Estado. Debian, en cambio, es una distribución cuyo soporte proviene principalmente de la comunidad de desarrolladores y usuarios. Finalmente, Ubuntu es una distribución patrocinada principalmente por una empresa, Canonical. Dicho esto, el interés que mueve a cada proyecto puede ser variado. Los objetivos de cada proyecto varían. El de uno podría ser práctico: entregar a la sociedad un producto útil que satisfaga las necesidades del usuario final. El del otro podría estar buscando lo mismo pero desde un sentido comercial. Y entre otros está aquel que buscaría suplir las necesidades de un usuario en concreto como podrían ser los funcionarios y empleados públicos de un país.
-
-
 
 Para las versiones evaluadas, Debian dispone de poco más de 1.300 desarrolladores para integrar los casi 20.500 paquetes que posee el repositorio. Ubuntu cuenta con un aproximado de 1.100 desarrolladores para la integración 2.495 paquetes. Canaima, por su parte, tiene 5 desarrolladores para la integración de 35 paquetes en la imagen ISO final. 
 
@@ -2611,7 +2610,7 @@ De este modo surgen varias interrogantes, los acuerdos conciliados en reuniones 
 
 Es sabido que en los últimos años la mengua de desarrolladores en organismos de la APN se acentúa. La variación de desarrolladores en Canaima va entre 7 como máximo (2013--2014) y 2 como mínimo (2016). Este factor maximiza el riesgo de retraso, acumulación de tareas y sobrecarga de trabajo que inciden de manera negativa sobre el trabajador potenciando la posibilidad de acrecentar la migración de personal.
 
-Una distribución nacional no debería contar con un personal de 12 personas\footnote{Según página del CNTI.}  para atender un proyecto que implica la atención de una plataforma e infraestructura tecnológica de gran envergadura que capaz de asegurar el correcto funcionamiento de los servicios que se prestan y que son utilizados. Adicionalmente, no se deben descuidar el resto de tareas operativas del proyecto, como las labores de diseño, soporte, desarrollo, documentación, sistematización, difusión, formación, enlaces institucionales, etcétera. 
+Una distribución nacional no debería contar con un personal de 12 personas\footnote{Según página del CNTI.}  para atender un proyecto que implica la atención de una plataforma e infraestructura tecnológica de gran envergadura que debe ser capaz de asegurar el correcto funcionamiento de los servicios que se prestan y que son utilizados. Adicionalmente, no se deben descuidar el resto de tareas operativas del proyecto, como las labores de diseño, soporte, desarrollo, documentación, sistematización, difusión, formación, enlaces institucionales, etcétera. 
 
 Todas estas condiciones deben valorarse al momento de preparar el plan de trabajo. Evitar en lo posible caer en la proyección de metas con alto riesgo de fracaso.
 
@@ -2635,7 +2634,7 @@ El constante cuestionamiento y autocrítica que nos hacemos en lo que respecta a 
 Por todo esto es imperativo un trabajo conjunto y coordinado entre los actores; con objetivos claros y alcanzables; con las condiciones tecnológicas y humanas acordes a los objetivos de la nación que se quiere; en un ambiente de confianza, cooperación y respeto.
 
 
-Para lograr un verdadero ambiente colaborativo libre no solo hace falta la apropiación del software sino también de los procesos.
+Para lograr un verdadero ambiente colaborativo libre no sólo hace falta la apropiación del software sino también de los procesos.
 
 
 %Para la reflexión: ?`Cuánto se ha invertido en el hardware de las portátiles del programa Canaima educativo y cuanto se ha invertido en el desarrollo de la distribución?
@@ -2643,15 +2642,17 @@ Para lograr un verdadero ambiente colaborativo libre no solo hace falta la aprop
 \chapter{Conclusiones y recomendaciones}
 \noindent\rule{\textwidth}{0.4pt}
 
+El Esfuerzo estimado de desarrollo de la distribución Canaima GNU/Linux arrojó un resultado de 779,64 persona--mes, esto se puede interpretar así: una persona necesitaría 779,64 meses para desarrollar el código que conforma el componente \textit{Usuarios} de Canaima en su versión 5.0. Para Debian 8.0 y Ubuntu 16.04 el Esfuerzo estimado fue de 4.865.175,62 y 1.071.515,44 persona--mes respectivamente. Diferencias significativas debido a la cantidad de líneas de código fuente obtenidas para cada repositorio de software evaluado.
 
-El ciclo de desarrollo que presenta la Distribución Canaima dibuja un comportamiento cíclico de 5 fases para cada ciclo (o versión). Estas fases abarcan los procesos de inicialización, planificación, desarrollo, pruebas y publicación.
+
+En cuanto al ciclo de desarrollo que presenta la Distribución Canaima, éste dibuja un comportamiento cíclico de 5 fases para cada versión. Estas fases abarcan los procesos de inicialización, planificación, desarrollo, pruebas y publicación.
 
 Pero este ciclo se ve afectado cuando variables imprevistas son introducidas en algún o algunos de los procesos del ciclo. Las variables más comunes en las instituciones de tecnología del sector publico nacional como el Centro Nacional de Tecnologías de Información (CNTI) o el Centro Nacional de Desarrollo e Investigación en Tecnologías Libres (CENDITEL) son entre otras:
 \begin{itemize}
 \item Introducción de nuevas metas en la planificación pautada. 
 \item Asignación del trabajador a nuevos proyectos que no estaban contemplados al inicio del plan y que manejan mayores prioridades repercuten en el tiempo que le queda para dedicarle a los proyectos originales.
 \item Salida de personal calificado de los proyectos/institución.
-\item Pérdidas de equipo por fallas imprevistas y no hay forma de reponer.
+\item Pérdidas de equipo por fallas imprevistas y dificultad en su reposición.
 \end{itemize}
 
 Adicional a esto, la problemática presentada en el caso de Canaima donde aún no se ha terminado de dar el salto a un modelo del estilo bazar atenta contra el objeto colaborativo del proyecto.
@@ -2683,8 +2684,8 @@ Ante todo lo expuesto, se proponen las siguientes recomendaciones:
 \item Actualizar la base de conocimiento publicada en los diferentes portales de Canaima.
 \item Continuar con el trabajo de organización de todos estos documentos.
 \item Completar aquellos documentos que aún quedan por concluir.
-\item Rescatar en lo posible los documentos históricos de las cayapas. El wiki\footnote{http://cayapa.canaima.net.ve/} utilizado históricamente para registrar las actividades y acuerdos realizados en las cayapas dejó de funcionar y toda la documentación que compilada allí está inaccesible.
-Existía otro portal\footnote{http://cayapa.canaima.softwarelibre.gob.ve/} con dominio del CNTI, con información, al menos  hasta la VII Cayapa que también está inaccesible.
+\item Rescatar en lo posible los documentos históricos de las cayapas. El wiki\footnote{http://cayapa.canaima.net.ve/} utilizado históricamente para registrar las actividades y acuerdos realizados en las cayapas dejó de funcionar y toda la documentación compilada allí está inaccesible.
+Existía otro portal\footnote{http://cayapa.canaima.softwarelibre.gob.ve/} con dominio del CNTI, con información, al menos  hasta la VII Cayapa que también se encuentra inaccesible al momento de concluir este trabajo.
 \end{itemize}
 
 \subsection{Respecto CNTI:}
@@ -2694,7 +2695,7 @@ Existía otro portal\footnote{http://cayapa.canaima.softwarelibre.gob.ve/} con do
 \item Establecer la dedicación exclusiva a las tareas de Canaima.
 \item \textbf{Respetar los acuerdos alcanzados con la comunidad.}
 \item Mantener las metas planificadas (no añadir a destiempo nuevas metas).
-\item \textbf{No añadir requerimientos nuevos fuera del plazo de planificación.}
+\item \textbf{No añadir nuevos requerimientos fuera del plazo de planificación.}
 \item El plan de migración nacional debe ser redefinido.
 \end{itemize}
 
@@ -2707,9 +2708,7 @@ Existía otro portal\footnote{http://cayapa.canaima.softwarelibre.gob.ve/} con do
 
 \subsection{A futuro:}
 \begin{itemize}
-\item Deslindar el proyecto de la red burocrática nacional y constituir una figura independiente, como por ejemplo una Fundación. Esta ha sido una propuesta que lleva años en el tapete. 
-
-Ya en 2010 se asomó un primer intento de conformar una fundación\footnote{\url{http://listas.canaima.softwarelibre.gob.ve/pipermail/discusion/2010-November/002227.html}}.
+\item Deslindar el proyecto de la red burocrática nacional y constituir una figura independiente, como por ejemplo una Fundación. Esta ha sido una propuesta que lleva años en el tapete. Ya en 2010 se asomó un primer intento de conformar una fundación\footnote{\url{http://listas.canaima.softwarelibre.gob.ve/pipermail/discusion/2010-November/002227.html}}.
 \end{itemize}
 
 \subsection{Otra opción:}
@@ -2755,7 +2754,7 @@ Ya en 2010 se asomó un primer intento de conformar una fundación\footnote{\url{h
 %debootstrap jessie jaula http://localhost/debian/ 
 %\end{lstlisting}
 %Donde: \\
-%\texttt{deboostrap}: es el comando para construir la jaula.\\
+%\texttt{debootstrap}: es el comando para construir la jaula.\\
 %\texttt{jessie}: es la distribución a instalar en la jaula.\\
 %\texttt{jaula}: es el nombre del directorio donde se creará la jaula.\\
 %\texttt{http://localhost/debian/}: es la dirección del repositorio local. Al utilizar un repositorio local se disminuye considerablemente el tiempo de descarga de los paquetes.
@@ -3069,6 +3068,5 @@ cat("==============================================================\n\n\n")
 \renewcommand{\bibname}{Referencias}
 \bibliographystyle{apa}
 \bibliography{davidh-proyecto-grado}
-
 
 \end{document}
