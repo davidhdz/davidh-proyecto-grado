@@ -1,8 +1,7 @@
-davidh-proyecto-grado
+Proyecto de Grado
 =====================
 
-Ciclos de vida del software libre. Caso de estudio Distribución Canaima 
-GNU/Linux
+Ciclos de vida del software libre. Caso de estudio Distribución Canaima GNU/Linux
 ----
 
 **Autor:** David A. Hernández Aponte
