@@ -15,3 +15,10 @@ GNU/Linux
 
 **Palabras Clave:** Linux, Software libre, Distribución Linux, Ciclo de vida, Canaima GNU/Linux, Desarrollo colaborativo, Debian, Ubuntu, COCOMO, SLOC.
 
+
+----
+## Licencias
+
+**Documento e imágenes:** Creative Commons Attribution 4.0 International Public License
+
+**Códigos:** GNU General Public License Version 3
